@@ -1,7 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Code, Home, SignIn, SignUp } from "./screens";
+import {
+  Code,
+  Home,
+  SetPassword,
+  SignIn,
+  SignUp,
+  VerifyPassword,
+} from "./screens";
 const Stack = createNativeStackNavigator();
 
 export default function App(): JSX.Element {
@@ -40,7 +47,7 @@ export default function App(): JSX.Element {
         />
         <Stack.Screen
           name="set-password"
-          component={Code}
+          component={SetPassword}
           options={{
             title: "Set Password",
             headerTitleAlign: "center",
@@ -48,7 +55,7 @@ export default function App(): JSX.Element {
         />
         <Stack.Screen
           name="verify-password"
-          component={Code}
+          component={VerifyPassword}
           options={{
             title: "Verify Password",
             headerTitleAlign: "center",

@@ -15,8 +15,9 @@ import {
 const widthWindow: number = Dimensions.get("window").width;
 const heightWindow: number = Dimensions.get("window").height;
 
-export default class Code extends Component {
+export default class Code extends Component<any, any> {
   render() {
+    const { from }: any = this.props.route.params;
     return (
       <SafeAreaView
         style={{
@@ -36,7 +37,13 @@ export default class Code extends Component {
               style={styles.textInputNumberCode}
               placeholder="6 - Digit Number Code"
             />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                if (from === "sign-in")
+                  this.props.navigation.navigate("verify-password");
+                else this.props.navigation.navigate("set-password");
+              }}
+            >
               <View style={styles.flatButton}>
                 <Text style={styles.textFlatButton}>Confirm</Text>
               </View>

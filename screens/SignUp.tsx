@@ -38,7 +38,12 @@ export default function SignUp({ navigation }: any): JSX.Element {
           />
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("code");
+              navigation.navigate({
+                name: "code",
+                params: {
+                  from: "sign-up",
+                },
+              });
             }}
           >
             <View style={styles.flatButton}>
