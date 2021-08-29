@@ -43,7 +43,7 @@ export default class SignIn extends React.Component<any, any> {
             />
             <TouchableOpacity
               onPress={() => {
-                this.props.navigator.navigate("code");
+                this.props.navigation.navigate("code");
               }}
             >
               <View style={styles.flatButton}>

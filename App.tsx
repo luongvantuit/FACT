@@ -38,6 +38,22 @@ export default function App(): JSX.Element {
             headerTitleAlign: "center",
           }}
         />
+        <Stack.Screen
+          name="set-password"
+          component={Code}
+          options={{
+            title: "Set Password",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="verify-password"
+          component={Code}
+          options={{
+            title: "Verify Password",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
