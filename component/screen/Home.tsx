@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import { Text, View, SafeAreaView } from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 
-export default class Home extends Component {
-  render() {
-    return (
-      <View>
-        <Text> Home </Text>
-      </View>
-    );
-  }
+export default function Home() {
+  return (
+    <View>
+      <Text> HomeApp </Text>
+    </View>
+  );
 }

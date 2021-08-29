@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import { Text, View } from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 
-export default class SignUp extends Component {
-  render() {
-    return (
-      <View>
-        <Text> SignUp </Text>
-      </View>
-    );
-  }
+export default function SignUp() {
+  return (
+    <View>
+      <Text> SignUp </Text>
+    </View>
+  );
 }
