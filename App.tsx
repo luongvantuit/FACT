@@ -1,19 +1,15 @@
 import React from "react";
-import { useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Home, SignIn, SignUp } from "./components";
-import { theme, themeDark } from "./themes";
-
+import { Home, SignIn, SignUp } from "./screens";
 const Stack = createNativeStackNavigator();
 
 export default function App(): JSX.Element {
-  const colorScheme = useColorScheme();
   return (
-    <NavigationContainer theme={colorScheme === "dark" ? themeDark : theme}>
-      <Stack.Navigator initialRouteName="SignIn">
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="sign-in">
         <Stack.Screen
-          name="Home"
+          name="home"
           component={Home}
           options={{
             title: "Home",
@@ -21,14 +17,14 @@ export default function App(): JSX.Element {
           }}
         />
         <Stack.Screen
-          name="SignUp"
+          name="sign-up"
           component={SignUp}
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="SignIn"
+          name="sign-in"
           component={SignIn}
           options={{
             headerShown: false,

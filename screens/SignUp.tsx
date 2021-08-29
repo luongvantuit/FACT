@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Dimensions,
+  StyleSheet,
 } from "react-native";
 
 export default function SignUp({ navigation }: any): JSX.Element {
@@ -44,3 +45,5 @@ export default function SignUp({ navigation }: any): JSX.Element {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({});

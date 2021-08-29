@@ -4,7 +4,7 @@ export const themeDark: Theme = {
   colors: {
     text: "#ffffff",
     background: "#000000",
-    primary: "",
+    primary: "#426eb4",
     border: "",
     card: "",
     notification: "",

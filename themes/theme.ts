@@ -3,8 +3,8 @@ export const theme: Theme = {
   dark: true,
   colors: {
     text: "#000000",
-    background: "",
-    primary: "",
+    background: "#ffffff",
+    primary: "#426eb4",
     border: "",
     card: "",
     notification: "",
