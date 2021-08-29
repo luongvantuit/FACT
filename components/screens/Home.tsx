@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <View>
-      <Text> HomeApp </Text>
+      <Text>Home</Text>
     </View>
   );
 }

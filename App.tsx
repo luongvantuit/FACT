@@ -7,14 +7,33 @@ import { theme, themeDark } from "./themes";
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default function App(): JSX.Element {
   const colorScheme = useColorScheme();
   return (
     <NavigationContainer theme={colorScheme === "dark" ? themeDark : theme}>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="SignUp" component={SignUp} />
-        <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Navigator initialRouteName="SignIn">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Home",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="SignIn"
+          component={SignIn}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
