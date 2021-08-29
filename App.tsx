@@ -34,7 +34,8 @@ export default function App(): JSX.Element {
           name="code"
           component={Code}
           options={{
-            headerShown: false,
+            title: "Verify Code",
+            headerTitleAlign: "center",
           }}
         />
       </Stack.Navigator>
