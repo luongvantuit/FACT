@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, {Component} from 'react';
+import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 
 export default class DashboardScreen extends Component {
-    render() {
-        return (
-            <View>
-                <Text> textInComponent </Text>
-            </View>
-        )
-    }
+  render() {
+    return (
+      <SafeAreaView>
+        <ScrollView>
+          <View></View>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
 }
