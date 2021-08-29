@@ -1,1 +1,1 @@
-export { Home, SignIn, SignUp } from "./screen";
+export { Home, SignIn, SignUp } from "./screens";

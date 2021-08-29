@@ -2,8 +2,8 @@ import React from "react";
 import { useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Home, SignIn, SignUp } from "./component";
-import { theme, themeDark } from "./theme";
+import { Home, SignIn, SignUp } from "./components";
+import { theme, themeDark } from "./themes";
 
 const Stack = createNativeStackNavigator();
 
