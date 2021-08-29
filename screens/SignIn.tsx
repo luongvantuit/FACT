@@ -13,7 +13,7 @@ import {
 } from "react-native";
 
 const widthWindow: number = Dimensions.get("window").width;
-const heighWindow: number = Dimensions.get("window").height;
+const heightWindow: number = Dimensions.get("window").height;
 
 export default class SignIn extends React.Component<any, any> {
   constructor(props: any) {
@@ -31,7 +31,7 @@ export default class SignIn extends React.Component<any, any> {
         <ScrollView
           style={{
             width: widthWindow,
-            height: heighWindow,
+            height: heightWindow,
           }}
         >
           <View style={styles.boxContainer}>
@@ -41,7 +41,11 @@ export default class SignIn extends React.Component<any, any> {
               keyboardType="numeric"
               style={styles.textInputNumberPhone}
             />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigator.navigate("code");
+              }}
+            >
               <View style={styles.flatButton}>
                 <Text style={styles.textFlatButton}>Net Step</Text>
               </View>
@@ -69,7 +73,7 @@ export default class SignIn extends React.Component<any, any> {
 
 const styles = StyleSheet.create({
   boxContainer: {
-    height: heighWindow > 740 ? heighWindow : 740,
+    height: heightWindow > 740 ? heightWindow : 740,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

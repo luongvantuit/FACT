@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Home, SignIn, SignUp } from "./screens";
+import { Code, Home, SignIn, SignUp } from "./screens";
 const Stack = createNativeStackNavigator();
 
 export default function App(): JSX.Element {
@@ -26,6 +26,13 @@ export default function App(): JSX.Element {
         <Stack.Screen
           name="sign-in"
           component={SignIn}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="code"
+          component={Code}
           options={{
             headerShown: false,
           }}
