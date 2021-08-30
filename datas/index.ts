@@ -1,4 +1,2 @@
-import { listCard } from "./list-card";
-export {
-    listCard,
-}
+import {listCard} from './list-card';
+export {listCard};

@@ -1,4 +1,2 @@
-import { Card } from "./card"
-export type {
-    Card,
-}
+import {Card} from './card';
+export type {Card};
