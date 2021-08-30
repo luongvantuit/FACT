@@ -22,7 +22,7 @@ export default class SignInScreen extends Component<{
               styleContainer={styles.flatButtonNextStepContainer}
               styleText={styles.flatButtonNextStepText}
               onPress={() => {
-                //this.props.navigation.navigate('sign-up');
+                this.props.navigation.navigate('dashboard');
               }}
             />
             <View style={styles.boxCotainerCreateAccount}>

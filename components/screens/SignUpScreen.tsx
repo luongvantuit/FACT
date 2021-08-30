@@ -58,6 +58,9 @@ export default class SignUpScreen extends Component<
               title={strings.nextStep}
               styleText={styleSignInScreen.flatButtonNextStepText}
               styleContainer={styleSignInScreen.flatButtonNextStepContainer}
+              onPress={() => {
+                this.props.navigation.navigate('dashboard');
+              }}
             />
             <FlatButton
               title={strings.goBack}
@@ -65,7 +68,7 @@ export default class SignUpScreen extends Component<
                 this.props.navigation.goBack();
               }}
               styleText={{
-                color: colors.blue6,
+                color: colors.black,
                 fontWeight: '900',
               }}
               styleContainer={{

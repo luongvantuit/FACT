@@ -3,15 +3,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {styleDashboardScreen as styles} from '../../styles/style-dashboard-screen';
 import {Dimensions, SafeAreaView, ScrollView, Text, View} from 'react-native';
 Icon.loadFont();
-import {ListCard} from '../widgets';
+import {ListCard, ToolbarDashboard} from '../widgets';
 export default class DashboardScreen extends Component {
   render() {
     return (
-      <SafeAreaView
-        style={{
-          width: Dimensions.get('window').width,
-          height: Dimensions.get('window').height,
-        }}>
+      <View>
+        <ToolbarDashboard />
         <ScrollView alwaysBounceVertical={false} alwaysBounceHorizontal={false}>
           <ListCard />
           <View style={styles.boxItemContainer}>
@@ -31,7 +28,7 @@ export default class DashboardScreen extends Component {
             </View>
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     );
   }
 }

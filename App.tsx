@@ -12,9 +12,9 @@ export default function App() {
           name="dashboard"
           component={DashboardScreen}
           options={{
-            headerShown: true,
-            headerTitleAlign: 'center',
-            title: 'Dashboard',
+            headerShown: false,
+            // headerTitleAlign: 'center',
+            // title: 'Dashboard',
           }}
         />
         <Stack.Screen

@@ -31,7 +31,7 @@ export const styleSignInScreen = StyleSheet.create({
   textInput: {
     marginHorizontal: marginHorizontal,
     width: Dimensions.get('window').width - marginHorizontal * 2,
-    backgroundColor: colors.blue1,
+    backgroundColor: '#D7D7D7',
     fontWeight: 'bold',
     borderRadius: 32,
     paddingVertical: Platform.OS === 'android' ? 18 : 24,
@@ -43,11 +43,11 @@ export const styleSignInScreen = StyleSheet.create({
     width: Dimensions.get('window').width - marginHorizontal * 2,
     borderRadius: 32,
     paddingHorizontal: 32,
-    backgroundColor: colors.blue6,
+    backgroundColor: colors.black,
     ...shadowBox,
   },
   flatButtonNextStepText: {
-    fontWeight: 'bold',
+    fontWeight: '900',
     paddingVertical: Platform.OS === 'android' ? 18 : 24,
     textAlign: 'center',
     color: colors.white,
@@ -59,6 +59,6 @@ export const styleSignInScreen = StyleSheet.create({
   },
   textCreateAccount: {
     fontWeight: '900',
-    color: colors.blue6,
+    color: colors.black,
   },
 });
