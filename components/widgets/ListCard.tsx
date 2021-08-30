@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {listCard} from '../../datas';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {styleWidgetListCard as styles} from '../../styles';
+Icon.loadFont();
 export default function ListCard() {
   return (
     <View>
@@ -19,7 +21,9 @@ export default function ListCard() {
                 </View>
                 <Text style={styles.textName}>{item.name}</Text>
               </View>
-              <View></View>
+              <View>
+                <Icon name="cc-visa" />
+              </View>
             </View>
           </View>
         )}

@@ -30,7 +30,7 @@ export const styleWidgetListCard = StyleSheet.create({
     fontWeight: 'bold',
   },
   textNumberCard: {
-    marginTop: 32,
+    marginTop: 28,
     color: colors.black,
     fontWeight: 'bold',
   },

@@ -12,7 +12,6 @@ target 'FACT_TECHCOMBANK' do
     :hermes_enabled => false
   )
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'FACT_TECHCOMBANKTests' do
     inherit! :complete
