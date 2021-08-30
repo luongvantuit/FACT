@@ -9,8 +9,10 @@ export default class DashboardScreen extends Component {
     return (
       <View>
         <ToolbarDashboard />
-        <ScrollView alwaysBounceVertical={false} alwaysBounceHorizontal={false}>
-          <ListCard />
+        <ScrollView
+          alwaysBounceVertical={false}
+          alwaysBounceHorizontal={false}
+          showsVerticalScrollIndicator={false}>
           <View style={styles.boxItemContainer}>
             <View style={styles.boxItemTopLeft}>
               <Text>Test</Text>
