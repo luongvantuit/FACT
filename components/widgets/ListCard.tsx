@@ -37,6 +37,7 @@ export default function ListCard() {
         )}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
+        alwaysBounceHorizontal={listCard.length > 1}
       />
     </View>
   );

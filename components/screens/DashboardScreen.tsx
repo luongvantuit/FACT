@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {styleDashboardScreen as styles} from '../styles/style-dashboard-screen';
+import {styleDashboardScreen as styles} from '../../styles/style-dashboard-screen';
 import {Dimensions, SafeAreaView, ScrollView, Text, View} from 'react-native';
 Icon.loadFont();
-import {ListCard} from './widgets';
+import {ListCard} from '../widgets';
 export default class DashboardScreen extends Component {
   render() {
     return (
