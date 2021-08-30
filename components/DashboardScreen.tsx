@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   Dimensions,
   SafeAreaView,
@@ -7,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
+Icon.loadFont();
 import {colors} from '../values';
 export default class DashboardScreen extends Component {
   render() {
@@ -16,7 +18,11 @@ export default class DashboardScreen extends Component {
           width: Dimensions.get('window').width,
           height: Dimensions.get('window').height,
         }}>
-        <ScrollView>
+        <ScrollView alwaysBounceVertical={false} alwaysBounceHorizontal={false}>
+          <View
+            style={{
+              height: 54,
+            }}></View>
           <View style={styles.boxItemContainer}>
             <View style={styles.boxItemTopLeft}>
               <Text>Test</Text>
