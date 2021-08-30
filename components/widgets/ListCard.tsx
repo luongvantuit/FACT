@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, Platform} from 'react-native';
 import {listCard} from '../../datas';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styleWidgetListCard as styles} from '../../styles';
+import {colors} from '../../values';
 Icon.loadFont();
 export default function ListCard() {
   return (
@@ -12,7 +13,7 @@ export default function ListCard() {
         renderItem={({item}) => (
           <View style={styles.boxContainer}>
             <View style={styles.boxContainerInner}>
-              <View>
+              <View style={styles.boxContainerLeft}>
                 <Text style={styles.textNameBank}>{item.nameBank}</Text>
                 <Text style={styles.textNumberCard}>{item.numberCard}</Text>
                 <View style={styles.boxContainerExpiryEnd}>
@@ -21,8 +22,15 @@ export default function ListCard() {
                 </View>
                 <Text style={styles.textName}>{item.name}</Text>
               </View>
-              <View>
-                <Icon name="cc-visa" />
+              <View style={styles.boxContainerRight}>
+                <Icon
+                  name={
+                    item.service === 'master-card' ? 'cc-mastercard' : 'cc-visa'
+                  }
+                  size={32}
+                  color={colors.black}
+                />
+                <Text>{item.type}</Text>
               </View>
             </View>
           </View>

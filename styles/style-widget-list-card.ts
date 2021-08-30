@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions, Platform, StyleSheet} from 'react-native';
 import {colors} from '../values';
 export const styleWidgetListCard = StyleSheet.create({
   boxContainer: {
@@ -20,6 +20,7 @@ export const styleWidgetListCard = StyleSheet.create({
     margin: 16,
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   textNameBank: {
     fontWeight: 'bold',
@@ -30,7 +31,7 @@ export const styleWidgetListCard = StyleSheet.create({
     fontWeight: 'bold',
   },
   textNumberCard: {
-    marginTop: 28,
+    marginTop: Platform.OS === 'android' ? 28 : 36,
     color: colors.black,
     fontWeight: 'bold',
   },
@@ -43,5 +44,14 @@ export const styleWidgetListCard = StyleSheet.create({
     marginLeft: 16,
     color: colors.black,
     fontWeight: 'bold',
+  },
+  boxContainerRight: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  boxContainerLeft: {
+    flexGrow: 3,
   },
 });

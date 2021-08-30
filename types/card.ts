@@ -3,7 +3,7 @@ export type Card = {
   numberCard: string;
   name: string;
   expiryEnd: string;
-  type: 'debit' | 'credit';
+  type: 'Debit' | 'Credit';
   nameBank: string;
   service: 'visa' | 'master-card';
 };
