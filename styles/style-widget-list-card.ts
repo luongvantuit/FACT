@@ -50,6 +50,7 @@ export const styleWidgetListCard = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    flexGrow: 1,
   },
   boxContainerLeft: {
     flexGrow: 3,
