@@ -1,3 +1,10 @@
 import {styleDashboardScreen} from './style-dashboard-screen';
 import {styleWidgetListCard} from './style-widget-list-card';
-export {styleDashboardScreen, styleWidgetListCard};
+import {styleSignInScreen} from './style-sign-in-screen';
+import {styleSignUpScreen} from './style-sign-up-screen';
+export {
+  styleDashboardScreen,
+  styleWidgetListCard,
+  styleSignInScreen,
+  styleSignUpScreen,
+};

@@ -1,2 +1,2 @@
 export {DashboardScreen, SignInScreen, SignUpScreen} from './screens';
-export {ListCard} from './widgets';
+export {ListCard, FlatButton} from './widgets';

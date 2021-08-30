@@ -1,2 +1,3 @@
 import ListCard from './ListCard';
-export {ListCard};
+import FlatButton from './FlatButton';
+export {ListCard, FlatButton};
