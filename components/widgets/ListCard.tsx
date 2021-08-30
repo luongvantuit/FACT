@@ -1,10 +1,31 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-
+import {View, Text, FlatList} from 'react-native';
+import {listCard} from '../../datas';
+import {styleWidgetListCard as styles} from '../../styles';
 export default function ListCard() {
   return (
     <View>
-      <Text></Text>
+      <FlatList
+        data={listCard}
+        renderItem={({item}) => (
+          <View style={styles.boxContainer}>
+            <View style={styles.boxContainerInner}>
+              <View>
+                <Text style={styles.textNameBank}>{item.nameBank}</Text>
+                <Text style={styles.textNumberCard}>{item.numberCard}</Text>
+                <View style={styles.boxContainerExpiryEnd}>
+                  <Text>Expiry End</Text>
+                  <Text style={styles.textExpiryEnd}>{item.expiryEnd}</Text>
+                </View>
+                <Text style={styles.textName}>{item.name}</Text>
+              </View>
+              <View></View>
+            </View>
+          </View>
+        )}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      />
     </View>
   );
 }
