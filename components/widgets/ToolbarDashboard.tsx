@@ -14,7 +14,7 @@ export default function ToolbarDashboard() {
         justifyContent: 'space-between',
         flexDirection: 'row',
         elevation: 6,
-        shadowColor: colors.black,
+        shadowColor: colors.black1,
         shadowOffset: {
           width: 1,
           height: 4,
@@ -29,7 +29,7 @@ export default function ToolbarDashboard() {
           style={{
             margin: 16,
           }}>
-          <Icon name="menu" color={colors.black} size={28} />
+          <Icon name="menu" color={colors.black1} size={28} />
         </View>
       </View>
       <View>

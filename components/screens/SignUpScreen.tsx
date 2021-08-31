@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {styleSignInScreen, styleSignUpScreen as styles} from '../../styles';
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {colors, strings} from '../../values';
 import {FlatButton} from '..';
 export default class SignUpScreen extends Component<
@@ -32,14 +32,10 @@ export default class SignUpScreen extends Component<
               }}>
               <View
                 style={{
-                  marginHorizontal: Platform.OS === 'android' ? 8 : 16,
-                  marginVertical: 8,
+                  marginHorizontal: 16,
+                  marginVertical: Platform.OS === 'ios' ? 8 : 16,
                 }}>
-                <Icon
-                  name="chevron-small-left"
-                  size={32}
-                  color={colors.black}
-                />
+                <Icon name="arrow-back-ios" size={28} color={colors.black1} />
               </View>
             </TouchableOpacity>
           </View>
@@ -68,7 +64,7 @@ export default class SignUpScreen extends Component<
                 this.props.navigation.goBack();
               }}
               styleText={{
-                color: colors.black,
+                color: colors.black1,
                 fontWeight: '900',
               }}
               styleContainer={{

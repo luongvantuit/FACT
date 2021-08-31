@@ -5,7 +5,7 @@ const boxItemBorderRadius: number = 6;
 const boxItemHeight: number = 110;
 
 const shawdowBox = {
-  shadowColor: colors.black,
+  shadowColor: colors.black1,
   shadowOffset: {
     width: 0,
     height: 1,

@@ -8,7 +8,7 @@ export const styleWidgetListCard = StyleSheet.create({
     height: 150,
     borderRadius: 8,
     elevation: 8,
-    shadowColor: colors.black,
+    shadowColor: colors.black1,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -24,15 +24,15 @@ export const styleWidgetListCard = StyleSheet.create({
   },
   textNameBank: {
     fontWeight: 'bold',
-    color: colors.black,
+    color: colors.black1,
   },
   textName: {
-    color: colors.black,
+    color: colors.black1,
     fontWeight: 'bold',
   },
   textNumberCard: {
     marginTop: Platform.OS === 'android' ? 28 : 36,
-    color: colors.black,
+    color: colors.black1,
     fontWeight: 'bold',
   },
   boxContainerExpiryEnd: {
@@ -42,7 +42,7 @@ export const styleWidgetListCard = StyleSheet.create({
   },
   textExpiryEnd: {
     marginLeft: 16,
-    color: colors.black,
+    color: colors.black1,
     fontWeight: 'bold',
   },
   boxContainerRight: {

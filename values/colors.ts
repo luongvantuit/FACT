@@ -1,5 +1,6 @@
 export const colors = {
-  black: '#000000',
+  black1: '#000000',
+  black2: '#363636',
   white: '#ffffff',
   blue1: '#BFCAE6',
   blue2: '#94AAD6',
@@ -9,4 +10,12 @@ export const colors = {
   blue6: '#1B4F93',
   blue7: '#184785',
   blue8: '#103667',
+  black3: '#555555',
+  black4: '#707070',
+  black5: '#898989',
+  black6: '#A0A0A0',
+  black7: '#B7B7B7',
+  black8: '#C2C2C2',
+  black9: '#D7D7D7',
+  black10: '#ECECEC',
 };

@@ -9,7 +9,7 @@ const fullBox = {
 const marginHorizontal: number = 32;
 const shadowBox = {
   elevation: 8,
-  shadowColor: colors.black,
+  shadowColor: colors.black1,
   shadowOffset: {
     width: 1,
     height: 4,
@@ -31,7 +31,7 @@ export const styleSignInScreen = StyleSheet.create({
   textInput: {
     marginHorizontal: marginHorizontal,
     width: Dimensions.get('window').width - marginHorizontal * 2,
-    backgroundColor: '#D7D7D7',
+    backgroundColor: colors.black9,
     fontWeight: 'bold',
     borderRadius: 32,
     paddingVertical: Platform.OS === 'android' ? 18 : 24,
@@ -43,7 +43,7 @@ export const styleSignInScreen = StyleSheet.create({
     width: Dimensions.get('window').width - marginHorizontal * 2,
     borderRadius: 32,
     paddingHorizontal: 32,
-    backgroundColor: colors.black,
+    backgroundColor: colors.black1,
     ...shadowBox,
   },
   flatButtonNextStepText: {
@@ -59,6 +59,6 @@ export const styleSignInScreen = StyleSheet.create({
   },
   textCreateAccount: {
     fontWeight: '900',
-    color: colors.black,
+    color: colors.black1,
   },
 });
