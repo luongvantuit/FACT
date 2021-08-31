@@ -5,6 +5,7 @@ import {Image} from 'react-native';
 import {
   DashboardScreen,
   EntypoIcon,
+  RechargeScreen,
   SignInScreen,
   SignUpScreen,
 } from './components';
@@ -48,6 +49,13 @@ export default function App() {
         <Stack.Screen
           name="sign-up"
           component={SignUpScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="recharge"
+          component={RechargeScreen}
           options={{
             headerShown: false,
           }}
