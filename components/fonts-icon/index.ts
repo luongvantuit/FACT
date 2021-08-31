@@ -5,7 +5,7 @@ import {Icon as EntypoIcon} from './entypo';
 import {Icon as EvillconsIcon} from './evillcons';
 import {Icon as FeatherIcon} from './feather';
 import {Icon as FontAwesome5BrandsIcon} from './font-awesome-5-brands';
-import {Icon as FonAwesome5Icon} from './font-awesome-5';
+import {Icon as FontAwesome5Icon} from './font-awesome-5';
 import {Icon as IoinconsIcon} from './ioincons';
 import {Icon as MaterialCommunityIcons} from './material-community-icons';
 import {Icon as MaterialIcon} from './material-icons';
@@ -19,7 +19,7 @@ export {
   EntypoIcon,
   EvillconsIcon,
   FeatherIcon,
-  FonAwesome5Icon,
+  FontAwesome5Icon,
   FontAwesome5BrandsIcon,
   IoinconsIcon,
   MaterialCommunityIcons,

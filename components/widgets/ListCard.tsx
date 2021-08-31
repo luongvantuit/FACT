@@ -4,6 +4,7 @@ import {listCard} from '../../datas';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styleWidgetListCard as styles} from '../../styles';
 import {colors} from '../../values';
+import {FontAwesomeIcon} from '..';
 Icon.loadFont();
 export default function ListCard() {
   return (
@@ -23,12 +24,12 @@ export default function ListCard() {
                 <Text style={styles.textName}>{item.name}</Text>
               </View>
               <View style={styles.boxContainerRight}>
-                <Icon
+                <FontAwesomeIcon
                   name={
                     item.service === 'master-card' ? 'cc-mastercard' : 'cc-visa'
                   }
                   size={32}
-                  color={colors.black}
+                  color={colors.black1}
                 />
                 <Text>{item.type}</Text>
               </View>
