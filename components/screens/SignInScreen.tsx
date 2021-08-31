@@ -13,6 +13,7 @@ export default class SignInScreen extends Component<{
       <SafeAreaView>
         <ScrollView style={styles.scrollWindow}>
           <View style={styles.boxContainer}>
+            <Text style={styles.textTitle}>{strings.signIn}</Text>
             <TextInput
               placeholder={strings.numberPhone}
               style={styles.textInput}

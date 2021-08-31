@@ -28,6 +28,11 @@ export const styleSignInScreen = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  textTitle: {
+    fontWeight: '900',
+    fontSize: 36,
+    margin: 16,
+  },
   textInput: {
     marginHorizontal: marginHorizontal,
     width: Dimensions.get('window').width - marginHorizontal * 2,
