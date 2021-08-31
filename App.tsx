@@ -3,8 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {Image} from 'react-native';
 import {
-  BottomTabsNavigation,
-  DashboardScreen,
+  HomeScreen,
   RechargeScreen,
   SignInScreen,
   SignUpScreen,
@@ -17,7 +16,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="sign-in">
         <Stack.Screen
           name="bottom-tabs"
-          component={BottomTabsNavigation}
+          component={HomeScreen}
           options={{
             headerShown: false,
           }}

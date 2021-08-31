@@ -6,7 +6,7 @@ import {MaterialIcon} from '..';
 
 const Tabs = createBottomTabNavigator();
 
-export default class BottomTabsNavigation extends Component {
+export default class HomeScreen extends Component {
   render() {
     return (
       <Tabs.Navigator>
