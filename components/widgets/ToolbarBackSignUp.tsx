@@ -8,7 +8,7 @@ export default function ToolbarBackSignUp(props: {onPress: () => void}) {
       style={{
         width: 54,
       }}>
-      <TouchableOpacity onPress={props.onPress}>
+      <TouchableOpacity onPress={props.onPress} activeOpacity={0.8}>
         <View
           style={{
             marginHorizontal: 16,
