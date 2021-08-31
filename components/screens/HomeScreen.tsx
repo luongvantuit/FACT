@@ -1,7 +1,12 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {Component} from 'react';
 import {Image} from 'react-native';
-import {DashboardScreen, PaymentScreen} from '.';
+import {
+  AnalyticsScreen,
+  DashboardScreen,
+  PaymentScreen,
+  ServicesScreen,
+} from '.';
 import {MaterialIcon} from '..';
 
 const Tabs = createBottomTabNavigator();
@@ -9,7 +14,7 @@ const Tabs = createBottomTabNavigator();
 export default class HomeScreen extends Component {
   render() {
     return (
-      <Tabs.Navigator>
+      <Tabs.Navigator initialRouteName="dashboard">
         <Tabs.Screen
           name="dashboard"
           component={DashboardScreen}
@@ -40,6 +45,33 @@ export default class HomeScreen extends Component {
             title: 'Payment',
             tabBarIcon: props => <MaterialIcon name="payment" />,
             headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontWeight: '900',
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="services"
+          component={ServicesScreen}
+          options={{
+            title: 'Services',
+            tabBarIcon: props => <MaterialIcon name="payment" />,
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontWeight: '900',
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="analytics"
+          component={AnalyticsScreen}
+          options={{
+            title: 'Analytics',
+            tabBarIcon: props => <MaterialIcon name="payment" />,
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontWeight: '900',
+            },
           }}
         />
       </Tabs.Navigator>

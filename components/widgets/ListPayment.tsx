@@ -47,7 +47,7 @@ export default function ListPayment() {
               </Text>
               <Text style={{}}>{`${item.increase === true ? '+' : '-'}${
                 item.value
-              }`}</Text>
+              }$`}</Text>
             </View>
           </View>
           <EntypoIcon

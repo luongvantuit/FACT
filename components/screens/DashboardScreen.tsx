@@ -177,90 +177,108 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
           Your Cards
         </Text>
         <ListCard />
-        <View
-          style={{
-            borderRadius: 8,
-            padding: 16,
-            marginTop: 8,
-            elevation: 8,
-            marginHorizontal: 8,
-            shadowColor: colors.black1,
-            shadowOffset: {
-              width: 1,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
-            backgroundColor: colors.white,
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-            alignItems: 'center',
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            this.props.navigation.navigate('payment');
           }}>
-          <Text
+          <View
             style={{
-              fontWeight: '900',
+              borderRadius: 8,
+              padding: 16,
+              marginTop: 8,
+              elevation: 8,
+              marginHorizontal: 8,
+              shadowColor: colors.black1,
+              shadowOffset: {
+                width: 1,
+                height: 4,
+              },
+              shadowOpacity: 0.3,
+              shadowRadius: 4.65,
+              backgroundColor: colors.white,
+              display: 'flex',
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              alignItems: 'center',
             }}>
-            Payment
-          </Text>
-          <EntypoIcon name="chevron-small-right" size={32} />
-        </View>
-        <View
-          style={{
-            borderRadius: 8,
-            padding: 16,
-            marginTop: 8,
-            elevation: 8,
-            marginHorizontal: 8,
-            shadowColor: colors.black1,
-            shadowOffset: {
-              width: 1,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
-            backgroundColor: colors.white,
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-            alignItems: 'center',
+            <Text
+              style={{
+                fontWeight: '900',
+              }}>
+              Payment
+            </Text>
+            <EntypoIcon name="chevron-small-right" size={32} />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            this.props.navigation.navigate('services');
           }}>
-          <Text
+          <View
             style={{
-              fontWeight: '900',
+              borderRadius: 8,
+              padding: 16,
+              marginTop: 8,
+              elevation: 8,
+              marginHorizontal: 8,
+              shadowColor: colors.black1,
+              shadowOffset: {
+                width: 1,
+                height: 4,
+              },
+              shadowOpacity: 0.3,
+              shadowRadius: 4.65,
+              backgroundColor: colors.white,
+              display: 'flex',
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              alignItems: 'center',
             }}>
-            Services
-          </Text>
-          <EntypoIcon name="chevron-small-right" size={32} />
-        </View>
-        <View
-          style={{
-            borderRadius: 8,
-            padding: 16,
-            marginTop: 8,
-            elevation: 8,
-            marginHorizontal: 8,
-            shadowColor: colors.black1,
-            shadowOffset: {
-              width: 1,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
-            backgroundColor: colors.white,
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-            alignItems: 'center',
+            <Text
+              style={{
+                fontWeight: '900',
+              }}>
+              Services
+            </Text>
+            <EntypoIcon name="chevron-small-right" size={32} />
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            this.props.navigation.navigate('analytics');
           }}>
-          <Text
+          <View
             style={{
-              fontWeight: '900',
+              borderRadius: 8,
+              padding: 16,
+              marginTop: 8,
+              elevation: 8,
+              marginHorizontal: 8,
+              shadowColor: colors.black1,
+              shadowOffset: {
+                width: 1,
+                height: 4,
+              },
+              shadowOpacity: 0.3,
+              shadowRadius: 4.65,
+              backgroundColor: colors.white,
+              display: 'flex',
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              alignItems: 'center',
             }}>
-            Analytics
-          </Text>
-          <EntypoIcon name="chevron-small-right" size={32} />
-        </View>
+            <Text
+              style={{
+                fontWeight: '900',
+              }}>
+              Analytics
+            </Text>
+            <EntypoIcon name="chevron-small-right" size={32} />
+          </View>
+        </TouchableOpacity>
         <View
           style={{
             borderTopLeftRadius: 8,

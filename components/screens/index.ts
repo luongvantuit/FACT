@@ -4,6 +4,8 @@ import SignUpScreen from './SignUpScreen';
 import RechargeScreen from './RechargeScreen';
 import HomeScreen from './HomeScreen';
 import PaymentScreen from './PaymentScreen';
+import AnalyticsScreen from './AnalyticsScreen';
+import ServicesScreen from './ServicesScreen';
 export {
   DashboardScreen,
   SignInScreen,
@@ -11,4 +13,6 @@ export {
   RechargeScreen,
   HomeScreen,
   PaymentScreen,
+  AnalyticsScreen,
+  ServicesScreen,
 };
