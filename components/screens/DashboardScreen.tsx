@@ -5,10 +5,12 @@ import {
   SafeAreaView,
   ScrollView,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {ListCard, ToolbarDashboard} from '../widgets';
 import {colors} from '../../values';
+import {IoinconsIcon} from '..';
 export default class DashboardScreen extends Component {
   render() {
     return (
@@ -21,8 +23,9 @@ export default class DashboardScreen extends Component {
           <Text
             style={{
               marginTop: 32,
-              marginHorizontal: 8,
+              marginHorizontal: 16,
               fontWeight: '900',
+              fontSize: 24,
             }}>
             Account
           </Text>
@@ -39,6 +42,8 @@ export default class DashboardScreen extends Component {
                 width: 1,
                 height: 4,
               },
+              display: 'flex',
+              flexDirection: 'column',
               shadowOpacity: 0.3,
               shadowRadius: 4.65,
               marginVertical: 16,
@@ -50,12 +55,17 @@ export default class DashboardScreen extends Component {
                 paddingVertical: 8,
                 borderBottomColor: colors.black5,
                 borderBottomWidth: 0.3,
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                flexGrow: 2,
               }}>
               <View
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
+                  flexGrow: 3,
                 }}>
                 <Image
                   source={require('../../assets/leak.jpeg')}
@@ -81,17 +91,78 @@ export default class DashboardScreen extends Component {
                   <Text style={{}}>Personal</Text>
                 </View>
               </View>
+              <Text
+                style={{
+                  paddingHorizontal: 12,
+                  paddingVertical: 6,
+                  borderColor: colors.black5,
+                  borderRadius: 8,
+                  borderWidth: 1,
+                  flexGrow: 1,
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                }}>
+                USD
+              </Text>
+            </View>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexGrow: 100,
+              }}>
+              <View
+                style={{
+                  flexGrow: 3,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    marginVertical: 8,
+                  }}>
+                  Gold
+                </Text>
+                <Text
+                  style={{
+                    fontWeight: '900',
+                    fontSize: 22,
+                  }}>
+                  $6262.62
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'flex-end',
+                  flexGrow: 1,
+                }}>
+                <TouchableOpacity activeOpacity={0.8}>
+                  <View
+                    style={{
+                      padding: 16,
+                      backgroundColor: colors.black8,
+                      borderRadius: 8,
+                    }}>
+                    <IoinconsIcon name="add" size={28} />
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
           <Text
             style={{
-              marginHorizontal: 8,
+              marginHorizontal: 16,
               fontWeight: '900',
               marginBottom: 8,
+              fontSize: 24,
             }}>
             Your Cards
           </Text>
           <ListCard />
+          ///
         </ScrollView>
       </View>
     );
