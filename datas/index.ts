@@ -1,2 +1,3 @@
 import {listCard} from './list-card';
-export {listCard};
+import {listServicePayment} from './list-service-payment';
+export {listCard, listServicePayment};

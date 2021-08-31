@@ -4,7 +4,7 @@ export {
   SignUpScreen,
   RechargeScreen,
 } from './screens';
-export {ListCard, FlatButton} from './widgets';
+export {ListCard, FlatButton, ListPayment} from './widgets';
 
 export {
   AntDesignIcon,

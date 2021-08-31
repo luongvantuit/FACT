@@ -1,2 +1,3 @@
 import {Card} from './card';
-export type {Card};
+import {ServicePayment} from './service-payment';
+export type {Card, ServicePayment};

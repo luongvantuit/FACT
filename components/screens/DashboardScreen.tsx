@@ -7,15 +7,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {ListCard} from '../widgets';
+import {ListCard, ListPayment} from '../widgets';
 import {colors} from '../../values';
 import {EntypoIcon, IoinconsIcon} from '..';
 export default class DashboardScreen extends Component<{navigation: any}, any> {
   render() {
     return (
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        alwaysBounceVertical={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Text
           style={{
             marginTop: 32,
@@ -264,152 +262,7 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
             backgroundColor: colors.white,
             display: 'flex',
           }}>
-          {/* */}
-          <View
-            style={{
-              borderBottomColor: colors.black5,
-              borderBottomWidth: 0.5,
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <Image
-                source={require('../../assets/highlands-coffee.png')}
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 20,
-                  resizeMode: 'contain',
-                }}
-              />
-              <View
-                style={{
-                  margin: 16,
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '900',
-                  }}>
-                  HighLands Coffe
-                </Text>
-                <Text style={{}}>-$10</Text>
-              </View>
-            </View>
-            <EntypoIcon
-              name="chevron-small-down"
-              color="red"
-              size={24}
-              style={{
-                marginHorizontal: 8,
-              }}
-            />
-          </View>
-          {/* */}
-          <View
-            style={{
-              borderBottomColor: colors.black5,
-              borderBottomWidth: 0.5,
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <Image
-                source={require('../../assets/leak-nguyen-duc-huy.jpeg')}
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 20,
-                }}
-              />
-              <View
-                style={{
-                  margin: 16,
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '900',
-                  }}>
-                  NGUYEN DUC HUY
-                </Text>
-                <Text style={{}}>+$1000</Text>
-              </View>
-            </View>
-            <EntypoIcon
-              name="chevron-small-up"
-              color="green"
-              size={24}
-              style={{
-                marginHorizontal: 8,
-              }}
-            />
-          </View>
-          {/* */}
-          <View
-            style={{
-              borderBottomColor: colors.black5,
-              borderBottomWidth: 0.5,
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <Image
-                source={require('../../assets/kfc.png')}
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 20,
-                  resizeMode: 'contain',
-                }}
-              />
-              <View
-                style={{
-                  margin: 16,
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '900',
-                  }}>
-                  KFC
-                </Text>
-                <Text style={{}}>-$29</Text>
-              </View>
-            </View>
-            <EntypoIcon
-              name="chevron-small-down"
-              color="red"
-              size={24}
-              style={{
-                marginHorizontal: 8,
-              }}
-            />
-          </View>
+          <ListPayment />
         </View>
       </ScrollView>
     );
