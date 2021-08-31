@@ -1,7 +1,14 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {DashboardScreen, SignInScreen, SignUpScreen} from './components';
+import {Image} from 'react-native';
+import {
+  DashboardScreen,
+  EntypoIcon,
+  SignInScreen,
+  SignUpScreen,
+} from './components';
+import {colors} from './values';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -12,10 +19,22 @@ export default function App() {
           name="dashboard"
           component={DashboardScreen}
           options={{
-            headerShown: false,
             headerTitleAlign: 'center',
             title: 'Dashboard',
             headerBackVisible: false,
+            headerLeft: props => (
+              <EntypoIcon name="menu" color={colors.black1} size={26} />
+            ),
+            headerRight: props => (
+              <Image
+                source={require('./assets/leak.jpeg')}
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: 16,
+                }}
+              />
+            ),
           }}
         />
         <Stack.Screen

@@ -1,10 +1,5 @@
 export {DashboardScreen, SignInScreen, SignUpScreen} from './screens';
-export {
-  ListCard,
-  FlatButton,
-  ToolbarDashboard,
-  ToolbarBackSignUp,
-} from './widgets';
+export {ListCard, FlatButton, ToolbarBackSignUp} from './widgets';
 
 export {
   AntDesignIcon,

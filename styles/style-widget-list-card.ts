@@ -3,7 +3,8 @@ import {colors} from '../values';
 export const styleWidgetListCard = StyleSheet.create({
   boxContainer: {
     width: Dimensions.get('window').width - 92,
-    margin: 8,
+    marginHorizontal: 8,
+    marginVertical: 16,
     backgroundColor: colors.white,
     height: 150,
     borderRadius: 8,
