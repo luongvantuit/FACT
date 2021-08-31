@@ -3,6 +3,8 @@ export {
   SignInScreen,
   SignUpScreen,
   RechargeScreen,
+  BottomTabsNavigation,
+  PaymentScreen,
 } from './screens';
 export {ListCard, FlatButton, ListPayment} from './widgets';
 

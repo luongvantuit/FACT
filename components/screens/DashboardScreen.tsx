@@ -14,12 +14,30 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
   render() {
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
+        <View
+          style={{
+            display: 'flex',
+            marginHorizontal: 8,
+            marginTop: 16,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
+          <IoinconsIcon name="sunny" size={24} />
+          <Text
+            style={{
+              color: colors.black5,
+              marginHorizontal: 8,
+              fontWeight: 'bold',
+            }}>
+            Good Morning.
+          </Text>
+        </View>
         <Text
           style={{
-            marginTop: 32,
+            marginTop: 16,
             marginHorizontal: 16,
-            fontWeight: '900',
-            fontSize: 24,
+            fontWeight: 'bold',
+            fontSize: 18,
           }}>
           Account
         </Text>
@@ -153,9 +171,8 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
         <Text
           style={{
             marginHorizontal: 16,
-            fontWeight: '900',
-            marginBottom: 8,
-            fontSize: 24,
+            fontWeight: 'bold',
+            fontSize: 18,
           }}>
           Your Cards
         </Text>

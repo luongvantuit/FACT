@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {Image} from 'react-native';
 import {
+  BottomTabsNavigation,
   DashboardScreen,
   RechargeScreen,
   SignInScreen,
@@ -15,25 +16,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="sign-in">
         <Stack.Screen
-          name="dashboard"
-          component={DashboardScreen}
+          name="bottom-tabs"
+          component={BottomTabsNavigation}
           options={{
-            headerTitleAlign: 'center',
-            title: 'Dashboard',
-            headerBackVisible: false,
-            headerRight: props => (
-              <Image
-                source={require('./assets/leak.jpeg')}
-                style={{
-                  width: 32,
-                  height: 32,
-                  borderRadius: 16,
-                }}
-              />
-            ),
-            headerTitleStyle: {
-              fontWeight: '900',
-            },
+            headerShown: false,
           }}
         />
         <Stack.Screen

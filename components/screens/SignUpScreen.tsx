@@ -38,7 +38,7 @@ export default class SignUpScreen extends Component<
               styleText={styleSignInScreen.flatButtonNextStepText}
               styleContainer={styleSignInScreen.flatButtonNextStepContainer}
               onPress={() => {
-                this.props.navigation.navigate('dashboard');
+                this.props.navigation.navigate('bottom-tabs');
               }}
             />
             <FlatButton
