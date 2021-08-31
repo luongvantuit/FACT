@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Platform, StatusBar, Dimensions, Image} from 'react-native';
 import {colors} from '../../values';
 import {styleWidgetToolbarDashboad as styles} from '../../styles';
-import {FontAwesomeIcon} from '../fonts-icon';
+import {EntypoIcon} from '../fonts-icon';
 
 export default function ToolbarDashboard() {
   return (
@@ -12,7 +12,7 @@ export default function ToolbarDashboard() {
           style={{
             margin: 16,
           }}>
-          <FontAwesomeIcon name="align-left" color={colors.black1} size={28} />
+          <EntypoIcon name="menu" color={colors.black1} size={28} />
         </View>
       </View>
       <View>

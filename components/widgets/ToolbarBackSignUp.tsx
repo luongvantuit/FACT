@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Platform} from 'react-native';
 import {colors} from '../../values';
-import {FontAwesomeIcon} from '../fonts-icon';
+import {EntypoIcon} from '../fonts-icon';
 export default function ToolbarBackSignUp(props: {onPress: () => void}) {
   return (
     <View
@@ -14,9 +14,9 @@ export default function ToolbarBackSignUp(props: {onPress: () => void}) {
             marginHorizontal: 16,
             marginVertical: Platform.OS === 'ios' ? 8 : 16,
           }}>
-          <FontAwesomeIcon
-            name="chevron-left"
-            size={28}
+          <EntypoIcon
+            name="chevron-small-left"
+            size={32}
             color={colors.black1}
           />
         </View>

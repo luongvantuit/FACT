@@ -11,7 +11,7 @@ export default class DashboardScreen extends Component {
           alwaysBounceVertical={false}
           alwaysBounceHorizontal={false}
           showsVerticalScrollIndicator={false}>
-          <View style={styles.boxItemContainer}>
+          {/* <View style={styles.boxItemContainer}>
             <View style={styles.boxItemTopLeft}>
               <Text>Test</Text>
             </View>
@@ -26,7 +26,7 @@ export default class DashboardScreen extends Component {
             <View style={styles.boxItemBottomRight}>
               <Text>Test</Text>
             </View>
-          </View>
+          </View> */}
         </ScrollView>
       </View>
     );
