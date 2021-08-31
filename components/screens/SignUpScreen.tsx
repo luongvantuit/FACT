@@ -3,7 +3,7 @@ import {Dimensions, ScrollView, Text, TextInput, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {styleSignInScreen, styleSignUpScreen as styles} from '../../styles';
 import {colors, strings} from '../../values';
-import {FlatButton, ToolbarBackSignUp} from '..';
+import {FlatButton} from '..';
 export default class SignUpScreen extends Component<
   {
     navigation: any;
@@ -13,12 +13,7 @@ export default class SignUpScreen extends Component<
   render() {
     return (
       <SafeAreaView>
-        <ScrollView>
-          <ToolbarBackSignUp
-            onPress={() => {
-              this.props.navigation.goBack();
-            }}
-          />
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View
             style={{
               height: Dimensions.get('window').height - 54,

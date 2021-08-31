@@ -49,7 +49,6 @@ export default function App() {
           name="sign-up"
           component={SignUpScreen}
           options={{
-            title: 'Sign Up',
             headerShown: false,
           }}
         />

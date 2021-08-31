@@ -11,7 +11,9 @@ export default class SignInScreen extends Component<{
   render() {
     return (
       <SafeAreaView>
-        <ScrollView style={styles.scrollWindow}>
+        <ScrollView
+          style={styles.scrollWindow}
+          showsVerticalScrollIndicator={false}>
           <View style={styles.boxContainer}>
             <Text style={styles.textTitle}>{strings.signIn}</Text>
             <TextInput
