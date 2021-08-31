@@ -1,9 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Platform} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {colors} from '../../values';
-Icon.loadFont();
-
+import {IconFontAwesome} from '../fonts';
 export default function ToolbarBackSignUp(props: {onPress: () => void}) {
   return (
     <View
@@ -16,7 +14,11 @@ export default function ToolbarBackSignUp(props: {onPress: () => void}) {
             marginHorizontal: 16,
             marginVertical: Platform.OS === 'ios' ? 8 : 16,
           }}>
-          <Icon name="arrow-back-ios" size={28} color={colors.black1} />
+          <IconFontAwesome
+            name="chevron-left"
+            size={28}
+            color={colors.black1}
+          />
         </View>
       </TouchableOpacity>
     </View>

@@ -1,35 +1,18 @@
 import React from 'react';
 import {View, Text, Platform, StatusBar, Dimensions, Image} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {colors} from '../../values';
-Icon.loadFont();
+import {styleWidgetToolbarDashboad as styles} from '../../styles';
+import {IconFontAwesome} from '../fonts';
 
 export default function ToolbarDashboard() {
   return (
-    <View
-      style={{
-        paddingTop: Platform.OS === 'android' ? 0 : 54,
-        display: 'flex',
-        width: Dimensions.get('window').width,
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        elevation: 6,
-        shadowColor: colors.black1,
-        shadowOffset: {
-          width: 1,
-          height: 4,
-        },
-        backgroundColor: colors.white,
-        shadowOpacity: 0.3,
-        shadowRadius: 2.22,
-        zIndex: 10,
-      }}>
+    <View style={styles.boxToolbar}>
       <View>
         <View
           style={{
             margin: 16,
           }}>
-          <Icon name="menu" color={colors.black1} size={28} />
+          <IconFontAwesome name="align-left" color={colors.black1} size={28} />
         </View>
       </View>
       <View>
