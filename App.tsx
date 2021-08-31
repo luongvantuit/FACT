@@ -4,13 +4,10 @@ import React from 'react';
 import {Image} from 'react-native';
 import {
   DashboardScreen,
-  EntypoIcon,
   RechargeScreen,
   SignInScreen,
   SignUpScreen,
 } from './components';
-import SlideMenuDashboard from './components/widgets/SlideMenuDashboard';
-import {colors} from './values';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -24,9 +21,6 @@ export default function App() {
             headerTitleAlign: 'center',
             title: 'Dashboard',
             headerBackVisible: false,
-            headerLeft: props => (
-              <EntypoIcon name="menu" color={colors.black1} size={26} />
-            ),
             headerRight: props => (
               <Image
                 source={require('./assets/leak.jpeg')}
@@ -68,15 +62,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-// function drawerWidget(): any {
-//   return (
-//     <Drawer.Navigator initialRouteName="dashboard">
-//       <Drawer.Screen name="dashboard" component={DashboardScreen} />
-//       <Drawer.Screen
-//         name="slide-menu-dashboard"
-//         component={SlideMenuDashboard}
-//       />
-//     </Drawer.Navigator>
-//   );
-// }
