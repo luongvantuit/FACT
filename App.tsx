@@ -9,6 +9,7 @@ import {
   SignInScreen,
   SignUpScreen,
 } from './components';
+import SlideMenuDashboard from './components/widgets/SlideMenuDashboard';
 import {colors} from './values';
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,9 @@ export default function App() {
                 }}
               />
             ),
+            headerTitleStyle: {
+              fontWeight: '900',
+            },
           }}
         />
         <Stack.Screen
@@ -64,3 +68,15 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+// function drawerWidget(): any {
+//   return (
+//     <Drawer.Navigator initialRouteName="dashboard">
+//       <Drawer.Screen name="dashboard" component={DashboardScreen} />
+//       <Drawer.Screen
+//         name="slide-menu-dashboard"
+//         component={SlideMenuDashboard}
+//       />
+//     </Drawer.Navigator>
+//   );
+// }
