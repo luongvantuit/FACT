@@ -25,9 +25,9 @@ export default function HomeBottomTab() {
         tabBarLabelStyle: {
           display: 'none'
         },
-        header: props => (<HeaderDashboard {...props} />)
+        header: props => (<HeaderDashboard props={props} />)
       }} />
-      <BottomTab.Screen component={AnalyticsScreen} name="analytic" options={{
+      <BottomTab.Screen component={AnalyticsScreen} name="analytics" options={{
         tabBarIcon: props => (
           <Container>
             <MaterialCommunityIcons name='google-analytics' color={'#000'} />
