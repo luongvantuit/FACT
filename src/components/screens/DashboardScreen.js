@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
+import styled from 'styled-components';
 
 export default function DashboardScreen() {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <Container showsVerticalScrollIndicator={false}>
+
+    </Container>
   );
 }
+
+const Container = styled.ScrollView`
+`

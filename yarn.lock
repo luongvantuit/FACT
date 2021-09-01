@@ -5399,7 +5399,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.7.2":
+"prop-types@^15.5.10", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -5486,6 +5486,13 @@
     "flow-parser" "^0.121.0"
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
+
+"react-native-collapsible-toolbar@^0.1.2":
+  "integrity" "sha512-huLYc29/72VJA6J8AJDDUYF3jCIevHHscUKwxmCazsltvzg6uz6Tgf4i0c480sQq2W5iLaLuQioQKU8v1xY1nw=="
+  "resolved" "https://registry.npmjs.org/react-native-collapsible-toolbar/-/react-native-collapsible-toolbar-0.1.2.tgz"
+  "version" "0.1.2"
+  dependencies:
+    "prop-types" "^15.5.10"
 
 "react-native-safe-area-context@^3.3.1", "react-native-safe-area-context@>= 3.0.0":
   "integrity" "sha512-vVb6ahpo6WkMIzi7SzpYZdUgLADQQMBUmKnxwtAl3QpAjJ+YirCrF1uMZs8bPuLSMY7Z4V+s6zWdmQo/wNhfpQ=="
