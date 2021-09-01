@@ -11,8 +11,8 @@ const BottomTab = createBottomTabNavigator();
 
 export default function HomeBottomTab() {
   return (
-    <BottomTab.Navigator initialRouteName="Dashboard">
-      <BottomTab.Screen component={DashboardScreen} name="Dashboard" options={{
+    <BottomTab.Navigator initialRouteName="dashboard">
+      <BottomTab.Screen component={DashboardScreen} name="dashboard" options={{
         tabBarIcon: props => (
           <Container>
             <MaterialCommunityIcons name='view-dashboard' color={'#000'} />
@@ -25,7 +25,7 @@ export default function HomeBottomTab() {
           display: 'none'
         }
       }} />
-      <BottomTab.Screen component={AnalyticsScreen} name="Analytic" options={{
+      <BottomTab.Screen component={AnalyticsScreen} name="analytic" options={{
         tabBarIcon: props => (
           <Container>
             <MaterialCommunityIcons name='google-analytics' color={'#000'} />
@@ -38,7 +38,7 @@ export default function HomeBottomTab() {
           display: 'none'
         }
       }} />
-      <BottomTab.Screen component={WalletScreen} name="Wallet" options={{
+      <BottomTab.Screen component={WalletScreen} name="wallet" options={{
         tabBarIcon: props => (
           <Container>
             <Ionicons name='wallet' color={'#000'} />
