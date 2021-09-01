@@ -12,7 +12,6 @@ target 'FACT_TECHCOMBANK' do
     :hermes_enabled => false
   )
 
-
   target 'FACT_TECHCOMBANKTests' do
     inherit! :complete
     # Pods for testing
