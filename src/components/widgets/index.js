@@ -1,2 +1,3 @@
 import FlatButton from './FlatButton';
-export {FlatButton};
+import AppStackNavigation from './AppStackNavigation';
+export {FlatButton, AppStackNavigation};
