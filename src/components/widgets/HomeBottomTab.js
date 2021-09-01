@@ -5,7 +5,7 @@ import AnalyticsScreen from '../screens/AnalyticsScreen';
 import DashboardScreen from '../screens/DashboardScreen';
 import WalletScreen from '../screens/WalletScreen';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons'
-import Ionicons from '../fonts-icon/Ionicons'
+import Ionicons from '../fonts-icon/ionicons'
 import styled from 'styled-components';
 const BottomTab = createBottomTabNavigator();
 
@@ -23,7 +23,7 @@ export default function HomeBottomTab() {
         ),
         tabBarLabelStyle: {
           display: 'none'
-        }
+        },
       }} />
       <BottomTab.Screen component={AnalyticsScreen} name="analytic" options={{
         tabBarIcon: props => (
