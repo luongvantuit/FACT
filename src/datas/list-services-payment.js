@@ -1,4 +1,4 @@
-export default listServicePayment = [
+export default listServicesPayment = [
     {
         id: '1',
         increase: false,

@@ -1,4 +1,4 @@
-export default listCard = [{
+export default listCards = [{
     expiryEnd: '02/25',
     id: '1',
     name: 'VAN TU/LUONG',
