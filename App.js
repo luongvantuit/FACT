@@ -1,7 +1,12 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {AppStackNavigation} from './src';
+import AppStackNavigation from './src/components/widgets/AppStackNavigation'
+import React, { Component } from 'react'
 
-export default function App() {
-  return <AppStackNavigation />;
+export default class App extends Component {
+  render() {
+    return (
+      <AppStackNavigation />
+    )
+  }
 }
+
+
