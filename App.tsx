@@ -7,6 +7,7 @@ import {
   RechargeScreen,
   SignInScreen,
   SignUpScreen,
+  UserScreen,
 } from './components';
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="sign-in">
         <Stack.Screen
-          name="bottom-tabs"
+          name="home"
           component={HomeScreen}
           options={{
             headerShown: false,
@@ -41,6 +42,13 @@ export default function App() {
           component={RechargeScreen}
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="user"
+          component={UserScreen}
+          options={{
+            headerShown: true,
           }}
         />
       </Stack.Navigator>

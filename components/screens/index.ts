@@ -7,6 +7,7 @@ import PaymentScreen from './PaymentScreen';
 import AnalyticsScreen from './AnalyticsScreen';
 import ServicesScreen from './ServicesScreen';
 import UserScreen from './UserScreen';
+import WalletScreen from './WalletScreen';
 export {
   DashboardScreen,
   SignInScreen,
@@ -17,4 +18,5 @@ export {
   AnalyticsScreen,
   ServicesScreen,
   UserScreen,
+  WalletScreen,
 };

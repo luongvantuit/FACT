@@ -8,9 +8,7 @@ export default function PaymentScreen() {
       <View
         style={{
           paddingHorizontal: 16,
-        }}>
-        <ListPayment />
-      </View>
+        }}></View>
     </ScrollView>
   );
 }

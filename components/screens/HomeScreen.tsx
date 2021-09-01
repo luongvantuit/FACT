@@ -1,11 +1,13 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {Component} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Button, Image, Pressable, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   AnalyticsScreen,
   DashboardScreen,
   PaymentScreen,
   ServicesScreen,
+  WalletScreen,
 } from '.';
 import {
   EntypoIcon,
@@ -16,7 +18,7 @@ import {
 
 const Tabs = createBottomTabNavigator();
 
-export default class HomeScreen extends Component {
+export default class HomeScreen extends Component<{navigation: any}> {
   render() {
     return (
       <Tabs.Navigator initialRouteName="dashboard" screenOptions={{}}>
@@ -27,15 +29,20 @@ export default class HomeScreen extends Component {
             headerTitleAlign: 'center',
             title: 'Dashboard',
             headerRight: props => (
-              <Image
-                source={require('../../assets/leak.jpeg')}
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: 18,
-                  marginHorizontal: 8,
-                }}
-              />
+              <Pressable
+                onPress={() => {
+                  this.props.navigation.navigate('user');
+                }}>
+                <Image
+                  source={require('../../assets/leak.jpeg')}
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 18,
+                    marginHorizontal: 8,
+                  }}
+                />
+              </Pressable>
             ),
             headerTitleStyle: {
               fontWeight: '900',
@@ -200,10 +207,10 @@ export default class HomeScreen extends Component {
         />
         {/* */}
         <Tabs.Screen
-          name="user"
-          component={AnalyticsScreen}
+          name="wallet"
+          component={WalletScreen}
           options={{
-            title: 'User',
+            title: 'Wallet',
             headerTitleAlign: 'center',
             headerTitle: props => (
               <Text
@@ -211,7 +218,7 @@ export default class HomeScreen extends Component {
                   fontWeight: '900',
                   fontSize: 20,
                 }}>
-                User
+                Wallet
               </Text>
             ),
             tabBarIcon: props => (
@@ -223,7 +230,7 @@ export default class HomeScreen extends Component {
                   alignItems: 'center',
                 }}>
                 <EntypoIcon
-                  name="user"
+                  name="wallet"
                   size={props.focused === true ? 22 : 26}
                 />
                 <Text
@@ -233,7 +240,7 @@ export default class HomeScreen extends Component {
                     display: props.focused === true ? 'flex' : 'none',
                     fontSize: 10,
                   }}>
-                  User
+                  Wallet
                 </Text>
               </View>
             ),

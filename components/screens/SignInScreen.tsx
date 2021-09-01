@@ -25,7 +25,7 @@ export default class SignInScreen extends Component<{
               styleContainer={styles.flatButtonNextStepContainer}
               styleText={styles.flatButtonNextStepText}
               onPress={() => {
-                this.props.navigation.navigate('bottom-tabs');
+                this.props.navigation.navigate('home');
               }}
             />
             <View style={styles.boxCotainerCreateAccount}>
