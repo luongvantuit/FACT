@@ -1,13 +1,19 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {Component} from 'react';
-import {Image} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import {
   AnalyticsScreen,
   DashboardScreen,
   PaymentScreen,
   ServicesScreen,
 } from '.';
-import {MaterialIcon} from '..';
+import {
+  EntypoIcon,
+  FontAwesome5BrandsIcon,
+  MaterialCommunityIcons,
+  MaterialIcon,
+} from '..';
+import {colors} from '../../values';
 
 const Tabs = createBottomTabNavigator();
 
@@ -35,7 +41,30 @@ export default class HomeScreen extends Component {
             headerTitleStyle: {
               fontWeight: '900',
             },
-            tabBarIcon: props => <MaterialIcon name="dashboard" />,
+            tabBarIcon: props => (
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <MaterialIcon
+                  name="dashboard"
+                  size={props.focused === true ? 22 : 26}
+                />
+                <Text
+                  style={{
+                    marginHorizontal: 4,
+                    fontWeight: '900',
+                    display: props.focused === true ? 'flex' : 'none',
+                    fontSize: 10,
+                  }}>
+                  Dashboard
+                </Text>
+              </View>
+            ),
+            tabBarLabelStyle: {display: 'none'},
           }}
         />
         <Tabs.Screen
@@ -43,11 +72,30 @@ export default class HomeScreen extends Component {
           component={PaymentScreen}
           options={{
             title: 'Payment',
-            tabBarIcon: props => <MaterialIcon name="payment" />,
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              fontWeight: '900',
-            },
+            tabBarIcon: props => (
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <MaterialIcon
+                  name="payment"
+                  size={props.focused === true ? 22 : 26}
+                />
+                <Text
+                  style={{
+                    marginHorizontal: 4,
+                    fontWeight: '900',
+                    display: props.focused === true ? 'flex' : 'none',
+                    fontSize: 10,
+                  }}>
+                  Payment
+                </Text>
+              </View>
+            ),
+            tabBarLabelStyle: {display: 'none'},
           }}
         />
         <Tabs.Screen
@@ -55,11 +103,30 @@ export default class HomeScreen extends Component {
           component={ServicesScreen}
           options={{
             title: 'Services',
-            tabBarIcon: props => <MaterialIcon name="payment" />,
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              fontWeight: '900',
-            },
+            tabBarIcon: props => (
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <EntypoIcon
+                  name="message"
+                  size={props.focused === true ? 22 : 26}
+                />
+                <Text
+                  style={{
+                    marginHorizontal: 4,
+                    fontWeight: '900',
+                    display: props.focused === true ? 'flex' : 'none',
+                    fontSize: 10,
+                  }}>
+                  Services
+                </Text>
+              </View>
+            ),
+            tabBarLabelStyle: {display: 'none'},
           }}
         />
         <Tabs.Screen
@@ -67,11 +134,30 @@ export default class HomeScreen extends Component {
           component={AnalyticsScreen}
           options={{
             title: 'Analytics',
-            tabBarIcon: props => <MaterialIcon name="payment" />,
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              fontWeight: '900',
-            },
+            tabBarIcon: props => (
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <MaterialCommunityIcons
+                  name="google-analytics"
+                  size={props.focused === true ? 22 : 26}
+                />
+                <Text
+                  style={{
+                    marginHorizontal: 4,
+                    fontWeight: '900',
+                    display: props.focused === true ? 'flex' : 'none',
+                    fontSize: 10,
+                  }}>
+                  Analytics
+                </Text>
+              </View>
+            ),
+            tabBarLabelStyle: {display: 'none'},
           }}
         />
       </Tabs.Navigator>
