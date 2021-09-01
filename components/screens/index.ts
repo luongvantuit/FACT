@@ -6,6 +6,7 @@ import HomeScreen from './HomeScreen';
 import PaymentScreen from './PaymentScreen';
 import AnalyticsScreen from './AnalyticsScreen';
 import ServicesScreen from './ServicesScreen';
+import UserScreen from './UserScreen';
 export {
   DashboardScreen,
   SignInScreen,
@@ -15,4 +16,5 @@ export {
   PaymentScreen,
   AnalyticsScreen,
   ServicesScreen,
+  UserScreen,
 };

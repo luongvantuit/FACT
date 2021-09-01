@@ -9,18 +9,17 @@ import {
 } from '.';
 import {
   EntypoIcon,
-  FontAwesome5BrandsIcon,
+  FontAwesomeIcon,
   MaterialCommunityIcons,
   MaterialIcon,
 } from '..';
-import {colors} from '../../values';
 
 const Tabs = createBottomTabNavigator();
 
 export default class HomeScreen extends Component {
   render() {
     return (
-      <Tabs.Navigator initialRouteName="dashboard">
+      <Tabs.Navigator initialRouteName="dashboard" screenOptions={{}}>
         <Tabs.Screen
           name="dashboard"
           component={DashboardScreen}
@@ -41,6 +40,15 @@ export default class HomeScreen extends Component {
             headerTitleStyle: {
               fontWeight: '900',
             },
+            headerTitle: props => (
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 20,
+                }}>
+                Dashboard
+              </Text>
+            ),
             tabBarIcon: props => (
               <View
                 style={{
@@ -72,6 +80,16 @@ export default class HomeScreen extends Component {
           component={PaymentScreen}
           options={{
             title: 'Payment',
+            headerTitleAlign: 'center',
+            headerTitle: props => (
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 20,
+                }}>
+                Payment
+              </Text>
+            ),
             tabBarIcon: props => (
               <View
                 style={{
@@ -103,6 +121,16 @@ export default class HomeScreen extends Component {
           component={ServicesScreen}
           options={{
             title: 'Services',
+            headerTitleAlign: 'center',
+            headerTitle: props => (
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 20,
+                }}>
+                Services
+              </Text>
+            ),
             tabBarIcon: props => (
               <View
                 style={{
@@ -111,8 +139,8 @@ export default class HomeScreen extends Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <EntypoIcon
-                  name="message"
+                <FontAwesomeIcon
+                  name="modx"
                   size={props.focused === true ? 22 : 26}
                 />
                 <Text
@@ -134,6 +162,16 @@ export default class HomeScreen extends Component {
           component={AnalyticsScreen}
           options={{
             title: 'Analytics',
+            headerTitleAlign: 'center',
+            headerTitle: props => (
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 20,
+                }}>
+                Analytics
+              </Text>
+            ),
             tabBarIcon: props => (
               <View
                 style={{
@@ -154,6 +192,48 @@ export default class HomeScreen extends Component {
                     fontSize: 10,
                   }}>
                   Analytics
+                </Text>
+              </View>
+            ),
+            tabBarLabelStyle: {display: 'none'},
+          }}
+        />
+        {/* */}
+        <Tabs.Screen
+          name="user"
+          component={AnalyticsScreen}
+          options={{
+            title: 'User',
+            headerTitleAlign: 'center',
+            headerTitle: props => (
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 20,
+                }}>
+                User
+              </Text>
+            ),
+            tabBarIcon: props => (
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <EntypoIcon
+                  name="user"
+                  size={props.focused === true ? 22 : 26}
+                />
+                <Text
+                  style={{
+                    marginHorizontal: 4,
+                    fontWeight: '900',
+                    display: props.focused === true ? 'flex' : 'none',
+                    fontSize: 10,
+                  }}>
+                  User
                 </Text>
               </View>
             ),

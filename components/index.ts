@@ -7,6 +7,7 @@ export {
   PaymentScreen,
   AnalyticsScreen,
   ServicesScreen,
+  UserScreen,
 } from './screens';
 export {ListCard, FlatButton, ListPayment} from './widgets';
 

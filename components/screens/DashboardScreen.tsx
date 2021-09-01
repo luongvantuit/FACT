@@ -138,8 +138,8 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
               </Text>
               <Text
                 style={{
-                  fontWeight: '900',
-                  fontSize: 22,
+                  fontWeight: 'bold',
+                  fontSize: 20,
                 }}>
                 $6262.62
               </Text>
@@ -177,7 +177,7 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
           Your Cards
         </Text>
         <ListCard />
-        <TouchableOpacity
+        {/* <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => {
             this.props.navigation.navigate('payment');
@@ -278,7 +278,7 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
             </Text>
             <EntypoIcon name="chevron-small-right" size={32} />
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View
           style={{
             borderTopLeftRadius: 8,

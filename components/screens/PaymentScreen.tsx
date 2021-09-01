@@ -1,10 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
+import {ListPayment} from '..';
 
 export default function PaymentScreen() {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <ScrollView>
+      <View
+        style={{
+          paddingHorizontal: 16,
+        }}>
+        <ListPayment />
+      </View>
+    </ScrollView>
   );
 }
