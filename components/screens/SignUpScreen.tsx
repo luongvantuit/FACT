@@ -34,26 +34,29 @@ export default class SignUpScreen extends Component<
               style={styles.textInput}
             />
             <FlatButton
-              title={strings.nextStep}
-              styleText={styleSignInScreen.flatButtonNextStepText}
-              styleContainer={styleSignInScreen.flatButtonNextStepContainer}
+              style={styleSignInScreen.flatButtonNextStepContainer}
               onPress={() => {
                 this.props.navigation.navigate('home');
-              }}
-            />
+              }}>
+              <Text style={styleSignInScreen.flatButtonNextStepText}>
+                {strings.nextStep}
+              </Text>
+            </FlatButton>
             <FlatButton
-              title={strings.goBack}
               onPress={() => {
                 this.props.navigation.goBack();
               }}
-              styleText={{
-                color: colors.black1,
-                fontWeight: '900',
-              }}
-              styleContainer={{
+              style={{
                 marginVertical: 8,
-              }}
-            />
+              }}>
+              <Text
+                style={{
+                  color: colors.black1,
+                  fontWeight: '900',
+                }}>
+                {strings.goBack}
+              </Text>
+            </FlatButton>
           </View>
         </ScrollView>
       </SafeAreaView>

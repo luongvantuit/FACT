@@ -21,13 +21,14 @@ export default class SignInScreen extends Component<{
               style={styles.textInput}
             />
             <FlatButton
-              title={strings.nextStep}
-              styleContainer={styles.flatButtonNextStepContainer}
-              styleText={styles.flatButtonNextStepText}
+              style={styles.flatButtonNextStepContainer}
               onPress={() => {
                 this.props.navigation.navigate('home');
-              }}
-            />
+              }}>
+              <Text style={styles.flatButtonNextStepText}>
+                {strings.nextStep}
+              </Text>
+            </FlatButton>
             <View style={styles.boxCotainerCreateAccount}>
               <Text
                 style={{
@@ -36,12 +37,13 @@ export default class SignInScreen extends Component<{
                 {strings.youHaveNotAccount}
               </Text>
               <FlatButton
-                title={strings.createAccount}
                 onPress={() => {
                   this.props.navigation.navigate('sign-up');
-                }}
-                styleText={styles.textCreateAccount}
-              />
+                }}>
+                <Text style={styles.textCreateAccount}>
+                  {strings.createAccount}
+                </Text>
+              </FlatButton>
             </View>
           </View>
         </ScrollView>
