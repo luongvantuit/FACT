@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList, Platform} from 'react-native';
+import {View, Text, FlatList, Platform, Image} from 'react-native';
 import {listCard} from '../../datas';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {styleWidgetListCard as styles} from '../../styles';
@@ -24,6 +24,14 @@ export default function ListCard() {
                 <Text style={styles.textName}>{item.name}</Text>
               </View>
               <View style={styles.boxContainerRight}>
+                <Image
+                  source={require('../../assets/sim.png')}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    marginVertical: 8,
+                  }}
+                />
                 <FontAwesomeIcon
                   name={
                     item.service === 'master-card' ? 'cc-mastercard' : 'cc-visa'
