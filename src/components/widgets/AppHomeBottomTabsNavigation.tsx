@@ -40,13 +40,15 @@ export default function AppHomeBottomTabsNavigation() {
                 }}>
                 <Text
                   style={{
-                    fontWeight: '600',
+                    fontWeight: '700',
+                    fontSize: 14,
                   }}>
                   Hi, TU
                 </Text>
                 <Text
                   style={{
                     fontWeight: '900',
+                    fontSize: 18,
                   }}>
                   Welcome back!
                 </Text>

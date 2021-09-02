@@ -1,52 +1,30 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Dimensions,
   Image,
+  Pressable,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import {leakImage} from '../../assets';
+import user from '../../datas/user';
 import Ionicons from '../fonts-icon/ionicons';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
-export default class DashboardScreen extends Component<{ navigation: any }, any> {
+export default class DashboardScreen extends Component<{navigation: any}, any> {
   render() {
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
-            display: 'flex',
-            marginHorizontal: 8,
-            marginTop: 16,
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
-          <Ionicons name="sunny" size={24} />
-          <Text
-            style={{
-              color: '#D7D7D7',
-              marginHorizontal: 8,
-              fontWeight: 'bold',
-            }}>
-            Good Morning.
-          </Text>
-        </View>
-        <Text
-          style={{
-            marginTop: 16,
-            marginHorizontal: 16,
-            fontWeight: 'bold',
-            fontSize: 18,
-          }}>
-          Account
-        </Text>
-        <View
-          style={{
             backgroundColor: '#fff',
             height: 180,
             width: Dimensions.get('window').width - 16,
-            margin: 8,
+            marginTop: 24,
+            marginBottom: 8,
+            marginHorizontal: 8,
             borderRadius: 8,
             elevation: 8,
             shadowColor: '#000',
@@ -54,11 +32,10 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
               width: 1,
               height: 4,
             },
-            display: 'flex',
-            flexDirection: 'column',
             shadowOpacity: 0.3,
             shadowRadius: 4.65,
-            marginVertical: 16,
+            display: 'flex',
+            flexDirection: 'column',
             padding: 16,
           }}>
           <View
@@ -80,11 +57,11 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
                 flexGrow: 3,
               }}>
               <Image
-                source={require('../../assets/leak.jpeg')}
+                source={leakImage}
                 style={{
                   width: 40,
                   height: 40,
-                  borderRadius: 20,
+                  borderRadius: 8,
                 }}
               />
               <View
@@ -98,9 +75,15 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
                     fontWeight: '900',
                     fontSize: 18,
                   }}>
-                  LUONG VAN TU
+                  {user.name}
                 </Text>
-                <Text style={{ }}>Personal</Text>
+                <Text
+                  style={{
+                    fontWeight: '600',
+                    fontSize: 14,
+                  }}>
+                  Personal
+                </Text>
               </View>
             </View>
             <Text
@@ -114,7 +97,7 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              USD
+              {user.currency}
             </Text>
           </View>
           <View
@@ -133,15 +116,17 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
               <Text
                 style={{
                   marginVertical: 8,
+                  fontWeight: '600',
+                  fontSize: 16,
                 }}>
-                Gold
+                {user.rank}
               </Text>
               <Text
                 style={{
                   fontWeight: 'bold',
                   fontSize: 20,
                 }}>
-                $6262.62
+                {`${user.balance}${user.currency === 'USD' ? '$' : 'Đ'}`}
               </Text>
             </View>
             <View
@@ -151,11 +136,7 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
                 alignItems: 'flex-end',
                 flexGrow: 1,
               }}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={() => {
-                  this.props.navigation.navigate('recharge');
-                }}>
+              <Pressable onPress={() => {}}>
                 <View
                   style={{
                     padding: 16,
@@ -164,18 +145,10 @@ export default class DashboardScreen extends Component<{ navigation: any }, any>
                   }}>
                   <Ionicons name="add" size={28} />
                 </View>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           </View>
         </View>
-        <Text
-          style={{
-            marginHorizontal: 16,
-            fontWeight: 'bold',
-            fontSize: 18,
-          }}>
-          Your Cards
-        </Text>
         <ListCard />
         <View
           style={{

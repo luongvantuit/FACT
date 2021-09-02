@@ -25,6 +25,14 @@ const listServicesPayment: Array<ServicePayment> = [
     value: 29,
     img: kFCImage,
   },
+  {
+    id: '4',
+    increase: false,
+    name: 'KFC',
+    service: true,
+    value: 100,
+    img: kFCImage,
+  },
 ];
 
 export default listServicesPayment;
