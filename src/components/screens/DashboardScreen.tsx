@@ -8,7 +8,6 @@ import {
   View,
 } from 'react-native';
 import Ionicons from '../fonts-icon/ionicons';
-import { LinearGradient } from 'react-native-svg';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
 export default class DashboardScreen extends Component<{ navigation: any }, any> {
