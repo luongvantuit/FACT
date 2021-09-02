@@ -16,7 +16,11 @@ import AppTheme from '../../themes/app-theme';
 export default function SignInScreen({navigation}: any) {
   const theme: AppTheme = useTheme() as AppTheme;
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <TouchableWithoutFeedback
+      onPress={Keyboard.dismiss}
+      style={{
+        backgroundColor: theme.app?.backgroundScreenColor,
+      }}>
       <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
         <View
           style={{
@@ -30,6 +34,7 @@ export default function SignInScreen({navigation}: any) {
             style={{
               fontWeight: '800',
               fontSize: 28,
+              color: theme.app?.textColor,
               marginHorizontal: 32,
               marginVertical: 8,
             }}>
@@ -37,6 +42,7 @@ export default function SignInScreen({navigation}: any) {
           </Text>
           <Text
             style={{
+              color: theme.app?.textColor,
               fontWeight: '800',
               fontSize: 32,
               marginHorizontal: 32,
@@ -54,7 +60,7 @@ export default function SignInScreen({navigation}: any) {
             <Text
               style={{
                 fontWeight: '500',
-                color: '#707070',
+                color: theme.app?.textPrimaryColor,
               }}>
               If You Haven't Account?
             </Text>
@@ -68,6 +74,7 @@ export default function SignInScreen({navigation}: any) {
               <Text
                 style={{
                   fontWeight: '800',
+                  color: theme.app?.textColor,
                 }}>
                 Create New Account
               </Text>
@@ -82,10 +89,12 @@ export default function SignInScreen({navigation}: any) {
               marginBottom: 12,
               paddingVertical: Platform.OS === 'android' ? 16 : 20,
               paddingHorizontal: 16,
-              backgroundColor: '#D7D7D7',
+              backgroundColor: theme.app?.backgroundTextInputColor,
               borderRadius: 8,
               fontWeight: 'bold',
+              color: theme.app?.textInputColor,
             }}
+            placeholderTextColor={theme.app?.placeholderTextColor}
           />
           <View
             style={{
@@ -97,13 +106,14 @@ export default function SignInScreen({navigation}: any) {
             }}>
             <Text
               style={{
-                color: '#707070',
+                color: theme.app?.textPrimaryColor,
               }}>
               Forgot Password?
             </Text>
             <Pressable style={{marginHorizontal: 8}} onPress={() => {}}>
               <Text
                 style={{
+                  color: theme.app?.textColor,
                   fontWeight: '800',
                 }}>
                 Reset
@@ -114,7 +124,7 @@ export default function SignInScreen({navigation}: any) {
             style={{
               marginHorizontal: 32,
               justifyContent: 'center',
-              backgroundColor: '#363636',
+              backgroundColor: theme.app?.backgroundButtonColor,
               paddingVertical: 16,
               borderRadius: 8,
             }}
@@ -124,7 +134,7 @@ export default function SignInScreen({navigation}: any) {
             <Text
               style={{
                 textAlign: 'center',
-                color: 'white',
+                color: theme.app?.textButtonColor,
                 fontWeight: '900',
               }}>
               Next Step

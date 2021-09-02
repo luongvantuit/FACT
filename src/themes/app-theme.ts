@@ -10,6 +10,9 @@ interface AppTheme extends Theme {
     backgroundButtonColor?: string;
     backgroundButtonPrimaryColor?: string;
     backgroundButtonSecondaryColor?: string;
+    textButtonColor?: string;
+    textButtonPrimaryColor?: string;
+    textButtonSecondaryColor?: string;
     backgroundScreenColor?: string;
     backgroundScreenPrimaryColor?: string;
     backgroundScreenSecondaryColor?: string;
@@ -60,25 +63,28 @@ interface AppTheme extends Theme {
     borderScendaryColor?: string;
     borderFocusedColor?: string;
     borderFocusedPrimaryColor?: string;
-    borderFocusedScendaryColor?: string;
+    borderFocusedScondaryColor?: string;
     outlineColor?: string;
     outlinePrimaryColor?: string;
     outlineScendaryColor?: string;
     outlineFocusedColor?: string;
     outlineFocusedPrimaryColor?: string;
-    outlineFocusedScendaryColor?: string;
+    outlineFocusedScondaryColor?: string;
     borderTextInputColor?: string;
     borderTextInputPrimaryColor?: string;
-    borderTextInputScendaryColor?: string;
+    borderTextInputScondaryColor?: string;
     borderTextInputFocusedColor?: string;
     borderTextInputFocusedPrimaryColor?: string;
-    borderTextInputFocusedScendaryColor?: string;
+    borderTextInputFocusedScondaryColor?: string;
     outlineTextInputColor?: string;
     outlineTextInputPrimaryColor?: string;
     outlineTextInputScendaryColor?: string;
     outlineTextInputFocusedColor?: string;
     outlineTextInputFocusedPrimaryColor?: string;
-    outlineTextInputFocusedScendaryColor?: string;
+    outlineTextInputFocusedScondaryColor?: string;
+    shadowColor?: string;
+    shadowPrimaryColor?: string;
+    shadowSecondaryColor?: string;
   };
 }
 

@@ -6,6 +6,23 @@ const ThemeLight: AppTheme = {
     ...DefaultTheme.colors,
   },
   dark: DefaultTheme.dark,
+  app: {
+    textColor: '#000',
+    textPrimaryColor: '#707070',
+    placeholderTextColor: '#A0A0A0',
+    backgroundTextInputColor: '#D7D7D7',
+    backgroundButtonColor: '#363636',
+    textButtonColor: '#fff',
+    backgroundScreenColor: '#f2f2f2',
+    textInputColor: '#000',
+    shadowColor: '#000',
+    borderColor: '#D7D7D7',
+    backgroundHeaderColor: '#fff',
+    labelBottomTabsColor: '#000',
+    iconBottomTabsColor: '#000',
+    labelBottomTabsFocusedColor: '#000',
+    iconBottomTabsFocusedColor: '#000',
+  },
 };
 
 export default ThemeLight;
