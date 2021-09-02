@@ -29,7 +29,7 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                 justifyContent: 'space-between',
                 flexDirection: 'row',
                 paddingBottom: 16,
-                paddingHorizontal: 16,
+                paddingHorizontal: 8,
                 backgroundColor: 'white',
                 borderBottomColor: '#D7D7D7',
                 borderBottomWidth: 0.3,

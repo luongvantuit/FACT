@@ -1,41 +1,140 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, TextInput, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import FlatButton from '../widgets/FlatButton';
+import {
+  View,
+  TextInput,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+  Dimensions,
+  Text,
+  Pressable,
+  Platform,
+} from 'react-native';
 
-export default class SignInScreen extends Component<{
-  navigation: any;
-}> {
+export default class SignInScreen extends Component<
+  {
+    navigation: any;
+  },
+  {isFocus: boolean}
+> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isFocus: false,
+    };
+  }
   render() {
     return (
-      <SafeAreaView>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View>
-            <Text>Sign In</Text>
-            <TextInput placeholder={'Number Phone'} />
-            <FlatButton
-              onPress={() => {
-                this.props.navigation.navigate('home');
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              paddingTop:
+                Dimensions.get('screen').height /
+                (Platform.OS === 'android' ? 3 : 2),
+            }}>
+            <Text
+              style={{
+                fontWeight: '800',
+                fontSize: 28,
+                marginHorizontal: 32,
+                marginVertical: 8,
               }}>
-              <Text>Next Step</Text>
-            </FlatButton>
-            <View>
+              Hey
+            </Text>
+            <Text
+              style={{
+                fontWeight: '800',
+                fontSize: 32,
+                marginHorizontal: 32,
+                marginVertical: 8,
+              }}>
+              Sign In, Now.
+            </Text>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                marginHorizontal: 32,
+                alignItems: 'center',
+              }}>
               <Text
                 style={{
                   fontWeight: '500',
+                  color: '#707070',
                 }}>
-                You Haven't Account?
+                If You Haven't Account?
               </Text>
-              <FlatButton
-                onPress={() => {
-                  this.props.navigation.navigate('sign-up');
+              <Pressable
+                style={{
+                  marginHorizontal: 8,
                 }}>
-                <Text>Create Account</Text>
-              </FlatButton>
+                <Text
+                  style={{
+                    fontWeight: '800',
+                  }}>
+                  Create New Account
+                </Text>
+              </Pressable>
             </View>
+            <TextInput
+              placeholder={'Number Phone'}
+              keyboardType={'numeric'}
+              style={{
+                marginHorizontal: 32,
+                marginTop: 16,
+                marginBottom: 12,
+                paddingVertical: 16,
+                paddingHorizontal: 16,
+                backgroundColor: '#D7D7D7',
+                borderRadius: 8,
+                fontWeight: 'bold',
+              }}
+            />
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginHorizontal: 32,
+                marginBottom: 32,
+              }}>
+              <Text
+                style={{
+                  color: '#707070',
+                }}>
+                Forgot Password?
+              </Text>
+              <Pressable style={{marginHorizontal: 8}}>
+                <Text
+                  style={{
+                    fontWeight: '800',
+                  }}>
+                  Reset
+                </Text>
+              </Pressable>
+            </View>
+            <Pressable
+              style={{
+                marginHorizontal: 32,
+                justifyContent: 'center',
+                backgroundColor: '#363636',
+                paddingVertical: 16,
+                borderRadius: 8,
+              }}>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                }}>
+                Next Step
+              </Text>
+            </Pressable>
           </View>
-        </ScrollView>
-      </SafeAreaView>
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
     );
   }
 }

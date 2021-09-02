@@ -8,7 +8,7 @@ const AppStack = createNativeStackNavigator();
 export default function AppStackNavigation() {
   return (
     <NavigationContainer>
-      <AppStack.Navigator initialRouteName="app-user">
+      <AppStack.Navigator initialRouteName="app-register">
         <AppStack.Screen
           name="app-user"
           component={AppUserStackNavigation}
