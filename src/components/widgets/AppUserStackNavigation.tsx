@@ -1,10 +1,15 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
-import { View, Text } from 'react-native'
+import ProfileScreen from '../screens/ProfileScreen';
+import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
+
+const AppUserStack = createNativeStackNavigator();
 
 export default function AppUserStackNavigation() {
     return (
-        <View>
-            <Text></Text>
-        </View>
+        <AppUserStack.Navigator initialRouteName={'app-home-bottom-tabs'}>
+            <AppUserStack.Screen name={'app-home-bottom-tabs'} component={AppHomeBottomTabsNavigation} />
+            <AppUserStack.Screen name={'profile'} component={ProfileScreen} />
+        </AppUserStack.Navigator>
     )
 }
