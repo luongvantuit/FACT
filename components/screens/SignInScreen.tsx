@@ -1,0 +1,53 @@
+import React, {Component} from 'react';
+import {ScrollView, Text, TextInput, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {FlatButton} from '..';
+import {styleSignInScreen as styles} from '../../styles';
+import {strings} from '../../values';
+
+export default class SignInScreen extends Component<{
+  navigation: any;
+}> {
+  render() {
+    return (
+      <SafeAreaView>
+        <ScrollView
+          style={styles.scrollWindow}
+          showsVerticalScrollIndicator={false}>
+          <View style={styles.boxContainer}>
+            <Text style={styles.textTitle}>{strings.signIn}</Text>
+            <TextInput
+              placeholder={strings.numberPhone}
+              style={styles.textInput}
+            />
+            <FlatButton
+              style={styles.flatButtonNextStepContainer}
+              onPress={() => {
+                this.props.navigation.navigate('home');
+              }}>
+              <Text style={styles.flatButtonNextStepText}>
+                {strings.nextStep}
+              </Text>
+            </FlatButton>
+            <View style={styles.boxCotainerCreateAccount}>
+              <Text
+                style={{
+                  fontWeight: '500',
+                }}>
+                {strings.youHaveNotAccount}
+              </Text>
+              <FlatButton
+                onPress={() => {
+                  this.props.navigation.navigate('sign-up');
+                }}>
+                <Text style={styles.textCreateAccount}>
+                  {strings.createAccount}
+                </Text>
+              </FlatButton>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+}
