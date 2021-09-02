@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Dimensions, ScrollView, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, {Component} from 'react';
+import {Dimensions, ScrollView, Text, TextInput, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import FlatButton from '../widgets/FlatButton';
 export default class SignUpScreen extends Component<
   {
@@ -27,16 +27,12 @@ export default class SignUpScreen extends Component<
               }}>
               Sign Up
             </Text>
-            <TextInput
-              placeholder={'Number Phone'}
-            />
+            <TextInput placeholder={'Number Phone'} />
             <FlatButton
               onPress={() => {
                 this.props.navigation.navigate('home');
               }}>
-              <Text >
-                Next Step
-              </Text>
+              <Text>Next Step</Text>
             </FlatButton>
             <FlatButton
               onPress={() => {

@@ -1,8 +1,6 @@
-
-
-import React, { Component } from 'react';
-import { ScrollView, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, {Component} from 'react';
+import {ScrollView, Text, TextInput, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import FlatButton from '../widgets/FlatButton';
 
 export default class SignInScreen extends Component<{
@@ -11,22 +9,17 @@ export default class SignInScreen extends Component<{
   render() {
     return (
       <SafeAreaView>
-        <ScrollView
-          showsVerticalScrollIndicator={false}>
-          <View >
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View>
             <Text>Sign In</Text>
-            <TextInput
-              placeholder={'Number Phone'}
-            />
+            <TextInput placeholder={'Number Phone'} />
             <FlatButton
               onPress={() => {
                 this.props.navigation.navigate('home');
               }}>
-              <Text >
-                Next Step
-              </Text>
+              <Text>Next Step</Text>
             </FlatButton>
-            <View >
+            <View>
               <Text
                 style={{
                   fontWeight: '500',
@@ -37,9 +30,7 @@ export default class SignInScreen extends Component<{
                 onPress={() => {
                   this.props.navigation.navigate('sign-up');
                 }}>
-                <Text >
-                  Create Account
-                </Text>
+                <Text>Create Account</Text>
               </FlatButton>
             </View>
           </View>

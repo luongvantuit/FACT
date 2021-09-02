@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
+import {View, Text, FlatList, Image} from 'react-native';
 import listServicesPayment from '../../datas/list-services-payment';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 
@@ -44,8 +44,9 @@ export default function ListServicesPayment() {
                 }}>
                 {item.name}
               </Text>
-              <Text style={{ }}>{`${item.increase === true ? '+' : '-'}${item.value
-                }$`}</Text>
+              <Text style={{}}>{`${item.increase === true ? '+' : '-'}${
+                item.value
+              }$`}</Text>
             </View>
           </View>
           <EntypoIcons

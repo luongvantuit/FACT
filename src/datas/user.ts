@@ -3,6 +3,7 @@ const user: User = {
     name: 'LUONG VAN TU',
     balance: 1028.2,
     currency: 'USD',
-    rank: 'Gold'
+    rank: 'Gold',
+    type: 'Personal'
 }
 export default user;

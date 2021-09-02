@@ -82,7 +82,7 @@ export default class DashboardScreen extends Component<{navigation: any}, any> {
                     fontWeight: '600',
                     fontSize: 14,
                   }}>
-                  Personal
+                  {user.type}
                 </Text>
               </View>
             </View>

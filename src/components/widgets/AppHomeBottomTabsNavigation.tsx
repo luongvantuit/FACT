@@ -3,6 +3,7 @@ import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs/lib/typescript
 import React from 'react';
 import {View, Text, Platform, Image, Pressable} from 'react-native';
 import {leakImage} from '../../assets';
+import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
@@ -166,6 +167,9 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 paddingTop: Platform.OS === 'android' ? 0 : 54,
+                backgroundColor: '#fff',
+                borderBottomColor: '#D7D7D7',
+                borderBottomWidth: 0.3,
               }}>
               <View
                 style={{
@@ -188,14 +192,14 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                       fontWeight: '900',
                       fontSize: 18,
                     }}>
-                    LUONG VAN TU
+                    {user.name}
                   </Text>
                   <Text
                     style={{
                       fontWeight: '600',
                       fontSize: 14,
                     }}>
-                    Personal
+                    {user.type}
                   </Text>
                 </View>
               </View>
