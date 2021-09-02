@@ -52,6 +52,9 @@ interface AppTheme extends Theme {
         backgroundTabBottomTabsFocusedColor?: string,
         backgroundTabBotomTabsFocusedPrimaryColor?: string,
         backgroundTabBottomTabsFocusedSecondaryColor?: string,
+        backgroundCardColor?: string,
+        backgroundCardPrimaryColor?: string,
+        backgroundCardSecondaryColor?: string,
     }
 }
 
