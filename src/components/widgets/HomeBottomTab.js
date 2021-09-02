@@ -16,9 +16,12 @@ export default function HomeBottomTab() {
       <BottomTab.Screen component={DashboardScreen} name="dashboard" options={{
         tabBarIcon: props => (
           <Container>
-            <MaterialCommunityIcons name='view-dashboard' color={'#000'} />
+            <MaterialCommunityIcons name='view-dashboard' color={'#000'} size={props.focused === true ? 32 : 24} />
             <Text style={{
-              color: '#000'
+              color: '#000',
+              display: props.focused === true ? 'none' : 'flex',
+              fontWeight: '900',
+              fontSize: 10
             }}>Dashboard</Text>
           </Container>
         ),
@@ -30,9 +33,12 @@ export default function HomeBottomTab() {
       <BottomTab.Screen component={AnalyticsScreen} name="analytics" options={{
         tabBarIcon: props => (
           <Container>
-            <MaterialCommunityIcons name='google-analytics' color={'#000'} />
+            <MaterialCommunityIcons name='google-analytics' color={'#000'} size={props.focused === true ? 32 : 24} />
             <Text style={{
-              color: '#000'
+              color: '#000',
+              display: props.focused === true ? 'none' : 'flex',
+              fontWeight: '900',
+              fontSize: 10
             }}>Analytics</Text>
           </Container>
         ),
@@ -43,9 +49,12 @@ export default function HomeBottomTab() {
       <BottomTab.Screen component={WalletScreen} name="wallet" options={{
         tabBarIcon: props => (
           <Container>
-            <Ionicons name='wallet' color={'#000'} />
+            <Ionicons name='wallet' color={'#000'} size={props.focused === true ? 32 : 24} />
             <Text style={{
-              color: '#000'
+              color: '#000',
+              display: props.focused === true ? 'none' : 'flex',
+              fontWeight: '900',
+              fontSize: 10,
             }}>Wallet</Text>
           </Container>
         ),
