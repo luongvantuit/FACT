@@ -9,8 +9,12 @@ export default function AppStackNavigation() {
     return (
         <NavigationContainer>
             <AppStack.Navigator initialRouteName="app-user">
-                <AppStack.Screen name='app-user' component={AppUserStackNavigation} />
-                <AppStack.Screen name='app-register' component={AppRegisterStackNavigation} />
+                <AppStack.Screen name='app-user' component={AppUserStackNavigation} options={{
+                    headerShown: false,
+                }} />
+                <AppStack.Screen name='app-register' component={AppRegisterStackNavigation} options={{
+                    headerShown: false,
+                }} />
             </AppStack.Navigator>
         </NavigationContainer>
     )

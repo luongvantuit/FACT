@@ -8,8 +8,12 @@ const AppUserStack = createNativeStackNavigator();
 export default function AppUserStackNavigation() {
     return (
         <AppUserStack.Navigator initialRouteName={'app-home-bottom-tabs'}>
-            <AppUserStack.Screen name={'app-home-bottom-tabs'} component={AppHomeBottomTabsNavigation} />
-            <AppUserStack.Screen name={'profile'} component={ProfileScreen} />
+            <AppUserStack.Screen name={'app-home-bottom-tabs'} component={AppHomeBottomTabsNavigation} options={{
+                headerShown: false,
+            }} />
+            <AppUserStack.Screen name={'profile'} component={ProfileScreen} options={{
+                headerShown: false,
+            }} />
         </AppUserStack.Navigator>
     )
 }
