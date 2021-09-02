@@ -16,10 +16,10 @@ export default function HomeBottomTab() {
       <BottomTab.Screen component={DashboardScreen} name="dashboard" options={{
         tabBarIcon: props => (
           <Container>
-            <MaterialCommunityIcons name='view-dashboard' color={'#000'} size={props.focused === true ? 32 : 24} />
+            <MaterialCommunityIcons name='view-dashboard' color={'#000'} size={props.focused === true ? 24 : 32} />
             <Text style={{
               color: '#000',
-              display: props.focused === true ? 'none' : 'flex',
+              display: props.focused === true ? 'flex' : 'none',
               fontWeight: '900',
               fontSize: 10
             }}>Dashboard</Text>
@@ -33,10 +33,10 @@ export default function HomeBottomTab() {
       <BottomTab.Screen component={AnalyticsScreen} name="analytics" options={{
         tabBarIcon: props => (
           <Container>
-            <MaterialCommunityIcons name='google-analytics' color={'#000'} size={props.focused === true ? 32 : 24} />
+            <MaterialCommunityIcons name='google-analytics' color={'#000'} size={props.focused === true ? 24 : 32} />
             <Text style={{
               color: '#000',
-              display: props.focused === true ? 'none' : 'flex',
+              display: props.focused === true ? 'flex' : 'none',
               fontWeight: '900',
               fontSize: 10
             }}>Analytics</Text>
@@ -49,10 +49,10 @@ export default function HomeBottomTab() {
       <BottomTab.Screen component={WalletScreen} name="wallet" options={{
         tabBarIcon: props => (
           <Container>
-            <Ionicons name='wallet' color={'#000'} size={props.focused === true ? 32 : 24} />
+            <Ionicons name='wallet' color={'#000'} size={props.focused === true ? 24 : 32} />
             <Text style={{
               color: '#000',
-              display: props.focused === true ? 'none' : 'flex',
+              display: props.focused === true ? 'flex' : 'none',
               fontWeight: '900',
               fontSize: 10,
             }}>Wallet</Text>
