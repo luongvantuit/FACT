@@ -1,6 +1,7 @@
 import { Theme, DefaultTheme } from "@react-navigation/native";
+import AppTheme from "./app-theme";
 
-const ThemeLight: Theme = {
+const ThemeLight: AppTheme = {
     colors: {
         ...DefaultTheme.colors
     },

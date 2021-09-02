@@ -10,11 +10,10 @@ import {
   Pressable,
   Platform,
 } from 'react-native';
-import {Theme, useTheme} from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 
 export default function SignInScreen({navigation}: any) {
-  const theme: Theme = useTheme();
-  console.log(theme.colors.text);
+  const theme: any = useTheme();
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
