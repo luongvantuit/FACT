@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import styled from 'styled-components';
-
-export default function DashboardScreen() {
+import ListCards from '../widgets/ListCards';
+export default function DashboardScreen({ navigation }) {
   return (
     <Container showsVerticalScrollIndicator={false}>
-
+      <ListCards />
     </Container>
   );
 }
