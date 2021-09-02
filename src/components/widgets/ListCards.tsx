@@ -1,14 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, FlatList, Platform, Image, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import listCards from '../../datas/list-cards';
 import FontAwesomeIcons from '../fonts-icon/font-awesome-icons';
 Icon.loadFont();
 export default function ListCards() {
+  const [page, setPage] = useState<number>(0);
   return (
     <View>
       <FlatList
         data={listCards}
+        snapToAlignment="center"
+        pagingEnabled
+        decelerationRate="fast"
+        snapToInterval={Dimensions.get('window').width - 48}
+        onScroll={e => {
+          setPage(
+            Math.round(
+              e.nativeEvent.contentOffset.x /
+                (Dimensions.get('window').width - 72),
+            ),
+          );
+        }}
         renderItem={({item}) => (
           <View
             style={{
@@ -114,6 +127,30 @@ export default function ListCards() {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
       />
+      <View
+        style={{
+          width: Dimensions.get('window').width,
+          justifyContent: 'center',
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
+        {listCards.map((e, index) => {
+          return (
+            <View
+              key={index}
+              style={{
+                backgroundColor: index === page ? 'black' : '#f2f2f2',
+                borderColor: '#D7D7D7',
+                borderWidth: 0.5,
+                width: 8,
+                height: 8,
+                borderRadius: 4,
+                marginHorizontal: 4,
+                marginVertical: 16,
+              }}></View>
+          );
+        })}
+      </View>
     </View>
   );
 }
