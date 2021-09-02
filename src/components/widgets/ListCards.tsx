@@ -90,7 +90,7 @@ export default function ListCards() {
               style={{
                 display: 'flex',
                 flexGrow: 3,
-                justifyContent: 'center',
+                justifyContent: 'flex-end',
                 alignItems: 'center',
               }}>
               <FontAwesomeIcons

@@ -11,7 +11,7 @@ import WalletScreen from '../screens/WalletScreen';
 
 const AppHomeBottomTabs = createBottomTabNavigator();
 
-export default function AppHomeBottomTabsNavigation() {
+export default function AppHomeBottomTabsNavigation({navigation}: any) {
   return (
     <AppHomeBottomTabs.Navigator initialRouteName={'dashboard'}>
       <AppHomeBottomTabs.Screen
@@ -133,11 +133,10 @@ export default function AppHomeBottomTabsNavigation() {
         component={WalletScreen}
         options={{
           headerShown: true,
-          header: (props: BottomTabHeaderProps) => <View></View>,
           tabBarLabelStyle: {
             display: 'none',
           },
-          tabBarIcon: props => (
+          tabBarIcon: (props: any) => (
             <View
               style={{
                 display: 'flex',
@@ -157,6 +156,65 @@ export default function AppHomeBottomTabsNavigation() {
                 }}>
                 Wallet
               </Text>
+            </View>
+          ),
+          header: (props: BottomTabHeaderProps) => (
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingTop: Platform.OS === 'android' ? 0 : 54,
+              }}>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Image
+                  source={require('../../assets/leak.jpeg')}
+                  style={{
+                    width: 46,
+                    height: 46,
+                    borderRadius: 23,
+                    margin: 16,
+                  }}
+                />
+                <View>
+                  <Text
+                    style={{
+                      fontWeight: '900',
+                      fontSize: 18,
+                    }}>
+                    LUONG VAN TU
+                  </Text>
+                  <Text
+                    style={{
+                      fontWeight: '600',
+                      fontSize: 14,
+                    }}>
+                    Personal
+                  </Text>
+                </View>
+              </View>
+              <Pressable
+                onPress={() => {
+                  navigation.navigate('profile');
+                }}
+                style={{
+                  backgroundColor: '#D7D7D7',
+                  borderRadius: 8,
+                  padding: 8,
+                  margin: 16,
+                }}>
+                <EntypoIcons
+                  name="chevron-small-right"
+                  color={'#000'}
+                  size={32}
+                />
+              </Pressable>
             </View>
           ),
         }}
