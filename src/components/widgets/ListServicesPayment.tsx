@@ -28,7 +28,7 @@ export default function ListServicesPayment() {
               style={{
                 width: 40,
                 height: 40,
-                borderRadius: item.service === false ? 20 : 40,
+                borderRadius: item.service === false ? 8 : 0,
                 resizeMode: item.service === false ? 'cover' : 'contain',
               }}
             />

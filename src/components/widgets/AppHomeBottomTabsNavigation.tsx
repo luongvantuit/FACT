@@ -178,11 +178,11 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   alignItems: 'center',
                 }}>
                 <Image
-                  source={require('../../assets/leak.jpeg')}
+                  source={leakImage}
                   style={{
-                    width: 46,
-                    height: 46,
-                    borderRadius: 23,
+                    width: 40,
+                    height: 40,
+                    borderRadius: 8,
                     margin: 16,
                   }}
                 />
