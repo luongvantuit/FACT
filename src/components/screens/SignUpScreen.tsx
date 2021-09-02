@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {
+  KeyboardAvoidingView,
+  TouchableNativeFeedback,
+  View,
+} from 'react-native';
 export default class SignUpScreen extends Component<
   {
     navigation: any;
@@ -7,6 +11,12 @@ export default class SignUpScreen extends Component<
   any
 > {
   render() {
-    return <View></View>;
+    return (
+      <KeyboardAvoidingView>
+        <TouchableNativeFeedback>
+          <View></View>
+        </TouchableNativeFeedback>
+      </KeyboardAvoidingView>
+    );
   }
 }

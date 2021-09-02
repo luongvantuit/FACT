@@ -70,6 +70,9 @@ export default class SignInScreen extends Component<
               <Pressable
                 style={{
                   marginHorizontal: 8,
+                }}
+                onPress={() => {
+                  this.props.navigation.navigate('sign-up');
                 }}>
                 <Text
                   style={{
@@ -86,7 +89,7 @@ export default class SignInScreen extends Component<
                 marginHorizontal: 32,
                 marginTop: 16,
                 marginBottom: 12,
-                paddingVertical: 16,
+                paddingVertical: Platform.OS === 'android' ? 16 : 20,
                 paddingHorizontal: 16,
                 backgroundColor: '#D7D7D7',
                 borderRadius: 8,
@@ -107,7 +110,7 @@ export default class SignInScreen extends Component<
                 }}>
                 Forgot Password?
               </Text>
-              <Pressable style={{marginHorizontal: 8}}>
+              <Pressable style={{marginHorizontal: 8}} onPress={() => {}}>
                 <Text
                   style={{
                     fontWeight: '800',
@@ -123,11 +126,15 @@ export default class SignInScreen extends Component<
                 backgroundColor: '#363636',
                 paddingVertical: 16,
                 borderRadius: 8,
+              }}
+              onPress={() => {
+                this.props.navigation.navigate('app-user');
               }}>
               <Text
                 style={{
                   textAlign: 'center',
                   color: 'white',
+                  fontWeight: '900',
                 }}>
                 Next Step
               </Text>
