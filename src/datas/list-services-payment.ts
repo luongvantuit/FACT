@@ -1,5 +1,5 @@
-import { highlandsCoffeeImage, kFCImage, leakNDHImage } from "../assets";
-import { ServicePayment } from "../types/service-payment";
+import {highlandsCoffeeImage, kFCImage, leakNDHImage} from '../assets';
+import {ServicePayment} from '../types/service-payment';
 const listServicesPayment: Array<ServicePayment> = [
   {
     id: '1',

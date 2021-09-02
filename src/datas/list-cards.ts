@@ -1,4 +1,4 @@
-import { Card } from "../types/card";
+import {Card} from '../types/card';
 const listCards: Array<Card> = [
   {
     expiryEnd: '02/25',
