@@ -13,7 +13,11 @@ export default function ListCards() {
         snapToAlignment="center"
         pagingEnabled
         decelerationRate="fast"
-        snapToInterval={Dimensions.get('window').width - 48}
+        snapToInterval={
+          Platform.OS === 'android'
+            ? Dimensions.get('window').width - 70
+            : Dimensions.get('window').width - 48
+        }
         onScroll={e => {
           setPage(
             Math.round(
@@ -22,18 +26,17 @@ export default function ListCards() {
             ),
           );
         }}
-        renderItem={({item}) => (
+        renderItem={({item, index}) => (
           <View
             style={{
               backgroundColor: 'white',
               marginHorizontal: 8,
-              marginVertical: 16,
+              marginVertical: index === page ? 16 : 26,
               display: 'flex',
               flexDirection: 'row',
               padding: 16,
               borderRadius: 8,
               width: Dimensions.get('window').width - 64,
-              height: 190,
               elevation: 8,
               shadowColor: '#000',
               shadowOffset: {
@@ -42,6 +45,7 @@ export default function ListCards() {
               },
               shadowOpacity: 0.3,
               shadowRadius: 4.65,
+              height: index === page ? 200 : 180,
             }}>
             <View
               style={{
@@ -142,7 +146,7 @@ export default function ListCards() {
                 backgroundColor: index === page ? 'black' : '#f2f2f2',
                 borderColor: '#D7D7D7',
                 borderWidth: 0.5,
-                width: 8,
+                width: index === page ? 16 : 8,
                 height: 8,
                 borderRadius: 4,
                 marginHorizontal: 4,
