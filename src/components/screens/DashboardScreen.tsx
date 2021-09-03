@@ -8,12 +8,14 @@ import {
   Text,
   View,
 } from 'react-native';
-import {leakImage} from '../../assets';
+import {charliePuth, leakImage, snoopDogg, taylorSwift} from '../../assets';
 import user from '../../datas/user';
 import AppTheme from '../../themes/app-theme';
 import Ionicons from '../fonts-icon/ionicons';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
+
+const listImg = [charliePuth, snoopDogg, taylorSwift];
 
 export default function DashboardScreen() {
   const theme: AppTheme = useTheme() as AppTheme;
@@ -149,6 +151,51 @@ export default function DashboardScreen() {
               </View>
             </Pressable>
           </View>
+        </View>
+      </View>
+      <View
+        style={{
+          marginTop: 16,
+          marginBottom: 40,
+          display: 'flex',
+          flexDirection: 'row',
+          marginHorizontal: 16,
+        }}>
+        {listImg.map((item, index) => {
+          return (
+            <View
+              style={{
+                position: 'absolute',
+                left: index * 30,
+              }}>
+              <Image
+                source={item}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
+                }}
+              />
+            </View>
+          );
+        })}
+        <View
+          style={{
+            position: 'absolute',
+            left: listImg.length * 30,
+          }}>
+          <Pressable
+            style={{
+              display: 'flex',
+              width: 40,
+              height: 40,
+              backgroundColor: '#D7D7D7',
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 20,
+            }}>
+            <Ionicons color={'#000'} name={'add'} size={24} />
+          </Pressable>
         </View>
       </View>
       <ListCard />
