@@ -1,5 +1,5 @@
 import {useTheme} from '@react-navigation/native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -17,9 +17,23 @@ export default function OPTSignInScreen({navigation}: any) {
   const [position, setPosition] = useState<number>(0);
   const [codeOPT, setCodeOPT] = useState<Array<string>>(['', '', '', '']);
   const theme: AppTheme = useTheme() as AppTheme;
+  useEffect(() => {
+    var opt: string = '';
+    for (let index = 0; index < codeOPT.length; index++) opt += codeOPT[index];
+    if (opt.length === 4) navigation.navigate('app-user');
+  });
   return (
     <View>
-      <Text>Code OPT</Text>
+      <Text
+        style={{
+          fontWeight: '900',
+          margin: 32,
+          fontSize: 32,
+          textAlign: 'center',
+          color: theme.app?.textColor,
+        }}>
+        Code OPT
+      </Text>
       <View
         style={{
           marginHorizontal: 24,
@@ -43,7 +57,6 @@ export default function OPTSignInScreen({navigation}: any) {
                 width: 1,
                 height: 4,
               },
-
               shadowOpacity: 0.3,
               shadowRadius: 4.65,
               height: 68,
@@ -63,6 +76,29 @@ export default function OPTSignInScreen({navigation}: any) {
           </Pressable>
         ))}
       </View>
+      <View
+        style={{
+          marginTop: 20,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text
+          style={{
+            fontWeight: '800',
+            color: theme.app?.textColor,
+          }}>
+          Send Again Code?
+        </Text>
+        <Text
+          style={{
+            fontWeight: '700',
+            color: theme.app?.textColor,
+          }}>
+          {' 02:03'}
+        </Text>
+      </View>
       <KeyPadCustom
         onPress={(key: any) => {
           const newCodeOPT: Array<string> = [];
@@ -70,7 +106,9 @@ export default function OPTSignInScreen({navigation}: any) {
             newCodeOPT.push(codeOPT[index]);
           }
           if (key !== 'delete') {
-            newCodeOPT[position] = key;
+            if (position === 3) {
+              if (newCodeOPT[position] === '') newCodeOPT[position] = key;
+            } else newCodeOPT[position] = key;
             if (position < 3) setPosition(position + 1);
           } else {
             if (newCodeOPT[position] === '') newCodeOPT[position - 1] = '';
@@ -81,6 +119,28 @@ export default function OPTSignInScreen({navigation}: any) {
           setCodeOPT(newCodeOPT);
         }}
       />
+      <Pressable
+        style={{
+          marginHorizontal: 32,
+          justifyContent: 'center',
+          paddingVertical: 16,
+          borderRadius: 8,
+          marginVertical: 16,
+          backgroundColor: theme.app?.backgroundButtonColor,
+          borderWidth: 0.3,
+        }}
+        onPress={() => {
+          navigation.goBack();
+        }}>
+        <Text
+          style={{
+            textAlign: 'center',
+            color: theme.app?.textButtonColor,
+            fontWeight: '900',
+          }}>
+          Go Back
+        </Text>
+      </Pressable>
     </View>
   );
 }
@@ -103,7 +163,7 @@ export function KeyPadCustom(props: {onPress?: (key: any) => void}) {
     <View
       style={{
         marginHorizontal: 32,
-        marginVertical: 32,
+        marginVertical: 16,
         display: 'flex',
         flexWrap: 'wrap',
         flexShrink: 3,
