@@ -28,6 +28,8 @@ export default function SignUpScreen({navigation}: any) {
         behavior={'padding'}>
         <View
           style={{
+            display: 'flex',
+            flexDirection: 'column',
             paddingTop: Dimensions.get('screen').height / 3,
           }}>
           <TextInput

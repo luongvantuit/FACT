@@ -31,10 +31,6 @@ export default function AppRegisterStackNavigation() {
                 style={{
                   paddingTop: Platform.OS === 'android' ? 0 : 54,
                   backgroundColor: theme.app?.backgroundHeaderColor,
-                  position: 'relative',
-                  top: 0,
-                  left: 0,
-                  right: 0,
                 }}>
                 <Pressable
                   onPress={() => {
@@ -42,6 +38,11 @@ export default function AppRegisterStackNavigation() {
                   }}
                   style={{
                     margin: 16,
+                    width: 40,
+                    height: 40,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                   }}>
                   <EntypoIcons
                     name="chevron-small-left"

@@ -20,6 +20,11 @@ export default function ProfileScreen({navigation}: any) {
             }}
             style={{
               margin: 16,
+              width: 40,
+              height: 40,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}>
             <EntypoIcons
               name="chevron-small-left"
