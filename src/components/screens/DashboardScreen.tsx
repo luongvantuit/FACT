@@ -15,7 +15,17 @@ import Ionicons from '../fonts-icon/ionicons';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
 
-const listImg = [charliePuth, snoopDogg, taylorSwift];
+const listImg: Array<{
+  id: string;
+  img: any;
+}> = [
+  {
+    id: '0',
+    img: taylorSwift,
+  },
+  {id: '1', img: charliePuth},
+  {id: '2', img: snoopDogg},
+];
 
 export default function DashboardScreen() {
   const theme: AppTheme = useTheme() as AppTheme;
@@ -167,9 +177,10 @@ export default function DashboardScreen() {
               style={{
                 position: 'absolute',
                 left: index * 30,
-              }}>
+              }}
+              key={item.id}>
               <Image
-                source={item}
+                source={item.img}
                 style={{
                   width: 40,
                   height: 40,
