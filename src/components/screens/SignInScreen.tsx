@@ -129,7 +129,7 @@ export default function SignInScreen({navigation}: any) {
               marginVertical: 16,
             }}
             onPress={() => {
-              navigation.navigate('app-user');
+              navigation.navigate('opt-sign-in');
             }}>
             <Text
               style={{

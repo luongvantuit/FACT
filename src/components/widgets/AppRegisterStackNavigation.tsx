@@ -13,6 +13,7 @@ import {
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import AppTheme from '../../themes/app-theme';
 import {useTheme} from '@react-navigation/native';
+import OPTSignInScreen from '../screens/OPTSignInScreen';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -25,6 +26,36 @@ export default function AppRegisterStackNavigation() {
         component={SignInScreen}
         options={{
           headerShown: false,
+        }}
+      />
+      <AppRegisterStack.Screen
+        name={'opt-sign-in'}
+        component={OPTSignInScreen}
+        options={{
+          header: props => (
+            <View
+              style={{
+                paddingTop: Platform.OS === 'android' ? 0 : 54,
+                backgroundColor: theme.app?.backgroundHeaderColor,
+                display: 'flex',
+                alignItems: 'flex-start',
+              }}>
+              <Pressable
+                onPress={() => {
+                  props.navigation.goBack();
+                }}
+                style={{
+                  marginVertical: 16,
+                  marginHorizontal: 25,
+                }}>
+                <EntypoIcons
+                  name="chevron-small-left"
+                  size={32}
+                  color={theme.app?.iconHeaderColor}
+                />
+              </Pressable>
+            </View>
+          ),
         }}
       />
       <AppRegisterStack.Screen
