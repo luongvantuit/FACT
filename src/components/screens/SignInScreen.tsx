@@ -102,7 +102,6 @@ export default function SignInScreen({navigation}: any) {
               flexDirection: 'row',
               alignItems: 'center',
               marginHorizontal: 32,
-              marginBottom: 32,
             }}>
             <Text
               style={{
@@ -127,6 +126,7 @@ export default function SignInScreen({navigation}: any) {
               backgroundColor: theme.app?.backgroundButtonColor,
               paddingVertical: 16,
               borderRadius: 8,
+              marginVertical: 16,
             }}
             onPress={() => {
               navigation.navigate('app-user');

@@ -1,6 +1,6 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {View, Text, Pressable, Platform} from 'react-native';
+import {View, Text, Pressable, Platform, TouchableOpacity} from 'react-native';
 import AppTheme from '../../themes/app-theme';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 
@@ -13,6 +13,8 @@ export default function ProfileScreen({navigation}: any) {
           style={{
             paddingTop: Platform.OS === 'android' ? 0 : 54,
             backgroundColor: theme.app?.backgroundHeaderColor,
+            display: 'flex',
+            alignItems: 'flex-start',
           }}>
           <Pressable
             onPress={() => {
@@ -20,11 +22,6 @@ export default function ProfileScreen({navigation}: any) {
             }}
             style={{
               margin: 16,
-              width: 40,
-              height: 40,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
             }}>
             <EntypoIcons
               name="chevron-small-left"

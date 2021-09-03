@@ -2,7 +2,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
-import {Platform, Pressable, View} from 'react-native';
+import {
+  Keyboard,
+  Platform,
+  Pressable,
+  View,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+} from 'react-native';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import AppTheme from '../../themes/app-theme';
 import {useTheme} from '@react-navigation/native';
@@ -27,30 +34,30 @@ export default function AppRegisterStackNavigation() {
           headerShown: true,
           header: props => {
             return (
-              <View
-                style={{
-                  paddingTop: Platform.OS === 'android' ? 0 : 54,
-                  backgroundColor: theme.app?.backgroundHeaderColor,
-                }}>
-                <Pressable
-                  onPress={() => {
-                    props.navigation.goBack();
-                  }}
+              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View
                   style={{
-                    margin: 16,
-                    width: 40,
-                    height: 40,
+                    paddingTop: Platform.OS === 'android' ? 0 : 54,
+                    backgroundColor: theme.app?.backgroundHeaderColor,
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                   }}>
-                  <EntypoIcons
-                    name="chevron-small-left"
-                    size={32}
-                    color={theme.app?.iconHeaderColor}
-                  />
-                </Pressable>
-              </View>
+                  <Pressable
+                    onPress={() => {
+                      props.navigation.goBack();
+                    }}
+                    style={{
+                      marginVertical: 16,
+                      marginHorizontal: 32,
+                    }}>
+                    <EntypoIcons
+                      name="chevron-small-left"
+                      size={32}
+                      color={theme.app?.iconHeaderColor}
+                    />
+                  </Pressable>
+                </View>
+              </TouchableWithoutFeedback>
             );
           },
         }}
