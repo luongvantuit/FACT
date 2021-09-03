@@ -19,7 +19,7 @@ export default function AppUserStackNavigation() {
         name={'profile'}
         component={ProfileScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
         }}
       />
     </AppUserStack.Navigator>
