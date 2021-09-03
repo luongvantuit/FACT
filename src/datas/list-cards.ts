@@ -6,7 +6,7 @@ const listCards: Array<Card> = [
     name: 'VAN TU/LUONG',
     nameBank: 'TECHCOMBANK',
     type: 'Debit',
-    numberCard: '4862 8298 8511 5379',
+    numberCard: '**** **** **** 5379',
     service: 'visa',
   },
   {
@@ -15,7 +15,7 @@ const listCards: Array<Card> = [
     name: 'THANH DAT/LE',
     nameBank: 'TECHCOMBANK',
     type: 'Credit',
-    numberCard: '5412 6572 2343 4657',
+    numberCard: '**** **** **** 4657',
     service: 'master-card',
   },
   {
@@ -24,7 +24,7 @@ const listCards: Array<Card> = [
     name: 'DUC HUY/NGUYEN',
     nameBank: 'TECHCOMBANK',
     type: 'Debit',
-    numberCard: '4122 2545 2345 7689',
+    numberCard: '**** **** **** 7689',
     service: 'visa',
   },
 ];
