@@ -4,6 +4,7 @@ import AppTheme from './app-theme';
 const ThemeLight: AppTheme = {
   colors: {
     ...DefaultTheme.colors,
+    background: '#f2f2f2',
   },
   dark: DefaultTheme.dark,
   app: {
@@ -17,11 +18,12 @@ const ThemeLight: AppTheme = {
     textInputColor: '#000',
     shadowColor: '#000',
     borderColor: '#D7D7D7',
-    backgroundHeaderColor: '#fff',
+    backgroundHeaderColor: '#f2f2f2',
     labelBottomTabsColor: '#000',
     iconBottomTabsColor: '#000',
     labelBottomTabsFocusedColor: '#000',
     iconBottomTabsFocusedColor: '#000',
+    iconHeaderColor: '#000',
   },
 };
 

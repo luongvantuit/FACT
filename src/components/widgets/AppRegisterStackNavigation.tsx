@@ -4,10 +4,13 @@ import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import {Platform, Pressable, View} from 'react-native';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import AppTheme from '../../themes/app-theme';
+import {useTheme} from '@react-navigation/native';
 
 const AppRegisterStack = createNativeStackNavigator();
 
 export default function AppRegisterStackNavigation() {
+  const theme: AppTheme = useTheme();
   return (
     <AppRegisterStack.Navigator initialRouteName={'sign-in'}>
       <AppRegisterStack.Screen
@@ -27,7 +30,11 @@ export default function AppRegisterStackNavigation() {
               <View
                 style={{
                   paddingTop: Platform.OS === 'android' ? 0 : 54,
-                  backgroundColor: '#f2f2f2',
+                  backgroundColor: theme.app?.backgroundHeaderColor,
+                  position: 'relative',
+                  top: 0,
+                  left: 0,
+                  right: 0,
                 }}>
                 <Pressable
                   onPress={() => {
@@ -39,7 +46,7 @@ export default function AppRegisterStackNavigation() {
                   <EntypoIcons
                     name="chevron-small-left"
                     size={32}
-                    color={'black'}
+                    color={theme.app?.iconHeaderColor}
                   />
                 </Pressable>
               </View>

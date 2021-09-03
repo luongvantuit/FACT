@@ -85,6 +85,9 @@ interface AppTheme extends Theme {
     shadowColor?: string;
     shadowPrimaryColor?: string;
     shadowSecondaryColor?: string;
+    iconHeaderColor?: string;
+    iconHeaderPrimaryColor?: string;
+    iconHeaderSecondaryColor?: string;
   };
 }
 

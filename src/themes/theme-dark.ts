@@ -10,15 +10,16 @@ const ThemeDark: AppTheme = {
     backgroundTextInputColor: '#D7D7D7',
     backgroundButtonColor: '#fff',
     textButtonColor: '#363636',
-    backgroundScreenColor: '#000',
+    backgroundScreenColor: '#707070',
     textInputColor: '#000',
     shadowColor: '#fff',
     borderColor: '#f2f2f2',
-    backgroundHeaderColor: '#000',
+    backgroundHeaderColor: '#101010',
     labelBottomTabsColor: '#fff',
     iconBottomTabsColor: '#fff',
     labelBottomTabsFocusedColor: '#fff',
     iconBottomTabsFocusedColor: '#fff',
+    iconHeaderColor: '#fff',
   },
 };
 export default ThemeDark;
