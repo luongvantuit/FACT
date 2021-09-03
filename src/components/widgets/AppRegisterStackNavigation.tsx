@@ -48,7 +48,7 @@ export default function AppRegisterStackNavigation() {
                     }}
                     style={{
                       marginVertical: 16,
-                      marginHorizontal: 32,
+                      marginHorizontal: 25,
                     }}>
                     <EntypoIcons
                       name="chevron-small-left"

@@ -32,8 +32,8 @@ export default function SignInScreen({navigation}: any) {
           }}>
           <Text
             style={{
-              fontWeight: '800',
-              fontSize: 28,
+              fontWeight: '900',
+              fontSize: 24,
               color: theme.app?.textColor,
               marginHorizontal: 32,
               marginVertical: 8,
@@ -43,10 +43,10 @@ export default function SignInScreen({navigation}: any) {
           <Text
             style={{
               color: theme.app?.textColor,
-              fontWeight: '800',
-              fontSize: 32,
+              fontWeight: '900',
+              fontSize: 28,
               marginHorizontal: 32,
-              marginVertical: 8,
+              marginBottom: 8,
             }}>
             Sign In, Now.
           </Text>
