@@ -2,8 +2,9 @@ import {useTheme} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
 import AppTheme from '../../themes/app-theme';
+import RadioButtonGroup from '../widgets/RadioButtonGroup';
 
-export default function SelectTypePersonalDocuments({navigation}: any) {
+export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
   const theme: AppTheme = useTheme();
   return (
     <View
@@ -15,8 +16,8 @@ export default function SelectTypePersonalDocuments({navigation}: any) {
           Dimensions.get('window').height -
           (Platform.OS === 'android' ? 64 : 118),
       }}>
-      <View style={{marginHorizontal: 32}}>
-        <Text></Text>
+      <View style={{marginHorizontal: 32, marginVertical: 16}}>
+        <RadioButtonGroup items={[{label: 'CCCD/CMND'}, {label: 'Passport'}]} />
       </View>
       <View
         style={{

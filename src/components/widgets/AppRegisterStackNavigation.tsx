@@ -14,7 +14,7 @@ import EntypoIcons from '../fonts-icon/entypo-icons';
 import AppTheme from '../../themes/app-theme';
 import {useTheme} from '@react-navigation/native';
 import OPTSignInScreen from '../screens/OPTSignInScreen';
-import SelectTypePersonalDocuments from '../screens/SelectTypePersonalDocuments';
+import SelectTypePersonalDocumentsScreen from '../screens/SelectTypePersonalDocumentsScreen';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -96,7 +96,7 @@ export default function AppRegisterStackNavigation() {
       />
       <AppRegisterStack.Screen
         name={'select-type-personal-documents'}
-        component={SelectTypePersonalDocuments}
+        component={SelectTypePersonalDocumentsScreen}
         options={{
           headerShown: true,
           header: props => {
