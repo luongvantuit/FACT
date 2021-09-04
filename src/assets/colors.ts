@@ -1,0 +1,29 @@
+export default class Colors {
+  static yellowLightest: string = '#FFF7EA';
+  static yellowLighter: string = '#FFE2AE';
+  static yellowLight: string = '#FBD083';
+  static yellow: string = '#FFC764';
+  static yellowDark: string = '#EFA92E';
+  static white: string = '#FFFFFF';
+  static neutralLightest: string = '#F7F7F7';
+  static neutralLighter: string = '#D8D9DA';
+  static neutralLight: string = '#B1B3B5';
+  static neutralDark: string = '#8B8C8F';
+  static neutralDarker: string = '#64666A';
+  static neutralDarkest: string = '#000000';
+  static matteBlack: string = '#363636';
+  static blueLightest: string = '#EEF7FF';
+  static blueLighter: string = '#9DCDFA';
+  static blueLight: string = '#4B99E6';
+  static blue: string = '#005FB9';
+  static blueDark: string = '#02427E';
+  static greenLightest: string = '#E3FAF2';
+  static greenLighter: string = '#81D6B8';
+  static greenLight: string = '#40AD87';
+  static green: string = '#008254';
+  static greenDark: string = '#006642';
+  static redLightest: string = '#FFE8E8';
+  static redLighter: string = '#FF9090';
+  static red: string = '#DE2828';
+  static redDark: string = '#B40000';
+}

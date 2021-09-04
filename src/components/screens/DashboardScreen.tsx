@@ -205,7 +205,7 @@ export default function DashboardScreen() {
               alignItems: 'center',
               borderRadius: 20,
             }}>
-            <Ionicons color={'#000'} name={'add'} size={24} />
+            <Ionicons color={'#363636'} name={'add'} size={24} />
           </Pressable>
         </View>
       </View>
