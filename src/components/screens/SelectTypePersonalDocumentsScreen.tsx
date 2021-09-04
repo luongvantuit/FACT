@@ -16,7 +16,25 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           Dimensions.get('window').height -
           (Platform.OS === 'android' ? 64 : 118),
       }}>
-      <View style={{marginHorizontal: 32, marginVertical: 16}}>
+      <View style={{marginHorizontal: 32, marginVertical: 32}}>
+        <Text
+          style={{
+            color: theme.app?.textColor,
+            fontWeight: '900',
+            fontSize: 28,
+            marginBottom: 8,
+          }}>
+          Now. Please Select Indentity Papers
+        </Text>
+        <Text
+          style={{
+            color: theme.app?.textColor,
+            fontWeight: '900',
+            fontSize: 24,
+            marginBottom: 16,
+          }}>
+          Step 2
+        </Text>
         <RadioButtonGroup items={[{label: 'CCCD/CMND'}, {label: 'Passport'}]} />
       </View>
       <View
