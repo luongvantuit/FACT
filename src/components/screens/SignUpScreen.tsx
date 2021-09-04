@@ -87,7 +87,9 @@ export default function SignUpScreen({navigation}: any) {
                 paddingVertical: 16,
                 borderRadius: 8,
               }}
-              onPress={() => {}}>
+              onPress={() => {
+                navigation.navigate('select-type-personal-documents');
+              }}>
               <Text
                 style={{
                   textAlign: 'center',

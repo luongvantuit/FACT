@@ -14,6 +14,7 @@ import EntypoIcons from '../fonts-icon/entypo-icons';
 import AppTheme from '../../themes/app-theme';
 import {useTheme} from '@react-navigation/native';
 import OPTSignInScreen from '../screens/OPTSignInScreen';
+import SelectTypePersonalDocuments from '../screens/SelectTypePersonalDocuments';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -61,6 +62,41 @@ export default function AppRegisterStackNavigation() {
       <AppRegisterStack.Screen
         name={'sign-up'}
         component={SignUpScreen}
+        options={{
+          headerShown: true,
+          header: props => {
+            return (
+              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View
+                  style={{
+                    paddingTop: Platform.OS === 'android' ? 0 : 54,
+                    backgroundColor: theme.app?.backgroundHeaderColor,
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                  }}>
+                  <Pressable
+                    onPress={() => {
+                      props.navigation.goBack();
+                    }}
+                    style={{
+                      marginVertical: 16,
+                      marginHorizontal: 25,
+                    }}>
+                    <EntypoIcons
+                      name="chevron-small-left"
+                      size={32}
+                      color={theme.app?.iconHeaderColor}
+                    />
+                  </Pressable>
+                </View>
+              </TouchableWithoutFeedback>
+            );
+          },
+        }}
+      />
+      <AppRegisterStack.Screen
+        name={'select-type-personal-documents'}
+        component={SelectTypePersonalDocuments}
         options={{
           headerShown: true,
           header: props => {

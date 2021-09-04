@@ -32,7 +32,7 @@ export default function OPTSignInScreen({navigation}: any) {
           textAlign: 'center',
           color: theme.app?.textColor,
         }}>
-        Code OPT
+        OPT Code
       </Text>
       <View
         style={{
