@@ -81,7 +81,7 @@ export default function SignInScreen({navigation}: any) {
             </Pressable>
           </View>
           <TextInput
-            placeholder={'Number Phone'}
+            placeholder={'Phone Number'}
             keyboardType={'numeric'}
             style={{
               marginHorizontal: 32,

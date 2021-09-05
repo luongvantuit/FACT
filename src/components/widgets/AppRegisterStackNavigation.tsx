@@ -13,9 +13,9 @@ import {
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import AppTheme from '../../themes/app-theme';
 import {useTheme} from '@react-navigation/native';
-import OPTSignInScreen from '../screens/OPTSignInScreen';
+import OTPSignInScreen from '../screens/OTPSignInScreen'; '../screens/OTPSignInScreen';
 import SelectTypePersonalDocumentsScreen from '../screens/SelectTypePersonalDocumentsScreen';
-import OPTSignUpScreen from '../screens/OPTSignUpScreen';
+import OTPSignUpScreen from '../screens/OTPSignUpScreen';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -32,7 +32,7 @@ export default function AppRegisterStackNavigation() {
       />
       <AppRegisterStack.Screen
         name={'opt-sign-in'}
-        component={OPTSignInScreen}
+        component={OTPSignInScreen}
         options={{
           header: props => (
             <View
@@ -132,7 +132,7 @@ export default function AppRegisterStackNavigation() {
       />
       <AppRegisterStack.Screen
         name={'opt-sign-up'}
-        component={OPTSignUpScreen}
+        component={OTPSignUpScreen}
         options={{
           headerShown: true,
           header: props => {

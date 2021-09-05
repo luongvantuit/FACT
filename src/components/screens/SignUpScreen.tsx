@@ -61,10 +61,10 @@ export default function SignUpScreen({navigation}: any) {
                 fontSize: 22,
                 marginVertical: 16,
               }}>
-              Enter Your Number Phone
+              Enter Your Phone Number
             </Text>
             <TextInput
-              placeholder={'Number Phone'}
+              placeholder={'Phone Number'}
               placeholderTextColor={theme.app?.placeholderTextColor}
               style={{
                 marginHorizontal: 32,

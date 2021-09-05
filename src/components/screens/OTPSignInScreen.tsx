@@ -6,14 +6,14 @@ import KeypadCustom from '../widgets/KeypadCustom';
 
 const len = [0, 1, 2, 3];
 
-export default function OPTSignUpScreen({navigation}: any) {
+export default function OTPSignInScreen({navigation}: any) {
   const [position, setPosition] = useState<number>(0);
   const [codeOPT, setCodeOPT] = useState<Array<string>>(['', '', '', '']);
   const theme: AppTheme = useTheme() as AppTheme;
   useEffect(() => {
     var opt: string = '';
     for (let index = 0; index < codeOPT.length; index++) opt += codeOPT[index];
-    if (opt.length === 4) navigation.navigate('select-type-personal-documents');
+    if (opt.length === 4) navigation.navigate('app-user');
   });
   return (
     <View>
@@ -25,7 +25,7 @@ export default function OPTSignUpScreen({navigation}: any) {
           textAlign: 'center',
           color: theme.app?.textColor,
         }}>
-        OPT Code
+        OTP Code
       </Text>
       <View
         style={{
