@@ -25,6 +25,8 @@ const ThemeLight: AppTheme = {
     labelBottomTabsFocusedColor: '#000',
     iconBottomTabsFocusedColor: '#000',
     iconHeaderColor: Colors.matteBlack,
+    textOTPColor : Colors.matteBlack,
+    backgroundOTPColor : Colors.white,
   },
 };
 

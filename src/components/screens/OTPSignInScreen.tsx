@@ -43,7 +43,7 @@ export default function OTPSignInScreen({navigation}: any) {
               borderRadius: 8,
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: '#f2f2f2',
+              backgroundColor: theme.app?.backgroundOTPColor,
               elevation: 8,
               shadowColor: theme.app?.shadowColor,
               shadowOffset: {
@@ -53,7 +53,7 @@ export default function OTPSignInScreen({navigation}: any) {
               shadowOpacity: 0.3,
               shadowRadius: 4.65,
               height: 68,
-              borderColor: '#D7D7D7',
+              borderColor: theme.app?.borderColor,
               borderWidth: index === position ? 0.5 : 0,
             }}
             key={item}
@@ -63,6 +63,7 @@ export default function OTPSignInScreen({navigation}: any) {
             <Text
               style={{
                 fontWeight: '900',
+                color: theme.app?.textOTPColor
               }}>
               {codeOPT[index]}
             </Text>
