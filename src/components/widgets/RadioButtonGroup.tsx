@@ -1,6 +1,7 @@
 import {useTheme} from '@react-navigation/native';
 import React, {Component, useState} from 'react';
 import {Pressable, Text, View} from 'react-native';
+import Colors from '../../assets/colors';
 import AppTheme from '../../themes/app-theme';
 
 export default function RadioButtonGroup(props: {
@@ -46,7 +47,7 @@ export default function RadioButtonGroup(props: {
           }}>
           <View
             style={{
-              borderColor: '#363636',
+              borderColor: theme.app?.textColor,
               borderWidth: 2,
               width: 24,
               height: 24,
@@ -61,7 +62,7 @@ export default function RadioButtonGroup(props: {
                 width: 14,
                 height: 14,
                 borderRadius: 7,
-                backgroundColor: index === value ? '#363636' : '#fff',
+                backgroundColor: index === value ? theme.app?.textColor : '#ffffff00',
               }}
             />
           </View>
@@ -70,7 +71,7 @@ export default function RadioButtonGroup(props: {
           ) : (
             <Text
               style={{
-                color: '#000',
+                color: theme.app?.textColor,
                 fontWeight: '900',
               }}>
               {item.label}

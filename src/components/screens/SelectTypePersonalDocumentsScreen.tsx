@@ -1,6 +1,7 @@
 import {useTheme} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
+import Colors from '../../assets/colors';
 import AppTheme from '../../themes/app-theme';
 import RadioButtonGroup from '../widgets/RadioButtonGroup';
 
@@ -51,7 +52,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           },
           shadowOpacity: 0.3,
           shadowRadius: 4.65,
-          backgroundColor: '#fff',
+          backgroundColor: Colors.yellow,
         }}>
         <Pressable
           style={{

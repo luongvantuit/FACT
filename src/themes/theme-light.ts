@@ -5,11 +5,11 @@ import AppTheme from './app-theme';
 const ThemeLight: AppTheme = {
   colors: {
     ...DefaultTheme.colors,
-    background: Colors.yellow,
+    background: Colors.yellowDark,
   },
   dark: DefaultTheme.dark,
   app: {
-    textColor: '#000',
+    textColor: Colors.matteBlack,
     textPrimaryColor: '#707070',
     placeholderTextColor: '#A0A0A0',
     backgroundTextInputColor: '#D7D7D7',
@@ -19,7 +19,7 @@ const ThemeLight: AppTheme = {
     textInputColor: '#000',
     shadowColor: '#000',
     borderColor: '#D7D7D7',
-    backgroundHeaderColor: '#f2f2f2',
+    backgroundHeaderColor: Colors.yellowDark,
     labelBottomTabsColor: '#000',
     iconBottomTabsColor: '#000',
     labelBottomTabsFocusedColor: '#000',
