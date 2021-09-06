@@ -1,8 +1,16 @@
-import React from 'react'
-import { View, Text, Dimensions, } from 'react-native'
+import React, { useEffect } from 'react'
+import { View, Text, Dimensions, Platform, } from 'react-native'
 import { RNCamera } from 'react-native-camera'
+import { check, RESULTS } from 'react-native-permissions'
 
-export default function eKYCIndentificationScreen() {
+export default function eKYCIndentificationScreen({ navigation }: any) {
+    useEffect(() => {
+        check(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA')
+            .then(result => {
+                if (result === RESULTS.DENIED)
+                    navigation.goBack();
+            })
+    }, [])
     return (
         <View style={{
 
