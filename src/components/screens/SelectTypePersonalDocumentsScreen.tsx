@@ -1,7 +1,7 @@
 import { useTheme } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, Dimensions, Platform, Pressable } from 'react-native';
-import { check, request, RESULTS } from 'react-native-permissions';
+import { check, checkMultiple, request, RESULTS } from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import AppTheme from '../../themes/app-theme';
 import RadioButtonGroup from '../widgets/RadioButtonGroup';
@@ -64,19 +64,17 @@ export default function SelectTypePersonalDocumentsScreen({ navigation }: any) {
             borderRadius: 8,
           }}
           onPress={() => {
-            check(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA').then(
-              result => {
-                if (result === RESULTS.GRANTED)
-                  console.log('Hello')
-                else {
-                  request(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA').then(
-                    result => {
-                      console.log(result);
-                    }
-                  )
-                }
+            check(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA').then(result => {
+              if (result === RESULTS.GRANTED)
+                navigation.navigate('ekyc-indentification')
+              else {
+                request(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA')
+                  .then(result => {
+                    if (result === RESULTS.GRANTED)
+                      navigation.navigate('ekyc-indentification')
+                  })
               }
-            )
+            })
           }}>
           <Text
             style={{

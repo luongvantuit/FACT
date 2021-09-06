@@ -20,10 +20,7 @@ export default function SignUpScreen({ navigation }: any) {
   const theme: AppTheme = useTheme();
   return (
     <TouchableNativeFeedback
-      onPress={Keyboard.dismiss}
-      style={{
-        backgroundColor: theme.app?.backgroundScreenColor,
-      }}>
+      onPress={Keyboard.dismiss} >
       <KeyboardAvoidingView
         style={{
           flex: 1,

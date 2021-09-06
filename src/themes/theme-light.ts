@@ -1,4 +1,5 @@
 import { Theme, DefaultTheme } from '@react-navigation/native';
+import { Platform } from 'react-native';
 import Colors from '../assets/colors';
 import AppTheme from './app-theme';
 
@@ -6,6 +7,9 @@ const ThemeLight: AppTheme = {
   colors: {
     ...DefaultTheme.colors,
     background: Colors.yellowDark,
+    text: Colors.matteBlack,
+    border: Colors.matteBlack,
+    primary: Colors.yellowDark,
   },
   dark: DefaultTheme.dark,
   app: {

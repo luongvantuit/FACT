@@ -19,10 +19,7 @@ export default function SignInScreen({ navigation }: any) {
   const theme: AppTheme = useTheme() as AppTheme;
   return (
     <TouchableWithoutFeedback
-      onPress={Keyboard.dismiss}
-      style={{
-        backgroundColor: theme.app?.backgroundScreenColor,
-      }}>
+      onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={'position'}>
         <View
           style={{
