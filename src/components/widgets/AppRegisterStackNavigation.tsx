@@ -41,8 +41,7 @@ export default function AppRegisterStackNavigation() {
         name={'sign-up'}
         component={SignUpScreen}
         options={{
-          headerShown: true,
-          header: props => <HeaderApp {...props} />,
+          headerShown: false,
         }}
       />
       <AppRegisterStack.Screen
@@ -96,10 +95,7 @@ export function HeaderApp(props: NativeStackHeaderProps) {
             marginVertical: 16,
             marginHorizontal: 25,
           }}>
-          <EntypoIcons
-            name="chevron-small-left"
-            size={32}
-          />
+          <EntypoIcons name="chevron-small-left" size={32} />
         </Pressable>
       </View>
     </TouchableWithoutFeedback>

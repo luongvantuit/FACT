@@ -23,7 +23,7 @@ export default function SignInScreen({navigation}: any) {
             display: 'flex',
             flexDirection: 'column',
             paddingTop:
-              Dimensions.get('screen').height /
+              Dimensions.get('window').height /
               (Platform.OS === 'android' ? 3 : 2),
           }}>
           <Text

@@ -5,7 +5,7 @@ const ThemeLight: Theme = {
   colors: {
     card: Colors.yellow,
     background: Colors.yellowDark,
-    text: Colors.matteBlack,
+    text: Colors.blue,
     border: Colors.matteBlack,
     primary: Colors.yellowDark,
     notification: Colors.yellowLight,
