@@ -12,12 +12,13 @@ target 'FACT_TECHCOMBANK' do
     :hermes_enabled => false
   )
 
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+
 
   target 'FACT_TECHCOMBANKTests' do
     inherit! :complete
     # Pods for testing
-    permissions_path = '../node_modules/react-native-permissions/ios'
-    pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
   end
 
   # Enables Flipper.
