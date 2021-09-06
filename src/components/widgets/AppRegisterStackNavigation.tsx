@@ -67,16 +67,14 @@ export default function AppRegisterStackNavigation() {
         name={'ekyc-indentification'}
         component={eKYCIndentificationScreen}
         options={{
-          headerShown: true,
-          header: props => <HeaderApp {...props} />,
+          headerShown: false,
         }}
       />
       <AppRegisterStack.Screen
         name={'ekyc-face'}
         component={eKYCFaceScreen}
         options={{
-          headerShown: true,
-          header: props => <HeaderApp {...props} />,
+          headerShown: false,
         }}
       />
     </AppRegisterStack.Navigator>
