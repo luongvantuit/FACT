@@ -17,6 +17,8 @@ import OTPSignInScreen from '../screens/OTPSignInScreen'; '../screens/OTPSignInS
 import SelectTypePersonalDocumentsScreen from '../screens/SelectTypePersonalDocumentsScreen';
 import OTPSignUpScreen from '../screens/OTPSignUpScreen';
 import eKYCIndentificationScreen from '../screens/eKYCIndentificationScreen';
+import eKYCFaceScreen from '../screens/eKYCFaceScreen';
+import { NativeStackHeaderProps } from '@react-navigation/native-stack/lib/typescript/src/types';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -35,30 +37,7 @@ export default function AppRegisterStackNavigation() {
         name={'otp-sign-in'}
         component={OTPSignInScreen}
         options={{
-          header: props => (
-            <View
-              style={{
-                paddingTop: Platform.OS === 'android' ? 0 : 54,
-                backgroundColor: theme.app?.backgroundHeaderColor,
-                display: 'flex',
-                alignItems: 'flex-start',
-              }}>
-              <Pressable
-                onPress={() => {
-                  props.navigation.goBack();
-                }}
-                style={{
-                  marginVertical: 16,
-                  marginHorizontal: 25,
-                }}>
-                <EntypoIcons
-                  name="chevron-small-left"
-                  size={32}
-                  color={theme.app?.iconHeaderColor}
-                />
-              </Pressable>
-            </View>
-          ),
+          header: props => (<HeaderApp {...props} />),
         }}
       />
       <AppRegisterStack.Screen
@@ -66,34 +45,7 @@ export default function AppRegisterStackNavigation() {
         component={SignUpScreen}
         options={{
           headerShown: true,
-          header: props => {
-            return (
-              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View
-                  style={{
-                    paddingTop: Platform.OS === 'android' ? 0 : 54,
-                    backgroundColor: theme.app?.backgroundHeaderColor,
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                  }}>
-                  <Pressable
-                    onPress={() => {
-                      props.navigation.goBack();
-                    }}
-                    style={{
-                      marginVertical: 16,
-                      marginHorizontal: 25,
-                    }}>
-                    <EntypoIcons
-                      name="chevron-small-left"
-                      size={32}
-                      color={theme.app?.iconHeaderColor}
-                    />
-                  </Pressable>
-                </View>
-              </TouchableWithoutFeedback>
-            );
-          },
+          header: props => (<HeaderApp {...props} />),
         }}
       />
       <AppRegisterStack.Screen
@@ -101,34 +53,7 @@ export default function AppRegisterStackNavigation() {
         component={SelectTypePersonalDocumentsScreen}
         options={{
           headerShown: true,
-          header: props => {
-            return (
-              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View
-                  style={{
-                    paddingTop: Platform.OS === 'android' ? 0 : 54,
-                    backgroundColor: theme.app?.backgroundHeaderColor,
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                  }}>
-                  <Pressable
-                    onPress={() => {
-                      props.navigation.goBack();
-                    }}
-                    style={{
-                      marginVertical: 16,
-                      marginHorizontal: 25,
-                    }}>
-                    <EntypoIcons
-                      name="chevron-small-left"
-                      size={32}
-                      color={theme.app?.iconHeaderColor}
-                    />
-                  </Pressable>
-                </View>
-              </TouchableWithoutFeedback>
-            );
-          },
+          header: props => (<HeaderApp {...props} />),
         }}
       />
       <AppRegisterStack.Screen
@@ -136,34 +61,7 @@ export default function AppRegisterStackNavigation() {
         component={OTPSignUpScreen}
         options={{
           headerShown: true,
-          header: props => {
-            return (
-              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View
-                  style={{
-                    paddingTop: Platform.OS === 'android' ? 0 : 54,
-                    backgroundColor: theme.app?.backgroundHeaderColor,
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                  }}>
-                  <Pressable
-                    onPress={() => {
-                      props.navigation.goBack();
-                    }}
-                    style={{
-                      marginVertical: 16,
-                      marginHorizontal: 25,
-                    }}>
-                    <EntypoIcons
-                      name="chevron-small-left"
-                      size={32}
-                      color={theme.app?.iconHeaderColor}
-                    />
-                  </Pressable>
-                </View>
-              </TouchableWithoutFeedback>
-            );
-          },
+          header: props => (<HeaderApp {...props} />),
         }}
       />
       <AppRegisterStack.Screen
@@ -171,36 +69,47 @@ export default function AppRegisterStackNavigation() {
         component={eKYCIndentificationScreen}
         options={{
           headerShown: true,
-          header: props => {
-            return (
-              <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View
-                  style={{
-                    paddingTop: Platform.OS === 'android' ? 0 : 54,
-                    backgroundColor: theme.app?.backgroundHeaderColor,
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                  }}>
-                  <Pressable
-                    onPress={() => {
-                      props.navigation.goBack();
-                    }}
-                    style={{
-                      marginVertical: 16,
-                      marginHorizontal: 25,
-                    }}>
-                    <EntypoIcons
-                      name="chevron-small-left"
-                      size={32}
-                      color={theme.app?.iconHeaderColor}
-                    />
-                  </Pressable>
-                </View>
-              </TouchableWithoutFeedback>
-            );
-          },
+          header: props => (<HeaderApp {...props} />),
+        }}
+      />
+      <AppRegisterStack.Screen
+        name={'ekyc-face'}
+        component={eKYCFaceScreen}
+        options={{
+          headerShown: true,
+          header: props => (<HeaderApp {...props} />),
         }}
       />
     </AppRegisterStack.Navigator>
+  );
+}
+
+export function HeaderApp(props: NativeStackHeaderProps) {
+  const theme: AppTheme = useTheme();
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View
+        style={{
+          paddingTop: Platform.OS === 'android' ? 0 : 54,
+          backgroundColor: theme.app?.backgroundHeaderColor,
+          display: 'flex',
+          alignItems: 'flex-start',
+        }}>
+        <Pressable
+          onPress={() => {
+            props.navigation.goBack();
+          }}
+          style={{
+            marginVertical: 16,
+            marginHorizontal: 25,
+          }}>
+          <EntypoIcons
+            name="chevron-small-left"
+            size={32}
+            color={theme.app?.iconHeaderColor}
+          />
+        </Pressable>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
