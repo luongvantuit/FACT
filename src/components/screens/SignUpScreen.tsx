@@ -1,5 +1,5 @@
-import {useTheme} from '@react-navigation/native';
-import React, {Component} from 'react';
+import { useTheme } from '@react-navigation/native';
+import React, { Component } from 'react';
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -13,8 +13,10 @@ import {
   ScrollView,
 } from 'react-native';
 import AppTheme from '../../themes/app-theme';
+import shadowBox from '../widgets/ShadowBox';
+import TextInputRegister from '../widgets/TextInputRegister';
 
-export default function SignUpScreen({navigation}: any) {
+export default function SignUpScreen({ navigation }: any) {
   const theme: AppTheme = useTheme();
   return (
     <TouchableNativeFeedback
@@ -63,22 +65,7 @@ export default function SignUpScreen({navigation}: any) {
               }}>
               Enter Your Phone Number
             </Text>
-            <TextInput
-              placeholder={'Phone Number'}
-              placeholderTextColor={theme.app?.placeholderTextColor}
-              style={{
-                marginHorizontal: 32,
-                marginTop: 16,
-                marginBottom: 12,
-                paddingVertical: Platform.OS === 'android' ? 16 : 20,
-                paddingHorizontal: 16,
-                backgroundColor: theme.app?.backgroundTextInputColor,
-                borderRadius: 8,
-                fontWeight: 'bold',
-                color: theme.app?.textInputColor,
-              }}
-              keyboardType="numeric"
-            />
+            <TextInputRegister />
             <Pressable
               style={{
                 marginHorizontal: 32,
@@ -86,6 +73,8 @@ export default function SignUpScreen({navigation}: any) {
                 backgroundColor: theme.app?.backgroundButtonColor,
                 paddingVertical: 16,
                 borderRadius: 8,
+                shadowColor: theme.app?.shadowColor,
+                ...shadowBox
               }}
               onPress={() => {
                 navigation.navigate('otp-sign-up');
@@ -101,13 +90,14 @@ export default function SignUpScreen({navigation}: any) {
             </Pressable>
             <Pressable
               style={{
-                marginHorizontal: 32 + 0.3,
+                marginHorizontal: 32,
                 justifyContent: 'center',
                 paddingVertical: 16,
                 borderRadius: 8,
                 marginVertical: 12,
-                borderColor: theme.app?.borderColor,
-                borderWidth: 0.3,
+                shadowColor: theme.app?.shadowColor,
+                ...shadowBox,
+                backgroundColor: theme.app?.backgroundButtonPrimaryColor
               }}
               onPress={() => {
                 navigation.goBack();
