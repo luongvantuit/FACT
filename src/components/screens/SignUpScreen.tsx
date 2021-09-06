@@ -9,7 +9,6 @@ import {
   Dimensions,
   Platform,
 } from 'react-native';
-import {HeaderApp} from '../widgets/AppRegisterStackNavigation';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
 
