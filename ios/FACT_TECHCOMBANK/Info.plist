@@ -53,5 +53,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array/>
+	<key>NSCameraUsageDescription</key>
+  	<string>YOUR TEXT</string>
 </dict>
 </plist>
