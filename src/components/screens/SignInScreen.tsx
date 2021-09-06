@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   TextInput,
@@ -10,10 +10,11 @@ import {
   Pressable,
   Platform,
 } from 'react-native';
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 import AppTheme from '../../themes/app-theme';
+import shadowBox from '../widgets/ShadowBox';
 
-export default function SignInScreen({navigation}: any) {
+export default function SignInScreen({ navigation }: any) {
   const theme: AppTheme = useTheme() as AppTheme;
   return (
     <TouchableWithoutFeedback
@@ -21,7 +22,7 @@ export default function SignInScreen({navigation}: any) {
       style={{
         backgroundColor: theme.app?.backgroundScreenColor,
       }}>
-      <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={'position'}>
         <View
           style={{
             display: 'flex',
@@ -50,36 +51,6 @@ export default function SignInScreen({navigation}: any) {
             }}>
             Sign In, Now.
           </Text>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              marginHorizontal: 32,
-              alignItems: 'center',
-            }}>
-            <Text
-              style={{
-                fontWeight: '500',
-                color: theme.app?.textPrimaryColor,
-              }}>
-              If You Haven't Account?
-            </Text>
-            <Pressable
-              style={{
-                marginHorizontal: 8,
-              }}
-              onPress={() => {
-                navigation.navigate('sign-up');
-              }}>
-              <Text
-                style={{
-                  fontWeight: '800',
-                  color: theme.app?.textColor,
-                }}>
-                Create New Account
-              </Text>
-            </Pressable>
-          </View>
           <TextInput
             placeholder={'Phone Number'}
             keyboardType={'numeric'}
@@ -91,8 +62,10 @@ export default function SignInScreen({navigation}: any) {
               paddingHorizontal: 16,
               backgroundColor: theme.app?.backgroundTextInputColor,
               borderRadius: 8,
-              fontWeight: 'bold',
+              fontWeight: '900',
               color: theme.app?.textInputColor,
+              shadowColor: theme.app?.shadowColor,
+              ...shadowBox
             }}
             placeholderTextColor={theme.app?.placeholderTextColor}
           />
@@ -106,14 +79,17 @@ export default function SignInScreen({navigation}: any) {
             <Text
               style={{
                 color: theme.app?.textPrimaryColor,
+                fontWeight: '600'
+                , fontSize: 14,
               }}>
               Forgot Password?
             </Text>
-            <Pressable style={{marginHorizontal: 8}} onPress={() => {}}>
+            <Pressable style={{ marginHorizontal: 8 }} onPress={() => { }}>
               <Text
                 style={{
                   color: theme.app?.textColor,
                   fontWeight: '800',
+                  fontSize: 16,
                 }}>
                 Reset
               </Text>
@@ -127,9 +103,11 @@ export default function SignInScreen({navigation}: any) {
               paddingVertical: 16,
               borderRadius: 8,
               marginVertical: 16,
+              shadowColor: theme.app?.shadowColor,
+              ...shadowBox
             }}
             onPress={() => {
-              navigation.navigate('opt-sign-in');
+              navigation.navigate('otp-sign-in');
             }}>
             <Text
               style={{
@@ -138,6 +116,37 @@ export default function SignInScreen({navigation}: any) {
                 fontWeight: '900',
               }}>
               Next Step
+            </Text>
+          </Pressable>
+          <Text style={{
+            textAlign: 'center',
+            color: theme.app?.textColor,
+            fontWeight: '800',
+            fontSize: 12,
+          }}>
+            Your Haven't Account
+          </Text>
+          <Pressable
+            style={{
+              marginHorizontal: 32,
+              justifyContent: 'center',
+              backgroundColor: theme.app?.backgroundButtonPrimaryColor,
+              paddingVertical: 16,
+              borderRadius: 8,
+              marginVertical: 16,
+              shadowColor: theme.app?.shadowColor,
+              ...shadowBox
+            }}
+            onPress={() => {
+              navigation.navigate('sign-up');
+            }}>
+            <Text
+              style={{
+                textAlign: 'center',
+                color: theme.app?.textColor,
+                fontWeight: '900',
+              }}>
+              Create New Account
             </Text>
           </Pressable>
         </View>

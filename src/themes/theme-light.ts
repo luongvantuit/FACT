@@ -1,4 +1,4 @@
-import {Theme, DefaultTheme} from '@react-navigation/native';
+import { Theme, DefaultTheme } from '@react-navigation/native';
 import Colors from '../assets/colors';
 import AppTheme from './app-theme';
 
@@ -10,23 +10,24 @@ const ThemeLight: AppTheme = {
   dark: DefaultTheme.dark,
   app: {
     textColor: Colors.matteBlack,
-    textPrimaryColor: '#707070',
-    placeholderTextColor: '#A0A0A0',
-    backgroundTextInputColor: '#D7D7D7',
+    textPrimaryColor: Colors.matteBlack,
+    placeholderTextColor: Colors.yellowDark,
+    backgroundTextInputColor: Colors.yellowLightest,
     backgroundButtonColor: '#363636',
-    textButtonColor: '#fff',
+    textButtonColor: Colors.yellowLightest,
     backgroundScreenColor: '#f2f2f2',
-    textInputColor: '#000',
-    shadowColor: '#000',
-    borderColor: '#D7D7D7',
+    textInputColor: Colors.matteBlack,
+    shadowColor: Colors.matteBlack,
+    borderColor: Colors.matteBlack,
     backgroundHeaderColor: Colors.yellowDark,
     labelBottomTabsColor: '#000',
     iconBottomTabsColor: '#000',
     labelBottomTabsFocusedColor: '#000',
     iconBottomTabsFocusedColor: '#000',
     iconHeaderColor: Colors.matteBlack,
-    textOTPColor : Colors.matteBlack,
-    backgroundOTPColor : Colors.white,
+    textOTPColor: Colors.matteBlack,
+    backgroundOTPColor: Colors.white,
+    backgroundButtonPrimaryColor: Colors.yellow
   },
 };
 

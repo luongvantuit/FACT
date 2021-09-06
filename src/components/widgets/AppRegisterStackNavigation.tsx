@@ -31,7 +31,7 @@ export default function AppRegisterStackNavigation() {
         }}
       />
       <AppRegisterStack.Screen
-        name={'opt-sign-in'}
+        name={'otp-sign-in'}
         component={OTPSignInScreen}
         options={{
           header: props => (
@@ -131,7 +131,7 @@ export default function AppRegisterStackNavigation() {
         }}
       />
       <AppRegisterStack.Screen
-        name={'opt-sign-up'}
+        name={'otp-sign-up'}
         component={OTPSignUpScreen}
         options={{
           headerShown: true,

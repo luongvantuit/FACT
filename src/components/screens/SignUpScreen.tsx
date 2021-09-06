@@ -88,7 +88,7 @@ export default function SignUpScreen({navigation}: any) {
                 borderRadius: 8,
               }}
               onPress={() => {
-                navigation.navigate('opt-sign-up');
+                navigation.navigate('otp-sign-up');
               }}>
               <Text
                 style={{

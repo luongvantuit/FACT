@@ -1,18 +1,21 @@
-import {useTheme} from '@react-navigation/native';
-import React, {useState, useEffect} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import { useTheme } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Pressable } from 'react-native';
 import AppTheme from '../../themes/app-theme';
 import KeypadCustom from '../widgets/KeypadCustom';
 
-const len = [0, 1, 2, 3];
 
-export default function OTPSignInScreen({navigation}: any) {
+export default function OTPSignInScreen({ navigation }: any) {
+  const init: Array<string> = [];
+  const length = 4;
+  for (let index = 0; index < length; index++)
+    init.push('');
   const [position, setPosition] = useState<number>(0);
-  const [codeOPT, setCodeOPT] = useState<Array<string>>(['', '', '', '']);
+  const [codeOTP, setCodeOTP] = useState<Array<string>>(init);
   const theme: AppTheme = useTheme() as AppTheme;
   useEffect(() => {
     var opt: string = '';
-    for (let index = 0; index < codeOPT.length; index++) opt += codeOPT[index];
+    for (let index = 0; index < codeOTP.length; index++) opt += codeOTP[index];
     if (opt.length === 4) navigation.navigate('app-user');
   });
   return (
@@ -34,7 +37,7 @@ export default function OTPSignInScreen({navigation}: any) {
           flexDirection: 'row',
           justifyContent: 'center',
         }}>
-        {len.map((item, index) => (
+        {init.map((item, index) => (
           <Pressable
             style={{
               marginHorizontal: 8,
@@ -56,7 +59,7 @@ export default function OTPSignInScreen({navigation}: any) {
               borderColor: theme.app?.borderColor,
               borderWidth: index === position ? 0.5 : 0,
             }}
-            key={item}
+            key={index}
             onPress={() => {
               setPosition(index);
             }}>
@@ -65,7 +68,7 @@ export default function OTPSignInScreen({navigation}: any) {
                 fontWeight: '900',
                 color: theme.app?.textOTPColor
               }}>
-              {codeOPT[index]}
+              {codeOTP?.[index]}
             </Text>
           </Pressable>
         ))}
@@ -97,20 +100,20 @@ export default function OTPSignInScreen({navigation}: any) {
         onPress={(key: any) => {
           const newCodeOPT: Array<string> = [];
           for (let index = 0; index < 4; index++) {
-            newCodeOPT.push(codeOPT[index]);
+            newCodeOPT.push(codeOTP[index]);
           }
           if (key !== 'delete') {
-            if (position === 3) {
+            if (position === (length - 1)) {
               if (newCodeOPT[position] === '') newCodeOPT[position] = key;
             } else newCodeOPT[position] = key;
-            if (position < 3) setPosition(position + 1);
+            if (position < (length - 1)) setPosition(position + 1);
           } else {
             if (newCodeOPT[position] === '') newCodeOPT[position - 1] = '';
             else newCodeOPT[position] = '';
-            if (codeOPT[3] !== '' && position === 3) newCodeOPT[3] = '';
+            if (codeOTP[length - 1] !== '' && position === (length - 1)) newCodeOPT[length - 1] = '';
             if (position !== 0) setPosition(position - 1);
           }
-          setCodeOPT(newCodeOPT);
+          setCodeOTP(newCodeOPT);
         }}
       />
       <Pressable
