@@ -1,11 +1,13 @@
 import React from 'react';
 import OTP from '../widgets/OTP';
 
-
-export default function OTPSignUpScreen({ navigation }: any) {
+export default function OTPSignUpScreen({navigation}: any) {
   return (
-    <OTP navigation={navigation} onComplete={() => {
-      navigation.navigate('select-type-personal-documents');
-    }} />
+    <OTP
+      navigation={navigation}
+      onComplete={() => {
+        navigation.navigate('select-type-personal-documents');
+      }}
+    />
   );
 }

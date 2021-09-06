@@ -88,18 +88,18 @@ interface AppTheme extends Theme {
     iconHeaderColor?: string;
     iconHeaderPrimaryColor?: string;
     iconHeaderSecondaryColor?: string;
-    backgroundRadioButtonItemColor?:string,
-    backgroundRadioButtonItemPrimaryColor?:string,
-    backgroundRadioButtonItemSecondaryColor?:string,
-    radioButtonItemColor?:string,
-    radioButtonItemPrimaryColor?:string,
-    radioButtonItemSecondaryColor?:string,
-    textOTPColor?:string,
-    textOTPPrimaryColor?:string,
-    textOTPSecondaryColor?:string,
-    backgroundOTPColor?:string,
-    backgroundOTPPrimaryColor?:string,
-    backgroundOTPSecondaryColor?:string,
+    backgroundRadioButtonItemColor?: string;
+    backgroundRadioButtonItemPrimaryColor?: string;
+    backgroundRadioButtonItemSecondaryColor?: string;
+    radioButtonItemColor?: string;
+    radioButtonItemPrimaryColor?: string;
+    radioButtonItemSecondaryColor?: string;
+    textOTPColor?: string;
+    textOTPPrimaryColor?: string;
+    textOTPSecondaryColor?: string;
+    backgroundOTPColor?: string;
+    backgroundOTPPrimaryColor?: string;
+    backgroundOTPSecondaryColor?: string;
   };
 }
 

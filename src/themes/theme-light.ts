@@ -1,5 +1,5 @@
-import { Theme, DefaultTheme } from '@react-navigation/native';
-import { Platform } from 'react-native';
+import {Theme, DefaultTheme} from '@react-navigation/native';
+import {Platform} from 'react-native';
 import Colors from '../assets/colors';
 import AppTheme from './app-theme';
 
@@ -31,7 +31,7 @@ const ThemeLight: AppTheme = {
     iconHeaderColor: Colors.matteBlack,
     textOTPColor: Colors.matteBlack,
     backgroundOTPColor: Colors.white,
-    backgroundButtonPrimaryColor: Colors.yellow
+    backgroundButtonPrimaryColor: Colors.yellow,
   },
 };
 

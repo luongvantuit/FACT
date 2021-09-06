@@ -1,12 +1,12 @@
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import { View, Text, Dimensions, Platform, Pressable } from 'react-native';
-import { check, checkMultiple, request, RESULTS } from 'react-native-permissions';
+import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
+import {check, checkMultiple, request, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import AppTheme from '../../themes/app-theme';
 import RadioButtonGroup from '../widgets/RadioButtonGroup';
 
-export default function SelectTypePersonalDocumentsScreen({ navigation }: any) {
+export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
   const theme: AppTheme = useTheme();
   return (
     <View
@@ -18,7 +18,7 @@ export default function SelectTypePersonalDocumentsScreen({ navigation }: any) {
           Dimensions.get('window').height -
           (Platform.OS === 'android' ? 64 : 118),
       }}>
-      <View style={{ marginHorizontal: 32, marginVertical: 32 }}>
+      <View style={{marginHorizontal: 32, marginVertical: 32}}>
         <Text
           style={{
             color: theme.app?.textColor,
@@ -37,7 +37,7 @@ export default function SelectTypePersonalDocumentsScreen({ navigation }: any) {
           }}>
           Step 2
         </Text>
-        <RadioButtonGroup items={[{ label: 'CCCD/CMND' }, { label: 'Passport' }]} />
+        <RadioButtonGroup items={[{label: 'CCCD/CMND'}, {label: 'Passport'}]} />
       </View>
       <View
         style={{
@@ -64,17 +64,24 @@ export default function SelectTypePersonalDocumentsScreen({ navigation }: any) {
             borderRadius: 8,
           }}
           onPress={() => {
-            check(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA').then(result => {
+            check(
+              Platform.OS === 'android'
+                ? 'android.permission.CAMERA'
+                : 'ios.permission.CAMERA',
+            ).then(result => {
               if (result === RESULTS.GRANTED)
-                navigation.navigate('ekyc-indentification')
+                navigation.navigate('ekyc-indentification');
               else {
-                request(Platform.OS === 'android' ? 'android.permission.CAMERA' : 'ios.permission.CAMERA')
-                  .then(result => {
-                    if (result === RESULTS.GRANTED)
-                      navigation.navigate('ekyc-indentification')
-                  })
+                request(
+                  Platform.OS === 'android'
+                    ? 'android.permission.CAMERA'
+                    : 'ios.permission.CAMERA',
+                ).then(result => {
+                  if (result === RESULTS.GRANTED)
+                    navigation.navigate('ekyc-indentification');
+                });
               }
-            })
+            });
           }}>
           <Text
             style={{

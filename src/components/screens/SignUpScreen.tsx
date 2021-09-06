@@ -1,5 +1,5 @@
-import { useTheme } from '@react-navigation/native';
-import React, { Component } from 'react';
+import {useTheme} from '@react-navigation/native';
+import React, {Component} from 'react';
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -16,11 +16,10 @@ import AppTheme from '../../themes/app-theme';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
 
-export default function SignUpScreen({ navigation }: any) {
+export default function SignUpScreen({navigation}: any) {
   const theme: AppTheme = useTheme();
   return (
-    <TouchableNativeFeedback
-      onPress={Keyboard.dismiss} >
+    <TouchableNativeFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
         style={{
           flex: 1,
@@ -71,7 +70,7 @@ export default function SignUpScreen({ navigation }: any) {
                 paddingVertical: 16,
                 borderRadius: 8,
                 shadowColor: theme.app?.shadowColor,
-                ...shadowBox
+                ...shadowBox,
               }}
               onPress={() => {
                 navigation.navigate('otp-sign-up');
@@ -94,7 +93,7 @@ export default function SignUpScreen({ navigation }: any) {
                 marginVertical: 12,
                 shadowColor: theme.app?.shadowColor,
                 ...shadowBox,
-                backgroundColor: theme.app?.backgroundButtonPrimaryColor
+                backgroundColor: theme.app?.backgroundButtonPrimaryColor,
               }}
               onPress={() => {
                 navigation.goBack();

@@ -62,7 +62,8 @@ export default function RadioButtonGroup(props: {
                 width: 14,
                 height: 14,
                 borderRadius: 7,
-                backgroundColor: index === value ? theme.app?.textColor : '#ffffff00',
+                backgroundColor:
+                  index === value ? theme.app?.textColor : '#ffffff00',
               }}
             />
           </View>

@@ -1,4 +1,4 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
@@ -8,17 +8,16 @@ import {
   Pressable,
   View,
   TouchableWithoutFeedback,
-  TouchableOpacity,
 } from 'react-native';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import AppTheme from '../../themes/app-theme';
-import { useTheme } from '@react-navigation/native';
-import OTPSignInScreen from '../screens/OTPSignInScreen'; '../screens/OTPSignInScreen';
+import {useTheme} from '@react-navigation/native';
+import OTPSignInScreen from '../screens/OTPSignInScreen';
 import SelectTypePersonalDocumentsScreen from '../screens/SelectTypePersonalDocumentsScreen';
 import OTPSignUpScreen from '../screens/OTPSignUpScreen';
 import eKYCIndentificationScreen from '../screens/eKYCIndentificationScreen';
 import eKYCFaceScreen from '../screens/eKYCFaceScreen';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack/lib/typescript/src/types';
+import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescript/src/types';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -37,7 +36,7 @@ export default function AppRegisterStackNavigation() {
         name={'otp-sign-in'}
         component={OTPSignInScreen}
         options={{
-          header: props => (<HeaderApp {...props} />),
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen
@@ -45,7 +44,7 @@ export default function AppRegisterStackNavigation() {
         component={SignUpScreen}
         options={{
           headerShown: true,
-          header: props => (<HeaderApp {...props} />),
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen
@@ -53,7 +52,7 @@ export default function AppRegisterStackNavigation() {
         component={SelectTypePersonalDocumentsScreen}
         options={{
           headerShown: true,
-          header: props => (<HeaderApp {...props} />),
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen
@@ -61,7 +60,7 @@ export default function AppRegisterStackNavigation() {
         component={OTPSignUpScreen}
         options={{
           headerShown: true,
-          header: props => (<HeaderApp {...props} />),
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen
@@ -69,7 +68,7 @@ export default function AppRegisterStackNavigation() {
         component={eKYCIndentificationScreen}
         options={{
           headerShown: true,
-          header: props => (<HeaderApp {...props} />),
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen
@@ -77,7 +76,7 @@ export default function AppRegisterStackNavigation() {
         component={eKYCFaceScreen}
         options={{
           headerShown: true,
-          header: props => (<HeaderApp {...props} />),
+          header: props => <HeaderApp {...props} />,
         }}
       />
     </AppRegisterStack.Navigator>
