@@ -10,7 +10,6 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import AppTheme from '../../themes/app-theme';
 import {useTheme} from '@react-navigation/native';
 import OTPSignInScreen from '../screens/OTPSignInScreen';
 import SelectTypePersonalDocumentsScreen from '../screens/SelectTypePersonalDocumentsScreen';
@@ -22,7 +21,6 @@ import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescr
 const AppRegisterStack = createNativeStackNavigator();
 
 export default function AppRegisterStackNavigation() {
-  const theme: AppTheme = useTheme();
   return (
     <AppRegisterStack.Navigator initialRouteName={'sign-in'}>
       <AppRegisterStack.Screen
@@ -82,13 +80,11 @@ export default function AppRegisterStackNavigation() {
 }
 
 export function HeaderApp(props: NativeStackHeaderProps) {
-  const theme: AppTheme = useTheme();
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View
         style={{
           paddingTop: Platform.OS === 'android' ? 0 : 54,
-          backgroundColor: theme.app?.backgroundHeaderColor,
           display: 'flex',
           alignItems: 'flex-start',
         }}>
@@ -103,7 +99,6 @@ export function HeaderApp(props: NativeStackHeaderProps) {
           <EntypoIcons
             name="chevron-small-left"
             size={32}
-            color={theme.app?.iconHeaderColor}
           />
         </Pressable>
       </View>

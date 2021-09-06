@@ -5,7 +5,6 @@ import React from 'react';
 import {View, Text, Platform, Image, Pressable} from 'react-native';
 import {leakImage} from '../../assets';
 import user from '../../datas/user';
-import AppTheme from '../../themes/app-theme';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
@@ -15,7 +14,6 @@ import WalletScreen from '../screens/WalletScreen';
 const AppHomeBottomTabs = createBottomTabNavigator();
 
 export default function AppHomeBottomTabsNavigation({navigation}: any) {
-  const theme: AppTheme = useTheme() as AppTheme;
   return (
     <AppHomeBottomTabs.Navigator initialRouteName={'dashboard'}>
       <AppHomeBottomTabs.Screen
@@ -33,9 +31,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                 flexDirection: 'row',
                 paddingBottom: 16,
                 paddingHorizontal: 8,
-                backgroundColor: theme.app?.backgroundHeaderColor,
-                borderBottomColor: theme.app?.borderColor,
-                borderBottomWidth: 0.3,
               }}>
               <View
                 style={{
@@ -46,7 +41,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   style={{
                     fontWeight: '700',
                     fontSize: 14,
-                    color: theme.app?.textColor,
                   }}>
                   Hi, TU
                 </Text>
@@ -54,7 +48,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   style={{
                     fontWeight: '900',
                     fontSize: 18,
-                    color: theme.app?.textColor,
                   }}>
                   Welcome back!
                 </Text>
@@ -86,11 +79,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
               }}>
               <MaterialCommunityIcons
                 name={'view-dashboard'}
-                color={
-                  props.focused === true
-                    ? theme.app?.iconBottomTabsFocusedColor
-                    : theme.app?.iconBottomTabsColor
-                }
                 size={props.focused === true ? 24 : 32}
               />
               <Text
@@ -98,10 +86,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   fontSize: 10,
                   display: props.focused === true ? 'flex' : 'none',
                   fontWeight: '900',
-                  color:
-                    props.focused === true
-                      ? theme.app?.labelBottomTabsFocusedColor
-                      : theme.app?.labelBottomTabsColor,
                 }}>
                 Dashboard
               </Text>
@@ -127,11 +111,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
               }}>
               <MaterialCommunityIcons
                 name={'google-analytics'}
-                color={
-                  props.focused === true
-                    ? theme.app?.iconBottomTabsFocusedColor
-                    : theme.app?.iconBottomTabsColor
-                }
                 size={props.focused === true ? 24 : 32}
               />
               <Text
@@ -139,10 +118,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   fontSize: 10,
                   display: props.focused === true ? 'flex' : 'none',
                   fontWeight: '900',
-                  color:
-                    props.focused === true
-                      ? theme.app?.labelBottomTabsFocusedColor
-                      : theme.app?.labelBottomTabsColor,
                 }}>
                 Analytics
               </Text>
@@ -167,11 +142,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
               }}>
               <EntypoIcons
                 name={'wallet'}
-                color={
-                  props.focused === true
-                    ? theme.app?.iconBottomTabsFocusedColor
-                    : theme.app?.iconBottomTabsColor
-                }
                 size={props.focused === true ? 24 : 32}
               />
               <Text
@@ -179,10 +149,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   display: props.focused === true ? 'flex' : 'none',
                   fontWeight: '900',
                   fontSize: 10,
-                  color:
-                    props.focused === true
-                      ? theme.app?.labelBottomTabsFocusedColor
-                      : theme.app?.labelBottomTabsColor,
                 }}>
                 Wallet
               </Text>
@@ -196,8 +162,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 paddingTop: Platform.OS === 'android' ? 0 : 54,
-                backgroundColor: theme.app?.backgroundHeaderColor,
-                borderBottomColor: theme.app?.borderColor,
                 borderBottomWidth: 0.3,
               }}>
               <View
@@ -220,7 +184,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                     style={{
                       fontWeight: '900',
                       fontSize: 18,
-                      color: theme.app?.textColor,
                     }}>
                     {user.name}
                   </Text>
@@ -228,7 +191,6 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                     style={{
                       fontWeight: '600',
                       fontSize: 14,
-                      color: theme.app?.textColor,
                     }}>
                     {user.type}
                   </Text>
@@ -239,14 +201,12 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   navigation.navigate('profile');
                 }}
                 style={{
-                  backgroundColor: '#D7D7D7',
                   borderRadius: 8,
                   padding: 8,
                   margin: 16,
                 }}>
                 <EntypoIcons
                   name="chevron-small-right"
-                  color={'#000'}
                   size={32}
                 />
               </Pressable>

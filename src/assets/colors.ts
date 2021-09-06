@@ -27,4 +27,5 @@ export default class Colors {
   static redLight: string = '#FF5D5E';
   static red: string = '#DE2828';
   static redDark: string = '#B40000';
+  static transparent: string = '#FFFFFF00';
 }

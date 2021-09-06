@@ -12,12 +12,10 @@ import {
   Text,
   ScrollView,
 } from 'react-native';
-import AppTheme from '../../themes/app-theme';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
 
 export default function SignUpScreen({navigation}: any) {
-  const theme: AppTheme = useTheme();
   return (
     <TouchableNativeFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
@@ -33,7 +31,6 @@ export default function SignUpScreen({navigation}: any) {
             }}>
             <Text
               style={{
-                color: theme.app?.textColor,
                 marginHorizontal: 32,
                 fontWeight: '900',
                 fontSize: 28,
@@ -44,7 +41,6 @@ export default function SignUpScreen({navigation}: any) {
             </Text>
             <Text
               style={{
-                color: theme.app?.textColor,
                 marginHorizontal: 32,
                 fontWeight: '900',
                 fontSize: 24,
@@ -53,7 +49,6 @@ export default function SignUpScreen({navigation}: any) {
             </Text>
             <Text
               style={{
-                color: theme.app?.textColor,
                 marginHorizontal: 32,
                 fontWeight: '800',
                 fontSize: 22,
@@ -66,10 +61,8 @@ export default function SignUpScreen({navigation}: any) {
               style={{
                 marginHorizontal: 32,
                 justifyContent: 'center',
-                backgroundColor: theme.app?.backgroundButtonColor,
                 paddingVertical: 16,
                 borderRadius: 8,
-                shadowColor: theme.app?.shadowColor,
                 ...shadowBox,
               }}
               onPress={() => {
@@ -78,7 +71,6 @@ export default function SignUpScreen({navigation}: any) {
               <Text
                 style={{
                   textAlign: 'center',
-                  color: theme.app?.textButtonColor,
                   fontWeight: '900',
                 }}>
                 Next Step
@@ -91,9 +83,7 @@ export default function SignUpScreen({navigation}: any) {
                 paddingVertical: 16,
                 borderRadius: 8,
                 marginVertical: 12,
-                shadowColor: theme.app?.shadowColor,
                 ...shadowBox,
-                backgroundColor: theme.app?.backgroundButtonPrimaryColor,
               }}
               onPress={() => {
                 navigation.goBack();
@@ -101,7 +91,6 @@ export default function SignUpScreen({navigation}: any) {
               <Text
                 style={{
                   textAlign: 'center',
-                  color: theme.app?.textColor,
                   fontWeight: '900',
                 }}>
                 Go Back

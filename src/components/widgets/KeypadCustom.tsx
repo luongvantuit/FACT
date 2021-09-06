@@ -20,7 +20,7 @@ export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
     '8',
     '9',
     '0',
-    <EntypoIcons name="chevron-small-left" color={'#000'} size={28} />,
+    <EntypoIcons name="chevron-small-left" size={28} />,
   ];
   return (
     <View
@@ -54,11 +54,9 @@ export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
                 (Dimensions.get('window').width - 32 * 2 - 3 * 16) / 3 - 32,
               height:
                 (Dimensions.get('window').width - 32 * 2 - 3 * 16) / 3 - 32,
-              backgroundColor: '#fff',
               borderRadius:
                 ((Dimensions.get('window').width - 32 * 2 - 3 * 16) / 3 - 32) /
                 2,
-              borderColor: '#D7D7D7',
               borderWidth: 0.5,
             }}
             onPress={(event: GestureResponderEvent) => {

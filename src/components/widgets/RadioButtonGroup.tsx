@@ -2,7 +2,7 @@ import {useTheme} from '@react-navigation/native';
 import React, {Component, useState} from 'react';
 import {Pressable, Text, View} from 'react-native';
 import Colors from '../../assets/colors';
-import AppTheme from '../../themes/app-theme';
+import shadowBox from './ShadowBox';
 
 export default function RadioButtonGroup(props: {
   items: Array<{
@@ -12,7 +12,6 @@ export default function RadioButtonGroup(props: {
   initialValue?: number;
   onChangeValue?: (value: number) => void;
 }) {
-  const theme: AppTheme = useTheme() as AppTheme;
   const [value, setValue] = useState<number>(props.initialValue || 0);
   return (
     <View
@@ -29,14 +28,7 @@ export default function RadioButtonGroup(props: {
             alignItems: 'center',
             marginVertical: 8,
             paddingHorizontal: 16,
-            elevation: 8,
-            shadowColor: theme.app?.shadowColor,
-            shadowOffset: {
-              width: 1,
-              height: 4,
-            },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
+            ...shadowBox,
             borderRadius: 8,
             paddingVertical: 16,
             backgroundColor: '#fff',
@@ -47,7 +39,6 @@ export default function RadioButtonGroup(props: {
           }}>
           <View
             style={{
-              borderColor: theme.app?.textColor,
               borderWidth: 2,
               width: 24,
               height: 24,
@@ -61,9 +52,7 @@ export default function RadioButtonGroup(props: {
               style={{
                 width: 14,
                 height: 14,
-                borderRadius: 7,
-                backgroundColor:
-                  index === value ? theme.app?.textColor : '#ffffff00',
+                borderRadius: 8,
               }}
             />
           </View>
@@ -72,7 +61,6 @@ export default function RadioButtonGroup(props: {
           ) : (
             <Text
               style={{
-                color: theme.app?.textColor,
                 fontWeight: '900',
               }}>
               {item.label}

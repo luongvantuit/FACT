@@ -1,8 +1,8 @@
 import {useTheme} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {View, Text, Pressable} from 'react-native';
-import AppTheme from '../../themes/app-theme';
 import KeypadCustom from './KeypadCustom';
+import shadowBox from './ShadowBox';
 
 export default function OTP(props: {
   navigation: any;
@@ -14,7 +14,6 @@ export default function OTP(props: {
   for (let index = 0; index < length; index++) init.push('');
   const [position, setPosition] = useState<number>(0);
   const [codeOTP, setCodeOTP] = useState<Array<string>>(init);
-  const theme: AppTheme = useTheme() as AppTheme;
   useEffect(() => {
     var opt: string = '';
     for (let index = 0; index < codeOTP.length; index++) opt += codeOTP[index];
@@ -29,7 +28,6 @@ export default function OTP(props: {
           margin: 32,
           fontSize: 32,
           textAlign: 'center',
-          color: theme.app?.textColor,
         }}>
         OTP Code
       </Text>
@@ -49,17 +47,8 @@ export default function OTP(props: {
               borderRadius: 8,
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: theme.app?.backgroundOTPColor,
-              elevation: 8,
-              shadowColor: theme.app?.shadowColor,
-              shadowOffset: {
-                width: 1,
-                height: 4,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 4.65,
+              ...shadowBox,
               height: 68,
-              borderColor: theme.app?.borderColor,
               borderWidth: index === position ? 0.5 : 0,
             }}
             key={index}
@@ -69,7 +58,6 @@ export default function OTP(props: {
             <Text
               style={{
                 fontWeight: '900',
-                color: theme.app?.textOTPColor,
               }}>
               {codeOTP?.[index]}
             </Text>
@@ -87,14 +75,12 @@ export default function OTP(props: {
         <Text
           style={{
             fontWeight: '800',
-            color: theme.app?.textColor,
           }}>
           Send Again Code?
         </Text>
         <Text
           style={{
             fontWeight: '700',
-            color: theme.app?.textColor,
           }}>
           {' 02:03'}
         </Text>
@@ -127,7 +113,6 @@ export default function OTP(props: {
           paddingVertical: 16,
           borderRadius: 8,
           marginVertical: 16,
-          backgroundColor: theme.app?.backgroundButtonColor,
           borderWidth: 0.3,
         }}
         onPress={() => {
@@ -136,7 +121,6 @@ export default function OTP(props: {
         <Text
           style={{
             textAlign: 'center',
-            color: theme.app?.textButtonColor,
             fontWeight: '900',
           }}>
           Go Back

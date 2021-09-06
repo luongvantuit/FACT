@@ -11,11 +11,11 @@ import {
 import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
-import AppTheme from '../../themes/app-theme';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import shadowBox from '../widgets/ShadowBox';
+import {Svg, Rect} from 'react-native-svg';
 
 export default function eKYCIndentificationScreen(props: any) {
-  const theme: AppTheme = useTheme() as AppTheme;
   useEffect(() => {
     check(
       Platform.OS === 'android'
@@ -38,16 +38,16 @@ export default function eKYCIndentificationScreen(props: any) {
           alignItems: 'flex-start',
           zIndex: 10,
         }}>
-        <View
+        <Pressable
           style={{
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
+          }}
+          onPress={() => {
+            props.navigation.goBack();
           }}>
-          <Pressable
-            onPress={() => {
-              props.navigation.goBack();
-            }}
+          <View
             style={{
               marginVertical: 16,
               marginLeft: 25,
@@ -55,17 +55,15 @@ export default function eKYCIndentificationScreen(props: any) {
             <EntypoIcons
               name="chevron-small-left"
               size={32}
-              color={Colors.matteBlack}
             />
-          </Pressable>
+          </View>
           <Text
             style={{
-              color: Colors.matteBlack,
               fontWeight: '900',
             }}>
             Go Back
           </Text>
-        </View>
+        </Pressable>
       </View>
       <RNCamera
         style={{
@@ -77,6 +75,46 @@ export default function eKYCIndentificationScreen(props: any) {
         type={RNCamera.Constants.Type.front}
         whiteBalance={'shadow'}
       />
+      <Pressable
+        style={{
+          marginHorizontal: 32,
+          justifyContent: 'center',
+          paddingVertical: 16,
+          borderRadius: 8,
+          marginVertical: 16,
+          ...shadowBox,
+          position: 'absolute',
+          bottom: 16,
+          left: 0,
+          right: 0,
+          zIndex: 10,
+        }}
+        onPress={() => {
+          props.navigation.navigate('ekyc-face');
+        }}>
+        <Text
+          style={{
+            textAlign: 'center',
+            fontWeight: '900',
+          }}>
+          Next Step
+        </Text>
+      </Pressable>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          zIndex: 3,
+        }}>
+        <Svg
+          width={`${Dimensions.get('window').width}`}
+          height={`${Dimensions.get('window').height}`}>
+          <Rect />
+        </Svg>
+      </View>
     </View>
   );
 }

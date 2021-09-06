@@ -11,12 +11,10 @@ import {
   Platform,
 } from 'react-native';
 import {useTheme} from '@react-navigation/native';
-import AppTheme from '../../themes/app-theme';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
 
 export default function SignInScreen({navigation}: any) {
-  const theme: AppTheme = useTheme() as AppTheme;
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
@@ -32,7 +30,6 @@ export default function SignInScreen({navigation}: any) {
             style={{
               fontWeight: '900',
               fontSize: 24,
-              color: theme.app?.textColor,
               marginHorizontal: 32,
               marginVertical: 8,
             }}>
@@ -40,7 +37,6 @@ export default function SignInScreen({navigation}: any) {
           </Text>
           <Text
             style={{
-              color: theme.app?.textColor,
               fontWeight: '900',
               fontSize: 28,
               marginHorizontal: 32,
@@ -58,7 +54,6 @@ export default function SignInScreen({navigation}: any) {
             }}>
             <Text
               style={{
-                color: theme.app?.textPrimaryColor,
                 fontWeight: '600',
                 fontSize: 14,
               }}>
@@ -67,7 +62,6 @@ export default function SignInScreen({navigation}: any) {
             <Pressable style={{marginHorizontal: 8}} onPress={() => {}}>
               <Text
                 style={{
-                  color: theme.app?.textColor,
                   fontWeight: '800',
                   fontSize: 16,
                 }}>
@@ -79,11 +73,9 @@ export default function SignInScreen({navigation}: any) {
             style={{
               marginHorizontal: 32,
               justifyContent: 'center',
-              backgroundColor: theme.app?.backgroundButtonColor,
               paddingVertical: 16,
               borderRadius: 8,
               marginVertical: 16,
-              shadowColor: theme.app?.shadowColor,
               ...shadowBox,
             }}
             onPress={() => {
@@ -92,7 +84,6 @@ export default function SignInScreen({navigation}: any) {
             <Text
               style={{
                 textAlign: 'center',
-                color: theme.app?.textButtonColor,
                 fontWeight: '900',
               }}>
               Next Step
@@ -101,7 +92,6 @@ export default function SignInScreen({navigation}: any) {
           <Text
             style={{
               textAlign: 'center',
-              color: theme.app?.textColor,
               fontWeight: '800',
               fontSize: 12,
             }}>
@@ -111,11 +101,9 @@ export default function SignInScreen({navigation}: any) {
             style={{
               marginHorizontal: 32,
               justifyContent: 'center',
-              backgroundColor: theme.app?.backgroundButtonPrimaryColor,
               paddingVertical: 16,
               borderRadius: 8,
               marginVertical: 16,
-              shadowColor: theme.app?.shadowColor,
               ...shadowBox,
             }}
             onPress={() => {
@@ -124,7 +112,6 @@ export default function SignInScreen({navigation}: any) {
             <Text
               style={{
                 textAlign: 'center',
-                color: theme.app?.textColor,
                 fontWeight: '900',
               }}>
               Create New Account

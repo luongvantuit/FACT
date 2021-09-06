@@ -10,7 +10,6 @@ export default function ListServicesPayment() {
         <View
           key={item.id}
           style={{
-            borderBottomColor: '#D7D7D7',
             borderBottomWidth: 0.5,
             display: 'flex',
             flexDirection: 'row',
@@ -51,7 +50,6 @@ export default function ListServicesPayment() {
           </View>
           <EntypoIcons
             name={`chevron-small-${item.increase === true ? 'up' : 'down'}`}
-            color={item.increase === true ? 'green' : 'red'}
             size={24}
             style={{
               marginHorizontal: 8,

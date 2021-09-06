@@ -3,11 +3,10 @@ import React from 'react';
 import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
 import {check, checkMultiple, request, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
-import AppTheme from '../../themes/app-theme';
 import RadioButtonGroup from '../widgets/RadioButtonGroup';
+import shadowBox from '../widgets/ShadowBox';
 
 export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
-  const theme: AppTheme = useTheme();
   return (
     <View
       style={{
@@ -21,7 +20,6 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
       <View style={{marginHorizontal: 32, marginVertical: 32}}>
         <Text
           style={{
-            color: theme.app?.textColor,
             fontWeight: '900',
             fontSize: 28,
             marginBottom: 8,
@@ -30,7 +28,6 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
         </Text>
         <Text
           style={{
-            color: theme.app?.textColor,
             fontWeight: '900',
             fontSize: 24,
             marginBottom: 16,
@@ -45,21 +42,12 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           flexDirection: 'column',
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
-          elevation: 8,
-          shadowColor: theme.app?.shadowColor,
-          shadowOffset: {
-            width: 1,
-            height: 4,
-          },
-          shadowOpacity: 0.3,
-          shadowRadius: 4.65,
-          backgroundColor: Colors.yellow,
+          ...shadowBox,
         }}>
         <Pressable
           style={{
             margin: 32,
             justifyContent: 'center',
-            backgroundColor: '#363636',
             paddingVertical: 16,
             borderRadius: 8,
           }}
@@ -86,7 +74,6 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           <Text
             style={{
               textAlign: 'center',
-              color: '#fff',
               fontWeight: '900',
             }}>
             Next Step

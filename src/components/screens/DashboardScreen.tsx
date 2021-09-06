@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import {charliePuth, leakImage, snoopDogg, taylorSwift} from '../../assets';
 import user from '../../datas/user';
-import AppTheme from '../../themes/app-theme';
 import Ionicons from '../fonts-icon/ionicons';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
@@ -28,12 +27,10 @@ const listImg: Array<{
 ];
 
 export default function DashboardScreen() {
-  const theme: AppTheme = useTheme() as AppTheme;
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View
         style={{
-          backgroundColor: '#fff',
           height: 180,
           width: Dimensions.get('window').width - 16,
           marginTop: 24,
@@ -41,7 +38,6 @@ export default function DashboardScreen() {
           marginHorizontal: 8,
           borderRadius: 8,
           elevation: 8,
-          shadowColor: theme.app?.shadowColor,
           shadowOffset: {
             width: 1,
             height: 4,
@@ -56,7 +52,6 @@ export default function DashboardScreen() {
           style={{
             width: Dimensions.get('window').width - 48,
             paddingVertical: 8,
-            borderBottomColor: '#D7D7D7',
             borderBottomWidth: 0.3,
             display: 'flex',
             flexDirection: 'row',
@@ -104,7 +99,6 @@ export default function DashboardScreen() {
             style={{
               paddingHorizontal: 12,
               paddingVertical: 6,
-              borderColor: '#D7D7D7',
               borderRadius: 8,
               borderWidth: 1,
               flexGrow: 1,
@@ -154,7 +148,6 @@ export default function DashboardScreen() {
               <View
                 style={{
                   padding: 16,
-                  backgroundColor: '#D7D7D7',
                   borderRadius: 8,
                 }}>
                 <Ionicons name="add" size={28} />
@@ -200,12 +193,11 @@ export default function DashboardScreen() {
               display: 'flex',
               width: 40,
               height: 40,
-              backgroundColor: '#D7D7D7',
               justifyContent: 'center',
               alignItems: 'center',
               borderRadius: 20,
             }}>
-            <Ionicons color={'#363636'} name={'add'} size={24} />
+            <Ionicons name={'add'} size={24} />
           </Pressable>
         </View>
       </View>
@@ -218,14 +210,12 @@ export default function DashboardScreen() {
           paddingTop: 32,
           marginTop: 8,
           elevation: 8,
-          shadowColor: '#000',
           shadowOffset: {
             width: 1,
             height: 4,
           },
           shadowOpacity: 0.3,
           shadowRadius: 4.65,
-          backgroundColor: '#fff',
           display: 'flex',
         }}>
         <ListServicesPayment />

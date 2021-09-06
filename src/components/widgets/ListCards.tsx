@@ -3,6 +3,7 @@ import {View, Text, FlatList, Platform, Image, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import listCards from '../../datas/list-cards';
 import FontAwesomeIcons from '../fonts-icon/font-awesome-icons';
+import shadowBox from './ShadowBox';
 Icon.loadFont();
 export default function ListCards() {
   const [page, setPage] = useState<number>(0);
@@ -29,7 +30,6 @@ export default function ListCards() {
         renderItem={({item, index}) => (
           <View
             style={{
-              backgroundColor: 'white',
               marginHorizontal: 8,
               marginVertical: index === page ? 16 : 26,
               display: 'flex',
@@ -37,14 +37,7 @@ export default function ListCards() {
               padding: 16,
               borderRadius: 8,
               width: Dimensions.get('window').width - 64,
-              elevation: 8,
-              shadowColor: '#000',
-              shadowOffset: {
-                width: 1,
-                height: 4,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 4.65,
+              ...shadowBox,
               height: index === page ? 200 : 180,
             }}>
             <View
@@ -58,14 +51,12 @@ export default function ListCards() {
                   style={{
                     fontWeight: '800',
                     fontSize: 18,
-                    color: '#000',
                   }}>
                   {item.nameBank}
                 </Text>
                 <Text
                   style={{
                     fontWeight: '700',
-                    color: '#000',
                     fontSize: 16,
                     marginVertical: 8,
                   }}>
@@ -80,7 +71,6 @@ export default function ListCards() {
                   }}>
                   <Text
                     style={{
-                      color: '#000',
                       fontSize: 14,
                       fontWeight: '600',
                     }}>
@@ -115,7 +105,6 @@ export default function ListCards() {
                   item.service === 'master-card' ? 'cc-mastercard' : 'cc-visa'
                 }
                 size={32}
-                color={'#000'}
               />
               <Text
                 style={{
@@ -143,8 +132,6 @@ export default function ListCards() {
             <View
               key={index}
               style={{
-                backgroundColor: index === page ? 'black' : '#f2f2f2',
-                borderColor: '#D7D7D7',
                 borderWidth: 0.5,
                 width: index === page ? 16 : 8,
                 height: 8,
