@@ -24,14 +24,13 @@ export default function DashboardScreen({navigation}: any) {
       <ImageBackground
         source={UndrawPayOnline}
         style={{
-          height: 440,
+          marginTop: Platform.OS === 'android' ? 16 : 64,
+          height: 340,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          paddingTop: Platform.OS === 'android' ? 16 : 64,
           paddingHorizontal: 8,
-        }}
-        resizeMode={'stretch'}>
+        }}>
         <View
           style={{
             display: 'flex',

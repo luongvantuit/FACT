@@ -15,7 +15,10 @@ import {UndrawTexting} from '../../assets';
 import Colors from '../../assets/colors';
 import shadowBox from './ShadowBox';
 
-export default function OTP(props: any) {
+export default function OTP(props: {
+  navigation?: any;
+  onComplete?: () => void;
+}) {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
@@ -61,7 +64,7 @@ export default function OTP(props: any) {
             placeholderTextColor={Colors.neutralLight}
             onChangeText={text => {
               if (text.trim().length === 4)
-                props.navigation.navigate('select-type-personal-documents');
+                if (props.onComplete !== undefined) props.onComplete();
             }}
             maxLength={4}
           />
