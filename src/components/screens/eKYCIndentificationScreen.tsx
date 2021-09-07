@@ -4,7 +4,7 @@ import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import {Svg, Rect, Polygon, Polyline} from 'react-native-svg';
+import {Svg, Rect, Polygon, Polyline, Text as SVGText} from 'react-native-svg';
 
 export default function eKYCIndentificationScreen(props: any) {
   useEffect(() => {
@@ -84,7 +84,27 @@ export default function eKYCIndentificationScreen(props: any) {
         }}>
         <EntypoIcons name="camera" color={Colors.white} size={38} />
       </Pressable>
-      <SVGFrame />
+      <SVGFrame colorStroke={Colors.green} />
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          width: Dimensions.get('window').width,
+          top: 130,
+          zIndex: 10,
+          justifyContent: 'center',
+        }}>
+        <Text
+          style={{
+            textAlign: 'center',
+            color: Colors.green,
+            fontWeight: '900',
+            fontSize: 16,
+          }}>
+          Front CCCD/CMND
+        </Text>
+      </View>
     </View>
   );
 }
