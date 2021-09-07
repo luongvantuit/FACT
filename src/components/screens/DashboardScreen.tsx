@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ImageBackground, ScrollView, View} from 'react-native';
+import {ImageBackground, Platform, ScrollView, Text, View} from 'react-native';
 import {UndrawPayOnline} from '../../assets';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
@@ -7,18 +7,33 @@ import ListServicesPayment from '../widgets/ListServicesPayment';
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(true);
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      alwaysBounceVertical={false}>
       <ImageBackground
         source={UndrawPayOnline}
         style={{
-          height: 500,
+          height: 480,
         }}
         resizeMode={'contain'}>
         <View
           style={{
             display: 'flex',
-            flexDirection: 'row',
-          }}></View>
+            flexDirection: 'column',
+            paddingTop: 54,
+          }}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+            }}>
+            <Text style={{
+              fontWeight: '900',
+              
+            }}>FACT</Text>
+          </View>
+          <View></View>
+        </View>
       </ImageBackground>
       <ListCard />
       <ListServicesPayment />

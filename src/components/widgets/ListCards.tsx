@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, FlatList, Platform, Image, Dimensions} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '../../assets/colors';
 import listCards from '../../datas/list-cards';
@@ -29,7 +30,10 @@ export default function ListCards() {
           );
         }}
         renderItem={({item, index}) => (
-          <View
+          <LinearGradient
+            colors={
+              item.color || [Colors.blueDark, Colors.blueDark, Colors.blueLight]
+            }
             style={{
               marginHorizontal: 8,
               marginVertical: index === page ? 16 : 26,
@@ -40,7 +44,6 @@ export default function ListCards() {
               width: Dimensions.get('window').width - 64,
               ...shadowBox,
               height: index === page ? 200 : 180,
-              backgroundColor: item.color,
             }}>
             <View
               style={{
@@ -48,26 +51,23 @@ export default function ListCards() {
                 flexGrow: 3,
                 justifyContent: 'space-between',
               }}>
+              <Text
+                style={{
+                  fontWeight: '800',
+                  fontSize: 18,
+                  color: Colors.neutralLightest,
+                }}>
+                {item.nameBank}
+              </Text>
               <View>
-                <Text
-                  style={{
-                    fontWeight: '800',
-                    fontSize: 18,
-                    color: Colors.neutralLightest,
-                  }}>
-                  {item.nameBank}
-                </Text>
                 <Text
                   style={{
                     fontWeight: '700',
                     fontSize: 16,
-                    marginVertical: 8,
                     color: Colors.neutralLightest,
                   }}>
                   {item.numberCard}
                 </Text>
-              </View>
-              <View>
                 <View
                   style={{
                     display: 'flex',
@@ -92,6 +92,7 @@ export default function ListCards() {
                 </View>
                 <Text
                   style={{
+                    marginTop: 24,
                     fontWeight: '800',
                     fontSize: 16,
                     color: Colors.neutralLightest,
@@ -124,7 +125,7 @@ export default function ListCards() {
                 {item.type}
               </Text>
             </View>
-          </View>
+          </LinearGradient>
         )}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -147,6 +148,8 @@ export default function ListCards() {
                 borderRadius: 4,
                 marginHorizontal: 4,
                 marginVertical: 16,
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
               }}
             />
           );

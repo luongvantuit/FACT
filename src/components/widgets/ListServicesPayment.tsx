@@ -15,6 +15,7 @@ export default function ListServicesPayment() {
         paddingTop: 32,
         marginTop: 8,
         ...shadowBox,
+        shadowColor: Colors.matteBlack,
         display: 'flex',
         backgroundColor: Colors.white,
       }}>
