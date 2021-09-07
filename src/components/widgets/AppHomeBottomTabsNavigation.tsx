@@ -1,9 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs/lib/typescript/src/types';
 import {Theme, useTheme} from '@react-navigation/native';
-import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescript/src/types';
 import React from 'react';
-import {View, Text, Platform, Image, Pressable, StyleSheet} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import {leakImage} from '../../assets';
 import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
@@ -16,7 +15,7 @@ import StyledImage from './StyledImage';
 
 const AppHomeBottomTabs = createBottomTabNavigator();
 
-export default function AppHomeBottomTabsNavigation({navigation}: any) {
+export default function AppHomeBottomTabsNavigation() {
   const theme: Theme = useTheme();
   return (
     <AppHomeBottomTabs.Navigator initialRouteName={'dashboard'}>
@@ -85,41 +84,7 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
               />
             </TabContainer>
           ),
-          header: (props: BottomTabHeaderProps) => (
-            <Pressable
-              style={StyledHeader.container}
-              onPress={() => {
-                navigation.navigate('profile');
-              }}>
-              <View
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}>
-                <Image
-                  source={leakImage}
-                  style={[StyledImage.leftHeader, {marginRight: 8}]}
-                />
-                <View>
-                  <Text
-                    style={{
-                      fontWeight: '900',
-                      fontSize: 18,
-                    }}>
-                    {user.name}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 14,
-                    }}>
-                    {user.type}
-                  </Text>
-                </View>
-              </View>
-              <EntypoIcons name="chevron-small-right" size={32} />
-            </Pressable>
-          ),
+          header: (props: BottomTabHeaderProps) => <HeaderWallet {...props} />,
         }}
       />
     </AppHomeBottomTabs.Navigator>
@@ -168,5 +133,43 @@ function TabContainer(props: {children?: JSX.Element}): JSX.Element {
       }}>
       {props.children}
     </View>
+  );
+}
+
+function HeaderWallet(props: BottomTabHeaderProps) {
+  return (
+    <Pressable
+      style={StyledHeader.container}
+      onPress={() => {
+        props.navigation.navigate('profile');
+      }}>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
+        <Image
+          source={leakImage}
+          style={[StyledImage.leftHeader, {marginRight: 8}]}
+        />
+        <View>
+          <Text
+            style={{
+              fontWeight: '900',
+              fontSize: 18,
+            }}>
+            {user.name}
+          </Text>
+          <Text
+            style={{
+              fontSize: 14,
+            }}>
+            {user.type}
+          </Text>
+        </View>
+      </View>
+      <EntypoIcons name="chevron-small-right" size={32} />
+    </Pressable>
   );
 }
