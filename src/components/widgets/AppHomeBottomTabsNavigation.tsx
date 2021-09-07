@@ -1,6 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs/lib/typescript/src/types';
-import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import {leakImage} from '../../assets';
@@ -16,7 +15,6 @@ import StyledImage from './StyledImage';
 const AppHomeBottomTabs = createBottomTabNavigator();
 
 export default function AppHomeBottomTabsNavigation() {
-  const theme: Theme = useTheme();
   return (
     <AppHomeBottomTabs.Navigator initialRouteName={'dashboard'}>
       {/**
@@ -26,7 +24,6 @@ export default function AppHomeBottomTabsNavigation() {
         name="dashboard"
         component={DashboardScreen}
         options={{
-          headerShown: true,
           header: (props: BottomTabHeaderProps) => (
             <HeaderDashboard {...props} />
           ),
@@ -50,8 +47,7 @@ export default function AppHomeBottomTabsNavigation() {
         name="analytics"
         component={AnalyticsScreen}
         options={{
-          headerShown: true,
-          header: (props: BottomTabHeaderProps) => <View></View>,
+          headerShown: false,
           tabBarLabelStyle: {
             display: 'none',
           },
@@ -72,7 +68,6 @@ export default function AppHomeBottomTabsNavigation() {
         name="wallet"
         component={WalletScreen}
         options={{
-          headerShown: true,
           tabBarLabelStyle: {
             display: 'none',
           },
