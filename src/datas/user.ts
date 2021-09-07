@@ -5,5 +5,6 @@ const user: User = {
   currency: 'USD',
   rank: 'Gold',
   type: 'Personal',
+  numberPhone: '0965445305',
 };
 export default user;

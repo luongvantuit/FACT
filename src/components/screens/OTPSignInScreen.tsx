@@ -6,7 +6,7 @@ export default function OTPSignInScreen({navigation}: any) {
     <OTP
       navigation={navigation}
       onComplete={() => {
-        navigation.navigate('app-user');
+        navigation.navigate('enter-password-sign-in');
       }}
     />
   );

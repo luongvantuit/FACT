@@ -4,4 +4,5 @@ export type User = {
   rank: 'Gold' | 'Sliver' | 'Platium';
   currency: 'USD' | 'VND';
   type: 'Personal' | 'Factory';
+  numberPhone: string;
 };
