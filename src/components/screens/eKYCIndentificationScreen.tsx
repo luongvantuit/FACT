@@ -81,10 +81,13 @@ export default function eKYCIndentificationScreen(props: any) {
           zIndex: 10,
           justifyContent: 'center',
           alignItems: 'center',
+        }}
+        onPress={() => {
+          props.navigation.navigate('ekyc-face');
         }}>
         <EntypoIcons name="camera" color={Colors.white} size={38} />
       </Pressable>
-      <SVGFrame colorStroke={Colors.green} />
+      <SVGFrame colorStroke={Colors.yellowDark} x={32} strokeWidth={5} />
       <View
         style={{
           position: 'absolute',
@@ -98,7 +101,7 @@ export default function eKYCIndentificationScreen(props: any) {
         <Text
           style={{
             textAlign: 'center',
-            color: Colors.green,
+            color: Colors.greenDark,
             fontWeight: '900',
             fontSize: 16,
           }}>
@@ -211,22 +214,22 @@ function RectInSideFrame(props: {
         y={0}
         width={Dimensions.get('window').width}
         height={y}
-        fill={'#00000050'}
+        fill={'#00000066'}
       />
-      <Rect x={0} y={y} width={x} height={height} fill={'#00000050'} />
+      <Rect x={0} y={y} width={x} height={height} fill={'#00000066'} />
       <Rect
         x={x + width}
         y={y}
         width={Dimensions.get('window').width - (x + width)}
         height={height}
-        fill={'#00000050'}
+        fill={'#00000066'}
       />
       <Rect
         x={0}
         y={y + height}
         width={Dimensions.get('window').width}
         height={Dimensions.get('window').height}
-        fill={'#00000050'}
+        fill={'#00000066'}
       />
     </Svg>
   );

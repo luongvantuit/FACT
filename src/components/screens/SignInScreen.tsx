@@ -8,7 +8,9 @@ import {
   Text,
   Pressable,
   Platform,
+  ImageBackground,
 } from 'react-native';
+import {UndrawWalkingAround, UndrawAccessAccount} from '../../assets';
 import Colors from '../../assets/colors';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
@@ -21,10 +23,14 @@ export default function SignInScreen({navigation}: any) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            paddingTop:
-              Dimensions.get('window').height /
-              (Platform.OS === 'android' ? 3 : 2),
+            paddingTop: Platform.OS === 'android' ? 16 : 72,
           }}>
+          <ImageBackground
+            source={UndrawAccessAccount}
+            style={{
+              height: 340,
+            }}
+          />
           <Text
             style={{
               fontWeight: '900',
@@ -81,7 +87,7 @@ export default function SignInScreen({navigation}: any) {
               marginVertical: 16,
               ...shadowBox,
               shadowColor: Colors.matteBlack,
-              backgroundColor: Colors.matteBlack,
+              backgroundColor: Colors.text,
             }}
             onPress={() => {
               navigation.navigate('otp-sign-in');
@@ -113,7 +119,7 @@ export default function SignInScreen({navigation}: any) {
               marginVertical: 16,
               ...shadowBox,
               shadowColor: Colors.matteBlack,
-              backgroundColor: Colors.yellow,
+              backgroundColor: Colors.yellowDark,
             }}
             onPress={() => {
               navigation.navigate('sign-up');

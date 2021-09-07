@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import {View, Text, Platform, Pressable, Dimensions} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
+import Svg, {Circle, Defs, LinearGradient, Stop} from 'react-native-svg';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import shadowBox from '../widgets/ShadowBox';
 
 export default function eKYCFaceScreen(props: any) {
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function eKYCFaceScreen(props: any) {
               color: Colors.neutralLightest,
               fontWeight: '900',
             }}>
-            Go Back
+            Back
           </Text>
         </Pressable>
       </View>
@@ -68,33 +68,34 @@ export default function eKYCFaceScreen(props: any) {
         type={RNCamera.Constants.Type.front}
         whiteBalance={'shadow'}
       />
-      <Pressable
+      <View
         style={{
-          marginHorizontal: 32,
-          justifyContent: 'center',
-          paddingVertical: 16,
-          borderRadius: 8,
-          marginVertical: 16,
-          ...shadowBox,
           position: 'absolute',
-          bottom: 16,
+          top: 0,
           left: 0,
           right: 0,
-          zIndex: 10,
-          backgroundColor: Colors.neutralLightest,
-        }}
-        onPress={() => {
-          props.navigation.navigate('app-user');
+          bottom: 0,
+          zIndex: 7,
         }}>
-        <Text
-          style={{
-            textAlign: 'center',
-            fontWeight: '900',
-            color: Colors.matteBlack,
-          }}>
-          Next Step
-        </Text>
-      </Pressable>
+        <Svg>
+          <Circle
+            cx={Dimensions.get('window').width / 2}
+            cy={Dimensions.get('window').height / 2 - 48}
+            r={380}
+            stroke={'black'}
+            strokeWidth={1000}
+          />
+          <Circle
+            cx={Dimensions.get('window').width / 2}
+            cy={Dimensions.get('window').height / 2 - 48}
+            r={136}
+            stroke={Colors.greenLight}
+            strokeWidth={24}
+            strokeDasharray={'3'}
+          />
+         
+        </Svg>
+      </View>
     </View>
   );
 }
