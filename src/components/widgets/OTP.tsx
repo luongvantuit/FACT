@@ -27,7 +27,7 @@ export default function OTP(props: {
       <Text
         style={{
           fontWeight: '900',
-          margin: 32,
+          margin: 16,
           fontSize: 32,
           textAlign: 'center',
           color: Colors.text,
@@ -121,7 +121,7 @@ export default function OTP(props: {
           justifyContent: 'center',
           paddingVertical: 16,
           borderRadius: 8,
-          marginVertical: 16,
+          marginVertical: 8,
           backgroundColor: Colors.matteBlack,
           ...shadowBox,
           shadowColor: Colors.matteBlack,
@@ -135,7 +135,7 @@ export default function OTP(props: {
             fontWeight: '900',
             color: Colors.neutralLightest,
           }}>
-          Go Back
+          Back
         </Text>
       </Pressable>
     </View>

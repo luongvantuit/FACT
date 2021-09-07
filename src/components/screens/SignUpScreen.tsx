@@ -101,7 +101,7 @@ export default function SignUpScreen(props: any) {
                 fontWeight: '900',
                 color: Colors.text,
               }}>
-              Go Back
+              Back
             </Text>
           </Pressable>
         </View>
