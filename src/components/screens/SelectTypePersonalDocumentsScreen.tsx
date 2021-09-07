@@ -1,6 +1,14 @@
 import React from 'react';
-import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  Dimensions,
+  Platform,
+  Pressable,
+  ImageBackground,
+} from 'react-native';
 import {check, request, RESULTS} from 'react-native-permissions';
+import {UndrawOptions} from '../../assets';
 import Colors from '../../assets/colors';
 import RadioButtonGroup from '../widgets/RadioButtonGroup';
 import shadowBox from '../widgets/ShadowBox';
@@ -11,12 +19,15 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
-        height:
-          Dimensions.get('window').height -
-          (Platform.OS === 'android' ? 64 : 118),
       }}>
-      <View style={{marginHorizontal: 32, marginVertical: 32}}>
+      <ImageBackground
+        source={UndrawOptions}
+        style={{
+          height: 220,
+        }}
+        resizeMode={'center'}
+      />
+      <View style={{marginHorizontal: 32}}>
         <Text
           style={{
             fontWeight: '900',
@@ -41,6 +52,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
         style={{
           display: 'flex',
           flexDirection: 'column',
+          height: Dimensions.get('window').height,
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
           ...shadowBox,
@@ -55,7 +67,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             borderRadius: 8,
             ...shadowBox,
             shadowColor: Colors.matteBlack,
-            backgroundColor: Colors.matteBlack,
+            backgroundColor: Colors.text,
           }}
           onPress={() => {
             check(

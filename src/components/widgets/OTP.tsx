@@ -68,6 +68,29 @@ export default function OTP(props: {
             }}
             maxLength={4}
           />
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              marginVertical: 8,
+              justifyContent: 'center',
+            }}>
+            <Text
+              style={{
+                fontWeight: '800',
+                color: Colors.text,
+              }}>
+              {'Resend OTP ->'}
+            </Text>
+            <Text
+              style={{
+                marginHorizontal: 8,
+                fontWeight: '900',
+                color: Colors.redDark,
+              }}>
+              00:14
+            </Text>
+          </View>
           <Pressable
             style={{
               marginHorizontal: 32,

@@ -9,3 +9,4 @@ export const UndrawAccessAccount = require('./undraw_access_account.png');
 export const UndrawMobileUser = require('./undraw_mobile_user.png');
 export const UndrawPhoneCall = require('./undraw_phone_call.png');
 export const UndrawTexting = require('./undraw_texting.png');
+export const UndrawOptions = require('./undraw_options.png');
