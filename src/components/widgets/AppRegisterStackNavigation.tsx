@@ -80,24 +80,22 @@ export default function AppRegisterStackNavigation() {
 
 export function HeaderApp(props: NativeStackHeaderProps) {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View
+    <View
+      style={{
+        paddingTop: Platform.OS === 'android' ? 0 : 54,
+        display: 'flex',
+        alignItems: 'flex-start',
+      }}>
+      <Pressable
+        onPress={() => {
+          props.navigation.goBack();
+        }}
         style={{
-          paddingTop: Platform.OS === 'android' ? 0 : 54,
-          display: 'flex',
-          alignItems: 'flex-start',
+          marginVertical: 16,
+          marginHorizontal: 25,
         }}>
-        <Pressable
-          onPress={() => {
-            props.navigation.goBack();
-          }}
-          style={{
-            marginVertical: 16,
-            marginHorizontal: 25,
-          }}>
-          <EntypoIcons name="chevron-small-left" size={32} />
-        </Pressable>
-      </View>
-    </TouchableWithoutFeedback>
+        <EntypoIcons name="chevron-small-left" size={32} />
+      </Pressable>
+    </View>
   );
 }

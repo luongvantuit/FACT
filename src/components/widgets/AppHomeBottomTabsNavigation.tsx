@@ -1,8 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs/lib/typescript/src/types';
-import {useTheme} from '@react-navigation/native';
+import {Theme, useTheme} from '@react-navigation/native';
+import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescript/src/types';
 import React from 'react';
-import {View, Text, Platform, Image, Pressable} from 'react-native';
+import {View, Text, Platform, Image, Pressable, StyleSheet} from 'react-native';
 import {leakImage} from '../../assets';
 import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
@@ -10,89 +11,42 @@ import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
 import DashboardScreen from '../screens/DashboardScreen';
 import WalletScreen from '../screens/WalletScreen';
+import StyledHeader from './StyledHeader';
+import StyledImage from './StyledImage';
 
 const AppHomeBottomTabs = createBottomTabNavigator();
 
 export default function AppHomeBottomTabsNavigation({navigation}: any) {
+  const theme: Theme = useTheme();
   return (
     <AppHomeBottomTabs.Navigator initialRouteName={'dashboard'}>
+      {/**
+       * header dashboard
+       */}
       <AppHomeBottomTabs.Screen
         name="dashboard"
         component={DashboardScreen}
         options={{
           headerShown: true,
           header: (props: BottomTabHeaderProps) => (
-            <View
-              style={{
-                paddingTop: Platform.OS === 'android' ? 16 : 68,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                paddingBottom: 16,
-                paddingHorizontal: 8,
-              }}>
-              <View
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '700',
-                    fontSize: 14,
-                  }}>
-                  Hi, TU
-                </Text>
-                <Text
-                  style={{
-                    fontWeight: '900',
-                    fontSize: 18,
-                  }}>
-                  Welcome back!
-                </Text>
-              </View>
-              <Pressable
-                onPress={() => {
-                  props.navigation.navigate('profile');
-                }}>
-                <Image
-                  source={leakImage}
-                  style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: 8,
-                  }}
-                />
-              </Pressable>
-            </View>
+            <HeaderDashboard {...props} />
           ),
           tabBarLabelStyle: {
             display: 'none',
           },
           tabBarIcon: props => (
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}>
+            <TabContainer>
               <MaterialCommunityIcons
                 name={'view-dashboard'}
-                size={props.focused === true ? 24 : 32}
+                size={props.focused === true ? 32 : 24}
               />
-              <Text
-                style={{
-                  fontSize: 10,
-                  display: props.focused === true ? 'flex' : 'none',
-                  fontWeight: '900',
-                }}>
-                Dashboard
-              </Text>
-            </View>
+            </TabContainer>
           ),
         }}
       />
+      {/**
+       * header tab analytics
+       */}
       <AppHomeBottomTabs.Screen
         name="analytics"
         component={AnalyticsScreen}
@@ -103,28 +57,18 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
             display: 'none',
           },
           tabBarIcon: props => (
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}>
+            <TabContainer>
               <MaterialCommunityIcons
                 name={'google-analytics'}
-                size={props.focused === true ? 24 : 32}
+                size={props.focused === true ? 32 : 24}
               />
-              <Text
-                style={{
-                  fontSize: 10,
-                  display: props.focused === true ? 'flex' : 'none',
-                  fontWeight: '900',
-                }}>
-                Analytics
-              </Text>
-            </View>
+            </TabContainer>
           ),
         }}
       />
+      {/**
+       * header tab wallet
+       */}
       <AppHomeBottomTabs.Screen
         name="wallet"
         component={WalletScreen}
@@ -134,35 +78,18 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
             display: 'none',
           },
           tabBarIcon: (props: any) => (
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}>
+            <TabContainer>
               <EntypoIcons
                 name={'wallet'}
-                size={props.focused === true ? 24 : 32}
+                size={props.focused === true ? 32 : 24}
               />
-              <Text
-                style={{
-                  display: props.focused === true ? 'flex' : 'none',
-                  fontWeight: '900',
-                  fontSize: 10,
-                }}>
-                Wallet
-              </Text>
-            </View>
+            </TabContainer>
           ),
           header: (props: BottomTabHeaderProps) => (
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                paddingTop: Platform.OS === 'android' ? 0 : 54,
-                borderBottomWidth: 0.3,
+            <Pressable
+              style={StyledHeader.container}
+              onPress={() => {
+                navigation.navigate('profile');
               }}>
               <View
                 style={{
@@ -172,12 +99,7 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                 }}>
                 <Image
                   source={leakImage}
-                  style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: 8,
-                    margin: 16,
-                  }}
+                  style={[StyledImage.leftHeader, {marginRight: 8}]}
                 />
                 <View>
                   <Text
@@ -189,31 +111,62 @@ export default function AppHomeBottomTabsNavigation({navigation}: any) {
                   </Text>
                   <Text
                     style={{
-                      fontWeight: '600',
                       fontSize: 14,
                     }}>
                     {user.type}
                   </Text>
                 </View>
               </View>
-              <Pressable
-                onPress={() => {
-                  navigation.navigate('profile');
-                }}
-                style={{
-                  borderRadius: 8,
-                  padding: 8,
-                  margin: 16,
-                }}>
-                <EntypoIcons
-                  name="chevron-small-right"
-                  size={32}
-                />
-              </Pressable>
-            </View>
+              <EntypoIcons name="chevron-small-right" size={32} />
+            </Pressable>
           ),
         }}
       />
     </AppHomeBottomTabs.Navigator>
+  );
+}
+
+function HeaderDashboard(props: BottomTabHeaderProps): JSX.Element {
+  return (
+    <View style={StyledHeader.container}>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}>
+        <Text
+          style={{
+            fontWeight: '700',
+            fontSize: 14,
+          }}>
+          Hi, TU
+        </Text>
+        <Text
+          style={{
+            fontWeight: '900',
+            fontSize: 18,
+          }}>
+          Welcome back!
+        </Text>
+      </View>
+      <Pressable
+        onPress={() => {
+          props.navigation.navigate('profile');
+        }}>
+        <Image source={leakImage} style={StyledImage.rightHeader} />
+      </Pressable>
+    </View>
+  );
+}
+
+function TabContainer(props: {children?: JSX.Element}): JSX.Element {
+  return (
+    <View
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}>
+      {props.children}
+    </View>
   );
 }

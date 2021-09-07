@@ -8,13 +8,14 @@ import {
   Text,
   Dimensions,
   Platform,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
 
 export default function SignUpScreen(props: any) {
   return (
-    <TouchableNativeFeedback onPress={Keyboard.dismiss}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
         <View
           style={{
@@ -93,6 +94,6 @@ export default function SignUpScreen(props: any) {
           </Pressable>
         </View>
       </KeyboardAvoidingView>
-    </TouchableNativeFeedback>
+    </TouchableWithoutFeedback>
   );
 }

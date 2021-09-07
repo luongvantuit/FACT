@@ -3,10 +3,10 @@ import Colors from '../assets/colors';
 
 const ThemeLight: Theme = {
   colors: {
-    card: Colors.yellow,
+    card: Colors.yellowDark,
     background: Colors.yellowDark,
     text: Colors.blue,
-    border: Colors.matteBlack,
+    border: Colors.blue,
     primary: Colors.yellowDark,
     notification: Colors.yellowLight,
   },
