@@ -151,7 +151,7 @@ export default function DashboardScreen({navigation}: any) {
             flexGrow: 1,
           }}>
           <LinearGradient
-            colors={[Colors.yellowDark, Colors.yellow]}
+            colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
             style={{
               height: 120,
               borderRadius: 8,
@@ -165,7 +165,7 @@ export default function DashboardScreen({navigation}: any) {
             flexGrow: 1,
           }}>
           <LinearGradient
-            colors={[Colors.yellowDark, Colors.yellow]}
+            colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
             style={{
               height: 120,
               borderRadius: 8,
@@ -187,7 +187,7 @@ export default function DashboardScreen({navigation}: any) {
             flexGrow: 1,
           }}>
           <LinearGradient
-            colors={[Colors.yellow, Colors.yellowDark]}
+            colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
             style={{
               height: 120,
               borderRadius: 8,
@@ -201,7 +201,7 @@ export default function DashboardScreen({navigation}: any) {
             flexGrow: 1,
           }}>
           <LinearGradient
-            colors={[Colors.yellow, Colors.yellowDark]}
+            colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
             style={{
               height: 120,
               borderRadius: 8,
