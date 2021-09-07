@@ -53,7 +53,7 @@ export default function ListCards() {
               }}>
               <Text
                 style={{
-                  fontWeight: '800',
+                  fontWeight: '900',
                   fontSize: 18,
                   color: Colors.neutralLightest,
                 }}>
@@ -62,7 +62,7 @@ export default function ListCards() {
               <View>
                 <Text
                   style={{
-                    fontWeight: '700',
+                    fontWeight: '800',
                     fontSize: 16,
                     color: Colors.neutralLightest,
                   }}>
@@ -118,7 +118,7 @@ export default function ListCards() {
               <Text
                 style={{
                   marginVertical: 4,
-                  fontWeight: '600',
+                  fontWeight: '800',
                   fontSize: 16,
                   color: Colors.neutralLightest,
                 }}>

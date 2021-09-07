@@ -39,7 +39,7 @@ export default function ListServicesPayment() {
               style={{
                 width: 40,
                 height: 40,
-                borderRadius: item.service === false ? 8 : 0,
+                borderRadius: item.service === false ? 20 : 0,
                 resizeMode: item.service === false ? 'cover' : 'contain',
               }}
             />
@@ -52,7 +52,7 @@ export default function ListServicesPayment() {
               <Text
                 style={{
                   fontWeight: '900',
-                  color: Colors.matteBlack,
+                  color: Colors.text,
                 }}>
                 {item.name}
               </Text>
@@ -64,14 +64,14 @@ export default function ListServicesPayment() {
                 }}>
                 <Text
                   style={{
-                    color: Colors.matteBlack,
+                    color: Colors.text,
                     fontWeight: '600',
                   }}>{`${item.increase === true ? '+' : '-'}${
                   item.value
                 }$`}</Text>
                 <Text
                   style={{
-                    color: Colors.matteBlack,
+                    color: Colors.text,
                     fontWeight: '500',
                   }}>
                   {item.date}

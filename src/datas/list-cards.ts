@@ -9,7 +9,7 @@ const listCards: Array<Card> = [
     type: 'Debit',
     numberCard: '**** **** **** 5379',
     service: 'visa',
-    color: [Colors.blueDark, Colors.blueDark, Colors.blueLight],
+    color: [Colors.blue, Colors.blueDark, Colors.blueDark],
   },
   {
     expiryEnd: '01/23',
@@ -19,7 +19,7 @@ const listCards: Array<Card> = [
     type: 'Credit',
     numberCard: '**** **** **** 4657',
     service: 'master-card',
-    color: [Colors.greenDark, Colors.greenDark, Colors.greenLight],
+    color: [Colors.green, Colors.greenDark, Colors.greenDark],
   },
   {
     expiryEnd: '05/24',
@@ -29,7 +29,7 @@ const listCards: Array<Card> = [
     type: 'Debit',
     numberCard: '**** **** **** 7689',
     service: 'visa',
-    color: [Colors.neutralDark, Colors.neutralDark, Colors.neutralLight],
+    color: [Colors.neutralDarker, Colors.neutralDarkest, Colors.neutralDarkest],
   },
 ];
 
