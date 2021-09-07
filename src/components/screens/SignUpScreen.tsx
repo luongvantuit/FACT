@@ -2,12 +2,9 @@ import React from 'react';
 import {
   Keyboard,
   KeyboardAvoidingView,
-  TouchableNativeFeedback,
   View,
   Pressable,
   Text,
-  Dimensions,
-  Platform,
   TouchableWithoutFeedback,
   ImageBackground,
 } from 'react-native';
@@ -24,7 +21,6 @@ export default function SignUpScreen(props: any) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            paddingTop: Platform.OS === 'android' ? 16 : 72,
           }}>
           <ImageBackground
             source={UndrawMobileUser}
@@ -38,7 +34,6 @@ export default function SignUpScreen(props: any) {
               marginHorizontal: 32,
               fontWeight: '900',
               fontSize: 28,
-              marginTop: 16,
               marginBottom: 8,
               color: Colors.text,
             }}>
@@ -58,7 +53,7 @@ export default function SignUpScreen(props: any) {
               marginHorizontal: 32,
               fontWeight: '800',
               fontSize: 22,
-              marginVertical: 16,
+              marginTop: 16,
               color: Colors.text,
             }}>
             Enter Your Phone Number

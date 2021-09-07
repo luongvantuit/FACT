@@ -42,7 +42,8 @@ export default function AppRegisterStackNavigation() {
         name={'sign-up'}
         component={SignUpScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen

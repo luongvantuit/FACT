@@ -1,143 +1,95 @@
-import {Theme, useTheme} from '@react-navigation/native';
-import React, {useEffect, useState} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import React from 'react';
+import {
+  View,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  Image,
+  TouchableWithoutFeedback,
+  ImageBackground,
+  Text,
+  TextInput,
+  Pressable,
+} from 'react-native';
+import {UndrawTexting} from '../../assets';
 import Colors from '../../assets/colors';
-import KeypadCustom from './KeypadCustom';
 import shadowBox from './ShadowBox';
 
-export default function OTP(props: {
-  navigation: any;
-  onComplete?: () => void;
-  length?: number;
-}) {
-  const theme: Theme = useTheme();
-  const init: Array<string> = [];
-  const length = props.length || 4;
-  for (let index = 0; index < length; index++) init.push('');
-  const [position, setPosition] = useState<number>(0);
-  const [codeOTP, setCodeOTP] = useState<Array<string>>(init);
-  useEffect(() => {
-    var opt: string = '';
-    for (let index = 0; index < codeOTP.length; index++) opt += codeOTP[index];
-    if (opt.length === length)
-      if (props.onComplete !== undefined) props.onComplete();
-  });
+export default function OTP(props: any) {
   return (
-    <View>
-      <Text
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView
         style={{
-          fontWeight: '900',
-          margin: 16,
-          fontSize: 32,
-          textAlign: 'center',
-          color: Colors.text,
-        }}>
-        OTP Code
-      </Text>
-      <View
-        style={{
-          marginHorizontal: 24,
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-        }}>
-        {init.map((item, index) => (
+          flex: 1,
+        }}
+        behavior={'position'}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}>
+          <ImageBackground
+            source={UndrawTexting}
+            style={{
+              height: 340,
+            }}
+          />
+          <Text
+            style={{
+              fontWeight: '900',
+              fontSize: 28,
+              color: Colors.text,
+              textAlign: 'center',
+            }}>
+            OTP Code
+          </Text>
+          <TextInput
+            placeholder={'4-Digit'}
+            keyboardType={'numeric'}
+            style={{
+              marginHorizontal: 32,
+              marginTop: 16,
+              marginBottom: 12,
+              paddingVertical: Platform.OS === 'android' ? 16 : 20,
+              paddingHorizontal: 16,
+              borderRadius: 8,
+              fontWeight: '900',
+              ...shadowBox,
+              color: Colors.text,
+              backgroundColor: Colors.neutralLightest,
+            }}
+            placeholderTextColor={Colors.neutralLight}
+            onChangeText={text => {
+              if (text.trim().length === 4)
+                props.navigation.navigate('select-type-personal-documents');
+            }}
+            maxLength={4}
+          />
           <Pressable
             style={{
-              marginHorizontal: 8,
-              display: 'flex',
-              width: 58,
-              borderRadius: 8,
+              marginHorizontal: 32,
               justifyContent: 'center',
-              alignItems: 'center',
+              paddingVertical: 16,
+              marginVertical: 8,
+              borderRadius: 8,
               ...shadowBox,
               shadowColor: Colors.matteBlack,
-              backgroundColor: Colors.neutralLightest,
-              height: 68,
-              borderColor: Colors.yellowDark,
-              borderWidth: index === position ? 1 : 0,
+              backgroundColor: Colors.text,
             }}
-            key={index}
             onPress={() => {
-              setPosition(index);
+              props.navigation.goBack();
             }}>
             <Text
               style={{
+                textAlign: 'center',
                 fontWeight: '900',
-                color: Colors.text,
+                color: Colors.neutralLightest,
               }}>
-              {codeOTP[index]}
+              Back
             </Text>
           </Pressable>
-        ))}
-      </View>
-      <View
-        style={{
-          marginTop: 20,
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text
-          style={{
-            fontWeight: '800',
-            color: Colors.text,
-          }}>
-          Send Again Code?
-        </Text>
-        <Text
-          style={{
-            fontWeight: '900',
-            color: Colors.redDark,
-          }}>
-          {' 02:03'}
-        </Text>
-      </View>
-      <KeypadCustom
-        onPress={(key: any) => {
-          const newCodeOPT: Array<string> = [];
-          for (let index = 0; index < 4; index++) {
-            newCodeOPT.push(codeOTP[index]);
-          }
-          if (key !== 'delete') {
-            if (position === length - 1) {
-              if (newCodeOPT[position] === '') newCodeOPT[position] = key;
-            } else newCodeOPT[position] = key;
-            if (position < length - 1) setPosition(position + 1);
-          } else {
-            if (newCodeOPT[position] === '') newCodeOPT[position - 1] = '';
-            else newCodeOPT[position] = '';
-            if (codeOTP[length - 1] !== '' && position === length - 1)
-              newCodeOPT[length - 1] = '';
-            if (position !== 0) setPosition(position - 1);
-          }
-          setCodeOTP(newCodeOPT);
-        }}
-      />
-      <Pressable
-        style={{
-          marginHorizontal: 32,
-          justifyContent: 'center',
-          paddingVertical: 16,
-          borderRadius: 8,
-          marginVertical: 8,
-          backgroundColor: Colors.matteBlack,
-          ...shadowBox,
-          shadowColor: Colors.matteBlack,
-        }}
-        onPress={() => {
-          props.navigation.goBack();
-        }}>
-        <Text
-          style={{
-            textAlign: 'center',
-            fontWeight: '900',
-            color: Colors.neutralLightest,
-          }}>
-          Back
-        </Text>
-      </Pressable>
-    </View>
+        </View>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 }

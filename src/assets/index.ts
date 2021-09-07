@@ -6,4 +6,6 @@ export const IconApp = require('./Icon-App.png');
 export const UndrawPayOnline = require('./undraw_pay_online.png');
 export const UndrawWalkingAround = require('./undraw_walking_around.png');
 export const UndrawAccessAccount = require('./undraw_access_account.png');
-export const UndrawMobileUser= require('./undraw_mobile_user.png');
+export const UndrawMobileUser = require('./undraw_mobile_user.png');
+export const UndrawPhoneCall = require('./undraw_phone_call.png');
+export const UndrawTexting = require('./undraw_texting.png');
