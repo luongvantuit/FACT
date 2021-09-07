@@ -1,17 +1,25 @@
-import {NavigationContainer, ThemeProvider} from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {useColorScheme} from 'react-native';
-import ThemeDark from '../../themes/theme-dark';
-import ThemeLight from '../../themes/theme-light';
+import Colors from '../../assets/colors';
 import AppRegisterStackNavigation from './AppRegisterStackNavigation';
 import AppUserStackNavigation from './AppUserStackNavigation';
 const AppStack = createNativeStackNavigator();
 
 export default function AppStackNavigation() {
-  const theme = useColorScheme();
   return (
-    <NavigationContainer theme={theme === 'dark' ? ThemeDark : ThemeLight}>
+    <NavigationContainer
+      theme={{
+        colors: {
+          background: Colors.yellowDark,
+          border: Colors.matteBlack,
+          card: Colors.yellowDark,
+          notification: Colors.yellowDark,
+          primary: Colors.yellowDark,
+          text: Colors.matteBlack,
+        },
+        dark: false,
+      }}>
       <AppStack.Navigator initialRouteName="app-register">
         <AppStack.Screen
           name="app-user"
