@@ -97,11 +97,7 @@ export function HeaderApp(props: NativeStackHeaderProps) {
           marginVertical: 16,
           marginHorizontal: 25,
         }}>
-        <EntypoIcons
-          name="chevron-small-left"
-          size={32}
-          color={Colors.matteBlack}
-        />
+        <EntypoIcons name="chevron-small-left" size={32} color={Colors.text} />
       </Pressable>
     </View>
   );

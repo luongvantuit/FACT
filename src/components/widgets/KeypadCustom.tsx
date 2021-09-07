@@ -1,4 +1,3 @@
-import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {
   Dimensions,
@@ -12,7 +11,6 @@ import EntypoIcons from '../fonts-icon/entypo-icons';
 import shadowBox from './ShadowBox';
 
 export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
-  const theme: Theme = useTheme();
   const key = [
     '1',
     '2',
@@ -24,11 +22,7 @@ export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
     '8',
     '9',
     '0',
-    <EntypoIcons
-      name="chevron-small-left"
-      size={28}
-      color={Colors.matteBlack}
-    />,
+    <EntypoIcons name="chevron-small-left" size={28} color={Colors.text} />,
   ];
   return (
     <View
@@ -65,11 +59,9 @@ export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
               borderRadius:
                 ((Dimensions.get('window').width - 32 * 2 - 3 * 16) / 3 - 32) /
                 2,
-              borderColor: Colors.yellow,
-              borderWidth: 0.5,
-              ...shadowBox,
+              borderColor: Colors.neutralLighter,
+              borderWidth: 1,
               backgroundColor: Colors.neutralLightest,
-              shadowColor: Colors.matteBlack,
             }}
             onPress={(event: GestureResponderEvent) => {
               if (props.onPress !== undefined) {
@@ -79,7 +71,7 @@ export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
             <Text
               style={{
                 fontWeight: '900',
-                color: Colors.matteBlack,
+                color: Colors.text,
               }}>
               {item}
             </Text>

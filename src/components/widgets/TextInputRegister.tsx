@@ -17,10 +17,10 @@ export default function TextInputRegister() {
         borderRadius: 8,
         fontWeight: '900',
         ...shadowBox,
-        color: Colors.matteBlack,
-        backgroundColor: Colors.yellowLightest,
+        color: Colors.text,
+        backgroundColor: Colors.neutralLightest,
       }}
-      placeholderTextColor={Colors.yellowDark}
+      placeholderTextColor={Colors.neutralLight}
     />
   );
 }

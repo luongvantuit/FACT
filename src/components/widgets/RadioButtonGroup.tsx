@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import {Pressable, Text, View} from 'react-native';
 import Colors from '../../assets/colors';
 import shadowBox from './ShadowBox';
@@ -47,7 +47,7 @@ export default function RadioButtonGroup(props: {
               justifyContent: 'center',
               alignItems: 'center',
               marginRight: 8,
-              borderColor: Colors.matteBlack,
+              borderColor: Colors.text,
             }}>
             <View
               style={{
@@ -55,7 +55,7 @@ export default function RadioButtonGroup(props: {
                 height: 14,
                 borderRadius: 8,
                 backgroundColor:
-                  value === index ? Colors.matteBlack : Colors.neutralLightest,
+                  value === index ? Colors.text : Colors.neutralLightest,
               }}
             />
           </View>
@@ -65,7 +65,7 @@ export default function RadioButtonGroup(props: {
             <Text
               style={{
                 fontWeight: '800',
-                color: Colors.matteBlack,
+                color: Colors.text,
               }}>
               {item.label}
             </Text>

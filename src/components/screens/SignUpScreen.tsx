@@ -34,7 +34,7 @@ export default function SignUpScreen(props: any) {
               fontSize: 28,
               marginTop: 32,
               marginBottom: 8,
-              color: Colors.matteBlack,
+              color: Colors.text,
             }}>
             Start, Sign Up Now.
           </Text>
@@ -43,7 +43,7 @@ export default function SignUpScreen(props: any) {
               marginHorizontal: 32,
               fontWeight: '900',
               fontSize: 24,
-              color: Colors.matteBlack,
+              color: Colors.text,
             }}>
             Step 1
           </Text>
@@ -53,7 +53,7 @@ export default function SignUpScreen(props: any) {
               fontWeight: '800',
               fontSize: 22,
               marginVertical: 16,
-              color: Colors.matteBlack,
+              color: Colors.text,
             }}>
             Enter Your Phone Number
           </Text>
@@ -99,7 +99,7 @@ export default function SignUpScreen(props: any) {
               style={{
                 textAlign: 'center',
                 fontWeight: '900',
-                color: Colors.matteBlack,
+                color: Colors.text,
               }}>
               Go Back
             </Text>

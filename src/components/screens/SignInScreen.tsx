@@ -31,7 +31,7 @@ export default function SignInScreen({navigation}: any) {
               fontSize: 24,
               marginHorizontal: 32,
               marginVertical: 8,
-              color: Colors.matteBlack,
+              color: Colors.text,
             }}>
             Hey
           </Text>
@@ -41,7 +41,7 @@ export default function SignInScreen({navigation}: any) {
               fontSize: 28,
               marginHorizontal: 32,
               marginBottom: 8,
-              color: Colors.matteBlack,
+              color: Colors.text,
             }}>
             Sign In, Now.
           </Text>
@@ -57,7 +57,7 @@ export default function SignInScreen({navigation}: any) {
               style={{
                 fontWeight: '600',
                 fontSize: 14,
-                color: Colors.matteBlack,
+                color: Colors.text,
               }}>
               Forgot Password?
             </Text>
@@ -66,7 +66,7 @@ export default function SignInScreen({navigation}: any) {
                 style={{
                   fontWeight: '800',
                   fontSize: 16,
-                  color: Colors.matteBlack,
+                  color: Colors.text,
                 }}>
                 Reset
               </Text>
@@ -100,7 +100,7 @@ export default function SignInScreen({navigation}: any) {
               textAlign: 'center',
               fontWeight: '800',
               fontSize: 12,
-              color: Colors.matteBlack,
+              color: Colors.text,
             }}>
             Your Haven't Account
           </Text>
@@ -122,7 +122,7 @@ export default function SignInScreen({navigation}: any) {
               style={{
                 textAlign: 'center',
                 fontWeight: '900',
-                color: Colors.matteBlack,
+                color: Colors.text,
               }}>
               Create New Account
             </Text>

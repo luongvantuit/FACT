@@ -2,7 +2,6 @@ import {Theme, useTheme} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {View, Text, Pressable} from 'react-native';
 import Colors from '../../assets/colors';
-import EntypoIcons from '../fonts-icon/entypo-icons';
 import KeypadCustom from './KeypadCustom';
 import shadowBox from './ShadowBox';
 
@@ -31,7 +30,7 @@ export default function OTP(props: {
           margin: 32,
           fontSize: 32,
           textAlign: 'center',
-          color: Colors.matteBlack,
+          color: Colors.text,
         }}>
         OTP Code
       </Text>
@@ -55,7 +54,7 @@ export default function OTP(props: {
               shadowColor: Colors.matteBlack,
               backgroundColor: Colors.neutralLightest,
               height: 68,
-              borderColor: theme.colors.background,
+              borderColor: Colors.yellowDark,
               borderWidth: index === position ? 1 : 0,
             }}
             key={index}
@@ -65,7 +64,7 @@ export default function OTP(props: {
             <Text
               style={{
                 fontWeight: '900',
-                color: Colors.matteBlack,
+                color: Colors.text,
               }}>
               {codeOTP[index]}
             </Text>
@@ -82,15 +81,15 @@ export default function OTP(props: {
         }}>
         <Text
           style={{
-            fontWeight: '700',
-            color: Colors.matteBlack,
+            fontWeight: '800',
+            color: Colors.text,
           }}>
           Send Again Code?
         </Text>
         <Text
           style={{
-            fontWeight: '800',
-            color: Colors.red,
+            fontWeight: '900',
+            color: Colors.redDark,
           }}>
           {' 02:03'}
         </Text>

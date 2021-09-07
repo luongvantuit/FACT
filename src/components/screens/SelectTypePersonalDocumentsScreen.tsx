@@ -1,7 +1,6 @@
-import {useTheme} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
-import {check, checkMultiple, request, RESULTS} from 'react-native-permissions';
+import {check, request, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import RadioButtonGroup from '../widgets/RadioButtonGroup';
 import shadowBox from '../widgets/ShadowBox';
@@ -23,7 +22,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             fontWeight: '900',
             fontSize: 28,
             marginBottom: 8,
-            color: Colors.matteBlack,
+            color: Colors.text,
           }}>
           Now. Please Select Indentity Papers
         </Text>
@@ -32,7 +31,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             fontWeight: '900',
             fontSize: 24,
             marginBottom: 16,
-            color: Colors.matteBlack,
+            color: Colors.text,
           }}>
           Step 2
         </Text>
@@ -46,7 +45,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           borderTopRightRadius: 8,
           ...shadowBox,
           shadowColor: Colors.matteBlack,
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.white,
         }}>
         <Pressable
           style={{

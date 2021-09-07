@@ -29,7 +29,7 @@ const listCards: Array<Card> = [
     type: 'Debit',
     numberCard: '**** **** **** 7689',
     service: 'visa',
-    color: [Colors.neutralDarker, Colors.neutralDarkest, Colors.neutralDarkest],
+    color: [Colors.text, Colors.neutralDarkest, Colors.neutralDarkest],
   },
 ];
 
