@@ -17,6 +17,7 @@ import OTPSignUpScreen from '../screens/OTPSignUpScreen';
 import eKYCIndentificationScreen from '../screens/eKYCIndentificationScreen';
 import eKYCFaceScreen from '../screens/eKYCFaceScreen';
 import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescript/src/types';
+import Colors from '../../assets/colors';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -79,12 +80,14 @@ export default function AppRegisterStackNavigation() {
 }
 
 export function HeaderApp(props: NativeStackHeaderProps) {
+  const theme = useTheme();
   return (
     <View
       style={{
         paddingTop: Platform.OS === 'android' ? 0 : 54,
         display: 'flex',
         alignItems: 'flex-start',
+        backgroundColor: theme.colors.background,
       }}>
       <Pressable
         onPress={() => {
@@ -94,7 +97,11 @@ export function HeaderApp(props: NativeStackHeaderProps) {
           marginVertical: 16,
           marginHorizontal: 25,
         }}>
-        <EntypoIcons name="chevron-small-left" size={32} />
+        <EntypoIcons
+          name="chevron-small-left"
+          size={32}
+          color={Colors.matteBlack}
+        />
       </Pressable>
     </View>
   );

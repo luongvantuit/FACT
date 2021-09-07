@@ -1,6 +1,8 @@
-import {useTheme} from '@react-navigation/native';
+import {Theme, useTheme} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {View, Text, Pressable} from 'react-native';
+import Colors from '../../assets/colors';
+import EntypoIcons from '../fonts-icon/entypo-icons';
 import KeypadCustom from './KeypadCustom';
 import shadowBox from './ShadowBox';
 
@@ -9,6 +11,7 @@ export default function OTP(props: {
   onComplete?: () => void;
   length?: number;
 }) {
+  const theme: Theme = useTheme();
   const init: Array<string> = [];
   const length = props.length || 4;
   for (let index = 0; index < length; index++) init.push('');
@@ -28,6 +31,7 @@ export default function OTP(props: {
           margin: 32,
           fontSize: 32,
           textAlign: 'center',
+          color: Colors.matteBlack,
         }}>
         OTP Code
       </Text>
@@ -48,8 +52,12 @@ export default function OTP(props: {
               justifyContent: 'center',
               alignItems: 'center',
               ...shadowBox,
+              shadowColor:
+                index === position
+                  ? Colors.matteBlack
+                  : theme.colors.background,
+              backgroundColor: Colors.yellow,
               height: 68,
-              borderWidth: index === position ? 0.5 : 0,
             }}
             key={index}
             onPress={() => {
@@ -58,8 +66,9 @@ export default function OTP(props: {
             <Text
               style={{
                 fontWeight: '900',
+                color: Colors.matteBlack,
               }}>
-              {codeOTP?.[index]}
+              {codeOTP[index]}
             </Text>
           </Pressable>
         ))}
@@ -74,13 +83,15 @@ export default function OTP(props: {
         }}>
         <Text
           style={{
-            fontWeight: '800',
+            fontWeight: '700',
+            color: Colors.matteBlack,
           }}>
           Send Again Code?
         </Text>
         <Text
           style={{
-            fontWeight: '700',
+            fontWeight: '800',
+            color: Colors.red,
           }}>
           {' 02:03'}
         </Text>
@@ -113,7 +124,9 @@ export default function OTP(props: {
           paddingVertical: 16,
           borderRadius: 8,
           marginVertical: 16,
-          borderWidth: 0.3,
+          backgroundColor: Colors.matteBlack,
+          ...shadowBox,
+          shadowColor: Colors.matteBlack,
         }}
         onPress={() => {
           props.navigation.goBack();
@@ -122,6 +135,7 @@ export default function OTP(props: {
           style={{
             textAlign: 'center',
             fontWeight: '900',
+            color: Colors.neutralLightest,
           }}>
           Go Back
         </Text>

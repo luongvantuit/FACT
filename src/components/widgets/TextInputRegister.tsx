@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, TextInput, Platform} from 'react-native';
+import {TextInput, Platform} from 'react-native';
+import Colors from '../../assets/colors';
 import shadowBox from './ShadowBox';
 
 export default function TextInputRegister() {
@@ -16,7 +17,10 @@ export default function TextInputRegister() {
         borderRadius: 8,
         fontWeight: '900',
         ...shadowBox,
+        color: Colors.matteBlack,
+        backgroundColor: Colors.yellowLightest,
       }}
+      placeholderTextColor={Colors.yellowDark}
     />
   );
 }

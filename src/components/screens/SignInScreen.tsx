@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   View,
-  TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
@@ -10,7 +9,7 @@ import {
   Pressable,
   Platform,
 } from 'react-native';
-import {useTheme} from '@react-navigation/native';
+import Colors from '../../assets/colors';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
 
@@ -32,6 +31,7 @@ export default function SignInScreen({navigation}: any) {
               fontSize: 24,
               marginHorizontal: 32,
               marginVertical: 8,
+              color: Colors.matteBlack,
             }}>
             Hey
           </Text>
@@ -41,6 +41,7 @@ export default function SignInScreen({navigation}: any) {
               fontSize: 28,
               marginHorizontal: 32,
               marginBottom: 8,
+              color: Colors.matteBlack,
             }}>
             Sign In, Now.
           </Text>
@@ -56,6 +57,7 @@ export default function SignInScreen({navigation}: any) {
               style={{
                 fontWeight: '600',
                 fontSize: 14,
+                color: Colors.matteBlack,
               }}>
               Forgot Password?
             </Text>
@@ -64,6 +66,7 @@ export default function SignInScreen({navigation}: any) {
                 style={{
                   fontWeight: '800',
                   fontSize: 16,
+                  color: Colors.matteBlack,
                 }}>
                 Reset
               </Text>
@@ -77,6 +80,8 @@ export default function SignInScreen({navigation}: any) {
               borderRadius: 8,
               marginVertical: 16,
               ...shadowBox,
+              shadowColor: Colors.matteBlack,
+              backgroundColor: Colors.matteBlack,
             }}
             onPress={() => {
               navigation.navigate('otp-sign-in');
@@ -85,6 +90,7 @@ export default function SignInScreen({navigation}: any) {
               style={{
                 textAlign: 'center',
                 fontWeight: '900',
+                color: Colors.neutralLightest,
               }}>
               Next Step
             </Text>
@@ -94,6 +100,7 @@ export default function SignInScreen({navigation}: any) {
               textAlign: 'center',
               fontWeight: '800',
               fontSize: 12,
+              color: Colors.matteBlack,
             }}>
             Your Haven't Account
           </Text>
@@ -105,6 +112,8 @@ export default function SignInScreen({navigation}: any) {
               borderRadius: 8,
               marginVertical: 16,
               ...shadowBox,
+              shadowColor: Colors.matteBlack,
+              backgroundColor: Colors.yellow,
             }}
             onPress={() => {
               navigation.navigate('sign-up');
@@ -113,6 +122,7 @@ export default function SignInScreen({navigation}: any) {
               style={{
                 textAlign: 'center',
                 fontWeight: '900',
+                color: Colors.matteBlack,
               }}>
               Create New Account
             </Text>

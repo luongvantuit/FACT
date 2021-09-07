@@ -23,6 +23,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             fontWeight: '900',
             fontSize: 28,
             marginBottom: 8,
+            color: Colors.matteBlack,
           }}>
           Now. Please Select Indentity Papers
         </Text>
@@ -31,6 +32,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             fontWeight: '900',
             fontSize: 24,
             marginBottom: 16,
+            color: Colors.matteBlack,
           }}>
           Step 2
         </Text>
@@ -43,6 +45,8 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
           ...shadowBox,
+          shadowColor: Colors.matteBlack,
+          backgroundColor: Colors.yellow,
         }}>
         <Pressable
           style={{
@@ -50,6 +54,9 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             justifyContent: 'center',
             paddingVertical: 16,
             borderRadius: 8,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            backgroundColor: Colors.matteBlack,
           }}
           onPress={() => {
             check(
@@ -75,6 +82,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             style={{
               textAlign: 'center',
               fontWeight: '900',
+              color: Colors.neutralLightest,
             }}>
             Next Step
           </Text>

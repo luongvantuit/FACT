@@ -29,9 +29,10 @@ export default function RadioButtonGroup(props: {
             marginVertical: 8,
             paddingHorizontal: 16,
             ...shadowBox,
+            shadowColor: Colors.matteBlack,
             borderRadius: 8,
             paddingVertical: 16,
-            backgroundColor: '#fff',
+            backgroundColor: Colors.neutralLightest,
           }}
           onPress={() => {
             if (props.onChangeValue !== undefined) props.onChangeValue(index);
@@ -47,12 +48,15 @@ export default function RadioButtonGroup(props: {
               justifyContent: 'center',
               alignItems: 'center',
               marginRight: 8,
+              borderColor: Colors.matteBlack,
             }}>
             <View
               style={{
                 width: 14,
                 height: 14,
                 borderRadius: 8,
+                backgroundColor:
+                  value === index ? Colors.matteBlack : Colors.neutralLightest,
               }}
             />
           </View>
@@ -61,7 +65,8 @@ export default function RadioButtonGroup(props: {
           ) : (
             <Text
               style={{
-                fontWeight: '900',
+                fontWeight: '800',
+                color: Colors.matteBlack,
               }}>
               {item.label}
             </Text>

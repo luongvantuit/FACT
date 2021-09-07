@@ -1,3 +1,4 @@
+import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {
   Dimensions,
@@ -6,9 +7,12 @@ import {
   View,
   Text,
 } from 'react-native';
+import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import shadowBox from './ShadowBox';
 
 export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
+  const theme: Theme = useTheme();
   const key = [
     '1',
     '2',
@@ -57,7 +61,11 @@ export default function KeypadCustom(props: {onPress?: (key: any) => void}) {
               borderRadius:
                 ((Dimensions.get('window').width - 32 * 2 - 3 * 16) / 3 - 32) /
                 2,
+              borderColor: Colors.yellow,
               borderWidth: 0.5,
+              ...shadowBox,
+              backgroundColor: theme.colors.background,
+              shadowColor: Colors.matteBlack,
             }}
             onPress={(event: GestureResponderEvent) => {
               if (props.onPress !== undefined) {
