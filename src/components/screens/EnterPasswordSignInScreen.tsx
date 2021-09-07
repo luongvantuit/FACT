@@ -76,6 +76,7 @@ export default function EnterPasswordSignInScreen({navigation}: any) {
             backgroundColor: Colors.neutralLightest,
           }}
           placeholderTextColor={Colors.neutralLight}
+          secureTextEntry={true}
         />
         <Pressable
           style={{
