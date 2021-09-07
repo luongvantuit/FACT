@@ -1,4 +1,3 @@
-import {useTheme} from '@react-navigation/native';
 import React, {Component, useState} from 'react';
 import {Pressable, Text, View} from 'react-native';
 import Colors from '../../assets/colors';

@@ -55,11 +55,13 @@ export default function eKYCIndentificationScreen(props: any) {
             <EntypoIcons
               name="chevron-small-left"
               size={32}
+              color={Colors.neutralLightest}
             />
           </View>
           <Text
             style={{
               fontWeight: '900',
+              color: Colors.neutralLightest,
             }}>
             Go Back
           </Text>
@@ -83,11 +85,13 @@ export default function eKYCIndentificationScreen(props: any) {
           borderRadius: 8,
           marginVertical: 16,
           ...shadowBox,
+          shadowColor: Colors.matteBlack,
           position: 'absolute',
           bottom: 16,
           left: 0,
           right: 0,
           zIndex: 10,
+          backgroundColor: Colors.matteBlack,
         }}
         onPress={() => {
           props.navigation.navigate('ekyc-face');
@@ -96,6 +100,7 @@ export default function eKYCIndentificationScreen(props: any) {
           style={{
             textAlign: 'center',
             fontWeight: '900',
+            color: Colors.yellowLightest,
           }}>
           Next Step
         </Text>

@@ -6,6 +6,6 @@ export type ServicePayment = {
   img: any;
   increase: boolean;
   value: number;
-  date?: number;
+  date?: string;
   id: string;
 };

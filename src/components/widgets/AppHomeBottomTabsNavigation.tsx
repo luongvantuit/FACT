@@ -3,6 +3,7 @@ import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs/lib/typescript
 import React from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import {leakImage} from '../../assets';
+import Colors from '../../assets/colors';
 import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
@@ -24,9 +25,7 @@ export default function AppHomeBottomTabsNavigation() {
         name="dashboard"
         component={DashboardScreen}
         options={{
-          header: (props: BottomTabHeaderProps) => (
-            <HeaderDashboard {...props} />
-          ),
+          headerShown: false,
           tabBarLabelStyle: {
             display: 'none',
           },
@@ -35,9 +34,21 @@ export default function AppHomeBottomTabsNavigation() {
               <MaterialCommunityIcons
                 name={'view-dashboard'}
                 size={props.focused === true ? 32 : 24}
+                color={
+                  props.focused === true
+                    ? Colors.yellowDark
+                    : Colors.neutralDark
+                }
               />
             </TabContainer>
           ),
+          tabBarStyle: {
+            borderWidth: 0,
+            borderTopWidth: 0,
+            borderTopRightRadius: 8,
+            borderTopLeftRadius: 8,
+            backgroundColor: Colors.neutralLightest,
+          },
         }}
       />
       {/**
@@ -56,9 +67,21 @@ export default function AppHomeBottomTabsNavigation() {
               <MaterialCommunityIcons
                 name={'google-analytics'}
                 size={props.focused === true ? 32 : 24}
+                color={
+                  props.focused === true
+                    ? Colors.yellowDark
+                    : Colors.neutralDark
+                }
               />
             </TabContainer>
           ),
+          tabBarStyle: {
+            borderWidth: 0,
+            borderTopWidth: 0,
+            borderTopRightRadius: 8,
+            borderTopLeftRadius: 8,
+            backgroundColor: Colors.neutralLightest,
+          },
         }}
       />
       {/**
@@ -76,46 +99,25 @@ export default function AppHomeBottomTabsNavigation() {
               <EntypoIcons
                 name={'wallet'}
                 size={props.focused === true ? 32 : 24}
+                color={
+                  props.focused === true
+                    ? Colors.yellowDark
+                    : Colors.neutralDark
+                }
               />
             </TabContainer>
           ),
           header: (props: BottomTabHeaderProps) => <HeaderWallet {...props} />,
+          tabBarStyle: {
+            borderWidth: 0,
+            borderTopWidth: 0,
+            borderTopRightRadius: 8,
+            borderTopLeftRadius: 8,
+            backgroundColor: Colors.neutralLightest,
+          },
         }}
       />
     </AppHomeBottomTabs.Navigator>
-  );
-}
-
-function HeaderDashboard(props: BottomTabHeaderProps): JSX.Element {
-  return (
-    <View style={StyledHeader.container}>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}>
-        <Text
-          style={{
-            fontWeight: '700',
-            fontSize: 14,
-          }}>
-          Hi, TU
-        </Text>
-        <Text
-          style={{
-            fontWeight: '900',
-            fontSize: 18,
-          }}>
-          Welcome back!
-        </Text>
-      </View>
-      <Pressable
-        onPress={() => {
-          props.navigation.navigate('profile');
-        }}>
-        <Image source={leakImage} style={StyledImage.rightHeader} />
-      </Pressable>
-    </View>
   );
 }
 

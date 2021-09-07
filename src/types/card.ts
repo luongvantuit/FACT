@@ -6,5 +6,5 @@ export type Card = {
   type: 'Debit' | 'Credit';
   nameBank: string;
   service: 'visa' | 'master-card';
-  color?: Array<string>;
+  color?: string;
 };

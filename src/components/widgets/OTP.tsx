@@ -52,12 +52,11 @@ export default function OTP(props: {
               justifyContent: 'center',
               alignItems: 'center',
               ...shadowBox,
-              shadowColor:
-                index === position
-                  ? Colors.matteBlack
-                  : theme.colors.background,
-              backgroundColor: Colors.yellow,
+              shadowColor: Colors.matteBlack,
+              backgroundColor: Colors.neutralLightest,
               height: 68,
+              borderColor: theme.colors.background,
+              borderWidth: index === position ? 1 : 0,
             }}
             key={index}
             onPress={() => {

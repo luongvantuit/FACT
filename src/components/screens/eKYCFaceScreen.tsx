@@ -1,9 +1,8 @@
-import {useTheme} from '@react-navigation/native';
 import React, {useEffect} from 'react';
 import {View, Text, Platform, Pressable, Dimensions} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
 
@@ -47,11 +46,12 @@ export default function eKYCFaceScreen(props: any) {
             <EntypoIcons
               name="chevron-small-left"
               size={32}
+              color={Colors.neutralLightest}
             />
           </View>
           <Text
             style={{
-              color: Colors.matteBlack,
+              color: Colors.neutralLightest,
               fontWeight: '900',
             }}>
             Go Back
@@ -81,6 +81,7 @@ export default function eKYCFaceScreen(props: any) {
           left: 0,
           right: 0,
           zIndex: 10,
+          backgroundColor: Colors.neutralLightest,
         }}
         onPress={() => {
           props.navigation.navigate('app-user');
@@ -89,6 +90,7 @@ export default function eKYCFaceScreen(props: any) {
           style={{
             textAlign: 'center',
             fontWeight: '900',
+            color: Colors.matteBlack,
           }}>
           Next Step
         </Text>

@@ -8,7 +8,7 @@ const StyledHeader = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     paddingBottom: 16,
-    paddingHorizontal: 8,
+    paddingHorizontal: 16,
   },
 });
 

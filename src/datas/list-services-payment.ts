@@ -8,6 +8,7 @@ const listServicesPayment: Array<ServicePayment> = [
     service: true,
     value: 10,
     img: highlandsCoffeeImage,
+    date: '23:26 - 05/09/2001',
   },
   {
     id: '2',
@@ -16,6 +17,7 @@ const listServicesPayment: Array<ServicePayment> = [
     service: false,
     value: 1000,
     img: leakNDHImage,
+    date: '18:43 - 02/09/2001',
   },
   {
     id: '3',
@@ -24,6 +26,7 @@ const listServicesPayment: Array<ServicePayment> = [
     service: true,
     value: 29,
     img: kFCImage,
+    date: '12:06 - 31/08/2001',
   },
   {
     id: '4',
@@ -32,6 +35,7 @@ const listServicesPayment: Array<ServicePayment> = [
     service: true,
     value: 100,
     img: kFCImage,
+    date: '15:35 - 30/08/2001',
   },
 ];
 

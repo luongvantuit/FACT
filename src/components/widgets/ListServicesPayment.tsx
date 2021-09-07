@@ -1,16 +1,32 @@
 import React from 'react';
-import {View, Text, FlatList, Image} from 'react-native';
+import {View, Text, Image} from 'react-native';
+import Colors from '../../assets/colors';
 import listServicesPayment from '../../datas/list-services-payment';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 
 export default function ListServicesPayment() {
   return (
-    <View>
+    <View
+      style={{
+        borderTopLeftRadius: 8,
+        borderTopRightRadius: 8,
+        paddingHorizontal: 16,
+        paddingTop: 32,
+        marginTop: 8,
+        elevation: 8,
+        shadowOffset: {
+          width: 1,
+          height: 4,
+        },
+        shadowOpacity: 0.3,
+        shadowRadius: 4.65,
+        display: 'flex',
+        backgroundColor: Colors.yellow,
+      }}>
       {listServicesPayment.map(item => (
         <View
           key={item.id}
           style={{
-            borderBottomWidth: 0.5,
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -40,12 +56,30 @@ export default function ListServicesPayment() {
               <Text
                 style={{
                   fontWeight: '900',
+                  color: Colors.matteBlack,
                 }}>
                 {item.name}
               </Text>
-              <Text style={{}}>{`${item.increase === true ? '+' : '-'}${
-                item.value
-              }$`}</Text>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                }}>
+                <Text
+                  style={{
+                    color: Colors.matteBlack,
+                    fontWeight: '600',
+                  }}>{`${item.increase === true ? '+' : '-'}${
+                  item.value
+                }$`}</Text>
+                <Text
+                  style={{
+                    color: Colors.matteBlack,
+                  }}>
+                  {item.date}
+                </Text>
+              </View>
             </View>
           </View>
           <EntypoIcons
@@ -54,6 +88,7 @@ export default function ListServicesPayment() {
             style={{
               marginHorizontal: 8,
             }}
+            color={item.increase === true ? Colors.green : Colors.red}
           />
         </View>
       ))}

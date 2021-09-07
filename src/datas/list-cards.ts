@@ -1,3 +1,4 @@
+import Colors from '../assets/colors';
 import {Card} from '../types/card';
 const listCards: Array<Card> = [
   {
@@ -8,6 +9,7 @@ const listCards: Array<Card> = [
     type: 'Debit',
     numberCard: '**** **** **** 5379',
     service: 'visa',
+    color: Colors.blueDark,
   },
   {
     expiryEnd: '01/23',
@@ -17,6 +19,7 @@ const listCards: Array<Card> = [
     type: 'Credit',
     numberCard: '**** **** **** 4657',
     service: 'master-card',
+    color: Colors.greenDark,
   },
   {
     expiryEnd: '05/24',
@@ -26,6 +29,7 @@ const listCards: Array<Card> = [
     type: 'Debit',
     numberCard: '**** **** **** 7689',
     service: 'visa',
+    color: Colors.neutralDark,
   },
 ];
 

@@ -1,5 +1,5 @@
 import {useTheme} from '@react-navigation/native';
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   Dimensions,
   Image,
@@ -8,27 +8,22 @@ import {
   Text,
   View,
 } from 'react-native';
-import {charliePuth, leakImage, snoopDogg, taylorSwift} from '../../assets';
+import {leakImage} from '../../assets';
+import Colors from '../../assets/colors';
 import user from '../../datas/user';
+import EntypoIcons from '../fonts-icon/entypo-icons';
 import Ionicons from '../fonts-icon/ionicons';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
+import shadowBox from '../widgets/ShadowBox';
+import StyledHeader from '../widgets/StyledHeader';
+import StyledImage from '../widgets/StyledImage';
 
-const listImg: Array<{
-  id: string;
-  img: any;
-}> = [
-  {
-    id: '0',
-    img: taylorSwift,
-  },
-  {id: '1', img: charliePuth},
-  {id: '2', img: snoopDogg},
-];
-
-export default function DashboardScreen() {
+export default function DashboardScreen({navigation}: any) {
+  const [hidden, setHidden] = useState<boolean>(true);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
+      <HeaderDashboard navigation={navigation} />
       <View
         style={{
           height: 180,
@@ -37,22 +32,17 @@ export default function DashboardScreen() {
           marginBottom: 8,
           marginHorizontal: 8,
           borderRadius: 8,
-          elevation: 8,
-          shadowOffset: {
-            width: 1,
-            height: 4,
-          },
-          shadowOpacity: 0.3,
-          shadowRadius: 4.65,
+          ...shadowBox,
+          shadowColor: Colors.matteBlack,
           display: 'flex',
           flexDirection: 'column',
           padding: 16,
+          backgroundColor: Colors.neutralLightest,
         }}>
         <View
           style={{
             width: Dimensions.get('window').width - 48,
             paddingVertical: 8,
-            borderBottomWidth: 0.3,
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -83,6 +73,7 @@ export default function DashboardScreen() {
                 style={{
                   fontWeight: '900',
                   fontSize: 18,
+                  color: Colors.matteBlack,
                 }}>
                 {user.name}
               </Text>
@@ -90,23 +81,30 @@ export default function DashboardScreen() {
                 style={{
                   fontWeight: '600',
                   fontSize: 14,
+                  color: Colors.matteBlack,
                 }}>
                 {user.type}
               </Text>
             </View>
           </View>
-          <Text
+          <View
             style={{
               paddingHorizontal: 12,
               paddingVertical: 6,
               borderRadius: 8,
-              borderWidth: 1,
-              flexGrow: 1,
-              textAlign: 'center',
-              fontWeight: 'bold',
+              backgroundColor: Colors.blueLight,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}>
-            {user.currency}
-          </Text>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                color: Colors.neutralLightest,
+              }}>
+              {user.currency}
+            </Text>
+          </View>
         </View>
         <View
           style={{
@@ -126,16 +124,46 @@ export default function DashboardScreen() {
                 marginVertical: 8,
                 fontWeight: '600',
                 fontSize: 16,
+                color: Colors.matteBlack,
               }}>
               {user.rank}
             </Text>
-            <Text
+            <View
               style={{
-                fontWeight: 'bold',
-                fontSize: 20,
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
               }}>
-              {`${user.balance}${user.currency === 'USD' ? '$' : 'Đ'}`}
-            </Text>
+              <Pressable
+                style={{
+                  marginHorizontal: 8,
+                }}
+                onPress={() => {
+                  setHidden(!hidden);
+                }}>
+                <EntypoIcons
+                  name={hidden === true ? 'eye-with-line' : 'eye'}
+                  color={Colors.matteBlack}
+                  size={24}
+                />
+              </Pressable>
+              {hidden === true ? (
+                <EntypoIcons
+                  name="dots-three-horizontal"
+                  color={Colors.matteBlack}
+                  size={24}
+                />
+              ) : (
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: 20,
+                    color: Colors.matteBlack,
+                  }}>
+                  {`${user.balance}${user.currency === 'USD' ? '$' : 'Đ'}`}
+                </Text>
+              )}
+            </View>
           </View>
           <View
             style={{
@@ -156,70 +184,43 @@ export default function DashboardScreen() {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          marginTop: 16,
-          marginBottom: 40,
-          display: 'flex',
-          flexDirection: 'row',
-          marginHorizontal: 16,
-        }}>
-        {listImg.map((item, index) => {
-          return (
-            <View
-              style={{
-                position: 'absolute',
-                left: index * 30,
-              }}
-              key={item.id}>
-              <Image
-                source={item.img}
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 20,
-                }}
-              />
-            </View>
-          );
-        })}
-        <View
-          style={{
-            position: 'absolute',
-            left: listImg.length * 30,
-          }}>
-          <Pressable
-            style={{
-              display: 'flex',
-              width: 40,
-              height: 40,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 20,
-            }}>
-            <Ionicons name={'add'} size={24} />
-          </Pressable>
-        </View>
-      </View>
       <ListCard />
+      <ListServicesPayment />
+    </ScrollView>
+  );
+}
+
+function HeaderDashboard({navigation}: any): JSX.Element {
+  return (
+    <View style={StyledHeader.container}>
       <View
         style={{
-          borderTopLeftRadius: 8,
-          borderTopRightRadius: 8,
-          paddingHorizontal: 16,
-          paddingTop: 32,
-          marginTop: 8,
-          elevation: 8,
-          shadowOffset: {
-            width: 1,
-            height: 4,
-          },
-          shadowOpacity: 0.3,
-          shadowRadius: 4.65,
           display: 'flex',
+          flexDirection: 'column',
         }}>
-        <ListServicesPayment />
+        <Text
+          style={{
+            fontWeight: '700',
+            fontSize: 14,
+            color: Colors.matteBlack,
+          }}>
+          Hi, TU
+        </Text>
+        <Text
+          style={{
+            fontWeight: '900',
+            fontSize: 18,
+            color: Colors.matteBlack,
+          }}>
+          Welcome back!
+        </Text>
       </View>
-    </ScrollView>
+      <Pressable
+        onPress={() => {
+          navigation.navigate('profile');
+        }}>
+        <Image source={leakImage} style={StyledImage.rightHeader} />
+      </Pressable>
+    </View>
   );
 }
