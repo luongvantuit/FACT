@@ -13,9 +13,8 @@ const AppStack = createNativeStackNavigator();
 export default function AppStackNavigation() {
   const theme: any = {
     colors: {
-      DefaultTheme,
-      background: Colors.yellowDark,
-      card: Colors.yellowDark,
+      ...DefaultTheme,
+      background: Colors.white,
     },
     dark: false,
   };

@@ -3,6 +3,7 @@ import {View, Text, Image} from 'react-native';
 import Colors from '../../assets/colors';
 import listServicesPayment from '../../datas/list-services-payment';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import shadowBox from './ShadowBox';
 
 export default function ListServicesPayment() {
   return (
@@ -13,15 +14,9 @@ export default function ListServicesPayment() {
         paddingHorizontal: 16,
         paddingTop: 32,
         marginTop: 8,
-        elevation: 8,
-        shadowOffset: {
-          width: 1,
-          height: 4,
-        },
-        shadowOpacity: 0.3,
-        shadowRadius: 4.65,
+        ...shadowBox,
         display: 'flex',
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.white,
       }}>
       {listServicesPayment.map(item => (
         <View
@@ -76,6 +71,7 @@ export default function ListServicesPayment() {
                 <Text
                   style={{
                     color: Colors.matteBlack,
+                    fontWeight: '500',
                   }}>
                   {item.date}
                 </Text>
@@ -84,7 +80,7 @@ export default function ListServicesPayment() {
           </View>
           <EntypoIcons
             name={`chevron-small-${item.increase === true ? 'up' : 'down'}`}
-            size={24}
+            size={28}
             style={{
               marginHorizontal: 8,
             }}

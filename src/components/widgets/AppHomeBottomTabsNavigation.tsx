@@ -10,6 +10,7 @@ import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
 import DashboardScreen from '../screens/DashboardScreen';
 import WalletScreen from '../screens/WalletScreen';
+import shadowBox from './ShadowBox';
 import StyledHeader from './StyledHeader';
 import StyledImage from './StyledImage';
 
@@ -43,11 +44,10 @@ export default function AppHomeBottomTabsNavigation() {
             </TabContainer>
           ),
           tabBarStyle: {
-            borderWidth: 0,
             borderTopWidth: 0,
-            borderTopRightRadius: 8,
-            borderTopLeftRadius: 8,
-            backgroundColor: Colors.neutralLightest,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            backgroundColor: Colors.white,
           },
         }}
       />
@@ -76,11 +76,10 @@ export default function AppHomeBottomTabsNavigation() {
             </TabContainer>
           ),
           tabBarStyle: {
-            borderWidth: 0,
             borderTopWidth: 0,
-            borderTopRightRadius: 8,
-            borderTopLeftRadius: 8,
-            backgroundColor: Colors.neutralLightest,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            backgroundColor: Colors.white,
           },
         }}
       />
@@ -109,11 +108,10 @@ export default function AppHomeBottomTabsNavigation() {
           ),
           header: (props: BottomTabHeaderProps) => <HeaderWallet {...props} />,
           tabBarStyle: {
-            borderWidth: 0,
             borderTopWidth: 0,
-            borderTopRightRadius: 8,
-            borderTopLeftRadius: 8,
-            backgroundColor: Colors.neutralLightest,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            backgroundColor: Colors.white,
           },
         }}
       />
