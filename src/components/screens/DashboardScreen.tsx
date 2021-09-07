@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import {IconApp, leakImage, UndrawPayOnline} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
@@ -135,6 +136,82 @@ export default function DashboardScreen({navigation}: any) {
           </Pressable>
         </View>
       </ImageBackground>
+      {/**
+       * container
+       */}
+      <View
+        style={{
+          marginHorizontal: 8,
+          marginTop: 8,
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
+        <View
+          style={{
+            flexGrow: 1,
+          }}>
+          <LinearGradient
+            colors={[Colors.yellowDark, Colors.yellow]}
+            style={{
+              height: 120,
+              borderRadius: 8,
+              borderTopLeftRadius: 16,
+              marginRight: 4,
+            }}
+          />
+        </View>
+        <View
+          style={{
+            flexGrow: 1,
+          }}>
+          <LinearGradient
+            colors={[Colors.yellowDark, Colors.yellow]}
+            style={{
+              height: 120,
+              borderRadius: 8,
+              borderTopRightRadius: 16,
+              marginLeft: 4,
+            }}
+          />
+        </View>
+      </View>
+      <View
+        style={{
+          marginHorizontal: 8,
+          marginVertical: 8,
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
+        <View
+          style={{
+            flexGrow: 1,
+          }}>
+          <LinearGradient
+            colors={[Colors.yellow, Colors.yellowDark]}
+            style={{
+              height: 120,
+              borderRadius: 8,
+              borderBottomLeftRadius: 16,
+              marginRight: 4,
+            }}
+          />
+        </View>
+        <View
+          style={{
+            flexGrow: 1,
+          }}>
+          <LinearGradient
+            colors={[Colors.yellow, Colors.yellowDark]}
+            style={{
+              height: 120,
+              borderRadius: 8,
+              borderBottomRightRadius: 16,
+              marginLeft: 4,
+            }}
+          />
+        </View>
+      </View>
+
       <ListCard />
       <ListServicesPayment />
     </ScrollView>
