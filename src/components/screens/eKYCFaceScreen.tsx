@@ -89,11 +89,10 @@ export default function eKYCFaceScreen(props: any) {
             cx={Dimensions.get('window').width / 2}
             cy={Dimensions.get('window').height / 2 - 48}
             r={136}
-            stroke={Colors.greenLight}
+            stroke={Colors.greenDark}
             strokeWidth={24}
             strokeDasharray={'3'}
           />
-         
         </Svg>
       </View>
     </View>

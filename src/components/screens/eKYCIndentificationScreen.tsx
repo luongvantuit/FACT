@@ -87,7 +87,7 @@ export default function eKYCIndentificationScreen(props: any) {
         }}>
         <EntypoIcons name="camera" color={Colors.white} size={38} />
       </Pressable>
-      <SVGFrame colorStroke={Colors.yellowDark} x={32} strokeWidth={5} />
+      <SVGFrame colorStroke={Colors.greenDark} x={32} strokeWidth={5} />
       <View
         style={{
           position: 'absolute',

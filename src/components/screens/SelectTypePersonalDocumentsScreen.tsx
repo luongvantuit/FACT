@@ -23,9 +23,9 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
       <ImageBackground
         source={UndrawOptions}
         style={{
-          height: 220,
+          height: 280,
         }}
-        resizeMode={'center'}
+        resizeMode={'stretch'}
       />
       <View style={{marginHorizontal: 32}}>
         <Text
@@ -39,7 +39,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
         </Text>
         <Text
           style={{
-            fontWeight: '900',
+            fontWeight: '800',
             fontSize: 24,
             marginBottom: 16,
             color: Colors.text,
@@ -53,6 +53,7 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
           display: 'flex',
           flexDirection: 'column',
           height: Dimensions.get('window').height,
+          marginTop: 16,
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
           ...shadowBox,
@@ -61,7 +62,8 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
         }}>
         <Pressable
           style={{
-            margin: 32,
+            marginHorizontal: 32,
+            marginVertical: 16,
             justifyContent: 'center',
             paddingVertical: 16,
             borderRadius: 8,
