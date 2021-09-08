@@ -169,56 +169,68 @@ export default function DashboardScreen({navigation}: any) {
           <LinearGradient
             colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
             style={{
-              height: 120,
-              borderTopLeftRadius: 16,
-              borderBottomLeftRadius: 16,
-              borderTopRightRadius: 16,
+              borderRadius: 16,
+              borderBottomRightRadius: 0,
               marginRight: 4,
-              width: (Dimensions.get('window').width - 24) / 2,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
             }}>
-            <AntDesignIcons
-              name={'wallet'}
-              color={Colors.neutralLightest}
-              size={32}
-            />
-            <Text
+            <Pressable
               style={{
-                color: Colors.neutralLightest,
-                fontWeight: '900',
+                width: (Dimensions.get('window').width - 24) / 2,
+                height: 120,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              onPress={() => {
+                navigation.navigate('account');
               }}>
-              Accounts
-            </Text>
+              <AntDesignIcons
+                name={'wallet'}
+                color={Colors.neutralLightest}
+                size={32}
+              />
+              <Text
+                style={{
+                  color: Colors.neutralLightest,
+                  fontWeight: '900',
+                }}>
+                Account
+              </Text>
+            </Pressable>
           </LinearGradient>
           <LinearGradient
             colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
             style={{
-              height: 120,
-              borderTopRightRadius: 16,
-              borderBottomRightRadius: 16,
-              borderTopLeftRadius: 16,
               marginLeft: 4,
-              width: (Dimensions.get('window').width - 24) / 2,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
+              borderRadius: 16,
+              borderBottomLeftRadius: 0,
             }}>
-            <AntDesignIcons
-              name={'creditcard'}
-              color={Colors.neutralLightest}
-              size={32}
-            />
-            <Text
+            <Pressable
               style={{
-                color: Colors.neutralLightest,
-                fontWeight: '900',
+                height: 120,
+                width: (Dimensions.get('window').width - 24) / 2,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              onPress={() => {
+                navigation.navigate('card-service');
               }}>
-              Card Service
-            </Text>
+              <AntDesignIcons
+                name={'creditcard'}
+                color={Colors.neutralLightest}
+                size={32}
+              />
+              <Text
+                style={{
+                  color: Colors.neutralLightest,
+                  fontWeight: '900',
+                }}>
+                Card Service
+              </Text>
+            </Pressable>
           </LinearGradient>
         </View>
         <View

@@ -1,6 +1,7 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import AccountScreen from '../screens/AccountScreen';
+import CardServiceScreen from '../screens/CardServiceScreen';
 import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
 
 const AppUserStack = createNativeStackNavigator();
@@ -18,6 +19,13 @@ export default function AppUserStackNavigation() {
       <AppUserStack.Screen
         name={'account'}
         component={AccountScreen}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'card-service'}
+        component={CardServiceScreen}
         options={{
           headerShown: true,
         }}
