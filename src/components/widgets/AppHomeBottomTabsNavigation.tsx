@@ -9,6 +9,7 @@ import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
 import DashboardScreen from '../screens/DashboardScreen';
+import GroupsAndFriendsScreen from '../screens/GroupsAndFriendsScreen';
 import WalletScreen from '../screens/WalletScreen';
 import shadowBox from './ShadowBox';
 import StyledHeader from './StyledHeader';
@@ -75,6 +76,36 @@ export default function AppHomeBottomTabsNavigation() {
               />
             </TabContainer>
           ),
+          tabBarStyle: {
+            borderTopWidth: 0,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            backgroundColor: Colors.white,
+          },
+        }}
+      />
+      {}
+      <AppHomeBottomTabs.Screen
+        name="groups-and-friends"
+        component={GroupsAndFriendsScreen}
+        options={{
+          tabBarLabelStyle: {
+            display: 'none',
+          },
+          tabBarIcon: (props: any) => (
+            <TabContainer>
+              <MaterialCommunityIcons
+                name={'chat'}
+                size={props.focused === true ? 32 : 24}
+                color={
+                  props.focused === true
+                    ? Colors.yellowDark
+                    : Colors.neutralDark
+                }
+              />
+            </TabContainer>
+          ),
+          headerShown: false,
           tabBarStyle: {
             borderTopWidth: 0,
             ...shadowBox,
