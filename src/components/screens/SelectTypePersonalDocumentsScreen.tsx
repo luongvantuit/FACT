@@ -73,15 +73,15 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
                 <AntDesignIcons
                   name={'checksquare'}
                   color={Colors.green}
-                  size={28}
+                  size={18}
                 />
               ) : (
                 <View
                   style={{
-                    borderRadius: 4,
+                    borderRadius: 2,
                     borderColor: Colors.text,
-                    width: 28,
-                    height: 28,
+                    width: 18,
+                    height: 18,
                     borderWidth: 2,
                   }}
                 />
@@ -92,7 +92,6 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
                 fontWeight: '900',
                 color: Colors.text,
                 marginLeft: 8,
-                fontSize: 18,
               }}>
               Must Have A Valid Citizenship ID Card
             </Text>
@@ -100,8 +99,33 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
         </View>
         <Pressable
           style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
             marginHorizontal: 32,
-            marginBottom: 32,
+            marginVertical: 8,
+          }}
+          onPress={() => {
+            navigation.navigate('enter-password-sign-up');
+          }}>
+          <Text
+            style={{
+              fontWeight: '800',
+              color: Colors.text,
+              marginRight: 4,
+              textDecorationColor: Colors.text,
+              textDecorationLine: 'underline',
+              textDecorationStyle: 'solid',
+            }}>
+            Skip, If Use Account As Digital Wallet
+          </Text>
+          <AntDesignIcons name={'arrowright'} color={Colors.text} size={26} />
+        </Pressable>
+        <Pressable
+          style={{
+            marginHorizontal: 32,
+            marginBottom: Platform.OS === 'android' ? 16 : 32,
             marginTop: 8,
             justifyContent: 'center',
             paddingVertical: 16,

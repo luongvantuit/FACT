@@ -19,6 +19,7 @@ import eKYCFaceScreen from '../screens/eKYCFaceScreen';
 import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescript/src/types';
 import Colors from '../../assets/colors';
 import EnterPasswordSignInScreen from '../screens/EnterPasswordSignInScreen';
+import EnterPasswordSignUpScreen from '../screens/EnterPasswordSignUpScreen';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -80,6 +81,14 @@ export default function AppRegisterStackNavigation() {
       <AppRegisterStack.Screen
         name={'enter-password-sign-in'}
         component={EnterPasswordSignInScreen}
+        options={{
+          headerShown: true,
+          header: props => <HeaderApp {...props} />,
+        }}
+      />
+      <AppRegisterStack.Screen
+        name={'enter-password-sign-up'}
+        component={EnterPasswordSignUpScreen}
         options={{
           headerShown: true,
           header: props => <HeaderApp {...props} />,
