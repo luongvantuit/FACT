@@ -161,7 +161,14 @@ export default function DashboardScreen({navigation}: any) {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <AntDesignIcons name={'swap'} color={'white'} size={32} />
+          <AntDesignIcons name={'wallet'} color={Colors.text} size={32} />
+          <Text
+            style={{
+              color: Colors.text,
+              fontWeight: '900',
+            }}>
+            Accounts
+          </Text>
         </LinearGradient>
         <LinearGradient
           colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
@@ -175,7 +182,16 @@ export default function DashboardScreen({navigation}: any) {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-          }}></LinearGradient>
+          }}>
+          <AntDesignIcons name={'creditcard'} color={Colors.text} size={32} />
+          <Text
+            style={{
+              color: Colors.text,
+              fontWeight: '900',
+            }}>
+            Card Service
+          </Text>
+        </LinearGradient>
       </View>
       <View
         style={{
@@ -196,8 +212,16 @@ export default function DashboardScreen({navigation}: any) {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-          }}
-        />
+          }}>
+          <AntDesignIcons name={'swap'} color={Colors.text} size={32} />
+          <Text
+            style={{
+              color: Colors.text,
+              fontWeight: '900',
+            }}>
+            Transfer
+          </Text>
+        </LinearGradient>
         <LinearGradient
           colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
           style={{
@@ -210,8 +234,16 @@ export default function DashboardScreen({navigation}: any) {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-          }}
-        />
+          }}>
+          <AntDesignIcons name={'qrcode'} color={Colors.text} size={32} />
+          <Text
+            style={{
+              color: Colors.text,
+              fontWeight: '900',
+            }}>
+            QR Code
+          </Text>
+        </LinearGradient>
       </View>
 
       <ListCard />
