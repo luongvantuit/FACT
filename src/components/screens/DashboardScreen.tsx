@@ -243,29 +243,35 @@ export default function DashboardScreen({navigation}: any) {
           <LinearGradient
             colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
             style={{
-              height: 120,
-              borderBottomLeftRadius: 16,
-              borderBottomRightRadius: 16,
-              borderTopLeftRadius: 16,
+              borderRadius: 16,
+              borderTopRightRadius: 0,
               marginRight: 4,
-              width: (Dimensions.get('window').width - 24) / 2,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
             }}>
-            <AntDesignIcons
-              name={'swap'}
-              color={Colors.neutralLightest}
-              size={32}
-            />
-            <Text
+            <Pressable
               style={{
-                color: Colors.neutralLightest,
-                fontWeight: '900',
+                height: 120,
+                width: (Dimensions.get('window').width - 24) / 2,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              onPress={() => {
+                navigation.navigate('transfer');
               }}>
-              Transfer
-            </Text>
+              <AntDesignIcons
+                name={'swap'}
+                color={Colors.neutralLightest}
+                size={32}
+              />
+              <Text
+                style={{
+                  color: Colors.neutralLightest,
+                  fontWeight: '900',
+                }}>
+                Transfer
+              </Text>
+            </Pressable>
           </LinearGradient>
           <LinearGradient
             colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}

@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import AccountScreen from '../screens/AccountScreen';
 import CardServiceScreen from '../screens/CardServiceScreen';
+import TransferScreen from '../screens/TransferScreen';
 import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
 
 const AppUserStack = createNativeStackNavigator();
@@ -26,6 +27,13 @@ export default function AppUserStackNavigation() {
       <AppUserStack.Screen
         name={'card-service'}
         component={CardServiceScreen}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'transfer'}
+        component={TransferScreen}
         options={{
           headerShown: true,
         }}
