@@ -79,7 +79,7 @@ export default function ListCards() {
                       fontWeight: '600',
                       color: Colors.neutralLightest,
                     }}>
-                    Expiry End
+                    Expiry end
                   </Text>
                   <Text
                     style={{

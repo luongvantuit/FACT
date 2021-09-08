@@ -1,11 +1,6 @@
+import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
-import {
-  View,
-  Text,
-  Pressable,
-  useWindowDimensions,
-  ScrollView,
-} from 'react-native';
+import {View, Text, Pressable, ScrollView, Platform} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
@@ -14,19 +9,27 @@ import EntypoIcons from '../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AccountScreen({navigation}: any) {
-  const layout = useWindowDimensions();
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      title: 'Account',
-      headerTitleStyle: {
-        fontWeight: '900',
-        color: Colors.text,
-      },
-      headerTitleAlign: 'center',
-      headerLeft: (props: any) => (
+  const theme: Theme = useTheme();
+  return (
+    <ScrollView showsVerticalScrollIndicator={true}>
+      {/**
+       * start header
+       */}
+      <View
+        style={{
+          paddingTop: Platform.OS === 'android' ? 0 : 54,
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          backgroundColor: theme.colors.background,
+        }}>
         <Pressable
           onPress={() => {
             navigation.goBack();
+          }}
+          style={{
+            marginVertical: 16,
+            marginHorizontal: 16 - 9,
           }}>
           <EntypoIcons
             name="chevron-small-left"
@@ -34,17 +37,34 @@ export default function AccountScreen({navigation}: any) {
             color={Colors.text}
           />
         </Pressable>
-      ),
-      headerStyle: {
-        borderWidth: 0,
-      },
-    });
-  }, []);
-  return (
-    <ScrollView showsVerticalScrollIndicator={true}>
+        <Text
+          style={{
+            flex: 1,
+            color: Colors.text,
+            textAlign: 'center',
+            fontWeight: '900',
+            fontSize: 18,
+          }}>
+          Account
+        </Text>
+        <Pressable
+          style={{
+            marginVertical: 16,
+            marginHorizontal: 16 - 9,
+          }}>
+          <EntypoIcons
+            name="chevron-small-left"
+            size={32}
+            color={Colors.transparent}
+          />
+        </Pressable>
+      </View>
+      {/**
+       * end header
+       */}
       <View
         style={{
-          marginHorizontal: 8,
+          marginHorizontal: 16,
           marginTop: 16,
           ...shadowBox,
           shadowColor: Colors.matteBlack,
@@ -109,7 +129,7 @@ export default function AccountScreen({navigation}: any) {
               </LinearGradient>
               <Text
                 style={{
-                  marginTop: 8,
+                  marginTop: 32,
                   fontWeight: '600',
                   color: Colors.neutralDarker,
                 }}>
@@ -118,7 +138,7 @@ export default function AccountScreen({navigation}: any) {
               <Text
                 style={{
                   color: Colors.text,
-                  fontWeight: '800',
+                  fontWeight: '900',
                   fontSize: 16,
                 }}>
                 {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
@@ -136,8 +156,8 @@ export default function AccountScreen({navigation}: any) {
                 style={{
                   backgroundColor: Colors.neutralLighter,
                   borderRadius: 4,
-                  paddingHorizontal: 12,
-                  paddingVertical: 1,
+                  paddingHorizontal: 16,
+                  paddingVertical: 2,
                 }}>
                 <AntDesignIcons
                   name={'arrowright'}

@@ -24,6 +24,9 @@ export default function AppUserStackNavigation({navigation}: any) {
       <AppUserStack.Screen
         name={'account'}
         component={AccountScreen}
+        options={{
+          headerShown: false,
+        }}
       />
       <AppUserStack.Screen
         name={'card-service'}

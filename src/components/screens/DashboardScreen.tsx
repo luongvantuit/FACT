@@ -35,7 +35,7 @@ export default function DashboardScreen({navigation}: any) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          paddingHorizontal: 8,
+          paddingHorizontal: 16,
         }}>
         <View
           style={{
@@ -128,7 +128,7 @@ export default function DashboardScreen({navigation}: any) {
           )}
           <Pressable
             style={{
-              marginHorizontal: 8,
+              marginLeft: 8,
             }}
             onPress={() => {
               setHidden(!hidden);
@@ -161,7 +161,7 @@ export default function DashboardScreen({navigation}: any) {
         }}>
         <View
           style={{
-            marginHorizontal: 8,
+            marginHorizontal: 16,
             marginTop: 8,
             display: 'flex',
             flexDirection: 'row',
@@ -175,7 +175,7 @@ export default function DashboardScreen({navigation}: any) {
             }}>
             <Pressable
               style={{
-                width: (Dimensions.get('window').width - 24) / 2,
+                width: (Dimensions.get('window').width - 40) / 2,
                 height: 120,
                 display: 'flex',
                 flexDirection: 'column',
@@ -209,7 +209,7 @@ export default function DashboardScreen({navigation}: any) {
             <Pressable
               style={{
                 height: 120,
-                width: (Dimensions.get('window').width - 24) / 2,
+                width: (Dimensions.get('window').width - 40) / 2,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -228,14 +228,14 @@ export default function DashboardScreen({navigation}: any) {
                   color: Colors.neutralLightest,
                   fontWeight: '900',
                 }}>
-                Card Service
+                Card service
               </Text>
             </Pressable>
           </LinearGradient>
         </View>
         <View
           style={{
-            marginHorizontal: 8,
+            marginHorizontal: 16,
             marginVertical: 8,
             display: 'flex',
             flexDirection: 'row',
@@ -250,7 +250,7 @@ export default function DashboardScreen({navigation}: any) {
             <Pressable
               style={{
                 height: 120,
-                width: (Dimensions.get('window').width - 24) / 2,
+                width: (Dimensions.get('window').width - 40) / 2,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -281,7 +281,7 @@ export default function DashboardScreen({navigation}: any) {
               borderBottomLeftRadius: 16,
               borderTopRightRadius: 16,
               marginLeft: 4,
-              width: (Dimensions.get('window').width - 24) / 2,
+              width: (Dimensions.get('window').width - 40) / 2,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -297,7 +297,7 @@ export default function DashboardScreen({navigation}: any) {
                 color: Colors.neutralLightest,
                 fontWeight: '900',
               }}>
-              QR Code
+              QR code
             </Text>
           </LinearGradient>
         </View>
