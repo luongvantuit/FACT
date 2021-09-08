@@ -111,24 +111,26 @@ export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
             backgroundColor: Colors.text,
           }}
           onPress={() => {
-            check(
-              Platform.OS === 'android'
-                ? 'android.permission.CAMERA'
-                : 'ios.permission.CAMERA',
-            ).then(result => {
-              if (result === RESULTS.GRANTED)
-                navigation.navigate('ekyc-indentification');
-              else {
-                request(
-                  Platform.OS === 'android'
-                    ? 'android.permission.CAMERA'
-                    : 'ios.permission.CAMERA',
-                ).then(result => {
-                  if (result === RESULTS.GRANTED)
-                    navigation.navigate('ekyc-indentification');
-                });
-              }
-            });
+            if (accept) {
+              check(
+                Platform.OS === 'android'
+                  ? 'android.permission.CAMERA'
+                  : 'ios.permission.CAMERA',
+              ).then(result => {
+                if (result === RESULTS.GRANTED)
+                  navigation.navigate('ekyc-indentification');
+                else {
+                  request(
+                    Platform.OS === 'android'
+                      ? 'android.permission.CAMERA'
+                      : 'ios.permission.CAMERA',
+                  ).then(result => {
+                    if (result === RESULTS.GRANTED)
+                      navigation.navigate('ekyc-indentification');
+                  });
+                }
+              });
+            }
           }}>
           <Text
             style={{
