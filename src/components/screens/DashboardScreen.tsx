@@ -90,7 +90,7 @@ export default function DashboardScreen({navigation}: any) {
                   color: Colors.text,
                   fontWeight: '800',
                 }}>
-                Good Morning!
+                Good morning!
               </Text>
               <Text
                 style={{

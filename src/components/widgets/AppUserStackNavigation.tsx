@@ -4,10 +4,14 @@ import AccountScreen from '../screens/AccountScreen';
 import CardServiceScreen from '../screens/CardServiceScreen';
 import TransferScreen from '../screens/TransferScreen';
 import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
-
+import Colors from '../../assets/colors';
+import {Theme, useTheme} from '@react-navigation/native';
+import {Pressable} from 'react-native';
+import EntypoIcons from '../fonts-icon/entypo-icons';
 const AppUserStack = createNativeStackNavigator();
 
-export default function AppUserStackNavigation() {
+export default function AppUserStackNavigation({navigation}: any) {
+  const theme: Theme = useTheme();
   return (
     <AppUserStack.Navigator initialRouteName={'app-home-bottom-tabs'}>
       <AppUserStack.Screen
@@ -20,9 +24,6 @@ export default function AppUserStackNavigation() {
       <AppUserStack.Screen
         name={'account'}
         component={AccountScreen}
-        options={{
-          headerShown: true,
-        }}
       />
       <AppUserStack.Screen
         name={'card-service'}
