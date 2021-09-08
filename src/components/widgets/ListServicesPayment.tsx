@@ -44,6 +44,7 @@ export default function ListServicesPayment() {
                 style={{
                   fontWeight: '900',
                   color: Colors.text,
+                  fontSize: 18,
                 }}>
                 {item.name}
               </Text>
@@ -56,7 +57,8 @@ export default function ListServicesPayment() {
                 <Text
                   style={{
                     color: Colors.text,
-                    fontWeight: '600',
+                    fontWeight: '700',
+                    fontSize: 16,
                   }}>{`${item.increase === true ? '+' : '-'}${
                   item.value
                 }$`}</Text>

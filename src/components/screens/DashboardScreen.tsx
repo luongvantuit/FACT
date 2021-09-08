@@ -21,6 +21,8 @@ import shadowBox from '../widgets/ShadowBox';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(true);
+  const [showHeader, setShowHeader] = useState<boolean>(false);
+  React.useLayoutEffect(() => {}, []);
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -139,6 +141,10 @@ export default function DashboardScreen({navigation}: any) {
           </Pressable>
         </View>
       </ImageBackground>
+      {/**
+       * service
+       */}
+      <View></View>
       {/**
        * container
        */}
