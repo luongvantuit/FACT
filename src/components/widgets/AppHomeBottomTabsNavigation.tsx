@@ -106,7 +106,7 @@ export default function AppHomeBottomTabsNavigation() {
               />
             </TabContainer>
           ),
-          header: (props: BottomTabHeaderProps) => <HeaderWallet {...props} />,
+          headerShown: false,
           tabBarStyle: {
             borderTopWidth: 0,
             ...shadowBox,
@@ -128,43 +128,5 @@ function TabContainer(props: {children?: JSX.Element}): JSX.Element {
       }}>
       {props.children}
     </View>
-  );
-}
-
-function HeaderWallet(props: BottomTabHeaderProps) {
-  return (
-    <Pressable
-      style={StyledHeader.container}
-      onPress={() => {
-        props.navigation.navigate('profile');
-      }}>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}>
-        <Image
-          source={leakImage}
-          style={[StyledImage.leftHeader, {marginRight: 8}]}
-        />
-        <View>
-          <Text
-            style={{
-              fontWeight: '900',
-              fontSize: 18,
-            }}>
-            {user.name}
-          </Text>
-          <Text
-            style={{
-              fontSize: 14,
-            }}>
-            {user.type}
-          </Text>
-        </View>
-      </View>
-      <EntypoIcons name="chevron-small-right" size={32} />
-    </Pressable>
   );
 }

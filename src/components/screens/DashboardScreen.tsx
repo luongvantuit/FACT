@@ -17,6 +17,7 @@ import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
+import shadowBox from '../widgets/ShadowBox';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(true);
@@ -143,111 +144,142 @@ export default function DashboardScreen({navigation}: any) {
        */}
       <View
         style={{
-          marginHorizontal: 8,
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
+          paddingTop: 32,
           marginTop: 8,
+          ...shadowBox,
+          shadowColor: Colors.matteBlack,
           display: 'flex',
-          flexDirection: 'row',
+          backgroundColor: Colors.white,
         }}>
-        <LinearGradient
-          colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
+        <View
           style={{
-            height: 120,
-            borderRadius: 8,
-            borderTopLeftRadius: 16,
-            marginRight: 4,
-            width: (Dimensions.get('window').width - 24) / 2,
+            marginHorizontal: 8,
+            marginTop: 8,
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            flexDirection: 'row',
           }}>
-          <AntDesignIcons name={'wallet'} color={Colors.text} size={32} />
-          <Text
+          <LinearGradient
+            colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
             style={{
-              color: Colors.text,
-              fontWeight: '900',
+              height: 120,
+              borderTopLeftRadius: 16,
+              borderBottomLeftRadius: 16,
+              borderTopRightRadius: 16,
+              marginRight: 4,
+              width: (Dimensions.get('window').width - 24) / 2,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}>
-            Accounts
-          </Text>
-        </LinearGradient>
-        <LinearGradient
-          colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
+            <AntDesignIcons
+              name={'wallet'}
+              color={Colors.neutralLightest}
+              size={32}
+            />
+            <Text
+              style={{
+                color: Colors.neutralLightest,
+                fontWeight: '900',
+              }}>
+              Accounts
+            </Text>
+          </LinearGradient>
+          <LinearGradient
+            colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
+            style={{
+              height: 120,
+              borderTopRightRadius: 16,
+              borderBottomRightRadius: 16,
+              borderTopLeftRadius: 16,
+              marginLeft: 4,
+              width: (Dimensions.get('window').width - 24) / 2,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <AntDesignIcons
+              name={'creditcard'}
+              color={Colors.neutralLightest}
+              size={32}
+            />
+            <Text
+              style={{
+                color: Colors.neutralLightest,
+                fontWeight: '900',
+              }}>
+              Card Service
+            </Text>
+          </LinearGradient>
+        </View>
+        <View
           style={{
-            height: 120,
-            borderRadius: 8,
-            borderTopRightRadius: 16,
-            marginLeft: 4,
-            width: (Dimensions.get('window').width - 24) / 2,
+            marginHorizontal: 8,
+            marginVertical: 8,
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            flexDirection: 'row',
           }}>
-          <AntDesignIcons name={'creditcard'} color={Colors.text} size={32} />
-          <Text
+          <LinearGradient
+            colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
             style={{
-              color: Colors.text,
-              fontWeight: '900',
+              height: 120,
+              borderBottomLeftRadius: 16,
+              borderBottomRightRadius: 16,
+              borderTopLeftRadius: 16,
+              marginRight: 4,
+              width: (Dimensions.get('window').width - 24) / 2,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}>
-            Card Service
-          </Text>
-        </LinearGradient>
+            <AntDesignIcons
+              name={'swap'}
+              color={Colors.neutralLightest}
+              size={32}
+            />
+            <Text
+              style={{
+                color: Colors.neutralLightest,
+                fontWeight: '900',
+              }}>
+              Transfer
+            </Text>
+          </LinearGradient>
+          <LinearGradient
+            colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
+            style={{
+              height: 120,
+              borderBottomRightRadius: 16,
+              borderBottomLeftRadius: 16,
+              borderTopRightRadius: 16,
+              marginLeft: 4,
+              width: (Dimensions.get('window').width - 24) / 2,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <AntDesignIcons
+              name={'qrcode'}
+              color={Colors.neutralLightest}
+              size={32}
+            />
+            <Text
+              style={{
+                color: Colors.neutralLightest,
+                fontWeight: '900',
+              }}>
+              QR Code
+            </Text>
+          </LinearGradient>
+        </View>
+        <ListCard />
+        <ListServicesPayment />
       </View>
-      <View
-        style={{
-          marginHorizontal: 8,
-          marginVertical: 8,
-          display: 'flex',
-          flexDirection: 'row',
-        }}>
-        <LinearGradient
-          colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
-          style={{
-            height: 120,
-            borderRadius: 8,
-            borderBottomLeftRadius: 16,
-            marginRight: 4,
-            width: (Dimensions.get('window').width - 24) / 2,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <AntDesignIcons name={'swap'} color={Colors.text} size={32} />
-          <Text
-            style={{
-              color: Colors.text,
-              fontWeight: '900',
-            }}>
-            Transfer
-          </Text>
-        </LinearGradient>
-        <LinearGradient
-          colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
-          style={{
-            height: 120,
-            borderRadius: 8,
-            borderBottomRightRadius: 16,
-            marginLeft: 4,
-            width: (Dimensions.get('window').width - 24) / 2,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <AntDesignIcons name={'qrcode'} color={Colors.text} size={32} />
-          <Text
-            style={{
-              color: Colors.text,
-              fontWeight: '900',
-            }}>
-            QR Code
-          </Text>
-        </LinearGradient>
-      </View>
-
-      <ListCard />
-      <ListServicesPayment />
     </ScrollView>
   );
 }

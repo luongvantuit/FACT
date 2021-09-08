@@ -3,21 +3,12 @@ import {View, Text, Image} from 'react-native';
 import Colors from '../../assets/colors';
 import listServicesPayment from '../../datas/list-services-payment';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import shadowBox from './ShadowBox';
 
 export default function ListServicesPayment() {
   return (
     <View
       style={{
-        borderTopLeftRadius: 8,
-        borderTopRightRadius: 8,
         paddingHorizontal: 16,
-        paddingTop: 32,
-        marginTop: 8,
-        ...shadowBox,
-        shadowColor: Colors.matteBlack,
-        display: 'flex',
-        backgroundColor: Colors.white,
       }}>
       {listServicesPayment.map(item => (
         <View

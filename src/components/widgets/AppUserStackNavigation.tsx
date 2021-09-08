@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import ProfileScreen from '../screens/ProfileScreen';
+import AccountScreen from '../screens/AccountScreen';
 import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
 
 const AppUserStack = createNativeStackNavigator();
@@ -16,8 +16,8 @@ export default function AppUserStackNavigation() {
         }}
       />
       <AppUserStack.Screen
-        name={'profile'}
-        component={ProfileScreen}
+        name={'account'}
+        component={AccountScreen}
         options={{
           headerShown: true,
         }}
