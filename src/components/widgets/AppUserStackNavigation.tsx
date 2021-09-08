@@ -32,7 +32,7 @@ export default function AppUserStackNavigation({navigation}: any) {
         name={'card-service'}
         component={CardServiceScreen}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <AppUserStack.Screen
