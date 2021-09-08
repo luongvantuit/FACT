@@ -144,7 +144,7 @@ export default function DashboardScreen({navigation}: any) {
       {/**
        * service
        */}
-      <View></View>
+      <DashboardService />
       {/**
        * container
        */}
@@ -306,4 +306,8 @@ export default function DashboardScreen({navigation}: any) {
       </View>
     </ScrollView>
   );
+}
+
+function DashboardService(): JSX.Element {
+  return <View></View>;
 }
