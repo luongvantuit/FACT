@@ -1,6 +1,6 @@
 import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
-import {View, Text, Pressable, ScrollView} from 'react-native';
+import {View, Text, Pressable, ScrollView, StatusBar} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
@@ -15,6 +15,10 @@ export default function AccountScreen({navigation}: any) {
       {/**
        * start header
        */}
+      <StatusBar
+        backgroundColor={Colors.transparent}
+        barStyle={'dark-content'}
+      />
       <View
         style={{
           paddingTop: 54,

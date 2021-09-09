@@ -3,10 +3,8 @@ import {
   Dimensions,
   Image,
   ImageBackground,
-  Platform,
   Pressable,
   ScrollView,
-  StatusBar,
   Text,
   View,
 } from 'react-native';
@@ -20,17 +18,11 @@ import ListServicesPayment from '../widgets/ListServicesPayment';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function DashboardScreen({navigation}: any) {
-  const [hidden, setHidden] = useState<boolean>(true);
-  React.useLayoutEffect(() => {}, []);
+  const [hidden, setHidden] = useState<boolean>(false);
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
       alwaysBounceVertical={false}>
-      <StatusBar
-        barStyle={'dark-content'}
-        translucent={true}
-        backgroundColor={Colors.transparent}
-      />
       <ImageBackground
         source={UndrawPayOnline}
         style={{

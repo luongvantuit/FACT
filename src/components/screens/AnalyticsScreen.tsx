@@ -13,15 +13,10 @@ export default function AnalyticsScreen({navigation}: any) {
     });
   });
   return (
-    <LinearGradient
-      colors={[Colors.greenDark, Colors.green, Colors.greenLight]}
+    <View
       style={{
         flex: 1,
       }}>
-      <StatusBar
-        backgroundColor={Colors.transparent}
-        barStyle={'light-content'}
-      />
       <ScrollView
         showsVerticalScrollIndicator={false}
         alwaysBounceVertical={false}>
@@ -126,6 +121,6 @@ export default function AnalyticsScreen({navigation}: any) {
           />
         </LinearGradient>
       </ScrollView>
-    </LinearGradient>
+    </View>
   );
 }

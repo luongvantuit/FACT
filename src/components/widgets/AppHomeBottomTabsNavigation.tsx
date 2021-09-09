@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {View} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
@@ -26,19 +26,21 @@ export default function AppHomeBottomTabsNavigation() {
           tabBarLabelStyle: {
             display: 'none',
           },
-          tabBarIcon: props => (
-            <TabContainer>
-              <MaterialCommunityIcons
-                name={'view-dashboard'}
-                size={props.focused === true ? 32 : 24}
-                color={
-                  props.focused === true
-                    ? Colors.yellowDark
-                    : Colors.neutralDark
-                }
-              />
-            </TabContainer>
-          ),
+          tabBarIcon: props => {
+            return (
+              <TabContainer>
+                <MaterialCommunityIcons
+                  name={'view-dashboard'}
+                  size={props.focused === true ? 32 : 24}
+                  color={
+                    props.focused === true
+                      ? Colors.yellowDark
+                      : Colors.neutralDark
+                  }
+                />
+              </TabContainer>
+            );
+          },
           tabBarStyle: {
             borderTopWidth: 0,
             ...shadowBox,
@@ -58,19 +60,21 @@ export default function AppHomeBottomTabsNavigation() {
           tabBarLabelStyle: {
             display: 'none',
           },
-          tabBarIcon: props => (
-            <TabContainer>
-              <MaterialCommunityIcons
-                name={'google-analytics'}
-                size={props.focused === true ? 32 : 24}
-                color={
-                  props.focused === true
-                    ? Colors.yellowDark
-                    : Colors.neutralDark
-                }
-              />
-            </TabContainer>
-          ),
+          tabBarIcon: props => {
+            return (
+              <TabContainer>
+                <MaterialCommunityIcons
+                  name={'google-analytics'}
+                  size={props.focused === true ? 32 : 24}
+                  color={
+                    props.focused === true
+                      ? Colors.yellowDark
+                      : Colors.neutralDark
+                  }
+                />
+              </TabContainer>
+            );
+          },
           tabBarStyle: {
             borderTopWidth: 0,
             ...shadowBox,
@@ -119,19 +123,21 @@ export default function AppHomeBottomTabsNavigation() {
           tabBarLabelStyle: {
             display: 'none',
           },
-          tabBarIcon: (props: any) => (
-            <TabContainer>
-              <EntypoIcons
-                name={'wallet'}
-                size={props.focused === true ? 32 : 24}
-                color={
-                  props.focused === true
-                    ? Colors.yellowDark
-                    : Colors.neutralDark
-                }
-              />
-            </TabContainer>
-          ),
+          tabBarIcon: (props: any) => {
+            return (
+              <TabContainer>
+                <EntypoIcons
+                  name={'wallet'}
+                  size={props.focused === true ? 32 : 24}
+                  color={
+                    props.focused === true
+                      ? Colors.yellowDark
+                      : Colors.neutralDark
+                  }
+                />
+              </TabContainer>
+            );
+          },
           headerShown: false,
           tabBarStyle: {
             borderTopWidth: 0,
