@@ -116,14 +116,8 @@ export default function AnalyticsScreen({navigation}: any) {
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        alwaysBounceVertical={false}
-        showsHorizontalScrollIndicator={false}
-        alwaysBounceHorizontal={false}
         bounces={false}
-        bouncesZoom={false}
-        accessibilityIgnoresInvertColors={false}
-        endFillColor={Colors.transparent}
-        disableScrollViewPanResponder={true}
+        overScrollMode={'never'}
         style={{
           position: 'absolute',
           width: Dimensions.get('window').width,
