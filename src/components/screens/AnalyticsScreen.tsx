@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ScrollView, Platform, Dimensions} from 'react-native';
+import {ScrollView, Dimensions, View, Text} from 'react-native';
 import {LineChart, PieChart} from 'react-native-chart-kit';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
@@ -9,104 +9,108 @@ import shadowBox from '../widgets/ShadowBox';
 export default function AnalyticsScreen({navigation}: any) {
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      headerShown: true,
-      header: (props: any) => (
-        <View
-          style={{
-            paddingTop: 54,
-            paddingBottom: 16,
-            borderBottomColor: Colors.text,
-          }}>
-          <Text
-            style={{
-              color: Colors.text,
-              fontWeight: '900',
-              fontSize: 18,
-              textAlign: 'center',
-              marginHorizontal: 32,
-            }}>
-            Analytics
-          </Text>
-        </View>
-      ),
+      headerShown: false,
     });
   });
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      alwaysBounceVertical={false}>
-      {/** 397 */}
-      <LineChart
-        data={{
-          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-          datasets: [
-            {
-              data: [20.0, 84.5, 54.0, 0.0, 18.5, 220],
-            },
-          ],
-        }}
-        width={Dimensions.get('window').width - 16}
-        height={240}
-        chartConfig={{
-          backgroundColor: Colors.blue,
-          backgroundGradientFrom: Colors.blueDark,
-          backgroundGradientTo: Colors.blue,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          propsForDots: {
-            r: '3',
-            fill: Colors.yellowDark,
-          },
-        }}
-        yAxisSuffix={user.currency === 'USD' ? '$' : 'VNĐ'}
-        bezier
+    <LinearGradient
+      colors={[Colors.greenDark, Colors.green, Colors.greenLight]}
+      style={{
+        flex: 1,
+      }}>
+      <View
         style={{
-          marginHorizontal: 8,
-          marginTop: 16,
-          borderRadius: 8,
-          ...shadowBox,
-          shadowColor: Colors.matteBlack,
-        }}
-      />
-      <LinearGradient
-        colors={[Colors.blueDark, Colors.blue, Colors.blue]}
-        style={{
-          marginTop: 16,
-          marginHorizontal: 8,
-          borderRadius: 8,
+          paddingTop: 54,
+          paddingBottom: 16,
+          borderBottomColor: Colors.text,
         }}>
-        <PieChart
+        <Text
+          style={{
+            color: Colors.neutralLightest,
+            fontWeight: '900',
+            fontSize: 18,
+            textAlign: 'center',
+            marginHorizontal: 32,
+          }}>
+          Analytics
+        </Text>
+      </View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={false}>
+        {/** 397 */}
+        <LineChart
+          data={{
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [
+              {
+                data: [20.0, 84.5, 54.0, 0.0, 18.5, 220],
+              },
+            ],
+          }}
           width={Dimensions.get('window').width - 16}
           height={240}
-          data={[
-            {
-              name: 'Service',
-              expense: 36.5,
-              color: Colors.blue,
-              legendFontColor: Colors.neutralLightest,
-            },
-            {
-              name: 'Restaurant',
-              expense: 120,
-              color: Colors.blueLight,
-              legendFontColor: Colors.neutralLightest,
-            },
-            {
-              name: 'Shopping',
-              expense: 240.5,
-              color: Colors.blueLighter,
-              legendFontColor: Colors.neutralLightest,
-            },
-          ]}
           chartConfig={{
-            color: () => `${Colors.blue}`,
-            labelColor: () => `${Colors.blue}`,
+            backgroundColor: Colors.blue,
+            backgroundGradientFrom: Colors.blueDark,
+            backgroundGradientTo: Colors.blue,
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            propsForDots: {
+              r: '3',
+              fill: Colors.yellowDark,
+            },
           }}
-          accessor={'expense'}
-          backgroundColor={Colors.transparent}
-          paddingLeft={'8'}
+          yAxisSuffix={user.currency === 'USD' ? '$' : 'VNĐ'}
+          bezier
+          style={{
+            marginHorizontal: 8,
+            marginTop: 16,
+            borderRadius: 8,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+          }}
         />
-      </LinearGradient>
-    </ScrollView>
+        <LinearGradient
+          colors={[Colors.blueDark, Colors.blue, Colors.blue]}
+          style={{
+            marginTop: 16,
+            marginHorizontal: 8,
+            borderRadius: 8,
+          }}>
+          <PieChart
+            width={Dimensions.get('window').width - 16}
+            height={240}
+            data={[
+              {
+                name: 'Service',
+                expense: 36.5,
+                color: Colors.blue,
+                legendFontColor: Colors.neutralLightest,
+              },
+              {
+                name: 'Restaurant',
+                expense: 120,
+                color: Colors.blueLight,
+                legendFontColor: Colors.neutralLightest,
+              },
+              {
+                name: 'Shopping',
+                expense: 240.5,
+                color: Colors.blueLighter,
+                legendFontColor: Colors.neutralLightest,
+              },
+            ]}
+            chartConfig={{
+              color: () => `${Colors.blue}`,
+              labelColor: () => `${Colors.blue}`,
+            }}
+            accessor={'expense'}
+            backgroundColor={Colors.transparent}
+            paddingLeft={'8'}
+          />
+        </LinearGradient>
+      </ScrollView>
+    </LinearGradient>
   );
 }
