@@ -89,7 +89,7 @@ export default function eKYCIndentificationScreen(props: any) {
           right: Dimensions.get('window').width / 2 - 30,
           borderRadius: 40,
           position: 'absolute',
-          bottom: 38,
+          bottom: 80,
           zIndex: 10,
           justifyContent: 'center',
           alignItems: 'center',
