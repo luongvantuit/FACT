@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {View, Text, Platform, Pressable, Dimensions} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
-import Svg, {Circle, Defs, LinearGradient, Stop} from 'react-native-svg';
+import Svg, {Circle} from 'react-native-svg';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 
@@ -64,9 +64,8 @@ export default function eKYCFaceScreen(props: any) {
           height: Dimensions.get('window').height,
         }}
         captureAudio={false}
-        autoFocus={'on'}
         type={RNCamera.Constants.Type.front}
-        whiteBalance={'shadow'}
+        keepAudioSession={false}
       />
       <View
         style={{
@@ -81,17 +80,18 @@ export default function eKYCFaceScreen(props: any) {
           <Circle
             cx={Dimensions.get('window').width / 2}
             cy={Dimensions.get('window').height / 2 - 48}
-            r={380}
+            r={340}
             stroke={'black'}
             strokeWidth={1000}
           />
           <Circle
             cx={Dimensions.get('window').width / 2}
             cy={Dimensions.get('window').height / 2 - 48}
-            r={136}
+            r={174}
             stroke={Colors.greenDark}
-            strokeWidth={24}
-            strokeDasharray={'3'}
+            strokeWidth={16}
+            fill={Colors.transparent}
+            strokeDasharray={'3.5'}
           />
         </Svg>
       </View>

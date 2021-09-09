@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
-import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import {Svg, Rect, Polygon, Polyline, Text as SVGText} from 'react-native-svg';
+import {Svg, Rect, Polyline, Text as SVGText} from 'react-native-svg';
+import { RNCamera } from 'react-native-camera';
 
 export default function eKYCIndentificationScreen(props: any) {
   useEffect(() => {
@@ -64,9 +64,8 @@ export default function eKYCIndentificationScreen(props: any) {
           height: Dimensions.get('window').height,
         }}
         captureAudio={false}
-        autoFocus={'on'}
-        type={RNCamera.Constants.Type.front}
-        whiteBalance={'shadow'}
+        type={RNCamera.Constants.Type.back}
+        keepAudioSession={false}
       />
       <Pressable
         style={{
@@ -87,7 +86,12 @@ export default function eKYCIndentificationScreen(props: any) {
         }}>
         <EntypoIcons name="camera" color={Colors.white} size={38} />
       </Pressable>
-      <SVGFrame colorStroke={Colors.greenDark} x={32} strokeWidth={5} />
+      <SVGFrame
+        colorStroke={Colors.greenDark}
+        x={16}
+        strokeWidth={5}
+        height={280}
+      />
       <View
         style={{
           position: 'absolute',
