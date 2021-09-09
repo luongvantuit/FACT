@@ -22,7 +22,9 @@ export default function DashboardScreen({navigation}: any) {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      alwaysBounceVertical={false}>
+      alwaysBounceVertical={false}
+      bounces={false}
+      overScrollMode={'never'}>
       <ImageBackground
         source={UndrawPayOnline}
         style={{

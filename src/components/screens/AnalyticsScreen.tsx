@@ -26,7 +26,7 @@ export default function AnalyticsScreen({navigation}: any) {
         style={{
           textAlign: 'center',
           marginBottom: 8,
-          marginTop: 78,
+          marginTop: 90,
           color: Colors.blueDark,
           fontWeight: '900',
           fontSize: 32,
@@ -116,6 +116,7 @@ export default function AnalyticsScreen({navigation}: any) {
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={false}
         bounces={false}
         overScrollMode={'never'}
         style={{
