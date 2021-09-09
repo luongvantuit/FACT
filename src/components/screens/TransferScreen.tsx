@@ -180,7 +180,6 @@ export default function TransferScreen({navigation}: any) {
                 style={{
                   paddingHorizontal: 16,
                   color: Colors.text,
-                  backgroundColor: Colors.neutralLighter,
                   paddingVertical: 8,
                   fontWeight: '700',
                   fontSize: 16,
@@ -198,7 +197,7 @@ export default function TransferScreen({navigation}: any) {
                 <TextInput
                   style={{
                     flex: 1,
-                    borderBottomColor: Colors.matteBlack,
+                    borderBottomColor: Colors.neutralLighter,
                     borderBottomWidth: 1,
                     paddingVertical: 8,
                     color: Colors.text,
@@ -206,7 +205,7 @@ export default function TransferScreen({navigation}: any) {
                   }}
                   keyboardType={'numeric'}
                   placeholder={'Amount'}
-                  placeholderTextColor={Colors.neutralLight}
+                  placeholderTextColor={Colors.neutralLighter}
                 />
                 <Text
                   style={{
@@ -217,11 +216,40 @@ export default function TransferScreen({navigation}: any) {
                   {user.currency === 'USD' ? '$' : 'VNĐ'}
                 </Text>
               </View>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  marginHorizontal: 16,
+                  marginTop: 32,
+                  marginBottom: 8,
+                }}>
+                <Text
+                  style={{
+                    color: Colors.neutralDark,
+                    fontWeight: '700',
+                  }}>
+                  Transaction remark
+                </Text>
+                <TextInput
+                  style={{
+                    borderBottomColor: Colors.neutralLighter,
+                    borderBottomWidth: 1,
+                    paddingVertical: 8,
+                    color: Colors.text,
+                    fontWeight: '700',
+                  }}
+                  keyboardType={'default'}
+                  placeholder={'Content'}
+                  placeholderTextColor={Colors.neutralLighter}
+                />
+              </View>
             </View>
             <View
               style={{
                 marginHorizontal: 16,
                 marginBottom: Platform.OS === 'android' ? 64 : 32,
+                marginTop: 8,
                 paddingVertical: 16,
                 borderRadius: 8,
                 backgroundColor: Colors.blue,
