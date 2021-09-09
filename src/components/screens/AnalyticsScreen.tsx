@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, Dimensions, View, Text} from 'react-native';
+import {ScrollView, Dimensions, View, Text, StatusBar} from 'react-native';
 import {LineChart, PieChart} from 'react-native-chart-kit';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
@@ -18,27 +18,31 @@ export default function AnalyticsScreen({navigation}: any) {
       style={{
         flex: 1,
       }}>
-      <View
-        style={{
-          paddingTop: 54,
-          paddingBottom: 16,
-          borderBottomColor: Colors.text,
-        }}>
-        <Text
-          style={{
-            color: Colors.neutralLightest,
-            fontWeight: '900',
-            fontSize: 18,
-            textAlign: 'center',
-            marginHorizontal: 32,
-          }}>
-          Analytics
-        </Text>
-      </View>
+      <StatusBar
+        backgroundColor={Colors.transparent}
+        barStyle={'light-content'}
+      />
       <ScrollView
         showsVerticalScrollIndicator={false}
         alwaysBounceVertical={false}>
         {/** 397 */}
+        <View
+          style={{
+            paddingTop: 54,
+            paddingBottom: 16,
+            borderBottomColor: Colors.text,
+          }}>
+          <Text
+            style={{
+              color: Colors.neutralLightest,
+              fontWeight: '900',
+              fontSize: 18,
+              textAlign: 'center',
+              marginHorizontal: 32,
+            }}>
+            Analytics
+          </Text>
+        </View>
         <LineChart
           data={{
             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
