@@ -71,6 +71,17 @@ export default function AnalyticsScreen({navigation}: any) {
             shadowColor: Colors.matteBlack,
           }}
         />
+        <Text
+          style={{
+            fontWeight: '900',
+            fontSize: 18,
+            color: Colors.neutralLightest,
+            textAlign: 'center',
+            marginTop: 16,
+            marginBottom: 8,
+          }}>
+          Top categories
+        </Text>
         <LinearGradient
           colors={[Colors.blueDark, Colors.blue, Colors.blue]}
           style={{
