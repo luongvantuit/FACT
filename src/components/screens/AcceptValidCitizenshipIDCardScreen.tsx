@@ -56,7 +56,9 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
         <Pressable
           style={{
             marginHorizontal: 32,
-            marginTop: 16,
+            marginTop: 8,
+            paddingVertical: 8,
+            paddingHorizontal: 4,
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
