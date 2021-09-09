@@ -4,7 +4,7 @@ import {check, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import {Svg, Rect, Polyline, Text as SVGText} from 'react-native-svg';
-import { RNCamera } from 'react-native-camera';
+import {RNCamera} from 'react-native-camera';
 
 export default function eKYCIndentificationScreen(props: any) {
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function eKYCIndentificationScreen(props: any) {
           height: Dimensions.get('window').height,
         }}
         captureAudio={false}
-        type={RNCamera.Constants.Type.back}
+        type={'back'}
         keepAudioSession={false}
       />
       <Pressable
@@ -218,22 +218,22 @@ function RectInSideFrame(props: {
         y={0}
         width={Dimensions.get('window').width}
         height={y}
-        fill={'#00000066'}
+        fill={'#000000AA'}
       />
-      <Rect x={0} y={y} width={x} height={height} fill={'#00000066'} />
+      <Rect x={0} y={y} width={x} height={height} fill={'#000000AA'} />
       <Rect
         x={x + width}
         y={y}
         width={Dimensions.get('window').width - (x + width)}
         height={height}
-        fill={'#00000066'}
+        fill={'#000000AA'}
       />
       <Rect
         x={0}
         y={y + height}
         width={Dimensions.get('window').width}
         height={Dimensions.get('window').height}
-        fill={'#00000066'}
+        fill={'#000000AA'}
       />
     </Svg>
   );

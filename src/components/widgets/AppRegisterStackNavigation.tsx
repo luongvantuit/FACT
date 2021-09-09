@@ -12,7 +12,7 @@ import {
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import {useTheme} from '@react-navigation/native';
 import OTPSignInScreen from '../screens/OTPSignInScreen';
-import SelectTypePersonalDocumentsScreen from '../screens/SelectTypePersonalDocumentsScreen';
+import AcceptValidCitizenshipIDCardScreen from '../screens/AcceptValidCitizenshipIDCardScreen';
 import OTPSignUpScreen from '../screens/OTPSignUpScreen';
 import eKYCIndentificationScreen from '../screens/eKYCIndentificationScreen';
 import eKYCFaceScreen from '../screens/eKYCFaceScreen';
@@ -49,8 +49,8 @@ export default function AppRegisterStackNavigation() {
         }}
       />
       <AppRegisterStack.Screen
-        name={'select-type-personal-documents'}
-        component={SelectTypePersonalDocumentsScreen}
+        name={'accept-valid-citizenship-id-card'}
+        component={AcceptValidCitizenshipIDCardScreen}
         options={{
           headerShown: true,
           header: props => <HeaderApp {...props} />,

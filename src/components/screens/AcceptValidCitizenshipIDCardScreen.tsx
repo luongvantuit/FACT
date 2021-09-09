@@ -6,7 +6,7 @@ import Colors from '../../assets/colors';
 import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import shadowBox from '../widgets/ShadowBox';
 
-export default function SelectTypePersonalDocumentsScreen({navigation}: any) {
+export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
   const [accept, setAccept] = useState<boolean>(false);
   return (
     <View

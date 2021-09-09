@@ -6,7 +6,7 @@ export default function OTPSignUpScreen({navigation}: any) {
     <OTP
       navigation={navigation}
       onComplete={() => {
-        navigation.navigate('select-type-personal-documents');
+        navigation.navigate('accept-valid-citizenship-id-card');
       }}
     />
   );
