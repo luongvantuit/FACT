@@ -21,7 +21,6 @@ import shadowBox from '../widgets/ShadowBox';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(true);
-  const [showHeader, setShowHeader] = useState<boolean>(false);
   React.useLayoutEffect(() => {}, []);
   return (
     <ScrollView
@@ -35,7 +34,7 @@ export default function DashboardScreen({navigation}: any) {
       <ImageBackground
         source={UndrawPayOnline}
         style={{
-          marginTop: 64,
+          marginTop: 54,
           height: 340,
           display: 'flex',
           flexDirection: 'column',

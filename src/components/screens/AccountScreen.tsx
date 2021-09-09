@@ -1,6 +1,6 @@
 import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
-import {View, Text, Pressable, ScrollView, Platform} from 'react-native';
+import {View, Text, Pressable, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
@@ -17,7 +17,7 @@ export default function AccountScreen({navigation}: any) {
        */}
       <View
         style={{
-          paddingTop: Platform.OS === 'android' ? 0 : 54,
+          paddingTop: 54,
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
@@ -29,7 +29,7 @@ export default function AccountScreen({navigation}: any) {
           }}
           style={{
             marginVertical: 16,
-            marginHorizontal: 16 - 9,
+            marginHorizontal: 25,
           }}>
           <EntypoIcons
             name="chevron-small-left"
@@ -50,7 +50,7 @@ export default function AccountScreen({navigation}: any) {
         <Pressable
           style={{
             marginVertical: 16,
-            marginHorizontal: 16 - 9,
+            marginHorizontal: 25,
           }}>
           <EntypoIcons
             name="chevron-small-left"
