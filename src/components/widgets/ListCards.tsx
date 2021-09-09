@@ -13,6 +13,9 @@ export default function ListCards() {
     <View>
       <FlatList
         data={listCards}
+        bounces={false}
+        overScrollMode={'never'}
+        alwaysBounceHorizontal={false}
         snapToAlignment="center"
         pagingEnabled
         decelerationRate="fast"
