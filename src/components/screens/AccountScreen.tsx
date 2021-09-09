@@ -18,7 +18,11 @@ import shadowBox from '../widgets/ShadowBox';
 export default function AccountScreen({navigation}: any) {
   const theme: Theme = useTheme();
   return (
-    <ScrollView showsVerticalScrollIndicator={true}>
+    <ScrollView
+      showsVerticalScrollIndicator={true}
+      alwaysBounceVertical={false}
+      bounces={false}
+      overScrollMode={'never'}>
       {/**
        * start header
        */}
@@ -180,6 +184,9 @@ export default function AccountScreen({navigation}: any) {
             </View>
           </View>
         </LinearGradient>
+      </View>
+      <View style={{}}>
+        <View></View>
       </View>
     </ScrollView>
   );
