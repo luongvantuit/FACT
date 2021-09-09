@@ -166,7 +166,7 @@ export default function AccountScreen({navigation}: any) {
               }}>
               <Pressable
                 style={{
-                  backgroundColor: Colors.neutralLighter,
+                  backgroundColor: Colors.neutralLightest,
                   borderRadius: 4,
                   paddingHorizontal: 16,
                   paddingVertical: 2,
