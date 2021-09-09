@@ -172,6 +172,8 @@ export default function DashboardScreen({navigation}: any) {
               borderRadius: 16,
               borderBottomRightRadius: 0,
               marginRight: 4,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
             }}>
             <Pressable
               style={{
@@ -205,6 +207,8 @@ export default function DashboardScreen({navigation}: any) {
               marginLeft: 4,
               borderRadius: 16,
               borderBottomLeftRadius: 0,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
             }}>
             <Pressable
               style={{
@@ -246,6 +250,8 @@ export default function DashboardScreen({navigation}: any) {
               borderRadius: 16,
               borderTopRightRadius: 0,
               marginRight: 4,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
             }}>
             <Pressable
               style={{
@@ -277,15 +283,16 @@ export default function DashboardScreen({navigation}: any) {
             colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
             style={{
               height: 110,
-              borderBottomRightRadius: 16,
-              borderBottomLeftRadius: 16,
-              borderTopRightRadius: 16,
+              borderRadius: 16,
+              borderTopLeftRadius: 0,
               marginLeft: 4,
               width: (Dimensions.get('window').width - 40) / 2,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
             }}>
             <AntDesignIcons
               name={'qrcode'}
