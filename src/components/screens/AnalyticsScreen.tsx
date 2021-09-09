@@ -15,114 +15,142 @@ export default function AnalyticsScreen({navigation}: any) {
   return (
     <View
       style={{
-        flex: 1,
+        width: Dimensions.get('window').width,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        zIndex: 0,
       }}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        alwaysBounceVertical={false}>
-        {/** 397 */}
-        <View
+      <View
+        style={{
+          paddingTop: 54,
+          paddingBottom: 16,
+          borderBottomColor: Colors.text,
+        }}>
+        <Text
           style={{
-            paddingTop: 54,
-            paddingBottom: 16,
-            borderBottomColor: Colors.text,
+            color: Colors.text,
+            fontWeight: '900',
+            fontSize: 18,
+            textAlign: 'center',
+            marginHorizontal: 32,
+          }}>
+          Analytics
+        </Text>
+      </View>
+      <Text
+        style={{
+          textAlign: 'center',
+          marginBottom: 8,
+          marginTop: 64,
+          color: Colors.blueDark,
+          fontWeight: '900',
+          fontSize: 32,
+        }}>
+        Spends
+      </Text>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          marginTop: 8,
+          marginBottom: 16,
+        }}>
+        <LinearGradient
+          colors={[Colors.blueDark, Colors.blueDark, Colors.blue]}
+          style={{
+            borderRadius: 18,
+            height: 36,
+            width: 74,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginHorizontal: 4,
+            borderWidth: 1,
+            borderColor: Colors.blueDark,
           }}>
           <Text
             style={{
-              color: Colors.text,
+              color: Colors.neutralLightest,
               fontWeight: '900',
-              fontSize: 18,
-              textAlign: 'center',
-              marginHorizontal: 32,
             }}>
-            Analytics
+            Week
           </Text>
-        </View>
-        <View
+        </LinearGradient>
+        <LinearGradient
+          colors={[Colors.transparent, Colors.transparent, Colors.transparent]}
           style={{
-            display: 'flex',
-            flexDirection: 'row',
+            backgroundColor: Colors.transparent,
+            borderRadius: 18,
+            height: 36,
+            width: 74,
             justifyContent: 'center',
-            marginVertical: 16,
+            alignItems: 'center',
+            marginHorizontal: 4,
+            borderWidth: 1,
+            borderColor: Colors.blueDark,
           }}>
-          <LinearGradient
-            colors={[Colors.blueDark, Colors.blueDark, Colors.blue]}
+          <Text
             style={{
-              borderRadius: 18,
-              height: 36,
-              width: 74,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginHorizontal: 4,
-              // borderWidth: 0.3,
-              // borderColor: Colors.text,
+              color: Colors.blueDark,
+              fontWeight: '800',
             }}>
-            <Text
-              style={{
-                color: Colors.neutralLightest,
-                fontWeight: '900',
-              }}>
-              Week
-            </Text>
-          </LinearGradient>
-          <LinearGradient
-            colors={[
-              Colors.transparent,
-              Colors.transparent,
-              Colors.transparent,
-            ]}
+            Month
+          </Text>
+        </LinearGradient>
+        <LinearGradient
+          colors={[Colors.transparent, Colors.transparent, Colors.transparent]}
+          style={{
+            backgroundColor: Colors.transparent,
+            borderRadius: 18,
+            height: 36,
+            width: 74,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginHorizontal: 4,
+            borderWidth: 1,
+            borderColor: Colors.blueDark,
+          }}>
+          <Text
             style={{
-              backgroundColor: Colors.transparent,
-              borderRadius: 18,
-              height: 36,
-              width: 74,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginHorizontal: 4,
-              borderWidth: 1,
-              borderColor: Colors.blueDark,
+              color: Colors.blueDark,
+              fontWeight: '800',
             }}>
-            <Text
-              style={{
-                color: Colors.blueDark,
-                fontWeight: '800',
-              }}>
-              Month
-            </Text>
-          </LinearGradient>
-          <LinearGradient
-            colors={[
-              Colors.transparent,
-              Colors.transparent,
-              Colors.transparent,
-            ]}
-            style={{
-              backgroundColor: Colors.transparent,
-              borderRadius: 18,
-              height: 36,
-              width: 74,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginHorizontal: 4,
-              borderWidth: 1,
-              borderColor: Colors.blueDark,
-            }}>
-            <Text
-              style={{
-                color: Colors.blueDark,
-                fontWeight: '800',
-              }}>
-              Year
-            </Text>
-          </LinearGradient>
-        </View>
+            Year
+          </Text>
+        </LinearGradient>
+      </View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={false}
+        showsHorizontalScrollIndicator={false}
+        alwaysBounceHorizontal={false}
+        bounces={false}
+        bouncesZoom={false}
+        accessibilityIgnoresInvertColors={false}
+        endFillColor={Colors.transparent}
+        disableScrollViewPanResponder={true}
+        style={{
+          position: 'absolute',
+          width: Dimensions.get('window').width,
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 2,
+        }}>
+        {/** 397 */}
         <LinearGradient
           colors={[Colors.blueDark, Colors.blue, Colors.blueLight]}
           style={{
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
-            paddingTop: 64,
+            marginTop: 320,
+            paddingTop: 32,
             paddingBottom: 32,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
           }}>
           <LineChart
             data={{
