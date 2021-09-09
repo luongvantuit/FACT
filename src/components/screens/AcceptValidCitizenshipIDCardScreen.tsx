@@ -49,54 +49,48 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
           flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
         }}>
-        <View
+        <Pressable
           style={{
-            flex: 1,
+            marginHorizontal: 32,
+            marginTop: 16,
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          onPress={() => {
+            setAccept(!accept);
           }}>
-          <View
-            style={{
-              marginHorizontal: 32,
-              marginTop: 16,
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Pressable
-              onPress={() => {
-                setAccept(!accept);
-              }}>
-              {accept === true ? (
-                <AntDesignIcons
-                  name={'checksquare'}
-                  color={Colors.green}
-                  size={18}
-                />
-              ) : (
-                <View
-                  style={{
-                    borderRadius: 2,
-                    borderColor: Colors.text,
-                    width: 18,
-                    height: 18,
-                    borderWidth: 2,
-                  }}
-                />
-              )}
-            </Pressable>
-            <Text
+          {accept === true ? (
+            <AntDesignIcons
+              name={'checksquare'}
+              color={Colors.green}
+              size={18}
+            />
+          ) : (
+            <View
               style={{
-                fontWeight: '900',
-                color: Colors.text,
-                marginLeft: 8,
-              }}>
-              Must Have A Valid Citizenship ID Card
-            </Text>
-          </View>
-        </View>
+                borderRadius: 2,
+                borderColor: Colors.text,
+                width: 18,
+                height: 18,
+                borderWidth: 2,
+              }}
+            />
+          )}
+          <Text
+            style={{
+              fontWeight: '900',
+              color: Colors.text,
+              marginLeft: 8,
+            }}>
+            Must Have A Valid Citizenship ID Card
+          </Text>
+        </Pressable>
         <Pressable
           style={{
             display: 'flex',
