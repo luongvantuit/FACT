@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, ScrollView, Platform, Dimensions} from 'react-native';
 import {LineChart, PieChart} from 'react-native-chart-kit';
 import LinearGradient from 'react-native-linear-gradient';
@@ -51,22 +51,14 @@ export default function AnalyticsScreen({navigation}: any) {
           backgroundColor: Colors.blue,
           backgroundGradientFrom: Colors.blueDark,
           backgroundGradientTo: Colors.blue,
-          decimalPlaces: 2,
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          style: {
-            borderRadius: 16,
-          },
-          paddingTop: 16,
           propsForDots: {
             r: '3',
-            strokeWidth: '2',
-            stroke: Colors.yellowDark,
-            fill: Colors.yellowLightest,
+            fill: Colors.yellowDark,
           },
         }}
-        yAxisLabel={user.currency === 'USD' ? '$' : 'VNĐ'}
-        yAxisInterval={1}
+        yAxisSuffix={user.currency === 'USD' ? '$' : 'VNĐ'}
         bezier
         style={{
           marginHorizontal: 8,
@@ -107,22 +99,8 @@ export default function AnalyticsScreen({navigation}: any) {
             },
           ]}
           chartConfig={{
-            backgroundColor: Colors.blue,
-            backgroundGradientFrom: Colors.blueDark,
-            backgroundGradientTo: Colors.blue,
-            decimalPlaces: 2,
-            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-            style: {
-              borderRadius: 16,
-            },
-            paddingTop: 16,
-            propsForDots: {
-              r: '3',
-              strokeWidth: '2',
-              stroke: Colors.yellowDark,
-              fill: Colors.yellowLightest,
-            },
+            color: () => `${Colors.blue}`,
+            labelColor: () => `${Colors.blue}`,
           }}
           accessor={'expense'}
           backgroundColor={Colors.transparent}
