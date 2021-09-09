@@ -82,7 +82,7 @@ export default function eKYCIndentificationScreen(props: any) {
           alignItems: 'center',
         }}
         onPress={() => {
-          props.navigation.navigate('ekyc-face');
+          props.navigation.navigate('accept-info');
         }}>
         <EntypoIcons name="camera" color={Colors.white} size={38} />
       </Pressable>

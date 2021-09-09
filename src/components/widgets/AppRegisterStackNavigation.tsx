@@ -20,6 +20,7 @@ import {NativeStackHeaderProps} from '@react-navigation/native-stack/lib/typescr
 import Colors from '../../assets/colors';
 import EnterPasswordSignInScreen from '../screens/EnterPasswordSignInScreen';
 import EnterPasswordSignUpScreen from '../screens/EnterPasswordSignUpScreen';
+import AcceptInforScreen from '../screens/AcceptInforScreen';
 
 const AppRegisterStack = createNativeStackNavigator();
 
@@ -74,6 +75,13 @@ export default function AppRegisterStackNavigation() {
       <AppRegisterStack.Screen
         name={'ekyc-face'}
         component={eKYCFaceScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppRegisterStack.Screen
+        name={'accept-info'}
+        component={AcceptInforScreen}
         options={{
           headerShown: false,
         }}

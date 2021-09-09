@@ -64,7 +64,7 @@ export default function eKYCFaceScreen(props: any) {
           height: Dimensions.get('window').height,
         }}
         captureAudio={false}
-        type={RNCamera.Constants.Type.front}
+        type={'front'}
         keepAudioSession={false}
       />
       <View
