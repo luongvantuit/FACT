@@ -88,129 +88,152 @@ export default function TransferScreen({navigation}: any) {
               borderTopLeftRadius: 8,
               borderTopRightRadius: 8,
               marginTop: 36,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}>
-            <View
-              style={{
-                backgroundColor: Colors.neutralLightest,
-                marginHorizontal: 16,
-                ...shadowBox,
-                shadowColor: Colors.matteBlack,
-                height: 120,
-                marginTop: 16,
-                borderRadius: 8,
-                padding: 16,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}>
-              <Text
+            <View>
+              <View
                 style={{
-                  fontWeight: '900',
-                  color: Colors.text,
-                  fontSize: 16,
-                }}>
-                {user.numberPhone}
-              </Text>
-              <LinearGradient
-                colors={[Colors.blueDark, Colors.blue]}
-                style={{
-                  width: 60,
-                  borderRadius: 4,
-                  padding: 4,
-                }}>
-                <Text
-                  style={{
-                    color: Colors.neutralLightest,
-                    fontWeight: '700',
-                    fontSize: 12,
-                    textAlign: 'center',
-                  }}>
-                  Default
-                </Text>
-              </LinearGradient>
-              <Text
-                style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                }}>
-                {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
-              </Text>
-            </View>
-            <View
-              style={{
-                marginHorizontal: 16,
-                marginVertical: 16,
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <EntypoIcons
-                name={'chevron-with-circle-right'}
-                color={Colors.blue}
-                size={52}
-              />
-              <LinearGradient
-                colors={[Colors.blueDark, Colors.blue, Colors.blueLight]}
-                style={{
-                  height: 120,
                   backgroundColor: Colors.neutralLightest,
-                  flex: 1,
-                  marginLeft: 16,
+                  marginHorizontal: 16,
                   ...shadowBox,
                   shadowColor: Colors.matteBlack,
+                  height: 120,
+                  marginTop: 16,
                   borderRadius: 8,
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  padding: 16,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
                 }}>
                 <Text
                   style={{
                     fontWeight: '900',
-                    fontSize: 18,
-                    color: Colors.neutralLightest,
+                    color: Colors.text,
+                    fontSize: 16,
                   }}>
-                  Choose contact
+                  {user.numberPhone}
                 </Text>
-              </LinearGradient>
+                <LinearGradient
+                  colors={[Colors.blueDark, Colors.blue]}
+                  style={{
+                    width: 60,
+                    borderRadius: 4,
+                    padding: 4,
+                  }}>
+                  <Text
+                    style={{
+                      color: Colors.neutralLightest,
+                      fontWeight: '700',
+                      fontSize: 12,
+                      textAlign: 'center',
+                    }}>
+                    Default
+                  </Text>
+                </LinearGradient>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                  }}>
+                  {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
+                </Text>
+              </View>
+              <View
+                style={{
+                  marginHorizontal: 16,
+                  marginVertical: 16,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <EntypoIcons
+                  name={'chevron-with-circle-right'}
+                  color={Colors.blue}
+                  size={52}
+                />
+                <LinearGradient
+                  colors={[Colors.blueDark, Colors.blue, Colors.blueLight]}
+                  style={{
+                    height: 120,
+                    backgroundColor: Colors.neutralLightest,
+                    flex: 1,
+                    marginLeft: 16,
+                    ...shadowBox,
+                    shadowColor: Colors.matteBlack,
+                    borderRadius: 8,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Text
+                    style={{
+                      fontWeight: '900',
+                      fontSize: 18,
+                      color: Colors.neutralLightest,
+                    }}>
+                    Choose contact
+                  </Text>
+                </LinearGradient>
+              </View>
+              <Text
+                style={{
+                  paddingHorizontal: 16,
+                  color: Colors.text,
+                  backgroundColor: Colors.neutralLighter,
+                  paddingVertical: 8,
+                  fontWeight: '700',
+                  fontSize: 16,
+                }}>
+                Transaction information
+              </Text>
+              <View
+                style={{
+                  marginHorizontal: 16,
+                  marginVertical: 8,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <TextInput
+                  style={{
+                    flex: 1,
+                    borderBottomColor: Colors.matteBlack,
+                    borderBottomWidth: 1,
+                    paddingVertical: 8,
+                    color: Colors.text,
+                    fontWeight: '700',
+                  }}
+                  keyboardType={'numeric'}
+                  placeholder={'Amount'}
+                  placeholderTextColor={Colors.neutralLight}
+                />
+                <Text
+                  style={{
+                    fontWeight: '800',
+                    fontSize: 16,
+                    color: Colors.text,
+                  }}>
+                  {user.currency === 'USD' ? '$' : 'VNĐ'}
+                </Text>
+              </View>
             </View>
-            <Text
-              style={{
-                paddingHorizontal: 16,
-                color: Colors.text,
-                backgroundColor: Colors.neutralLighter,
-                paddingVertical: 8,
-                fontWeight: '700',
-                fontSize: 16,
-              }}>
-              Transaction information
-            </Text>
             <View
               style={{
                 marginHorizontal: 16,
-                marginVertical: 8,
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
+                marginBottom: Platform.OS === 'android' ? 64 : 32,
+                paddingVertical: 16,
+                borderRadius: 8,
+                backgroundColor: Colors.blue,
               }}>
-              <TextInput
-                style={{
-                  flex: 1,
-                  borderBottomColor: Colors.matteBlack,
-                  borderBottomWidth: 1,
-                  paddingVertical: 8,
-                  color: Colors.text,
-                  fontWeight: '700',
-                }}
-                keyboardType={'numeric'}
-                placeholder={'Amount'}
-                placeholderTextColor={Colors.neutralLight}
-              />
               <Text
                 style={{
-                  fontWeight: '800',
+                  textAlign: 'center',
+                  fontWeight: '900',
+                  color: Colors.neutralLightest,
                   fontSize: 16,
-                  color: Colors.text,
                 }}>
-                {user.currency === 'USD' ? '$' : 'VNĐ'}
+                Next
               </Text>
             </View>
           </View>
