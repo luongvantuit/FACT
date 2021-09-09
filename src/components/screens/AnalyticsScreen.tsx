@@ -29,7 +29,7 @@ export default function AnalyticsScreen({navigation}: any) {
           }}>
           <Text
             style={{
-              color: Colors.neutralLightest,
+              color: Colors.text,
               fontWeight: '900',
               fontSize: 18,
               textAlign: 'center',
@@ -74,7 +74,7 @@ export default function AnalyticsScreen({navigation}: any) {
           style={{
             fontWeight: '900',
             fontSize: 18,
-            color: Colors.neutralLightest,
+            color: Colors.text,
             textAlign: 'center',
             marginTop: 16,
             marginBottom: 8,
