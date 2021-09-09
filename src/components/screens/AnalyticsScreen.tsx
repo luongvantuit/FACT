@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {View, Text, ScrollView, Platform, Dimensions} from 'react-native';
-import {LineChart} from 'react-native-chart-kit';
+import {LineChart, PieChart} from 'react-native-chart-kit';
+import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AnalyticsScreen({navigation}: any) {
-  const [borderWidth, setBorderWidth] = useState<number>(0);
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
@@ -16,7 +16,6 @@ export default function AnalyticsScreen({navigation}: any) {
             paddingTop: Platform.OS === 'android' ? 16 : 54,
             paddingBottom: 16,
             borderBottomColor: Colors.text,
-            borderBottomWidth: borderWidth,
           }}>
           <Text
             style={{
@@ -34,12 +33,9 @@ export default function AnalyticsScreen({navigation}: any) {
   });
   return (
     <ScrollView
-      onScroll={e => {
-        if (e.nativeEvent.contentOffset.y > 0) setBorderWidth(0.2);
-        else setBorderWidth(0);
-      }}
       showsVerticalScrollIndicator={false}
       alwaysBounceVertical={false}>
+      {/** 397 */}
       <LineChart
         data={{
           labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -80,6 +76,59 @@ export default function AnalyticsScreen({navigation}: any) {
           shadowColor: Colors.matteBlack,
         }}
       />
+      <LinearGradient
+        colors={[Colors.blueDark, Colors.blue, Colors.blue]}
+        style={{
+          marginTop: 16,
+          marginHorizontal: 8,
+          borderRadius: 8,
+        }}>
+        <PieChart
+          width={Dimensions.get('window').width - 16}
+          height={240}
+          data={[
+            {
+              name: 'Service',
+              expense: 36.5,
+              color: Colors.blue,
+              legendFontColor: Colors.neutralLightest,
+            },
+            {
+              name: 'Restaurant',
+              expense: 120,
+              color: Colors.blueLight,
+              legendFontColor: Colors.neutralLightest,
+            },
+            {
+              name: 'Shopping',
+              expense: 240.5,
+              color: Colors.blueLighter,
+              legendFontColor: Colors.neutralLightest,
+            },
+          ]}
+          chartConfig={{
+            backgroundColor: Colors.blue,
+            backgroundGradientFrom: Colors.blueDark,
+            backgroundGradientTo: Colors.blue,
+            decimalPlaces: 2,
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            style: {
+              borderRadius: 16,
+            },
+            paddingTop: 16,
+            propsForDots: {
+              r: '3',
+              strokeWidth: '2',
+              stroke: Colors.yellowDark,
+              fill: Colors.yellowLightest,
+            },
+          }}
+          accessor={'expense'}
+          backgroundColor={Colors.transparent}
+          paddingLeft={'8'}
+        />
+      </LinearGradient>
     </ScrollView>
   );
 }
