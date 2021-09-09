@@ -308,13 +308,14 @@ export default function DashboardScreen({navigation}: any) {
 }
 
 function DashboardService(): JSX.Element {
-  const [indeterminate, setIndeterminate] = useState<boolean>(true);
-  useEffect(() => {
-    const interval: NodeJS.Timer = setInterval(() => {
-      clearTimeout(interval);
-      setIndeterminate(false);
-    }, 1200);
-  }, []);
+  const [indeterminate, setIndeterminate] = useState<boolean>(false);
+  const limit = 12000;
+  // useEffect(() => {
+  //   const interval: NodeJS.Timer = setInterval(() => {
+  //     clearTimeout(interval);
+  //     setIndeterminate(false);
+  //   }, 1200);
+  // }, []);
   return (
     <View>
       <View
@@ -327,6 +328,8 @@ function DashboardService(): JSX.Element {
           ...shadowBox,
           shadowColor: Colors.matteBlack,
           borderRadius: 16,
+          display: 'flex',
+          flexDirection: 'row',
         }}>
         <ProcessBar.Circle
           progress={indeterminate === true ? 0.09 : 0.43}
@@ -350,6 +353,51 @@ function DashboardService(): JSX.Element {
           direction={'clockwise'}
           collapsable
         />
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            marginLeft: 16,
+          }}>
+          <Text
+            style={{
+              fontWeight: '900',
+              color: Colors.text,
+              fontSize: 16,
+            }}>
+            Monthly transfer limit
+          </Text>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+            }}>
+            <Text
+              style={{
+                color: Colors.blueLight,
+                fontWeight: '900',
+                fontSize: 12,
+              }}>{`${limit * 0.43}${
+              user.currency === 'USD' ? '$' : 'VNĐ'
+            }`}</Text>
+            <Text
+              style={{
+                color: Colors.text,
+                fontWeight: '900',
+                fontSize: 12,
+                marginHorizontal: 8,
+              }}>
+              of
+            </Text>
+            <Text
+              style={{
+                color: Colors.blueLight,
+                fontWeight: '900',
+                fontSize: 12,
+              }}>{`${limit}${user.currency === 'USD' ? '$' : 'VNĐ'}`}</Text>
+          </View>
+        </View>
       </View>
     </View>
   );
