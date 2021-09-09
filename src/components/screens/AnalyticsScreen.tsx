@@ -13,7 +13,7 @@ export default function AnalyticsScreen({navigation}: any) {
       header: (props: any) => (
         <View
           style={{
-            paddingTop: Platform.OS === 'android' ? 16 : 54,
+            paddingTop: 54,
             paddingBottom: 16,
             borderBottomColor: Colors.text,
           }}>

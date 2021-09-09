@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {View, Text, Platform, Pressable, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Platform,
+  Pressable,
+  Dimensions,
+  StatusBar,
+} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import {check, RESULTS} from 'react-native-permissions';
 import Svg, {Circle} from 'react-native-svg';
@@ -18,13 +25,20 @@ export default function eKYCFaceScreen(props: any) {
   }, []);
   return (
     <View>
+      <StatusBar
+        barStyle={'light-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+        animated={true}
+        showHideTransition={'none'}
+      />
       <View
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          paddingTop: Platform.OS === 'android' ? 0 : 54,
+          paddingTop: 54,
           display: 'flex',
           alignItems: 'flex-start',
           zIndex: 10,
@@ -40,7 +54,6 @@ export default function eKYCFaceScreen(props: any) {
           }}>
           <View
             style={{
-              marginVertical: 16,
               marginLeft: 25,
             }}>
             <EntypoIcons

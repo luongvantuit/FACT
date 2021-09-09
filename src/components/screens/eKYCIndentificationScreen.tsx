@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {View, Text, Dimensions, Platform, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  Dimensions,
+  Platform,
+  Pressable,
+  StatusBar,
+} from 'react-native';
 import {check, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
@@ -18,13 +25,20 @@ export default function eKYCIndentificationScreen(props: any) {
   }, []);
   return (
     <View>
+      <StatusBar
+        barStyle={'light-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+        animated={true}
+        showHideTransition={'none'}
+      />
       <View
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          paddingTop: Platform.OS === 'android' ? 0 : 54,
+          paddingTop: 54,
           display: 'flex',
           alignItems: 'flex-start',
           zIndex: 10,
@@ -40,7 +54,6 @@ export default function eKYCIndentificationScreen(props: any) {
           }}>
           <View
             style={{
-              marginVertical: 16,
               marginLeft: 25,
             }}>
             <EntypoIcons
@@ -60,8 +73,8 @@ export default function eKYCIndentificationScreen(props: any) {
       </View>
       <RNCamera
         style={{
-          width: Dimensions.get('window').width,
-          height: Dimensions.get('window').height,
+          width: Dimensions.get('screen').width,
+          height: Dimensions.get('screen').height,
         }}
         captureAudio={false}
         type={'back'}

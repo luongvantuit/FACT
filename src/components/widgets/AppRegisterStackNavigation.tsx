@@ -2,13 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
-import {
-  Keyboard,
-  Platform,
-  Pressable,
-  View,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {Pressable, View} from 'react-native';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import {useTheme} from '@react-navigation/native';
 import OTPSignInScreen from '../screens/OTPSignInScreen';
@@ -112,10 +106,10 @@ export function HeaderApp(props: NativeStackHeaderProps) {
   return (
     <View
       style={{
-        paddingTop: Platform.OS === 'android' ? 0 : 54,
+        paddingTop: 54,
         display: 'flex',
         alignItems: 'flex-start',
-        backgroundColor: theme.colors.background,
+        backgroundColor: Colors.transparent,
       }}>
       <Pressable
         onPress={() => {

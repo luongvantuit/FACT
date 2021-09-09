@@ -9,8 +9,9 @@ import {
   Pressable,
   Platform,
   ImageBackground,
+  StatusBar,
 } from 'react-native';
-import {UndrawWalkingAround, UndrawAccessAccount} from '../../assets';
+import {UndrawAccessAccount} from '../../assets';
 import Colors from '../../assets/colors';
 import shadowBox from '../widgets/ShadowBox';
 import TextInputRegister from '../widgets/TextInputRegister';
@@ -19,11 +20,17 @@ export default function SignInScreen({navigation}: any) {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView style={{flex: 1}} behavior={'position'}>
+        <StatusBar
+          barStyle={'dark-content'}
+          translucent={Platform.OS === 'android'}
+          animated={true}
+          showHideTransition={'fade'}
+        />
         <View
           style={{
             display: 'flex',
             flexDirection: 'column',
-            paddingTop: Platform.OS === 'android' ? 16 : 72,
+            paddingTop: 72,
           }}>
           <ImageBackground
             source={UndrawAccessAccount}
