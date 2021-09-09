@@ -1,10 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs/lib/typescript/src/types';
 import React from 'react';
-import {View, Text, Image, Pressable} from 'react-native';
-import {leakImage} from '../../assets';
+import {View} from 'react-native';
 import Colors from '../../assets/colors';
-import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
@@ -12,8 +9,6 @@ import DashboardScreen from '../screens/DashboardScreen';
 import GroupsAndFriendsScreen from '../screens/GroupsAndFriendsScreen';
 import WalletScreen from '../screens/WalletScreen';
 import shadowBox from './ShadowBox';
-import StyledHeader from './StyledHeader';
-import StyledImage from './StyledImage';
 
 const AppHomeBottomTabs = createBottomTabNavigator();
 

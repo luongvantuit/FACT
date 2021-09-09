@@ -6,6 +6,7 @@ import {
   Platform,
   Pressable,
   ScrollView,
+  StatusBar,
   Text,
   View,
 } from 'react-native';
@@ -15,7 +16,6 @@ import Colors from '../../assets/colors';
 import user from '../../datas/user';
 import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import ListCard from '../widgets/ListCards';
 import ListServicesPayment from '../widgets/ListServicesPayment';
 import shadowBox from '../widgets/ShadowBox';
 
@@ -27,10 +27,15 @@ export default function DashboardScreen({navigation}: any) {
     <ScrollView
       showsVerticalScrollIndicator={false}
       alwaysBounceVertical={false}>
+      <StatusBar
+        barStyle={'dark-content'}
+        translucent={true}
+        backgroundColor={Colors.transparent}
+      />
       <ImageBackground
         source={UndrawPayOnline}
         style={{
-          marginTop: Platform.OS === 'android' ? 16 : 64,
+          marginTop: 64,
           height: 340,
           display: 'flex',
           flexDirection: 'column',
@@ -301,7 +306,6 @@ export default function DashboardScreen({navigation}: any) {
             </Text>
           </LinearGradient>
         </View>
-        <ListCard />
         <ListServicesPayment />
       </View>
     </ScrollView>

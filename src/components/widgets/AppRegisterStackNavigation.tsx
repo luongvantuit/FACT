@@ -83,7 +83,8 @@ export default function AppRegisterStackNavigation() {
         name={'accept-info'}
         component={AcceptInforScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
+          header: props => <HeaderApp {...props} />,
         }}
       />
       <AppRegisterStack.Screen
