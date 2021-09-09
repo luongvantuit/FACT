@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Dimensions,
   Image,
@@ -16,6 +16,7 @@ import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import ListServicesPayment from '../widgets/ListServicesPayment';
 import shadowBox from '../widgets/ShadowBox';
+import * as ProcessBar from 'react-native-progress';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -142,7 +143,7 @@ export default function DashboardScreen({navigation}: any) {
       {/**
        * service
        */}
-      <DashboardService />
+
       {/**
        * container
        */}
@@ -157,6 +158,7 @@ export default function DashboardScreen({navigation}: any) {
           display: 'flex',
           backgroundColor: Colors.white,
         }}>
+        <DashboardService />
         <View
           style={{
             marginHorizontal: 16,
@@ -306,5 +308,49 @@ export default function DashboardScreen({navigation}: any) {
 }
 
 function DashboardService(): JSX.Element {
-  return <View></View>;
+  const [indeterminate, setIndeterminate] = useState<boolean>(true);
+  useEffect(() => {
+    const interval: NodeJS.Timer = setInterval(() => {
+      clearTimeout(interval);
+      setIndeterminate(false);
+    }, 1200);
+  }, []);
+  return (
+    <View>
+      <View
+        style={{
+          marginHorizontal: 16,
+          marginVertical: 12,
+          paddingHorizontal: 16,
+          paddingVertical: 8,
+          backgroundColor: Colors.white,
+          ...shadowBox,
+          shadowColor: Colors.matteBlack,
+          borderRadius: 16,
+        }}>
+        <ProcessBar.Circle
+          progress={indeterminate === true ? 0.09 : 0.43}
+          color={indeterminate === true ? Colors.transparent : Colors.blueLight}
+          size={98}
+          thickness={14}
+          borderWidth={0}
+          unfilledColor={
+            indeterminate === true ? Colors.blueLight : Colors.neutralLightest
+          }
+          showsText={true}
+          formatText={() => `${0.43 * 100}%`}
+          textStyle={{
+            fontWeight: '900',
+            color: Colors.text,
+          }}
+          animated={true}
+          indeterminate={indeterminate}
+          strokeCap={'round'}
+          accessible
+          direction={'clockwise'}
+          collapsable
+        />
+      </View>
+    </View>
+  );
 }
