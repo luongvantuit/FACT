@@ -176,7 +176,7 @@ export default function DashboardScreen({navigation}: any) {
             <Pressable
               style={{
                 width: (Dimensions.get('window').width - 40) / 2,
-                height: 120,
+                height: 110,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -208,7 +208,7 @@ export default function DashboardScreen({navigation}: any) {
             }}>
             <Pressable
               style={{
-                height: 120,
+                height: 110,
                 width: (Dimensions.get('window').width - 40) / 2,
                 display: 'flex',
                 flexDirection: 'column',
@@ -249,7 +249,7 @@ export default function DashboardScreen({navigation}: any) {
             }}>
             <Pressable
               style={{
-                height: 120,
+                height: 110,
                 width: (Dimensions.get('window').width - 40) / 2,
                 display: 'flex',
                 flexDirection: 'column',
@@ -276,7 +276,7 @@ export default function DashboardScreen({navigation}: any) {
           <LinearGradient
             colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
             style={{
-              height: 120,
+              height: 110,
               borderBottomRightRadius: 16,
               borderBottomLeftRadius: 16,
               borderTopRightRadius: 16,
