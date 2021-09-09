@@ -22,33 +22,26 @@ export default function AnalyticsScreen({navigation}: any) {
         bottom: 0,
         zIndex: 0,
       }}>
-      <View
-        style={{
-          paddingTop: 54,
-          paddingBottom: 16,
-          borderBottomColor: Colors.text,
-        }}>
-        <Text
-          style={{
-            color: Colors.text,
-            fontWeight: '900',
-            fontSize: 18,
-            textAlign: 'center',
-            marginHorizontal: 32,
-          }}>
-          Analytics
-        </Text>
-      </View>
       <Text
         style={{
           textAlign: 'center',
           marginBottom: 8,
-          marginTop: 64,
+          marginTop: 78,
           color: Colors.blueDark,
           fontWeight: '900',
           fontSize: 32,
         }}>
         Spends
+      </Text>
+      <Text
+        style={{
+          textAlign: 'center',
+          marginBottom: 8,
+          color: Colors.text,
+          fontWeight: '800',
+          fontSize: 12,
+        }}>
+        6th - 11h of September 2021
       </Text>
       <View
         style={{
@@ -67,7 +60,7 @@ export default function AnalyticsScreen({navigation}: any) {
             justifyContent: 'center',
             alignItems: 'center',
             marginHorizontal: 4,
-            borderWidth: 1,
+            borderWidth: 0,
             borderColor: Colors.blueDark,
           }}>
           <Text
@@ -146,7 +139,7 @@ export default function AnalyticsScreen({navigation}: any) {
           style={{
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
-            marginTop: 320,
+            marginTop: 280,
             paddingTop: 32,
             paddingBottom: 32,
             ...shadowBox,
