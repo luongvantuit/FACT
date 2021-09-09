@@ -118,7 +118,9 @@ export default function EnterPasswordSignUpScreen({navigation}: any) {
             shadowColor: Colors.matteBlack,
             backgroundColor: Colors.yellowDark,
           }}
-          onPress={() => {}}>
+          onPress={() => {
+            navigation.navigate('sign-in');
+          }}>
           <Text
             style={{
               textAlign: 'center',

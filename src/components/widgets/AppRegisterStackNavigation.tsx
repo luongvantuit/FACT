@@ -109,7 +109,7 @@ export function HeaderApp(props: NativeStackHeaderProps) {
         paddingTop: 54,
         display: 'flex',
         alignItems: 'flex-start',
-        backgroundColor: Colors.transparent,
+        backgroundColor: theme.colors.background,
       }}>
       <Pressable
         onPress={() => {
