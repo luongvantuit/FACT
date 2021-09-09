@@ -10,6 +10,7 @@ import {
   Text,
   TextInput,
   Pressable,
+  StatusBar,
 } from 'react-native';
 import {UndrawTexting} from '../../assets';
 import Colors from '../../assets/colors';
@@ -26,6 +27,11 @@ export default function OTP(props: {
           flex: 1,
         }}
         behavior={'position'}>
+        <StatusBar
+          barStyle={'dark-content'}
+          translucent={Platform.OS === 'android'}
+          backgroundColor={Colors.transparent}
+        />
         <View
           style={{
             display: 'flex',

@@ -39,7 +39,7 @@ export default function AppUserStackNavigation({navigation}: any) {
         name={'transfer'}
         component={TransferScreen}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
     </AppUserStack.Navigator>

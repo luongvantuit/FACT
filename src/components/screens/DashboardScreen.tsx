@@ -3,8 +3,10 @@ import {
   Dimensions,
   Image,
   ImageBackground,
+  Platform,
   Pressable,
   ScrollView,
+  StatusBar,
   Text,
   View,
 } from 'react-native';
@@ -26,6 +28,11 @@ export default function DashboardScreen({navigation}: any) {
       alwaysBounceVertical={false}
       bounces={false}
       overScrollMode={'never'}>
+      <StatusBar
+        barStyle={'dark-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+      />
       <ImageBackground
         source={UndrawPayOnline}
         style={{

@@ -9,6 +9,7 @@ import {
   Text,
   View,
   Pressable,
+  StatusBar,
 } from 'react-native';
 import {UndrawRomaticGetaway} from '../../assets';
 import Colors from '../../assets/colors';
@@ -24,6 +25,11 @@ export default function EnterPasswordSignUpScreen({navigation}: any) {
           flex: 1,
         }}
         behavior={'position'}>
+        <StatusBar
+          barStyle={'dark-content'}
+          translucent={Platform.OS === 'android'}
+          backgroundColor={Colors.transparent}
+        />
         <ImageBackground
           source={UndrawRomaticGetaway}
           style={{

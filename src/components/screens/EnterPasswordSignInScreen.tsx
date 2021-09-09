@@ -9,6 +9,7 @@ import {
   TextInput,
   Platform,
   Pressable,
+  StatusBar,
 } from 'react-native';
 import {UndrawMyPassword} from '../../assets';
 import Colors from '../../assets/colors';
@@ -25,6 +26,11 @@ export default function EnterPasswordSignInScreen({navigation}: any) {
           flex: 1,
         }}
         behavior={'position'}>
+        <StatusBar
+          barStyle={'dark-content'}
+          translucent={Platform.OS === 'android'}
+          backgroundColor={Colors.transparent}
+        />
         <ImageBackground
           source={UndrawMyPassword}
           style={{

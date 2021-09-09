@@ -1,5 +1,12 @@
 import React from 'react';
-import {ScrollView, Dimensions, View, Text, StatusBar} from 'react-native';
+import {
+  ScrollView,
+  Dimensions,
+  View,
+  Text,
+  StatusBar,
+  Platform,
+} from 'react-native';
 import {LineChart, PieChart} from 'react-native-chart-kit';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
@@ -22,6 +29,11 @@ export default function AnalyticsScreen({navigation}: any) {
         bottom: 0,
         zIndex: 0,
       }}>
+      <StatusBar
+        barStyle={'dark-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+      />
       <Text
         style={{
           textAlign: 'center',

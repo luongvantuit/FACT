@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
-  Dimensions,
   Text,
   Pressable,
   Platform,
@@ -23,8 +22,7 @@ export default function SignInScreen({navigation}: any) {
         <StatusBar
           barStyle={'dark-content'}
           translucent={Platform.OS === 'android'}
-          animated={true}
-          showHideTransition={'fade'}
+          backgroundColor={Colors.transparent}
         />
         <View
           style={{

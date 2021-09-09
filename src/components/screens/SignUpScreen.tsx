@@ -7,6 +7,8 @@ import {
   Text,
   TouchableWithoutFeedback,
   ImageBackground,
+  StatusBar,
+  Platform,
 } from 'react-native';
 import {UndrawMobileUser} from '../../assets';
 import Colors from '../../assets/colors';
@@ -22,6 +24,11 @@ export default function SignUpScreen(props: any) {
             display: 'flex',
             flexDirection: 'column',
           }}>
+          <StatusBar
+            barStyle={'dark-content'}
+            translucent={Platform.OS === 'android'}
+            backgroundColor={Colors.transparent}
+          />
           <ImageBackground
             source={UndrawMobileUser}
             style={{

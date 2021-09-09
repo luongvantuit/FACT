@@ -1,4 +1,3 @@
-import {Theme, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {
   View,
@@ -15,7 +14,6 @@ import ListCards from '../widgets/ListCards';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function CardServiceScreen({navigation}: any) {
-  const theme: Theme = useTheme();
   return (
     <LinearGradient
       colors={[Colors.blueDark, Colors.blue, Colors.blueLight]}
@@ -26,7 +24,6 @@ export default function CardServiceScreen({navigation}: any) {
       <StatusBar
         barStyle={'light-content'}
         translucent={Platform.OS === 'android'}
-        showHideTransition={'slide'}
         backgroundColor={Colors.transparent}
       />
       <View

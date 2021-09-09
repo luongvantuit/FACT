@@ -9,8 +9,6 @@ export default function AcceptInforScreen({navigation}: any) {
         barStyle={'dark-content'}
         translucent={Platform.OS === 'android'}
         backgroundColor={Colors.transparent}
-        animated={true}
-        showHideTransition={'none'}
       />
       <View style={{}}></View>
     </ScrollView>

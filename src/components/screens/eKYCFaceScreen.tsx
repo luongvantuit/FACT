@@ -29,8 +29,6 @@ export default function eKYCFaceScreen(props: any) {
         barStyle={'light-content'}
         translucent={Platform.OS === 'android'}
         backgroundColor={Colors.transparent}
-        animated={true}
-        showHideTransition={'none'}
       />
       <View
         style={{

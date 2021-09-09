@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Platform, Pressable, ImageBackground} from 'react-native';
+import {View, Text, Platform, Pressable, ImageBackground, StatusBar} from 'react-native';
 import {check, request, RESULTS} from 'react-native-permissions';
 import {UndrawOptions} from '../../assets';
 import Colors from '../../assets/colors';
@@ -15,6 +15,11 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
         display: 'flex',
         flexDirection: 'column',
       }}>
+      <StatusBar
+        barStyle={'dark-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+      />
       <ImageBackground
         source={UndrawOptions}
         style={{
