@@ -308,14 +308,14 @@ export default function DashboardScreen({navigation}: any) {
 }
 
 function DashboardService(): JSX.Element {
-  const [indeterminate, setIndeterminate] = useState<boolean>(false);
+  const [indeterminate, setIndeterminate] = useState<boolean>(true);
   const limit = 12000;
-  // useEffect(() => {
-  //   const interval: NodeJS.Timer = setInterval(() => {
-  //     clearTimeout(interval);
-  //     setIndeterminate(false);
-  //   }, 1200);
-  // }, []);
+  useEffect(() => {
+    const interval: NodeJS.Timer = setInterval(() => {
+      clearTimeout(interval);
+      setIndeterminate(false);
+    }, 220);
+  }, []);
   return (
     <View>
       <View
@@ -332,7 +332,7 @@ function DashboardService(): JSX.Element {
           flexDirection: 'row',
         }}>
         <ProcessBar.Circle
-          progress={indeterminate === true ? 0.09 : 0.43}
+          progress={indeterminate === true ? 0 : 0.43}
           color={indeterminate === true ? Colors.transparent : Colors.blueLight}
           size={98}
           thickness={14}
