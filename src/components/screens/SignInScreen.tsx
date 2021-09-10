@@ -89,7 +89,7 @@ export default function SignInScreen({navigation}: any) {
               justifyContent: 'center',
               paddingVertical: 16,
               borderRadius: 8,
-              marginVertical: 16,
+              marginVertical: 8,
               ...shadowBox,
               shadowColor: Colors.matteBlack,
               backgroundColor: Colors.text,
@@ -111,6 +111,7 @@ export default function SignInScreen({navigation}: any) {
               textAlign: 'center',
               fontWeight: '800',
               fontSize: 12,
+              marginTop: 8,
               color: Colors.text,
             }}>
             Your Haven't Account
