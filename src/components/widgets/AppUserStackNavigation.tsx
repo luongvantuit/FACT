@@ -8,6 +8,8 @@ import {Theme, useTheme} from '@react-navigation/native';
 import ConfirmTransactionScreen from '../screens/ConfirmTransactionScreen';
 import SpendingScreen from '../screens/SpendingScreen';
 import BeneficicaryScreen from '../screens/BeneficicaryScreen';
+import TopUpScreen from '../screens/TopUpScreen';
+import OnlineSavingsScreen from '../screens/OnlineSavingsScreen';
 const AppUserStack = createNativeStackNavigator();
 
 export default function AppUserStackNavigation({navigation}: any) {
@@ -59,6 +61,20 @@ export default function AppUserStackNavigation({navigation}: any) {
       <AppUserStack.Screen
         name={'spending'}
         component={SpendingScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'top-up'}
+        component={TopUpScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'online-savings'}
+        component={OnlineSavingsScreen}
         options={{
           headerShown: false,
         }}

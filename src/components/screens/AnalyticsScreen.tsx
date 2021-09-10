@@ -147,8 +147,7 @@ export default function AnalyticsScreen({navigation}: any) {
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
             marginTop: 280,
-            paddingTop: 32,
-            paddingBottom: 32,
+            paddingVertical: 32,
             ...shadowBox,
             shadowColor: Colors.matteBlack,
           }}>

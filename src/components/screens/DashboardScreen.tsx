@@ -225,8 +225,8 @@ export default function DashboardScreen({navigation}: any) {
          */}
         <View
           style={{
-            borderTopLeftRadius: 8,
-            borderTopRightRadius: 8,
+            borderTopLeftRadius: 16,
+            borderTopRightRadius: 16,
             paddingTop: 32,
             marginTop: 8,
             ...shadowBox,
