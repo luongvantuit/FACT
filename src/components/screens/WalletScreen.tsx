@@ -182,6 +182,27 @@ function Setting(): JSX.Element {
           display: 'flex',
           flexDirection: 'row',
         }}>
+        <AntDesignIcons name={'gift'} size={32} color={Colors.yellowDark} />
+        <Text
+          style={{
+            color: Colors.text,
+            fontWeight: '900',
+            fontSize: 16,
+            marginLeft: 8,
+          }}>
+          Gift voucher
+        </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: Colors.white,
+          marginVertical: 4,
+          paddingHorizontal: 16,
+          alignItems: 'center',
+          height: 68,
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
         <EntypoIcons name={'fingerprint'} size={32} color={Colors.yellowDark} />
         <Text
           style={{
