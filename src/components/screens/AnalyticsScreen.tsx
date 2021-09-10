@@ -73,7 +73,7 @@ export default function AnalyticsScreen({navigation}: any) {
             alignItems: 'center',
             marginHorizontal: 4,
             borderWidth: 0,
-            borderColor: Colors.blueDark,
+            borderColor: Colors.transparent,
           }}>
           <Text
             style={{
@@ -84,7 +84,7 @@ export default function AnalyticsScreen({navigation}: any) {
           </Text>
         </LinearGradient>
         <LinearGradient
-          colors={[Colors.transparent, Colors.transparent, Colors.transparent]}
+          colors={[Colors.white, Colors.white, Colors.white]}
           style={{
             backgroundColor: Colors.transparent,
             borderRadius: 18,
@@ -94,7 +94,7 @@ export default function AnalyticsScreen({navigation}: any) {
             alignItems: 'center',
             marginHorizontal: 4,
             borderWidth: 1,
-            borderColor: Colors.blueDark,
+            borderColor: Colors.blue,
           }}>
           <Text
             style={{
@@ -105,7 +105,7 @@ export default function AnalyticsScreen({navigation}: any) {
           </Text>
         </LinearGradient>
         <LinearGradient
-          colors={[Colors.transparent, Colors.transparent, Colors.transparent]}
+          colors={[Colors.white, Colors.white, Colors.white]}
           style={{
             backgroundColor: Colors.transparent,
             borderRadius: 18,
@@ -115,7 +115,7 @@ export default function AnalyticsScreen({navigation}: any) {
             alignItems: 'center',
             marginHorizontal: 4,
             borderWidth: 1,
-            borderColor: Colors.blueDark,
+            borderColor: Colors.blue,
           }}>
           <Text
             style={{
