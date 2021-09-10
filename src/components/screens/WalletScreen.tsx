@@ -112,7 +112,7 @@ export default function WalletScreen({navigation}: any) {
               style={{
                 color: Colors.text,
                 fontWeight: '900',
-                fontSize: 18,
+                fontSize: 16,
               }}>
               {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
             </Text>
