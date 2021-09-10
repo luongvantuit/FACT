@@ -99,9 +99,10 @@ export default function DashboardScreen({navigation}: any) {
         bounces={false}
         overScrollMode={'never'}
         onScroll={event => {
-          if (event.nativeEvent.contentOffset.y >= 382) setHeaderShown(true);
+          if (event.nativeEvent.contentOffset.y >= 378) setHeaderShown(true);
           else setHeaderShown(false);
-        }}>
+        }}
+        scrollEventThrottle={1}>
         <StatusBar
           barStyle={'dark-content'}
           translucent={Platform.OS === 'android'}
