@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, Platform, Pressable, ImageBackground, StatusBar} from 'react-native';
+import {
+  View,
+  Text,
+  Platform,
+  Pressable,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
 import {check, request, RESULTS} from 'react-native-permissions';
 import {UndrawOptions} from '../../assets';
 import Colors from '../../assets/colors';
@@ -34,7 +41,7 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
             marginBottom: 8,
             color: Colors.text,
           }}>
-          Now. Please Check Your Citizenship ID
+          Now. Please check your citizenship ID
         </Text>
         <Text
           style={{
@@ -95,7 +102,7 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
               color: Colors.text,
               marginLeft: 8,
             }}>
-            Must Have A Valid Citizenship ID Card
+            Must have a valid citizenship ID card
           </Text>
         </Pressable>
         <Pressable
@@ -119,7 +126,7 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
               textDecorationLine: 'underline',
               textDecorationStyle: 'solid',
             }}>
-            Skip, If Use Account As Digital Wallet
+            Skip, If use account as digital wallet
           </Text>
           <AntDesignIcons name={'arrowright'} color={Colors.text} size={26} />
         </Pressable>
@@ -163,7 +170,7 @@ export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {
               fontWeight: '900',
               color: Colors.neutralLightest,
             }}>
-            Next Step
+            Next step
           </Text>
         </Pressable>
       </View>

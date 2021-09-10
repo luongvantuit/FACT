@@ -6,7 +6,7 @@ import shadowBox from './ShadowBox';
 export default function TextInputRegister() {
   return (
     <TextInput
-      placeholder={'Phone Number'}
+      placeholder={'Phone number'}
       keyboardType={'numeric'}
       style={{
         marginHorizontal: 32,

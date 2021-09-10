@@ -50,7 +50,7 @@ export default function OTP(props: {
               color: Colors.text,
               textAlign: 'center',
             }}>
-            OTP Code
+            OTP code
           </Text>
           <TextInput
             placeholder={'4-Digit'}

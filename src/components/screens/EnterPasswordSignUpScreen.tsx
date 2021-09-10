@@ -44,7 +44,7 @@ export default function EnterPasswordSignUpScreen({navigation}: any) {
             marginHorizontal: 32,
             marginBottom: 8,
           }}>
-          Enter Your Password
+          Enter your password
         </Text>
         <Text
           style={{
@@ -95,7 +95,7 @@ export default function EnterPasswordSignUpScreen({navigation}: any) {
           maxLength={6}
         />
         <TextInput
-          placeholder={'Confirm Password'}
+          placeholder={'Confirm password'}
           keyboardType={'numeric'}
           style={{
             marginHorizontal: 32,
@@ -133,7 +133,7 @@ export default function EnterPasswordSignUpScreen({navigation}: any) {
               fontWeight: '900',
               color: Colors.text,
             }}>
-            Create Account
+            Create account
           </Text>
         </Pressable>
       </KeyboardAvoidingView>

@@ -120,7 +120,7 @@ export default function eKYCIndentificationScreen(props: any) {
             fontWeight: '900',
             fontSize: 16,
           }}>
-          Front CCCD/CMND
+          Front citizenship ID card
         </Text>
       </View>
     </View>
