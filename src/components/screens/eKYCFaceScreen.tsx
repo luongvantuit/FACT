@@ -63,16 +63,16 @@ export default function eKYCFaceScreen(props: any) {
           <Text
             style={{
               color: Colors.neutralLightest,
-              fontWeight: '900',
+              fontWeight: 'bold',
             }}>
-            Back
+            Open accounts for new customers
           </Text>
         </Pressable>
       </View>
       <RNCamera
         style={{
-          width: Dimensions.get('window').width,
-          height: Dimensions.get('window').height,
+          width: Dimensions.get('screen').width,
+          height: Dimensions.get('screen').height,
         }}
         captureAudio={false}
         type={'front'}
@@ -89,15 +89,15 @@ export default function eKYCFaceScreen(props: any) {
         }}>
         <Svg>
           <Circle
-            cx={Dimensions.get('window').width / 2}
-            cy={Dimensions.get('window').height / 2 - 48}
+            cx={Dimensions.get('screen').width / 2}
+            cy={Dimensions.get('screen').height / 2 - 48}
             r={340}
             stroke={'black'}
             strokeWidth={1000}
           />
           <Circle
-            cx={Dimensions.get('window').width / 2}
-            cy={Dimensions.get('window').height / 2 - 48}
+            cx={Dimensions.get('screen').width / 2}
+            cy={Dimensions.get('screen').height / 2 - 48}
             r={174}
             stroke={Colors.greenDark}
             strokeWidth={16}

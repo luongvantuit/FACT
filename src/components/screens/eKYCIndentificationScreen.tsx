@@ -62,10 +62,10 @@ export default function eKYCIndentificationScreen(props: any) {
           </View>
           <Text
             style={{
-              fontWeight: '900',
+              fontWeight: 'bold',
               color: Colors.neutralLightest,
             }}>
-            Back
+            Open accounts for new customers
           </Text>
         </Pressable>
       </View>
