@@ -1,7 +1,16 @@
 import React from 'react';
-import {Platform, StatusBar, View, Text, Pressable} from 'react-native';
+import {
+  Platform,
+  StatusBar,
+  View,
+  Text,
+  Pressable,
+  Dimensions,
+} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import Ionicons from '../fonts-icon/ionicons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AcceptInforScreen({navigation}: any) {
@@ -12,7 +21,7 @@ export default function AcceptInforScreen({navigation}: any) {
         flex: 1,
       }}>
       <StatusBar
-        barStyle={'dark-content'}
+        barStyle={'light-content'}
         backgroundColor={Colors.transparent}
         translucent={Platform.OS === 'android'}
       />
@@ -53,31 +62,217 @@ export default function AcceptInforScreen({navigation}: any) {
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}>
-        <View>
-          <Text
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            marginHorizontal: 8,
+            borderRadius: 8,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            backgroundColor: Colors.neutralLightest,
+            padding: 8,
+          }}>
+          <View
             style={{
-              fontWeight: '900',
-              color: Colors.text,
-              marginHorizontal: 16,
+              justifyContent: 'flex-end',
             }}>
-            Name
-          </Text>
-          <Text
+            <LinearGradient
+              colors={[Colors.blue, Colors.blue, Colors.blueLight]}
+              style={{
+                width: 68,
+                height: 86,
+                borderRadius: 8,
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Ionicons
+                name={'person'}
+                color={Colors.neutralLightest}
+                size={42}
+              />
+            </LinearGradient>
+          </View>
+          <View
             style={{
-              fontWeight: '900',
-              color: Colors.text,
-              marginHorizontal: 16,
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              marginLeft: 8,
             }}>
-            LUONG VAN TU
-          </Text>
+            <View
+              style={{
+                alignItems: 'center',
+                paddingBottom: 16,
+              }}>
+              <Text
+                style={{
+                  color: Colors.red,
+                  fontWeight: '900',
+                  fontSize: 16,
+                }}>
+                CCCD/CMND
+              </Text>
+              <Text
+                style={{
+                  color: Colors.red,
+                  fontWeight: '700',
+                }}>
+                *********7788
+              </Text>
+            </View>
+            <View style={{}}>
+              <Text
+                style={{
+                  color: Colors.blue,
+                  fontWeight: '900',
+                  fontSize: 12,
+                }}>
+                Full name:
+              </Text>
+              <Text
+                style={{
+                  color: Colors.text,
+                  fontWeight: '800',
+                }}>
+                LUONG VAN TU
+              </Text>
+            </View>
+            <View style={{display: 'flex', flexDirection: 'row'}}>
+              <Text
+                style={{
+                  color: Colors.blue,
+                  fontWeight: '900',
+                  fontSize: 12,
+                }}>
+                Birthday:
+              </Text>
+              <Text
+                style={{
+                  color: Colors.text,
+                  fontWeight: '800',
+                  fontSize: 12,
+                }}>
+                09/06/2001
+              </Text>
+            </View>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <View style={{display: 'flex', flexDirection: 'row'}}>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Sex:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                    fontSize: 12,
+                  }}>
+                  Male
+                </Text>
+              </View>
+              <View style={{display: 'flex', flexDirection: 'row'}}>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Nationality:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                    fontSize: 12,
+                  }}>
+                  Vietnamese
+                </Text>
+              </View>
+            </View>
+            <View style={{display: 'flex', flexDirection: 'column'}}>
+              <Text
+                style={{
+                  color: Colors.blue,
+                  fontWeight: '900',
+                  fontSize: 12,
+                }}>
+                Address:
+              </Text>
+              <Text
+                style={{
+                  color: Colors.text,
+                  fontWeight: '800',
+                  fontSize: 12,
+                }}>
+                An Trang - Quynh Phu - Thai Binh
+              </Text>
+            </View>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}>
+              <Text
+                style={{
+                  color: Colors.blue,
+                  fontWeight: '900',
+                  fontSize: 12,
+                }}>
+                Permanent address:
+              </Text>
+              <Text
+                style={{
+                  color: Colors.text,
+                  fontWeight: '800',
+                  fontSize: 12,
+                }}>
+                Dong Quan - Dong Hung - Thai Binh
+              </Text>
+            </View>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+              }}>
+              <Text
+                style={{
+                  color: Colors.blue,
+                  fontWeight: '900',
+                  fontSize: 12,
+                }}>
+                Valid until:
+              </Text>
+              <Text
+                style={{
+                  color: Colors.text,
+                  fontWeight: '800',
+                  fontSize: 12,
+                }}>
+                09/06/2026
+              </Text>
+            </View>
+          </View>
         </View>
-        <Pressable
+        <View style={{}}></View>
+        {/* <Pressable
           style={{
             marginHorizontal: 32,
             justifyContent: 'center',
             paddingVertical: 16,
             borderRadius: 8,
-            marginVertical: 8,
+            marginVertical: Platform.OS === 'android' ? 8 : 16,
             ...shadowBox,
             shadowColor: Colors.matteBlack,
             backgroundColor: Colors.blue,
@@ -93,7 +288,7 @@ export default function AcceptInforScreen({navigation}: any) {
             }}>
             Next step
           </Text>
-        </Pressable>
+        </Pressable> */}
       </View>
     </View>
   );
