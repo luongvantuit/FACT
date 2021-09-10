@@ -1,35 +1,31 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {RNCamera} from 'react-native-camera';
+import {Dimensions, Platform, StatusBar, View} from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export default function QRCodeScreen() {
   return (
-    <QRCodeScanner
-      onRead={e => {
-        console.log(e.data);
-      }}
-    
-    />
+    <View
+      style={{
+        flex: 1,
+      }}>
+      <StatusBar
+        barStyle={'light-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+      />
+      <QRCodeScanner
+        onRead={e => {
+          console.log(e.data);
+        }}
+        reactivateTimeout={5000}
+        reactivate={true}
+        cameraStyle={{
+          height: Dimensions.get('screen').height,
+          width: Dimensions.get('screen').width,
+        }}
+        fadeIn={false}
+      />
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  centerText: {
-    flex: 1,
-    fontSize: 18,
-    padding: 32,
-    color: '#777',
-  },
-  textBold: {
-    fontWeight: '500',
-    color: '#000',
-  },
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
-  },
-  buttonTouchable: {
-    padding: 16,
-  },
-});
