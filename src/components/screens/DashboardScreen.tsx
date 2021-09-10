@@ -22,302 +22,323 @@ import * as ProcessBar from 'react-native-progress';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(false);
+  const [headerShown, setHeaderShown] = useState<boolean>(false);
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      alwaysBounceVertical={false}
-      bounces={false}
-      overScrollMode={'never'}>
-      <StatusBar
-        barStyle={'dark-content'}
-        translucent={Platform.OS === 'android'}
-        backgroundColor={Colors.transparent}
-      />
-      <ImageBackground
-        source={UndrawPayOnline}
-        style={{
-          marginTop: 54,
-          height: 340,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          paddingHorizontal: 16,
-        }}>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-          }}>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Text
-              style={{
-                fontWeight: '900',
-                fontSize: 24,
-                color: Colors.text,
-              }}>
-              FACT
-            </Text>
-            <Image
-              source={IconApp}
-              style={{
-                width: 24,
-                height: 24,
-                resizeMode: 'contain',
-                marginHorizontal: 8,
-              }}
-            />
-          </View>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Image
-              source={leakImage}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-              }}
-            />
-            <View
-              style={{
-                marginVertical: 16,
-                marginHorizontal: 8,
-              }}>
-              <Text
-                style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                }}>
-                Good morning!
-              </Text>
-              <Text
-                style={{
-                  color: Colors.text,
-                  fontWeight: '900',
-                  fontSize: 18,
-                }}>
-                {user.name}
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-          }}>
-          {hidden === true ? (
-            <EntypoIcons
-              name={'dots-three-horizontal'}
-              color={Colors.text}
-              size={24}
-            />
-          ) : (
-            <Text
-              style={{
-                fontWeight: '900',
-                fontSize: 18,
-                color: Colors.text,
-              }}>
-              {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
-            </Text>
-          )}
-          <Pressable
-            style={{
-              marginLeft: 8,
-            }}
-            onPress={() => {
-              setHidden(!hidden);
-            }}>
-            <EntypoIcons
-              name={hidden === true ? 'eye-with-line' : 'eye'}
-              color={Colors.text}
-              size={24}
-            />
-          </Pressable>
-        </View>
-      </ImageBackground>
-      {/**
-       * service
-       */}
-
-      {/**
-       * container
-       */}
+    <View>
       <View
         style={{
-          borderTopLeftRadius: 8,
-          borderTopRightRadius: 8,
-          paddingTop: 32,
-          marginTop: 8,
+          backgroundColor: Colors.neutralLightest,
+          height: 120,
+          display: headerShown === true ? 'flex' : 'none',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 10,
           ...shadowBox,
           shadowColor: Colors.matteBlack,
-          display: 'flex',
-          backgroundColor: Colors.white,
+        }}></View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={false}
+        bounces={false}
+        overScrollMode={'never'}
+        onScroll={event => {
+          if (event.nativeEvent.contentOffset.y > 340) setHeaderShown(true);
+          else setHeaderShown(false);
         }}>
-        <DashboardService />
-        <View
+        <StatusBar
+          barStyle={'dark-content'}
+          translucent={Platform.OS === 'android'}
+          backgroundColor={Colors.transparent}
+        />
+
+        <ImageBackground
+          source={UndrawPayOnline}
           style={{
-            marginHorizontal: 16,
-            marginTop: 8,
+            marginTop: 54,
+            height: 340,
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            paddingHorizontal: 16,
           }}>
-          <LinearGradient
-            colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
+          <View
             style={{
-              borderRadius: 16,
-              borderBottomRightRadius: 0,
-              marginRight: 4,
-              ...shadowBox,
-              shadowColor: Colors.matteBlack,
-            }}>
-            <Pressable
-              style={{
-                width: (Dimensions.get('window').width - 40) / 2,
-                height: 110,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-              onPress={() => {
-                navigation.navigate('account');
-              }}>
-              <AntDesignIcons
-                name={'wallet'}
-                color={Colors.neutralLightest}
-                size={32}
-              />
-              <Text
-                style={{
-                  color: Colors.neutralLightest,
-                  fontWeight: '900',
-                }}>
-                Account
-              </Text>
-            </Pressable>
-          </LinearGradient>
-          <LinearGradient
-            colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
-            style={{
-              marginLeft: 4,
-              borderRadius: 16,
-              borderBottomLeftRadius: 0,
-              ...shadowBox,
-              shadowColor: Colors.matteBlack,
-            }}>
-            <Pressable
-              style={{
-                height: 110,
-                width: (Dimensions.get('window').width - 40) / 2,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-              onPress={() => {
-                navigation.navigate('card-service');
-              }}>
-              <AntDesignIcons
-                name={'creditcard'}
-                color={Colors.neutralLightest}
-                size={32}
-              />
-              <Text
-                style={{
-                  color: Colors.neutralLightest,
-                  fontWeight: '900',
-                }}>
-                Card service
-              </Text>
-            </Pressable>
-          </LinearGradient>
-        </View>
-        <View
-          style={{
-            marginHorizontal: 16,
-            marginVertical: 8,
-            display: 'flex',
-            flexDirection: 'row',
-          }}>
-          <LinearGradient
-            colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
-            style={{
-              borderRadius: 16,
-              borderTopRightRadius: 0,
-              marginRight: 4,
-              ...shadowBox,
-              shadowColor: Colors.matteBlack,
-            }}>
-            <Pressable
-              style={{
-                height: 110,
-                width: (Dimensions.get('window').width - 40) / 2,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-              onPress={() => {
-                navigation.navigate('transfer');
-              }}>
-              <AntDesignIcons
-                name={'swap'}
-                color={Colors.neutralLightest}
-                size={32}
-              />
-              <Text
-                style={{
-                  color: Colors.neutralLightest,
-                  fontWeight: '900',
-                }}>
-                Transfer
-              </Text>
-            </Pressable>
-          </LinearGradient>
-          <LinearGradient
-            colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
-            style={{
-              height: 110,
-              borderRadius: 16,
-              borderTopLeftRadius: 0,
-              marginLeft: 4,
-              width: (Dimensions.get('window').width - 40) / 2,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              ...shadowBox,
-              shadowColor: Colors.matteBlack,
             }}>
-            <AntDesignIcons
-              name={'qrcode'}
-              color={Colors.neutralLightest}
-              size={32}
-            />
-            <Text
+            <View
               style={{
-                color: Colors.neutralLightest,
-                fontWeight: '900',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
               }}>
-              QR code
-            </Text>
-          </LinearGradient>
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 24,
+                  color: Colors.text,
+                }}>
+                FACT
+              </Text>
+              <Image
+                source={IconApp}
+                style={{
+                  width: 24,
+                  height: 24,
+                  resizeMode: 'contain',
+                  marginHorizontal: 8,
+                }}
+              />
+            </View>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Image
+                source={leakImage}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
+                }}
+              />
+              <View
+                style={{
+                  marginVertical: 16,
+                  marginHorizontal: 8,
+                }}>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                  }}>
+                  Good morning!
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '900',
+                    fontSize: 18,
+                  }}>
+                  {user.name}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+            }}>
+            {hidden === true ? (
+              <EntypoIcons
+                name={'dots-three-horizontal'}
+                color={Colors.text}
+                size={24}
+              />
+            ) : (
+              <Text
+                style={{
+                  fontWeight: '900',
+                  fontSize: 18,
+                  color: Colors.text,
+                }}>
+                {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
+              </Text>
+            )}
+            <Pressable
+              style={{
+                marginLeft: 8,
+              }}
+              onPress={() => {
+                setHidden(!hidden);
+              }}>
+              <EntypoIcons
+                name={hidden === true ? 'eye-with-line' : 'eye'}
+                color={Colors.text}
+                size={24}
+              />
+            </Pressable>
+          </View>
+        </ImageBackground>
+        {/**
+         * service
+         */}
+
+        {/**
+         * container
+         */}
+        <View
+          style={{
+            borderTopLeftRadius: 8,
+            borderTopRightRadius: 8,
+            paddingTop: 32,
+            marginTop: 8,
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+            display: 'flex',
+            backgroundColor: Colors.white,
+          }}>
+          <DashboardService />
+          <View
+            style={{
+              marginHorizontal: 16,
+              marginTop: 8,
+              display: 'flex',
+              flexDirection: 'row',
+            }}>
+            <LinearGradient
+              colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
+              style={{
+                borderRadius: 16,
+                borderBottomRightRadius: 0,
+                marginRight: 4,
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
+              }}>
+              <Pressable
+                style={{
+                  width: (Dimensions.get('window').width - 40) / 2,
+                  height: 110,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  navigation.navigate('account');
+                }}>
+                <AntDesignIcons
+                  name={'wallet'}
+                  color={Colors.neutralLightest}
+                  size={32}
+                />
+                <Text
+                  style={{
+                    color: Colors.neutralLightest,
+                    fontWeight: '900',
+                  }}>
+                  Account
+                </Text>
+              </Pressable>
+            </LinearGradient>
+            <LinearGradient
+              colors={[Colors.yellowDark, Colors.yellowDark, Colors.yellow]}
+              style={{
+                marginLeft: 4,
+                borderRadius: 16,
+                borderBottomLeftRadius: 0,
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
+              }}>
+              <Pressable
+                style={{
+                  height: 110,
+                  width: (Dimensions.get('window').width - 40) / 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  navigation.navigate('card-service');
+                }}>
+                <AntDesignIcons
+                  name={'creditcard'}
+                  color={Colors.neutralLightest}
+                  size={32}
+                />
+                <Text
+                  style={{
+                    color: Colors.neutralLightest,
+                    fontWeight: '900',
+                  }}>
+                  Card service
+                </Text>
+              </Pressable>
+            </LinearGradient>
+          </View>
+          <View
+            style={{
+              marginHorizontal: 16,
+              marginVertical: 8,
+              display: 'flex',
+              flexDirection: 'row',
+            }}>
+            <LinearGradient
+              colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
+              style={{
+                borderRadius: 16,
+                borderTopRightRadius: 0,
+                marginRight: 4,
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
+              }}>
+              <Pressable
+                style={{
+                  height: 110,
+                  width: (Dimensions.get('window').width - 40) / 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  navigation.navigate('transfer');
+                }}>
+                <AntDesignIcons
+                  name={'swap'}
+                  color={Colors.neutralLightest}
+                  size={32}
+                />
+                <Text
+                  style={{
+                    color: Colors.neutralLightest,
+                    fontWeight: '900',
+                  }}>
+                  Transfer
+                </Text>
+              </Pressable>
+            </LinearGradient>
+            <LinearGradient
+              colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
+              style={{
+                height: 110,
+                borderRadius: 16,
+                borderTopLeftRadius: 0,
+                marginLeft: 4,
+                width: (Dimensions.get('window').width - 40) / 2,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
+              }}>
+              <AntDesignIcons
+                name={'qrcode'}
+                color={Colors.neutralLightest}
+                size={32}
+              />
+              <Text
+                style={{
+                  color: Colors.neutralLightest,
+                  fontWeight: '900',
+                }}>
+                QR code
+              </Text>
+            </LinearGradient>
+          </View>
+          <ListServicesPayment />
         </View>
-        <ListServicesPayment />
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
