@@ -46,12 +46,15 @@ export default function DashboardScreen({navigation}: any) {
           ...shadowBox,
           shadowColor: Colors.matteBlack,
         }}>
-        <View
+        <Pressable
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+          }}
+          onPress={() => {
+            navigation.navigate('top-up');
           }}>
           <FeatherIcons
             name={'smartphone'}
@@ -65,13 +68,16 @@ export default function DashboardScreen({navigation}: any) {
             }}>
             Top up
           </Text>
-        </View>
-        <View
+        </Pressable>
+        <Pressable
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+          }}
+          onPress={() => {
+            navigation.navigate('online-savings');
           }}>
           <MaterialCommunityIcons
             name={'piggy-bank'}
@@ -83,9 +89,9 @@ export default function DashboardScreen({navigation}: any) {
               fontWeight: '900',
               color: Colors.blueLight,
             }}>
-            Savings online
+            Online savings
           </Text>
-        </View>
+        </Pressable>
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -234,7 +240,7 @@ export default function DashboardScreen({navigation}: any) {
             display: 'flex',
             backgroundColor: Colors.white,
           }}>
-          <DashboardService />
+          <DashboardService navigation={navigation} />
           <View
             style={{
               marginHorizontal: 16,
@@ -391,7 +397,7 @@ export default function DashboardScreen({navigation}: any) {
   );
 }
 
-function DashboardService(): JSX.Element {
+function DashboardService({navigation}: any): JSX.Element {
   const [indeterminate, setIndeterminate] = useState<boolean>(true);
   const limit = 12000;
   useEffect(() => {
@@ -408,12 +414,15 @@ function DashboardService(): JSX.Element {
           flexDirection: 'row',
           paddingBottom: 16,
         }}>
-        <View
+        <Pressable
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+          }}
+          onPress={() => {
+            navigation.navigate('top-up');
           }}>
           <FeatherIcons
             name={'smartphone'}
@@ -427,13 +436,16 @@ function DashboardService(): JSX.Element {
             }}>
             Top up
           </Text>
-        </View>
-        <View
+        </Pressable>
+        <Pressable
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+          }}
+          onPress={() => {
+            navigation.navigate('online-savings');
           }}>
           <MaterialCommunityIcons
             name={'piggy-bank'}
@@ -445,9 +457,9 @@ function DashboardService(): JSX.Element {
               fontWeight: '900',
               color: Colors.blueLight,
             }}>
-            Savings online
+            Online savings
           </Text>
-        </View>
+        </Pressable>
       </View>
       <View
         style={{
