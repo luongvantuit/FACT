@@ -174,7 +174,7 @@ export default function TransferScreen({navigation}: any) {
                       paddingHorizontal: 16,
                     }}
                     onPress={() => {
-                      navigation.navigate('choose-contact');
+                      navigation.navigate('beneficicary');
                     }}>
                     <Text
                       style={{

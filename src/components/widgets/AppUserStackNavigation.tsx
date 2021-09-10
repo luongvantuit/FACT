@@ -49,7 +49,7 @@ export default function AppUserStackNavigation({navigation}: any) {
         }}
       />
       <AppUserStack.Screen
-        name={'choose-contact'}
+        name={'beneficicary'}
         component={ChooseContactScreen}
         options={{
           headerShown: false,

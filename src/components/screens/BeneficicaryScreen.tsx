@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 
-export default function ChooseContactScreen({navigation}: any) {
+export default function BeneficicaryScreen({navigation}: any) {
   return (
     <LinearGradient
       colors={[
