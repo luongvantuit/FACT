@@ -15,6 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import Ionicons from '../fonts-icon/ionicons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function TransferScreen({navigation}: any) {
@@ -167,20 +168,30 @@ export default function TransferScreen({navigation}: any) {
                   <Pressable
                     style={{
                       flex: 1,
-                      justifyContent: 'center',
+                      flexDirection: 'row',
+                      justifyContent: 'flex-end',
                       alignItems: 'center',
+                      paddingHorizontal: 16,
                     }}
                     onPress={() => {
                       navigation.navigate('choose-contact');
                     }}>
                     <Text
                       style={{
-                        fontWeight: '900',
-                        fontSize: 18,
+                        fontWeight: '800',
+                        fontSize: 16,
                         color: Colors.neutralLightest,
                       }}>
-                      Choose contact
+                      Beneficicary
                     </Text>
+                    <Ionicons
+                      name={'person-circle-sharp'}
+                      style={{
+                        marginLeft: 8,
+                      }}
+                      color={Colors.neutralLightest}
+                      size={42}
+                    />
                   </Pressable>
                 </LinearGradient>
               </View>

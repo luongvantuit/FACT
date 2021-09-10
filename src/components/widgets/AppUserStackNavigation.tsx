@@ -6,7 +6,7 @@ import TransferScreen from '../screens/TransferScreen';
 import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
 import {Theme, useTheme} from '@react-navigation/native';
 import ConfirmTransactionScreen from '../screens/ConfirmTransactionScreen';
-import ChooseContactScreen from '../screens/ChooseContactScreen';
+import ChooseContactScreen from '../screens/BeneficicaryScreen';
 const AppUserStack = createNativeStackNavigator();
 
 export default function AppUserStackNavigation({navigation}: any) {

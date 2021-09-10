@@ -49,7 +49,7 @@ export default function ChooseContactScreen({navigation}: any) {
             fontWeight: '900',
             fontSize: 18,
           }}>
-          Choose contact
+          Beneficicary
         </Text>
         <Pressable
           style={{
