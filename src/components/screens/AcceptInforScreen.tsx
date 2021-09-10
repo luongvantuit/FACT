@@ -165,7 +165,7 @@ export default function AcceptInforScreen({navigation}: any) {
                     fontWeight: '800',
                     fontSize: 12,
                   }}>
-                  09/06/2001
+                  09 - 06 - 2001
                 </Text>
               </View>
               <View
@@ -270,7 +270,7 @@ export default function AcceptInforScreen({navigation}: any) {
                     fontWeight: '800',
                     fontSize: 12,
                   }}>
-                  09/06/2026
+                  09 - 06 - 2026
                 </Text>
               </View>
             </View>
