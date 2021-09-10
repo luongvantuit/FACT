@@ -19,16 +19,24 @@ import EntypoIcons from '../fonts-icon/entypo-icons';
 import ListServicesPayment from '../widgets/ListServicesPayment';
 import shadowBox from '../widgets/ShadowBox';
 import * as ProcessBar from 'react-native-progress';
+import FeatherIcons from '../fonts-icon/feather-icons';
+import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
+import {Theme, useTheme} from '@react-navigation/native';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(false);
   const [headerShown, setHeaderShown] = useState<boolean>(false);
+  const theme: Theme = useTheme();
   return (
     <View>
       <View
         style={{
-          backgroundColor: Colors.neutralLightest,
+          backgroundColor: theme.colors.background,
           height: 120,
+          paddingTop: 48,
+          paddingBottom: 16,
+          justifyContent: 'space-around',
+          flexDirection: 'row',
           display: headerShown === true ? 'flex' : 'none',
           position: 'absolute',
           top: 0,
@@ -37,14 +45,55 @@ export default function DashboardScreen({navigation}: any) {
           zIndex: 10,
           ...shadowBox,
           shadowColor: Colors.matteBlack,
-        }}></View>
+        }}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <FeatherIcons
+            name={'smartphone'}
+            color={Colors.blueLight}
+            size={42}
+          />
+          <Text
+            style={{
+              fontWeight: '900',
+              color: Colors.blueLight,
+            }}>
+            Top up
+          </Text>
+        </View>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <MaterialCommunityIcons
+            name={'piggy-bank'}
+            color={Colors.blueLight}
+            size={42}
+          />
+          <Text
+            style={{
+              fontWeight: '900',
+              color: Colors.blueLight,
+            }}>
+            Savings online
+          </Text>
+        </View>
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         alwaysBounceVertical={false}
         bounces={false}
         overScrollMode={'never'}
         onScroll={event => {
-          if (event.nativeEvent.contentOffset.y > 340) setHeaderShown(true);
+          if (event.nativeEvent.contentOffset.y >= 382) setHeaderShown(true);
           else setHeaderShown(false);
         }}>
         <StatusBar
@@ -353,6 +402,53 @@ function DashboardService(): JSX.Element {
   }, []);
   return (
     <View>
+      <View
+        style={{
+          justifyContent: 'space-around',
+          flexDirection: 'row',
+          paddingBottom: 16,
+        }}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <FeatherIcons
+            name={'smartphone'}
+            color={Colors.blueLight}
+            size={42}
+          />
+          <Text
+            style={{
+              fontWeight: '900',
+              color: Colors.blueLight,
+            }}>
+            Top up
+          </Text>
+        </View>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <MaterialCommunityIcons
+            name={'piggy-bank'}
+            color={Colors.blueLight}
+            size={42}
+          />
+          <Text
+            style={{
+              fontWeight: '900',
+              color: Colors.blueLight,
+            }}>
+            Savings online
+          </Text>
+        </View>
+      </View>
       <View
         style={{
           marginHorizontal: 16,

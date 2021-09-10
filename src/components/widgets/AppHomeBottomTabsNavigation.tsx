@@ -2,6 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {StatusBar, View} from 'react-native';
 import Colors from '../../assets/colors';
+import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
@@ -63,8 +64,8 @@ export default function AppHomeBottomTabsNavigation() {
           tabBarIcon: props => {
             return (
               <TabContainer>
-                <MaterialCommunityIcons
-                  name={'google-analytics'}
+                <AntDesignIcons
+                  name={'piechart'}
                   size={props.focused === true ? 32 : 24}
                   color={
                     props.focused === true
