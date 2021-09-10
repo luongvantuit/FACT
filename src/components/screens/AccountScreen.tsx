@@ -174,6 +174,9 @@ export default function AccountScreen({navigation}: any) {
                   borderRadius: 4,
                   paddingHorizontal: 16,
                   paddingVertical: 2,
+                }}
+                onPress={() => {
+                  navigation.navigate('spending');
                 }}>
                 <AntDesignIcons
                   name={'arrowright'}

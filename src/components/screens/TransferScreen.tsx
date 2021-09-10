@@ -157,7 +157,7 @@ export default function TransferScreen({navigation}: any) {
                 <LinearGradient
                   colors={[Colors.blueDark, Colors.blueDark, Colors.blue]}
                   style={{
-                    height: 80,
+                    height: 110,
                     backgroundColor: Colors.neutralLightest,
                     flex: 1,
                     marginLeft: 16,
