@@ -99,7 +99,7 @@ export default function TransferScreen({navigation}: any) {
                   marginHorizontal: 16,
                   ...shadowBox,
                   shadowColor: Colors.matteBlack,
-                  height: 120,
+                  height: 110,
                   marginTop: 16,
                   borderRadius: 8,
                   padding: 16,
@@ -156,24 +156,32 @@ export default function TransferScreen({navigation}: any) {
                 <LinearGradient
                   colors={[Colors.blueDark, Colors.blueDark, Colors.blue]}
                   style={{
-                    height: 120,
+                    height: 80,
                     backgroundColor: Colors.neutralLightest,
                     flex: 1,
                     marginLeft: 16,
                     ...shadowBox,
                     shadowColor: Colors.matteBlack,
                     borderRadius: 8,
-                    justifyContent: 'center',
-                    alignItems: 'center',
                   }}>
-                  <Text
+                  <Pressable
                     style={{
-                      fontWeight: '900',
-                      fontSize: 18,
-                      color: Colors.neutralLightest,
+                      flex: 1,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                    onPress={() => {
+                      navigation.navigate('choose-contact');
                     }}>
-                    Choose contact
-                  </Text>
+                    <Text
+                      style={{
+                        fontWeight: '900',
+                        fontSize: 18,
+                        color: Colors.neutralLightest,
+                      }}>
+                      Choose contact
+                    </Text>
+                  </Pressable>
                 </LinearGradient>
               </View>
               <Text
