@@ -6,6 +6,7 @@ import user from '../../datas/user';
 import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import Ionicons from '../fonts-icon/ionicons';
+import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import MaterialIcons from '../fonts-icon/material-icons';
 import shadowBox from '../widgets/ShadowBox';
 
@@ -191,6 +192,31 @@ function Setting(): JSX.Element {
             marginLeft: 8,
           }}>
           Gift voucher
+        </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: Colors.white,
+          marginVertical: 4,
+          paddingHorizontal: 16,
+          alignItems: 'center',
+          height: 68,
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
+        <MaterialCommunityIcons
+          name={'piggy-bank'}
+          size={32}
+          color={Colors.yellowDark}
+        />
+        <Text
+          style={{
+            color: Colors.text,
+            fontWeight: '900',
+            fontSize: 16,
+            marginLeft: 8,
+          }}>
+          Online savings
         </Text>
       </View>
       <View
