@@ -12,3 +12,4 @@ export const UndrawTexting = require('./undraw_texting.png');
 export const UndrawOptions = require('./undraw_options.png');
 export const UndrawMyPassword = require('./undraw_my_password.png');
 export const UndrawRomaticGetaway = require('./undraw_romantic_getaway.png');
+export const Fingerfrint = require('./fingerfrint.png');

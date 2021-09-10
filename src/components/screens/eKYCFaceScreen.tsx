@@ -65,7 +65,7 @@ export default function eKYCFaceScreen(props: any) {
               color: Colors.neutralLightest,
               fontWeight: 'bold',
             }}>
-            Open accounts for new customers
+            Verify face
           </Text>
         </Pressable>
       </View>

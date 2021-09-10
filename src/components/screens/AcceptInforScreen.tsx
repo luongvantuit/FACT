@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Platform,
   StatusBar,
@@ -6,14 +6,19 @@ import {
   Text,
   Pressable,
   Dimensions,
+  Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {Fingerfrint} from '../../assets';
 import Colors from '../../assets/colors';
+import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import FeatherIcons from '../fonts-icon/feather-icons';
 import Ionicons from '../fonts-icon/ionicons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AcceptInforScreen({navigation}: any) {
+  const [accept, setAccept] = useState<boolean>(false);
   return (
     <View
       style={{
@@ -57,7 +62,7 @@ export default function AcceptInforScreen({navigation}: any) {
           borderTopRightRadius: 8,
           flex: 1,
           backgroundColor: Colors.neutralLightest,
-          paddingVertical: 8,
+          paddingTop: 8,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -82,7 +87,7 @@ export default function AcceptInforScreen({navigation}: any) {
                 justifyContent: 'flex-end',
               }}>
               <LinearGradient
-                colors={[Colors.blue, Colors.blue, Colors.blueLight]}
+                colors={[Colors.blue, Colors.blue, Colors.blue]}
                 style={{
                   width: 68,
                   height: 86,
@@ -113,9 +118,9 @@ export default function AcceptInforScreen({navigation}: any) {
                 }}>
                 <Text
                   style={{
-                    color: Colors.red,
+                    color: Colors.redDark,
                     fontWeight: '900',
-                    fontSize: 16,
+                    fontSize: 18,
                   }}>
                   CCCD/CMND
                 </Text>
@@ -123,6 +128,7 @@ export default function AcceptInforScreen({navigation}: any) {
                   style={{
                     color: Colors.red,
                     fontWeight: '700',
+                    letterSpacing: 3,
                   }}>
                   *********7788
                 </Text>
@@ -275,39 +281,144 @@ export default function AcceptInforScreen({navigation}: any) {
           <View
             style={{
               display: 'flex',
-              flexDirection: 'row',
+              flexDirection: 'column',
               marginHorizontal: 8,
               marginVertical: 8,
               borderRadius: 8,
               ...shadowBox,
               shadowColor: Colors.matteBlack,
               backgroundColor: Colors.neutralLightest,
-              padding: 8,
-            }}></View>
+              paddingVertical: 8,
+            }}>
+            <View
+              style={{
+                marginTop: 8,
+                marginBottom: 16,
+                height: 54,
+                backgroundColor: Colors.blue,
+              }}
+            />
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+              }}>
+              <View>
+                <Image
+                  source={Fingerfrint}
+                  style={{
+                    width: 86,
+                    height: 64,
+                    marginBottom: 4,
+                    transform: [{rotate: '-90deg'}],
+                  }}
+                  resizeMode={'contain'}
+                />
+                <Image
+                  source={Fingerfrint}
+                  style={{
+                    width: 86,
+                    height: 64,
+                    marginTop: 4,
+                    transform: [{rotate: '-90deg'}],
+                  }}
+                  resizeMode={'contain'}
+                />
+              </View>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  marginLeft: 32,
+                }}>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                  }}>
+                  Issued on
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '900',
+                  }}>
+                  17th of May 2016
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
-        {/* <Pressable
+        <View
           style={{
-            marginHorizontal: 32,
-            justifyContent: 'center',
-            paddingVertical: 16,
-            borderRadius: 8,
-            marginVertical: Platform.OS === 'android' ? 8 : 16,
+            borderTopLeftRadius: 8,
+            borderTopRightRadius: 8,
             ...shadowBox,
             shadowColor: Colors.matteBlack,
-            backgroundColor: Colors.blue,
-          }}
-          onPress={() => {
-            navigation.navigate('ekyc-face');
+            backgroundColor: Colors.neutralLightest,
+            alignItems: 'center',
           }}>
-          <Text
+          <Pressable
             style={{
-              textAlign: 'center',
-              fontWeight: '900',
-              color: Colors.neutralLightest,
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              marginHorizontal: 32,
+              marginVertical: 16,
+            }}
+            onPress={() => {
+              setAccept(!accept);
             }}>
-            Next step
-          </Text>
-        </Pressable> */}
+            {accept === true ? (
+              <AntDesignIcons
+                name={'checksquare'}
+                color={Colors.green}
+                size={18}
+              />
+            ) : (
+              <View
+                style={{
+                  borderRadius: 2,
+                  borderColor: Colors.text,
+                  width: 18,
+                  height: 18,
+                  borderWidth: 2,
+                }}
+              />
+            )}
+            <Text
+              style={{
+                marginLeft: 8,
+                fontWeight: '800',
+                color: Colors.text,
+              }}>
+              Accept the terms of service
+            </Text>
+          </Pressable>
+          <Pressable
+            style={{
+              marginHorizontal: 32,
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: 120,
+              height: 54,
+              borderRadius: 27,
+              marginBottom: Platform.OS === 'android' ? 16 : 24,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
+              backgroundColor: Colors.blue,
+            }}
+            onPress={() => {
+              if (accept) navigation.navigate('ekyc-face');
+            }}>
+            <FeatherIcons
+              name={'arrow-right'}
+              color={Colors.neutralLightest}
+              size={28}
+            />
+          </Pressable>
+        </View>
       </View>
     </View>
   );
