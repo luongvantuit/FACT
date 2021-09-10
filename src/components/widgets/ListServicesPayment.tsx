@@ -10,6 +10,7 @@ export default function ListServicesPayment() {
     <View
       style={{
         paddingHorizontal: 16,
+        paddingVertical: 4,
       }}>
       {listServicesPayment.map(item => (
         <View
@@ -23,8 +24,8 @@ export default function ListServicesPayment() {
             ...shadowBox,
             shadowColor: Colors.matteBlack,
             backgroundColor: Colors.white,
-            marginVertical: 8,
-            borderRadius: 8,
+            marginVertical: 4,
+            borderRadius: 16,
           }}>
           <View
             style={{

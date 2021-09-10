@@ -154,7 +154,7 @@ export default function TransferScreen({navigation}: any) {
                   size={52}
                 />
                 <LinearGradient
-                  colors={[Colors.blueDark, Colors.blue, Colors.blueLight]}
+                  colors={[Colors.blueDark, Colors.blueDark, Colors.blue]}
                   style={{
                     height: 120,
                     backgroundColor: Colors.neutralLightest,
@@ -226,7 +226,7 @@ export default function TransferScreen({navigation}: any) {
                 }}>
                 <Text
                   style={{
-                    color: Colors.neutralDark,
+                    color: Colors.neutralDarker,
                     fontWeight: '700',
                   }}>
                   Transaction remark
