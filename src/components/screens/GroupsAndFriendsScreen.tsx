@@ -33,6 +33,7 @@ export default function GroupsAndFriendsScreen() {
           Groups and friends
         </Text>
       </View>
+
       <View
         style={{
           flex: 1,
@@ -352,7 +353,7 @@ export default function GroupsAndFriendsScreen() {
                   height: 40,
                   color: Colors.neutralLight,
                 }}>
-                I am Perry, here to help you find new friends.
+                Hello, Tu.
               </Text>
             </View>
             <View
