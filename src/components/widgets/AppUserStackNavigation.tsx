@@ -10,6 +10,7 @@ import SpendingScreen from '../screens/SpendingScreen';
 import BeneficicaryScreen from '../screens/BeneficicaryScreen';
 import TopUpScreen from '../screens/TopUpScreen';
 import OnlineSavingsScreen from '../screens/OnlineSavingsScreen';
+import QRCodeScreen from '../screens/QRCodeScreen';
 const AppUserStack = createNativeStackNavigator();
 
 export default function AppUserStackNavigation({navigation}: any) {
@@ -75,6 +76,13 @@ export default function AppUserStackNavigation({navigation}: any) {
       <AppUserStack.Screen
         name={'online-savings'}
         component={OnlineSavingsScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'qr-code'}
+        component={QRCodeScreen}
         options={{
           headerShown: false,
         }}

@@ -365,30 +365,37 @@ export default function DashboardScreen({navigation}: any) {
             <LinearGradient
               colors={[Colors.yellow, Colors.yellowDark, Colors.yellowDark]}
               style={{
-                height: 110,
                 borderRadius: 16,
                 borderTopLeftRadius: 0,
                 marginLeft: 4,
-                width: (Dimensions.get('window').width - 40) / 2,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
                 ...shadowBox,
                 shadowColor: Colors.matteBlack,
               }}>
-              <AntDesignIcons
-                name={'qrcode'}
-                color={Colors.neutralLightest}
-                size={32}
-              />
-              <Text
+              <Pressable
                 style={{
-                  color: Colors.neutralLightest,
-                  fontWeight: '900',
+                  height: 110,
+                  width: (Dimensions.get('window').width - 40) / 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  navigation.navigate('qr-code');
                 }}>
-                QR code
-              </Text>
+                <AntDesignIcons
+                  name={'qrcode'}
+                  color={Colors.neutralLightest}
+                  size={32}
+                />
+                <Text
+                  style={{
+                    color: Colors.neutralLightest,
+                    fontWeight: '900',
+                  }}>
+                  QR code
+                </Text>
+              </Pressable>
             </LinearGradient>
           </View>
           <ListServicesPayment />
