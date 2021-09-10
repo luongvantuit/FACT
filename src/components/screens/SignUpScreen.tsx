@@ -60,7 +60,7 @@ export default function SignUpScreen(props: any) {
               marginHorizontal: 32,
               fontWeight: '800',
               fontSize: 22,
-              marginTop: 16,
+              marginTop: 8,
               color: Colors.text,
             }}>
             Enter Your Phone Number
@@ -95,7 +95,7 @@ export default function SignUpScreen(props: any) {
               justifyContent: 'center',
               paddingVertical: 16,
               borderRadius: 8,
-              marginVertical: 12,
+              marginVertical: 8,
               ...shadowBox,
               shadowColor: Colors.matteBlack,
               backgroundColor: Colors.yellowDark,

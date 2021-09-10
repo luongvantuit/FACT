@@ -11,7 +11,7 @@ export default function TextInputRegister() {
       style={{
         marginHorizontal: 32,
         marginTop: 16,
-        marginBottom: 12,
+        marginBottom: 9,
         paddingVertical: Platform.OS === 'android' ? 16 : 20,
         paddingHorizontal: 16,
         borderRadius: 8,
