@@ -245,14 +245,17 @@ export default function TransferScreen({navigation}: any) {
                 />
               </View>
             </View>
-            <View
+            <Pressable
               style={{
                 marginHorizontal: 16,
                 marginBottom: Platform.OS === 'android' ? 64 : 32,
                 marginTop: 8,
                 paddingVertical: 16,
                 borderRadius: 8,
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.blueDark,
+              }}
+              onPress={() => {
+                navigation.navigate('confirm-transaction');
               }}>
               <Text
                 style={{
@@ -263,7 +266,7 @@ export default function TransferScreen({navigation}: any) {
                 }}>
                 Next
               </Text>
-            </View>
+            </Pressable>
           </View>
         </LinearGradient>
       </KeyboardAvoidingView>

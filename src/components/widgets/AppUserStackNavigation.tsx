@@ -4,11 +4,9 @@ import AccountScreen from '../screens/AccountScreen';
 import CardServiceScreen from '../screens/CardServiceScreen';
 import TransferScreen from '../screens/TransferScreen';
 import AppHomeBottomTabsNavigation from './AppHomeBottomTabsNavigation';
-import Colors from '../../assets/colors';
 import {Theme, useTheme} from '@react-navigation/native';
-import {Pressable} from 'react-native';
-import EntypoIcons from '../fonts-icon/entypo-icons';
 import ConfirmTransactionScreen from '../screens/ConfirmTransactionScreen';
+import ChooseContactScreen from '../screens/ChooseContactScreen';
 const AppUserStack = createNativeStackNavigator();
 
 export default function AppUserStackNavigation({navigation}: any) {
@@ -46,6 +44,13 @@ export default function AppUserStackNavigation({navigation}: any) {
       <AppUserStack.Screen
         name={'confirm-transaction'}
         component={ConfirmTransactionScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'choose-contact'}
+        component={ChooseContactScreen}
         options={{
           headerShown: false,
         }}
