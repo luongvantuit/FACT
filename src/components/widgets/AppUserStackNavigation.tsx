@@ -8,6 +8,7 @@ import Colors from '../../assets/colors';
 import {Theme, useTheme} from '@react-navigation/native';
 import {Pressable} from 'react-native';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import ConfirmTransactionScreen from '../screens/ConfirmTransactionScreen';
 const AppUserStack = createNativeStackNavigator();
 
 export default function AppUserStackNavigation({navigation}: any) {
@@ -38,6 +39,13 @@ export default function AppUserStackNavigation({navigation}: any) {
       <AppUserStack.Screen
         name={'transfer'}
         component={TransferScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AppUserStack.Screen
+        name={'confirm-transaction'}
+        component={ConfirmTransactionScreen}
         options={{
           headerShown: false,
         }}
