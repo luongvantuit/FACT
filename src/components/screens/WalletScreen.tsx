@@ -1,18 +1,13 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  Pressable,
-  StatusBar,
-  Platform,
-} from 'react-native';
+import {View, Text, ScrollView, StatusBar, Platform, Image} from 'react-native';
+import {leakImage} from '../../assets';
 import Colors from '../../assets/colors';
+import user from '../../datas/user';
 import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
-import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
+import Ionicons from '../fonts-icon/ionicons';
 import MaterialIcons from '../fonts-icon/material-icons';
+import shadowBox from '../widgets/ShadowBox';
 
 export default function WalletScreen({navigation}: any) {
   return (
@@ -30,6 +25,8 @@ export default function WalletScreen({navigation}: any) {
           backgroundColor: Colors.white,
           paddingTop: 54,
           paddingBottom: 8,
+          ...shadowBox,
+          shadowColor: Colors.matteBlack,
         }}>
         <Text
           style={{
@@ -41,7 +38,85 @@ export default function WalletScreen({navigation}: any) {
           My Wallet
         </Text>
       </View>
-      <ScrollView>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={false}
+        bounces={false}
+        overScrollMode={'never'}>
+        <View
+          style={{
+            paddingTop: 8,
+            backgroundColor: Colors.neutralLightest,
+          }}>
+          <View
+            style={{
+              paddingVertical: 32,
+              justifyContent: 'center',
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              backgroundColor: Colors.white,
+            }}>
+            <View
+              style={{
+                ...shadowBox,
+                shadowColor: Colors.matteBlack,
+                width: 160,
+                height: 160,
+                borderRadius: 80,
+              }}>
+              <Image
+                source={leakImage}
+                style={{
+                  width: 160,
+                  height: 160,
+                  borderRadius: 80,
+                }}
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: Colors.blueLight,
+                paddingVertical: 4,
+                paddingHorizontal: 16,
+                marginVertical: 16,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 16,
+              }}>
+              <Text
+                style={{
+                  color: Colors.white,
+                  fontWeight: 'bold',
+                }}>
+                Current account
+              </Text>
+            </View>
+            <Text
+              style={{
+                color: Colors.text,
+                fontWeight: '900',
+                fontSize: 18,
+              }}>
+              {user.name}
+            </Text>
+            <Text
+              style={{
+                color: Colors.neutralLighter,
+                fontSize: 12,
+              }}>
+              Balance
+            </Text>
+            <Text
+              style={{
+                color: Colors.text,
+                fontWeight: '900',
+                fontSize: 18,
+              }}>
+              {`${user.balance}${user.currency === 'USD' ? '$' : 'VNĐ'}`}
+            </Text>
+          </View>
+        </View>
         <Setting />
       </ScrollView>
     </View>
@@ -59,6 +134,27 @@ function Setting(): JSX.Element {
           backgroundColor: Colors.white,
           marginTop: 8,
           marginBottom: 4,
+          paddingHorizontal: 16,
+          alignItems: 'center',
+          height: 68,
+          display: 'flex',
+          flexDirection: 'row',
+        }}>
+        <Ionicons name={'person-circle'} size={32} color={Colors.yellowDark} />
+        <Text
+          style={{
+            color: Colors.text,
+            fontWeight: '900',
+            fontSize: 16,
+            marginLeft: 8,
+          }}>
+          Change profile
+        </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: Colors.white,
+          marginVertical: 4,
           paddingHorizontal: 16,
           alignItems: 'center',
           height: 68,
