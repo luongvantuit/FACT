@@ -62,210 +62,229 @@ export default function AcceptInforScreen({navigation}: any) {
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            marginHorizontal: 8,
-            borderRadius: 8,
-            ...shadowBox,
-            shadowColor: Colors.matteBlack,
-            backgroundColor: Colors.neutralLightest,
-            padding: 8,
-          }}>
+        <View>
+          {/**
+           * front card
+           */}
           <View
             style={{
-              justifyContent: 'flex-end',
-            }}>
-            <LinearGradient
-              colors={[Colors.blue, Colors.blue, Colors.blueLight]}
-              style={{
-                width: 68,
-                height: 86,
-                borderRadius: 8,
-                ...shadowBox,
-                shadowColor: Colors.matteBlack,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Ionicons
-                name={'person'}
-                color={Colors.neutralLightest}
-                size={42}
-              />
-            </LinearGradient>
-          </View>
-          <View
-            style={{
-              flex: 1,
               display: 'flex',
-              flexDirection: 'column',
-              marginLeft: 8,
+              flexDirection: 'row',
+              marginHorizontal: 8,
+              borderRadius: 8,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
+              backgroundColor: Colors.neutralLightest,
+              padding: 8,
             }}>
             <View
               style={{
-                alignItems: 'center',
-                paddingBottom: 16,
+                justifyContent: 'flex-end',
               }}>
-              <Text
+              <LinearGradient
+                colors={[Colors.blue, Colors.blue, Colors.blueLight]}
                 style={{
-                  color: Colors.red,
-                  fontWeight: '900',
-                  fontSize: 16,
+                  width: 68,
+                  height: 86,
+                  borderRadius: 8,
+                  ...shadowBox,
+                  shadowColor: Colors.matteBlack,
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 }}>
-                CCCD/CMND
-              </Text>
-              <Text
-                style={{
-                  color: Colors.red,
-                  fontWeight: '700',
-                }}>
-                *********7788
-              </Text>
-            </View>
-            <View style={{}}>
-              <Text
-                style={{
-                  color: Colors.blue,
-                  fontWeight: '900',
-                  fontSize: 12,
-                }}>
-                Full name:
-              </Text>
-              <Text
-                style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                }}>
-                LUONG VAN TU
-              </Text>
-            </View>
-            <View style={{display: 'flex', flexDirection: 'row'}}>
-              <Text
-                style={{
-                  color: Colors.blue,
-                  fontWeight: '900',
-                  fontSize: 12,
-                }}>
-                Birthday:
-              </Text>
-              <Text
-                style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                  fontSize: 12,
-                }}>
-                09/06/2001
-              </Text>
+                <Ionicons
+                  name={'person'}
+                  color={Colors.neutralLightest}
+                  size={42}
+                />
+              </LinearGradient>
             </View>
             <View
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <View style={{display: 'flex', flexDirection: 'row'}}>
-                <Text
-                  style={{
-                    color: Colors.blue,
-                    fontWeight: '900',
-                    fontSize: 12,
-                  }}>
-                  Sex:
-                </Text>
-                <Text
-                  style={{
-                    color: Colors.text,
-                    fontWeight: '800',
-                    fontSize: 12,
-                  }}>
-                  Male
-                </Text>
-              </View>
-              <View style={{display: 'flex', flexDirection: 'row'}}>
-                <Text
-                  style={{
-                    color: Colors.blue,
-                    fontWeight: '900',
-                    fontSize: 12,
-                  }}>
-                  Nationality:
-                </Text>
-                <Text
-                  style={{
-                    color: Colors.text,
-                    fontWeight: '800',
-                    fontSize: 12,
-                  }}>
-                  Vietnamese
-                </Text>
-              </View>
-            </View>
-            <View style={{display: 'flex', flexDirection: 'column'}}>
-              <Text
-                style={{
-                  color: Colors.blue,
-                  fontWeight: '900',
-                  fontSize: 12,
-                }}>
-                Address:
-              </Text>
-              <Text
-                style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                  fontSize: 12,
-                }}>
-                An Trang - Quynh Phu - Thai Binh
-              </Text>
-            </View>
-            <View
-              style={{
+                flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
+                marginLeft: 8,
               }}>
-              <Text
+              <View
                 style={{
-                  color: Colors.blue,
-                  fontWeight: '900',
-                  fontSize: 12,
+                  alignItems: 'center',
+                  paddingBottom: 16,
                 }}>
-                Permanent address:
-              </Text>
-              <Text
+                <Text
+                  style={{
+                    color: Colors.red,
+                    fontWeight: '900',
+                    fontSize: 16,
+                  }}>
+                  CCCD/CMND
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.red,
+                    fontWeight: '700',
+                  }}>
+                  *********7788
+                </Text>
+              </View>
+              <View style={{}}>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Full name:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                  }}>
+                  LUONG VAN TU
+                </Text>
+              </View>
+              <View style={{display: 'flex', flexDirection: 'row'}}>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Birthday:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                    fontSize: 12,
+                  }}>
+                  09/06/2001
+                </Text>
+              </View>
+              <View
                 style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                  fontSize: 12,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
                 }}>
-                Dong Quan - Dong Hung - Thai Binh
-              </Text>
-            </View>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-              }}>
-              <Text
+                <View style={{display: 'flex', flexDirection: 'row'}}>
+                  <Text
+                    style={{
+                      color: Colors.blue,
+                      fontWeight: '900',
+                      fontSize: 12,
+                    }}>
+                    Sex:
+                  </Text>
+                  <Text
+                    style={{
+                      color: Colors.text,
+                      fontWeight: '800',
+                      fontSize: 12,
+                    }}>
+                    Male
+                  </Text>
+                </View>
+                <View style={{display: 'flex', flexDirection: 'row'}}>
+                  <Text
+                    style={{
+                      color: Colors.blue,
+                      fontWeight: '900',
+                      fontSize: 12,
+                    }}>
+                    Nationality:
+                  </Text>
+                  <Text
+                    style={{
+                      color: Colors.text,
+                      fontWeight: '800',
+                      fontSize: 12,
+                    }}>
+                    Vietnamese
+                  </Text>
+                </View>
+              </View>
+              <View style={{display: 'flex', flexDirection: 'column'}}>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Address:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                    fontSize: 12,
+                  }}>
+                  An Trang - Quynh Phu - Thai Binh
+                </Text>
+              </View>
+              <View
                 style={{
-                  color: Colors.blue,
-                  fontWeight: '900',
-                  fontSize: 12,
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}>
-                Valid until:
-              </Text>
-              <Text
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Permanent address:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                    fontSize: 12,
+                  }}>
+                  Dong Quan - Dong Hung - Thai Binh
+                </Text>
+              </View>
+              <View
                 style={{
-                  color: Colors.text,
-                  fontWeight: '800',
-                  fontSize: 12,
+                  display: 'flex',
+                  flexDirection: 'row',
                 }}>
-                09/06/2026
-              </Text>
+                <Text
+                  style={{
+                    color: Colors.blue,
+                    fontWeight: '900',
+                    fontSize: 12,
+                  }}>
+                  Valid until:
+                </Text>
+                <Text
+                  style={{
+                    color: Colors.text,
+                    fontWeight: '800',
+                    fontSize: 12,
+                  }}>
+                  09/06/2026
+                </Text>
+              </View>
             </View>
           </View>
+          {/**
+           * back card
+           */}
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              marginHorizontal: 8,
+              marginVertical: 8,
+              borderRadius: 8,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
+              backgroundColor: Colors.neutralLightest,
+              padding: 8,
+            }}></View>
         </View>
-        <View style={{}}></View>
         {/* <Pressable
           style={{
             marginHorizontal: 32,
