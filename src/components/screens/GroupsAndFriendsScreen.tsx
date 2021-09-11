@@ -141,24 +141,6 @@ export default function GroupsAndFriendsScreen() {
                 }}>
                 18:00PM
               </Text>
-              {/* <View
-                style={{
-                  width: 24,
-                  height: 24,
-                  borderRadius: 12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  backgroundColor: Colors.red,
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '800',
-                    fontSize: 10,
-                    color: Colors.neutralLightest,
-                  }}>
-                  1
-                </Text>
-              </View> */}
             </View>
           </View>
           {/** */}
@@ -197,7 +179,8 @@ export default function GroupsAndFriendsScreen() {
               <Text
                 style={{
                   height: 40,
-                  color: Colors.neutralLight,
+                  color: Colors.text,
+                  fontWeight: '900',
                 }}
                 numberOfLines={2}
                 ellipsizeMode={'tail'}>
@@ -299,24 +282,6 @@ export default function GroupsAndFriendsScreen() {
                 }}>
                 05:12AM
               </Text>
-              <View
-                style={{
-                  width: 24,
-                  height: 24,
-                  borderRadius: 12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  backgroundColor: Colors.red,
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '800',
-                    fontSize: 10,
-                    color: Colors.neutralLightest,
-                  }}>
-                  2
-                </Text>
-              </View>
             </View>
           </View>
           {/** */}
@@ -378,24 +343,6 @@ export default function GroupsAndFriendsScreen() {
                 }}>
                 03:30AM
               </Text>
-              {/* <View
-                style={{
-                  width: 24,
-                  height: 24,
-                  borderRadius: 12,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  backgroundColor: Colors.red,
-                }}>
-                <Text
-                  style={{
-                    fontWeight: '800',
-                    fontSize: 10,
-                    color: Colors.neutralLightest,
-                  }}>
-                  1
-                </Text>
-              </View> */}
             </View>
           </View>
           {/** */}
