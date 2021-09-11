@@ -21,8 +21,6 @@ export default function ListServicesPayment() {
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingHorizontal: 16,
-            ...shadowBox,
-            shadowColor: Colors.matteBlack,
             backgroundColor: Colors.white,
             marginVertical: 4,
             borderRadius: 16,
