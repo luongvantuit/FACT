@@ -119,7 +119,9 @@ export default function GroupsAndFriendsScreen() {
                 style={{
                   height: 40,
                   color: Colors.neutralLight,
-                }}>
+                }}
+                numberOfLines={2}
+                ellipsizeMode={'tail'}>
                 Congratulations! You get a discount voucher for orders over 10$
               </Text>
             </View>
@@ -195,9 +197,10 @@ export default function GroupsAndFriendsScreen() {
               <Text
                 style={{
                   height: 40,
-                  fontWeight: '800',
-                  color: Colors.text,
-                }}>
+                  color: Colors.neutralLight,
+                }}
+                numberOfLines={2}
+                ellipsizeMode={'tail'}>
                 I am Perry, here to help you find new friends.
               </Text>
             </View>
@@ -273,9 +276,10 @@ export default function GroupsAndFriendsScreen() {
               <Text
                 style={{
                   height: 40,
-                  fontWeight: '800',
-                  color: Colors.text,
-                }}>
+                  color: Colors.neutralLight,
+                }}
+                numberOfLines={2}
+                ellipsizeMode={'tail'}>
                 Transfer: 1000$
               </Text>
             </View>
@@ -352,8 +356,10 @@ export default function GroupsAndFriendsScreen() {
                 style={{
                   height: 40,
                   color: Colors.neutralLight,
-                }}>
-                Hello, Tu.
+                }}
+                numberOfLines={2}
+                ellipsizeMode={'tail'}>
+                Hello! Tu.
               </Text>
             </View>
             <View
