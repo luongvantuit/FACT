@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ScrollView,
   Dimensions,
@@ -12,6 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
 import shadowBox from '../widgets/ShadowBox';
+import * as Progress from 'react-native-progress';
 
 export default function AnalyticsScreen({navigation}: any) {
   React.useLayoutEffect(() => {
@@ -19,7 +20,33 @@ export default function AnalyticsScreen({navigation}: any) {
       headerShown: false,
     });
   });
-  return (
+  const [shownAlert, setShownAlert] = useState<boolean>(true);
+  let timeOut: NodeJS.Timeout = setTimeout(() => {
+    setShownAlert(false);
+    clearTimeout(timeOut);
+  }, 800);
+  return shownAlert === true ? (
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <StatusBar
+        barStyle={'dark-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+      />
+      <Progress.Circle
+        borderWidth={6}
+        indeterminate
+        color={Colors.blueLight}
+        strokeCap={'butt'}
+        size={98}
+        animated={true}
+      />
+    </View>
+  ) : (
     <View
       style={{
         width: Dimensions.get('window').width,
