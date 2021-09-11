@@ -25,7 +25,7 @@ import {Theme, useTheme} from '@react-navigation/native';
 import {check, request, RESULTS} from 'react-native-permissions';
 
 export default function DashboardScreen({navigation}: any) {
-  const [hidden, setHidden] = useState<boolean>(false);
+  const [hidden, setHidden] = useState<boolean>(true);
   const [headerShown, setHeaderShown] = useState<boolean>(false);
   const theme: Theme = useTheme();
   return (

@@ -1,4 +1,5 @@
-import React from 'react';
+import {Theme, useTheme} from '@react-navigation/native';
+import React, {useLayoutEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -10,16 +11,41 @@ import {
   Platform,
   Pressable,
   StatusBar,
+  Dimensions,
 } from 'react-native';
 import {UndrawMyPassword} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
+import * as Progress from 'react-native-progress';
 
-export default function EnterPasswordSignInScreen({navigation}: any) {
-  return (
+export default function EnterPasswordSignInScreen({
+  navigation,
+}: any): JSX.Element {
+  const [shownAlert, setShownAlert] = useState<boolean>(false);
+  return shownAlert === true ? (
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <StatusBar
+        barStyle={'dark-content'}
+        translucent={Platform.OS === 'android'}
+        backgroundColor={Colors.transparent}
+      />
+      <Progress.Circle
+        borderWidth={6}
+        indeterminate
+        color={Colors.blueLight}
+        strokeCap={'butt'}
+        size={98}
+        animated={true}
+      />
+    </View>
+  ) : (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
         style={{
@@ -98,7 +124,14 @@ export default function EnterPasswordSignInScreen({navigation}: any) {
             backgroundColor: Colors.text,
           }}
           onPress={() => {
-            navigation.navigate('app-user');
+            if (shownAlert === false) {
+              setShownAlert(true);
+              let timeOut: NodeJS.Timeout = setTimeout(() => {
+                clearTimeout(timeOut);
+                setShownAlert(false);
+                navigation.navigate('app-user');
+              }, 1200);
+            }
           }}>
           <Text
             style={{
