@@ -22,6 +22,7 @@ import * as ProcessBar from 'react-native-progress';
 import FeatherIcons from '../fonts-icon/feather-icons';
 import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
 import {Theme, useTheme} from '@react-navigation/native';
+import {check, request, RESULTS} from 'react-native-permissions';
 
 export default function DashboardScreen({navigation}: any) {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -381,6 +382,24 @@ export default function DashboardScreen({navigation}: any) {
                   alignItems: 'center',
                 }}
                 onPress={() => {
+                  check(
+                    Platform.OS === 'android'
+                      ? 'android.permission.CAMERA'
+                      : 'ios.permission.CAMERA',
+                  ).then(result => {
+                    if (result === RESULTS.GRANTED)
+                      navigation.navigate('qr-code');
+                    else {
+                      request(
+                        Platform.OS === 'android'
+                          ? 'android.permission.CAMERA'
+                          : 'ios.permission.CAMERA',
+                      ).then(result => {
+                        if (result === RESULTS.GRANTED)
+                          navigation.navigate('qr-code');
+                      });
+                    }
+                  });
                   navigation.navigate('qr-code');
                 }}>
                 <AntDesignIcons
