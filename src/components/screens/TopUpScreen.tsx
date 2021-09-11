@@ -16,6 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {IconApp} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
+import AntDesignIcons from '../fonts-icon/ant-design-icons';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
 
@@ -67,17 +68,17 @@ export default function TopUpScreen({navigation}: any) {
           style={{
             flex: 1,
           }}>
-          <KeyboardAvoidingView
+          <View
             style={{
               flex: 1,
+              borderTopLeftRadius: 8,
+              borderTopRightRadius: 8,
+              backgroundColor: Colors.neutralLightest,
+              justifyContent: 'space-between',
+              display: 'flex',
+              flexDirection: 'column',
             }}>
-            <View
-              style={{
-                flex: 1,
-                borderTopLeftRadius: 8,
-                borderTopRightRadius: 8,
-                backgroundColor: Colors.neutralLightest,
-              }}>
+            <View>
               <View
                 style={{
                   justifyContent: 'center',
@@ -175,8 +176,10 @@ export default function TopUpScreen({navigation}: any) {
                     borderRadius: 8,
                     fontWeight: '900',
                     color: Colors.text,
+                    fontSize: 18,
                   }}
                   placeholder={'Amount'}
+                  numberOfLines={1}
                   keyboardType={'numeric'}
                   maxLength={9}
                   placeholderTextColor={Colors.neutralLighter}
@@ -243,9 +246,44 @@ export default function TopUpScreen({navigation}: any) {
                     </Text>
                   </Pressable>
                 </View>
+
+                <View></View>
               </View>
             </View>
-          </KeyboardAvoidingView>
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <View
+                style={{
+                  marginVertical: 16,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: Colors.blueLight,
+                  paddingVertical: 8,
+                  paddingHorizontal: 32,
+                  borderRadius: 32,
+                }}>
+                <Text
+                  style={{
+                    color: Colors.neutralLightest,
+                    fontWeight: '900',
+                    fontSize: 18,
+                    marginRight: 8,
+                  }}>
+                  Top up
+                </Text>
+                <AntDesignIcons
+                  name={'arrowright'}
+                  color={Colors.neutralLightest}
+                  size={32}
+                />
+              </View>
+            </View>
+          </View>
         </TouchableWithoutFeedback>
       </LinearGradient>
     </View>
