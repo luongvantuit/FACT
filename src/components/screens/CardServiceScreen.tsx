@@ -6,6 +6,7 @@ import {
   Pressable,
   Dimensions,
   StatusBar,
+  Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
@@ -71,7 +72,75 @@ export default function CardServiceScreen({navigation}: any) {
       </View>
       <View
         style={{
-          marginTop: Dimensions.get('window').height / 4,
+          marginVertical: 32,
+          marginHorizontal: 32,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: Colors.neutralLightest,
+          ...shadowBox,
+          shadowColor: Colors.matteBlack,
+          borderRadius: 8,
+          paddingVertical: 16,
+        }}>
+        <View
+          style={{
+            flexGrow: 1,
+            paddingHorizontal: 16,
+            justifyContent: 'center',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            borderRightColor: Colors.blueLight,
+            borderRightWidth: 1,
+          }}>
+          <Image
+            source={require('../../assets/credit-card.png')}
+            style={{
+              height: 80,
+              width: 40,
+            }}
+            resizeMode={'contain'}
+          />
+          <Text
+            style={{
+              color: Colors.text,
+              fontWeight: '900',
+            }}>
+            Issue card
+          </Text>
+        </View>
+        <View
+          style={{
+            flexGrow: 1,
+            paddingHorizontal: 16,
+            justifyContent: 'center',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            borderLeftColor: Colors.blueLight,
+            borderLeftWidth: 1,
+          }}>
+          <Image
+            source={require('../../assets/padlock.png')}
+            style={{
+              height: 80,
+              width: 40,
+            }}
+            resizeMode={'contain'}
+          />
+          <Text
+            style={{
+              color: Colors.text,
+              fontWeight: '900',
+            }}>
+            Security & Lock
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{
           flex: 1,
           backgroundColor: Colors.neutralLightest,
           ...shadowBox,

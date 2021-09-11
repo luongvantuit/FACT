@@ -174,7 +174,7 @@ export default function TopUpScreen({navigation}: any) {
                     paddingVertical: 8,
                     paddingHorizontal: 16,
                     borderRadius: 8,
-                    fontWeight: '900',
+                    fontWeight: '800',
                     color: Colors.text,
                     fontSize: 18,
                   }}
@@ -270,7 +270,7 @@ export default function TopUpScreen({navigation}: any) {
                 <Text
                   style={{
                     color: Colors.neutralLightest,
-                    fontWeight: '900',
+                    fontWeight: '800',
                     fontSize: 18,
                     marginRight: 8,
                   }}>
