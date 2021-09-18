@@ -9,19 +9,19 @@ import {
   Pressable,
 } from 'react-native';
 import Colors from '../../assets/colors';
+import listOnlineSavings from '../../datas/list-online-savings';
+import user from '../../datas/user';
 import EntypoIcons from '../fonts-icon/entypo-icons';
+import Ionicons from '../fonts-icon/ionicons';
+import shadowBox from '../widgets/ShadowBox';
 
 export default function OnlineSavingsScreen({navigation}: any) {
   const theme: Theme = useTheme();
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={true}
-      alwaysBounceVertical={false}
-      bounces={false}
-      overScrollMode={'never'}>
-      {/**
-       * start header
-       */}
+    <View
+      style={{
+        flex: 1,
+      }}>
       <StatusBar
         barStyle={'dark-content'}
         backgroundColor={Colors.transparent}
@@ -74,6 +74,81 @@ export default function OnlineSavingsScreen({navigation}: any) {
       {/**
        * end header
        */}
-    </ScrollView>
+      <ScrollView
+        showsHorizontalScrollIndicator={true}
+        alwaysBounceHorizontal={false}
+        bounces={false}
+        overScrollMode={'never'}
+        style={{
+          flex: 1,
+          paddingBottom: 16,
+        }}>
+        {/**
+         * start header
+         */}
+        <View
+          style={{
+            marginHorizontal: 16,
+            marginVertical: 8,
+            backgroundColor: Colors.yellowDark,
+            borderRadius: 8,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+            alignItems: 'center',
+            ...shadowBox,
+            shadowColor: Colors.matteBlack,
+          }}>
+          <Ionicons name={'add'} color={Colors.neutralLightest} size={28} />
+        </View>
+        {listOnlineSavings.map((e, index) => (
+          <View
+            style={{
+              marginTop: index == 0 ? 4 : 8,
+              marginBottom: index === listOnlineSavings.length ? 4 : 8,
+              backgroundColor: Colors.white,
+              marginHorizontal: 16,
+              ...shadowBox,
+              shadowColor: Colors.matteBlack,
+              borderRadius: 8,
+            }}
+            key={index}>
+            <View
+              style={{
+                borderTopLeftRadius: 8,
+                borderTopRightRadius: 8,
+                backgroundColor: Colors.yellowDark,
+                padding: 16,
+              }}>
+              <Text
+                style={{
+                  color: Colors.neutralLightest,
+                  fontWeight: '900',
+                  fontSize: 18,
+                }}>
+                {e.note}
+              </Text>
+            </View>
+            <View
+              style={{
+                padding: 16,
+              }}>
+              <Text
+                style={{
+                  color: Colors.text,
+                  fontWeight: '900',
+                  marginBottom: 8,
+                  fontSize: 18,
+                }}>{`${e.value}${user.currency}`}</Text>
+              <Text
+                style={{
+                  color: Colors.neutralLight,
+                  fontWeight: '700',
+                }}>{`${e.createAt} to ${e.expiration}`}</Text>
+            </View>
+          </View>
+        ))}
+      </ScrollView>
+    </View>
   );
 }
