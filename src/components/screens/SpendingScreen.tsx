@@ -182,7 +182,7 @@ export default function SpendingScreen({navigation}: any) {
                   <View
                     key={index}
                     style={{
-                      marginTop: index == 0 ? 8 : 4,
+                      marginTop: index == 0 ? 16 : 8,
                       marginBottom: index == listData.length - 1 ? 8 : 4,
                       marginHorizontal: 16,
                     }}>
@@ -190,19 +190,50 @@ export default function SpendingScreen({navigation}: any) {
                       style={{
                         display: 'flex',
                         flexDirection: 'row',
+                        justifyContent: 'space-between',
                       }}>
                       <View
                         style={{
-                          flex: 1,
+                          width: 200,
                         }}>
-                        <Text
+                        <View
                           style={{
-                            color: Colors.text,
-                            fontSize: 18,
-                            fontWeight: '900',
+                            display: 'flex',
+                            flexDirection: 'row',
                           }}>
-                          {e.message}
-                        </Text>
+                          <Text
+                            style={{
+                              color: Colors.text,
+                              fontSize: 16,
+                              fontWeight: '800',
+                            }}>
+                            {e.message}
+                          </Text>
+                          {e.service ? (
+                            <View
+                              style={{
+                                marginHorizontal: 8,
+                                backgroundColor: Colors.blueLight,
+                                borderRadius: 16,
+                                height: 24,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                              }}>
+                              <Text
+                                style={{
+                                  paddingHorizontal: 8,
+                                  textAlign: 'center',
+                                  fontWeight: '900',
+                                  fontSize: 12,
+                                  color: Colors.neutralLightest,
+                                }}>
+                                Service
+                              </Text>
+                            </View>
+                          ) : (
+                            <View></View>
+                          )}
+                        </View>
                         <Text
                           style={{
                             color: Colors.neutralLight,
@@ -215,8 +246,7 @@ export default function SpendingScreen({navigation}: any) {
                         <Text
                           style={{
                             color: e.increase ? Colors.green : Colors.red,
-                            fontWeight: '800',
-                            fontSize: 16,
+                            fontWeight: '700',
                           }}>{`${e.increase ? '+' : '-'}${e.value} ${
                           user.currency
                         }`}</Text>
