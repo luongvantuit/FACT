@@ -7,6 +7,7 @@ import {
   ScrollView,
   StatusBar,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
@@ -126,12 +127,12 @@ export default function AccountScreen({navigation}: any) {
                 }}>
                 {user.numberPhone}
               </Text>
-              <LinearGradient
-                colors={[Colors.blueDark, Colors.blue]}
+              <View
                 style={{
                   width: 60,
                   borderRadius: 4,
                   padding: 4,
+                  backgroundColor: Colors.blueLight,
                 }}>
                 <Text
                   style={{
@@ -142,7 +143,7 @@ export default function AccountScreen({navigation}: any) {
                   }}>
                   Default
                 </Text>
-              </LinearGradient>
+              </View>
               <Text
                 style={{
                   marginTop: 32,
@@ -188,9 +189,32 @@ export default function AccountScreen({navigation}: any) {
           </View>
         </LinearGradient>
       </View>
-      <View style={{}}>
-        <View></View>
-      </View>
+      <TouchableOpacity
+        style={{
+          backgroundColor: Colors.blueLight,
+          marginVertical: 8,
+          marginHorizontal: 16,
+          borderRadius: 8,
+          padding: 16,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        activeOpacity={0.8}
+        onPress={() => {
+          navigation.navigate('online-savings');
+        }}>
+        <Text
+          style={{
+            color: Colors.white,
+            fontWeight: '900',
+            fontSize: 18,
+          }}>
+          Online Savings
+        </Text>
+        <AntDesignIcons name={'arrowright'} color={Colors.white} size={32} />
+      </TouchableOpacity>
     </ScrollView>
   );
 }
