@@ -7,6 +7,7 @@ import {
   Platform,
   Pressable,
   ScrollView,
+  Dimensions,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
@@ -190,50 +191,38 @@ export default function SpendingScreen({navigation}: any) {
                       style={{
                         display: 'flex',
                         flexDirection: 'row',
-                        justifyContent: 'space-between',
+                        width: Dimensions.get('window').width - 32,
                       }}>
                       <View
                         style={{
-                          width: 200,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          width: Dimensions.get('window').width - 106,
+                          alignItems: 'flex-start',
                         }}>
-                        <View
+                        <Text
                           style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                          }}>
+                            color: Colors.text,
+                            fontSize: 16,
+                            fontWeight: '800',
+                            width: Dimensions.get('window').width - 106,
+                          }}
+                          ellipsizeMode={'tail'}>
+                          {e.message}
+                        </Text>
+                        {e.service ? (
                           <Text
                             style={{
-                              color: Colors.text,
-                              fontSize: 16,
-                              fontWeight: '800',
+                              paddingVertical: 4,
+                              fontWeight: '900',
+                              fontSize: 12,
+                              color: Colors.blueLight,
                             }}>
-                            {e.message}
+                            Service
                           </Text>
-                          {e.service ? (
-                            <View
-                              style={{
-                                marginHorizontal: 8,
-                                backgroundColor: Colors.blueLight,
-                                borderRadius: 16,
-                                height: 24,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                              }}>
-                              <Text
-                                style={{
-                                  paddingHorizontal: 8,
-                                  textAlign: 'center',
-                                  fontWeight: '900',
-                                  fontSize: 12,
-                                  color: Colors.neutralLightest,
-                                }}>
-                                Service
-                              </Text>
-                            </View>
-                          ) : (
-                            <View></View>
-                          )}
-                        </View>
+                        ) : (
+                          <View></View>
+                        )}
                         <Text
                           style={{
                             color: Colors.neutralLight,
@@ -242,15 +231,17 @@ export default function SpendingScreen({navigation}: any) {
                           {e.date}
                         </Text>
                       </View>
-                      <View>
-                        <Text
-                          style={{
-                            color: e.increase ? Colors.green : Colors.red,
-                            fontWeight: '700',
-                          }}>{`${e.increase ? '+' : '-'}${e.value} ${
-                          user.currency
-                        }`}</Text>
-                      </View>
+                      <Text
+                        style={{
+                          width: 74,
+                          color: e.increase ? Colors.green : Colors.red,
+                          fontWeight: '700',
+                          textAlign: 'right',
+                        }}
+                        numberOfLines={1}
+                        ellipsizeMode={'tail'}>{`${e.increase ? '+' : '-'}${
+                        e.value
+                      } ${user.currency}`}</Text>
                     </View>
                   </View>
                 );
