@@ -10,6 +10,33 @@ const listSpending: Array<Spending> = [
     date: '18:43PM - 02/09/2021',
     message: 'Transfer 1000$',
   },
+  {
+    id: '2',
+    increase: false,
+    name: 'Nguyen Duc Huy',
+    service: false,
+    value: 1000,
+    date: '18:43PM - 02/09/2021',
+    message: 'Transfer 1000$',
+  },
+  {
+    id: '3',
+    increase: false,
+    name: 'Nguyen Duc Huy',
+    service: false,
+    value: 1000,
+    date: '18:43PM - 02/09/2021',
+    message: 'Transfer 1000$',
+  },
+  {
+    id: '4',
+    increase: false,
+    name: 'Nguyen Duc Huy',
+    service: false,
+    value: 1000,
+    date: '18:43PM - 02/09/2021',
+    message: 'Transfer 1000$',
+  },
 ];
 
 export default listSpending;
