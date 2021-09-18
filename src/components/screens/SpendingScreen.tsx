@@ -1,15 +1,32 @@
 import {Theme, useTheme} from '@react-navigation/native';
-import React from 'react';
-import {View, Text, StatusBar, Platform, Pressable} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StatusBar,
+  Platform,
+  Pressable,
+  ScrollView,
+} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
+import listSpending from '../../datas/list-spending';
+import user from '../../datas/user';
+import {Spending} from '../../types/spending';
 import EntypoIcons from '../fonts-icon/entypo-icons';
 
 export default function SpendingScreen({navigation}: any) {
   const theme: Theme = useTheme();
+  const [index, setIndex] = useState<number>(0);
+  const [listData, setListData] = useState<Array<Spending>>(listSpending);
   return (
-    <View>
+    <LinearGradient
+      colors={[Colors.blueDark, Colors.blueDark, Colors.blue]}
+      style={{
+        flex: 1,
+      }}>
       <StatusBar
-        barStyle={'dark-content'}
+        barStyle={'light-content'}
         backgroundColor={Colors.transparent}
         translucent={Platform.OS === 'android'}
       />
@@ -19,7 +36,6 @@ export default function SpendingScreen({navigation}: any) {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          backgroundColor: theme.colors.background,
         }}>
         <Pressable
           onPress={() => {
@@ -32,13 +48,13 @@ export default function SpendingScreen({navigation}: any) {
           <EntypoIcons
             name="chevron-small-left"
             size={32}
-            color={Colors.text}
+            color={Colors.neutralLightest}
           />
         </Pressable>
         <Text
           style={{
             flex: 1,
-            color: Colors.text,
+            color: Colors.neutralLightest,
             textAlign: 'center',
             fontWeight: '900',
             fontSize: 18,
@@ -57,6 +73,192 @@ export default function SpendingScreen({navigation}: any) {
           />
         </Pressable>
       </View>
-    </View>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: Colors.white,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          paddingTop: 16,
+        }}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            marginHorizontal: 16,
+            backgroundColor: '#EEEEEE',
+            borderRadius: 20,
+          }}>
+          <Pressable
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingVertical: 8,
+              margin: 4,
+              backgroundColor: index == 0 ? Colors.white : Colors.transparent,
+              borderRadius: 16,
+            }}
+            onPress={() => {
+              setIndex(0);
+              setListData(listSpending);
+            }}>
+            <Text
+              style={{
+                color: index == 0 ? Colors.blueDark : Colors.text,
+                fontWeight: '900',
+                fontSize: index == 0 ? 16 : 14,
+              }}>
+              All
+            </Text>
+          </Pressable>
+          <Pressable
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingVertical: 8,
+              margin: 4,
+              backgroundColor: index == 1 ? Colors.white : Colors.transparent,
+              borderRadius: 16,
+            }}
+            onPress={() => {
+              setIndex(1);
+              const newData: Array<Spending> = [];
+              for (let index = 0; index < listSpending.length; index++) {
+                if (listSpending[index].increase)
+                  newData.push(listSpending[index]);
+              }
+              setListData(newData);
+            }}>
+            <Text
+              style={{
+                color: index == 1 ? Colors.blueDark : Colors.text,
+                fontWeight: '900',
+                fontSize: index == 1 ? 16 : 14,
+              }}>
+              Credit
+            </Text>
+          </Pressable>
+          <Pressable
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingVertical: 8,
+              margin: 4,
+              backgroundColor: index == 2 ? Colors.white : Colors.transparent,
+              borderRadius: 16,
+            }}
+            onPress={() => {
+              setIndex(2);
+              const newData: Array<Spending> = [];
+              for (let index = 0; index < listSpending.length; index++) {
+                if (!listSpending[index].increase)
+                  newData.push(listSpending[index]);
+              }
+              setListData(newData);
+            }}>
+            <Text
+              style={{
+                color: index == 2 ? Colors.blueDark : Colors.text,
+                fontWeight: '900',
+                fontSize: index == 2 ? 16 : 14,
+              }}>
+              Debit
+            </Text>
+          </Pressable>
+        </View>
+        <ScrollView
+          bounces={false}
+          alwaysBounceHorizontal={false}
+          overScrollMode={'never'}>
+          {listData.length == 0 ? (
+            <View></View>
+          ) : (
+            <View>
+              {listData.map((e, index) => {
+                return (
+                  <View
+                    key={index}
+                    style={{
+                      marginTop: index == 0 ? 16 : 8,
+                      marginBottom: index == listData.length - 1 ? 8 : 4,
+                      marginHorizontal: 16,
+                    }}>
+                    <View
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                      }}>
+                      <View
+                        style={{
+                          width: 200,
+                        }}>
+                        <View
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                          }}>
+                          <Text
+                            style={{
+                              color: Colors.text,
+                              fontSize: 16,
+                              fontWeight: '800',
+                            }}>
+                            {e.message}
+                          </Text>
+                          {e.service ? (
+                            <View
+                              style={{
+                                marginHorizontal: 8,
+                                backgroundColor: Colors.blueLight,
+                                borderRadius: 16,
+                                height: 24,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                              }}>
+                              <Text
+                                style={{
+                                  paddingHorizontal: 8,
+                                  textAlign: 'center',
+                                  fontWeight: '900',
+                                  fontSize: 12,
+                                  color: Colors.neutralLightest,
+                                }}>
+                                Service
+                              </Text>
+                            </View>
+                          ) : (
+                            <View></View>
+                          )}
+                        </View>
+                        <Text
+                          style={{
+                            color: Colors.neutralLight,
+                            fontWeight: '600',
+                          }}>
+                          {e.date}
+                        </Text>
+                      </View>
+                      <View>
+                        <Text
+                          style={{
+                            color: e.increase ? Colors.green : Colors.red,
+                            fontWeight: '700',
+                          }}>{`${e.increase ? '+' : '-'}${e.value} ${
+                          user.currency
+                        }`}</Text>
+                      </View>
+                    </View>
+                  </View>
+                );
+              })}
+            </View>
+          )}
+        </ScrollView>
+      </View>
+    </LinearGradient>
   );
 }
