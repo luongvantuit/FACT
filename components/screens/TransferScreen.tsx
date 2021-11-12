@@ -14,8 +14,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import EntypoIcons from '../fonts-icon/entypo-icons';
-import Ionicons from '../fonts-icon/ionicons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
+import Ionicons from '../../fonts-icon/ionicons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function TransferScreen({navigation}: any) {

@@ -3,7 +3,7 @@ import React from 'react';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import {Pressable, View} from 'react-native';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import {useTheme} from '@react-navigation/native';
 import OTPSignInScreen from '../screens/OTPSignInScreen';
 import AcceptValidCitizenshipIDCardScreen from '../screens/AcceptValidCitizenshipIDCardScreen';

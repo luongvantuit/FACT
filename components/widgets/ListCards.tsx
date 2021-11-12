@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '../../assets/colors';
 import listCards from '../../datas/list-cards';
-import FontAwesomeIcons from '../fonts-icon/font-awesome-icons';
+import FontAwesomeIcons from '../../fonts-icon/font-awesome-icons';
 import shadowBox from './ShadowBox';
 Icon.loadFont();
 export default function ListCards() {

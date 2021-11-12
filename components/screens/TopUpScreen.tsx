@@ -16,8 +16,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {IconApp} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import AntDesignIcons from '../../fonts-icon/ant-design-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function TopUpScreen({navigation}: any) {

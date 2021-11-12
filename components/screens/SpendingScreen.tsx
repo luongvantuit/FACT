@@ -14,7 +14,7 @@ import Colors from '../../assets/colors';
 import listSpending from '../../datas/list-spending';
 import user from '../../datas/user';
 import {Spending} from '../../types/spending';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 
 export default function SpendingScreen({navigation}: any) {
   const theme: Theme = useTheme();

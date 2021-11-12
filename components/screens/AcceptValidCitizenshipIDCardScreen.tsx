@@ -10,7 +10,7 @@ import {
 import {check, request, RESULTS} from 'react-native-permissions';
 import {UndrawOptions} from '../../assets';
 import Colors from '../../assets/colors';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
+import AntDesignIcons from '../../fonts-icon/ant-design-icons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AcceptValidCitizenshipIDCardScreen({navigation}: any) {

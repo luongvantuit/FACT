@@ -12,8 +12,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import AntDesignIcons from '../../fonts-icon/ant-design-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AccountScreen({navigation}: any) {

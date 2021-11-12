@@ -1,51 +1,24 @@
-import {Theme, useTheme} from '@react-navigation/native';
-import React, {useLayoutEffect, useState} from 'react';
+import React from 'react';
 import {
-  View,
-  Text,
   TouchableWithoutFeedback,
   KeyboardAvoidingView,
   Keyboard,
-  ImageBackground,
   TextInput,
   Platform,
+  ImageBackground,
+  Text,
+  View,
   Pressable,
   StatusBar,
-  Dimensions,
 } from 'react-native';
-import {UndrawMyPassword} from '../../assets';
+import {UndrawRomaticGetaway} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import shadowBox from '../widgets/ShadowBox';
-import * as Progress from 'react-native-progress';
 
-export default function EnterPasswordSignInScreen({
-  navigation,
-}: any): JSX.Element {
-  const [shownAlert, setShownAlert] = useState<boolean>(false);
-  return shownAlert === true ? (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <StatusBar
-        barStyle={'dark-content'}
-        translucent={Platform.OS === 'android'}
-        backgroundColor={Colors.transparent}
-      />
-      <Progress.Circle
-        borderWidth={6}
-        indeterminate
-        color={Colors.blueLight}
-        strokeCap={'butt'}
-        size={98}
-        animated={true}
-      />
-    </View>
-  ) : (
+export default function EnterPasswordSignUpScreen({navigation}: any) {
+  return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
         style={{
@@ -58,20 +31,29 @@ export default function EnterPasswordSignInScreen({
           backgroundColor={Colors.transparent}
         />
         <ImageBackground
-          source={UndrawMyPassword}
+          source={UndrawRomaticGetaway}
           style={{
             height: 340,
           }}
         />
         <Text
           style={{
-            fontWeight: '900',
-            marginTop: 8,
-            marginHorizontal: 32,
-            fontSize: 28,
             color: Colors.text,
+            fontWeight: '900',
+            fontSize: 28,
+            marginHorizontal: 32,
+            marginBottom: 8,
           }}>
-          Enter Your Password
+          Enter your password
+        </Text>
+        <Text
+          style={{
+            color: Colors.text,
+            fontWeight: '900',
+            fontSize: 24,
+            marginHorizontal: 32,
+          }}>
+          Finally. 6-Digit
         </Text>
         <View
           style={{
@@ -94,12 +76,30 @@ export default function EnterPasswordSignInScreen({
           <EntypoIcons name={'check'} color={Colors.green} size={20} />
         </View>
         <TextInput
-          placeholder={'6-Digit'}
+          placeholder={'Password'}
           keyboardType={'numeric'}
-          maxLength={6}
           style={{
             marginHorizontal: 32,
             marginTop: 16,
+            marginBottom: 8,
+            paddingVertical: Platform.OS === 'android' ? 16 : 20,
+            paddingHorizontal: 16,
+            borderRadius: 8,
+            fontWeight: '900',
+            ...shadowBox,
+            color: Colors.text,
+            backgroundColor: Colors.neutralLightest,
+          }}
+          placeholderTextColor={Colors.neutralLight}
+          secureTextEntry={true}
+          maxLength={6}
+        />
+        <TextInput
+          placeholder={'Confirm password'}
+          keyboardType={'numeric'}
+          style={{
+            marginHorizontal: 32,
+            marginTop: 8,
             marginBottom: 12,
             paddingVertical: Platform.OS === 'android' ? 16 : 20,
             paddingHorizontal: 16,
@@ -111,37 +111,8 @@ export default function EnterPasswordSignInScreen({
           }}
           placeholderTextColor={Colors.neutralLight}
           secureTextEntry={true}
+          maxLength={6}
         />
-        <Pressable
-          style={{
-            marginHorizontal: 32,
-            justifyContent: 'center',
-            paddingVertical: 16,
-            borderRadius: 8,
-            marginVertical: 8,
-            ...shadowBox,
-            shadowColor: Colors.matteBlack,
-            backgroundColor: Colors.text,
-          }}
-          onPress={() => {
-            if (shownAlert === false) {
-              setShownAlert(true);
-              let timeOut: NodeJS.Timeout = setTimeout(() => {
-                clearTimeout(timeOut);
-                setShownAlert(false);
-                navigation.navigate('app-user');
-              }, 1200);
-            }
-          }}>
-          <Text
-            style={{
-              textAlign: 'center',
-              fontWeight: '900',
-              color: Colors.neutralLightest,
-            }}>
-            Sign In
-          </Text>
-        </Pressable>
         <Pressable
           style={{
             marginHorizontal: 32,
@@ -162,7 +133,7 @@ export default function EnterPasswordSignInScreen({
               fontWeight: '900',
               color: Colors.text,
             }}>
-            Change Phone Number
+            Create account
           </Text>
         </Pressable>
       </KeyboardAvoidingView>

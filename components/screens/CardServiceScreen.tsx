@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import ListCards from '../widgets/ListCards';
 import shadowBox from '../widgets/ShadowBox';
 

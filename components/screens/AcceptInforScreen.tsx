@@ -11,10 +11,10 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {Fingerfrint} from '../../assets';
 import Colors from '../../assets/colors';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
-import EntypoIcons from '../fonts-icon/entypo-icons';
-import FeatherIcons from '../fonts-icon/feather-icons';
-import Ionicons from '../fonts-icon/ionicons';
+import AntDesignIcons from '../../fonts-icon/ant-design-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
+import FeatherIcons from '../../fonts-icon/feather-icons';
+import Ionicons from '../../fonts-icon/ionicons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function AcceptInforScreen({navigation}: any) {

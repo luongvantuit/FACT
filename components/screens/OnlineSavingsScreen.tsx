@@ -11,8 +11,8 @@ import {
 import Colors from '../../assets/colors';
 import listOnlineSavings from '../../datas/list-online-savings';
 import user from '../../datas/user';
-import EntypoIcons from '../fonts-icon/entypo-icons';
-import Ionicons from '../fonts-icon/ionicons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
+import Ionicons from '../../fonts-icon/ionicons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function OnlineSavingsScreen({navigation}: any) {

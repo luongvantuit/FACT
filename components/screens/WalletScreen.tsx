@@ -3,11 +3,11 @@ import {View, Text, ScrollView, StatusBar, Platform, Image} from 'react-native';
 import {leakImage} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
-import EntypoIcons from '../fonts-icon/entypo-icons';
-import Ionicons from '../fonts-icon/ionicons';
-import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
-import MaterialIcons from '../fonts-icon/material-icons';
+import AntDesignIcons from '../../fonts-icon/ant-design-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
+import Ionicons from '../../fonts-icon/ionicons';
+import MaterialCommunityIcons from '../../fonts-icon/material-community-icons';
+import MaterialIcons from '../../fonts-icon/material-icons';
 import shadowBox from '../widgets/ShadowBox';
 
 export default function WalletScreen({navigation}: any) {

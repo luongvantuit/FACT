@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {check, RESULTS} from 'react-native-permissions';
 import Colors from '../../assets/colors';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import {Svg, Rect, Polyline, Text as SVGText} from 'react-native-svg';
 import {RNCamera} from 'react-native-camera';
 

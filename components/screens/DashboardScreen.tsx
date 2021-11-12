@@ -14,13 +14,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import {IconApp, leakImage, UndrawPayOnline} from '../../assets';
 import Colors from '../../assets/colors';
 import user from '../../datas/user';
-import AntDesignIcons from '../fonts-icon/ant-design-icons';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import AntDesignIcons from '../../fonts-icon/ant-design-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 import ListServicesPayment from '../widgets/ListServicesPayment';
 import shadowBox from '../widgets/ShadowBox';
 import * as ProcessBar from 'react-native-progress';
-import FeatherIcons from '../fonts-icon/feather-icons';
-import MaterialCommunityIcons from '../fonts-icon/material-community-icons';
+import FeatherIcons from '../../fonts-icon/feather-icons';
+import MaterialCommunityIcons from '../../fonts-icon/material-community-icons';
 import {Theme, useTheme} from '@react-navigation/native';
 import {check, request, RESULTS} from 'react-native-permissions';
 

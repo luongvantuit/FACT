@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, StatusBar, Pressable, Platform} from 'react-native';
+import {View, Text, StatusBar, Platform, Pressable} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '../../assets/colors';
-import EntypoIcons from '../fonts-icon/entypo-icons';
+import EntypoIcons from '../../fonts-icon/entypo-icons';
 
-export default function BeneficicaryScreen({navigation}: any) {
+export default function ConfirmTransactionScreen({navigation}: any) {
   return (
     <LinearGradient
       colors={[
@@ -49,7 +49,7 @@ export default function BeneficicaryScreen({navigation}: any) {
             fontWeight: '900',
             fontSize: 18,
           }}>
-          Beneficicary
+          Confirm transaction
         </Text>
         <Pressable
           style={{
